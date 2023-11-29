@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace ChrisReedIO\Athena\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class AthenaCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-athena-sdk';
 
     public $description = 'My command';
 
