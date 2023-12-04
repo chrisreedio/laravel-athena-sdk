@@ -12,16 +12,14 @@ use Saloon\Http\Request;
  */
 class ListOfficeOrderTypes extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/chart/configuration/officeordertypes';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/configuration/officeordertypes";
-	}
-
-
-	public function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 }

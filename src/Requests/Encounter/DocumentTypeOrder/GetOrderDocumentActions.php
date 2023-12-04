@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class GetOrderDocumentActions extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/documents/order/{$this->orderid}/actions";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/documents/order/{$this->orderid}/actions";
-	}
+    /**
+     * @param  int  $orderid orderid
+     */
+    public function __construct(
+        protected int $orderid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $orderid orderid
-	 */
-	public function __construct(
-		protected int $orderid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([]);
+    }
 }

@@ -12,28 +12,25 @@ use Saloon\Http\Request;
  */
 class ListPatientCancerCases extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/{$this->patientid}/cancercases";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/{$this->patientid}/cancercases";
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $departmentid The ID of the department to retrieve cancer cases for.
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $departmentid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $departmentid The ID of the department to retrieve cancer cases for.
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $departmentid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['departmentid' => $this->departmentid]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['departmentid' => $this->departmentid]);
+    }
 }

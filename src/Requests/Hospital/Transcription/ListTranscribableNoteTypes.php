@@ -12,22 +12,19 @@ use Saloon\Http\Request;
  */
 class ListTranscribableNoteTypes extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/stays/configuration/transcribablenotetypes';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/stays/configuration/transcribablenotetypes";
-	}
+    public function __construct()
+    {
+    }
 
-
-	public function __construct()
-	{
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([]);
+    }
 }

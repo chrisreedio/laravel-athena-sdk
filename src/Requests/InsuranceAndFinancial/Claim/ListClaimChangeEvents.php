@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class ListClaimChangeEvents extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/claims/changed/subscription/events';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/claims/changed/subscription/events";
-	}
+    /**
+     * @param  null|bool  $showadditionalevents Include non-default events
+     */
+    public function __construct(
+        protected ?bool $showadditionalevents = null,
+    ) {
+    }
 
-
-	/**
-	 * @param null|bool $showadditionalevents Include non-default events
-	 */
-	public function __construct(
-		protected ?bool $showadditionalevents = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['showadditionalevents' => $this->showadditionalevents]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['showadditionalevents' => $this->showadditionalevents]);
+    }
 }

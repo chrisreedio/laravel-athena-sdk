@@ -12,20 +12,18 @@ use Saloon\Http\Request;
  */
 class DeleteAppointmentThirdPartyCodingStatus extends Request
 {
-	protected Method $method = Method::DELETE;
+    protected Method $method = Method::DELETE;
 
+    public function resolveEndpoint(): string
+    {
+        return "/appointments/{$this->appointmentid}/thirdpartycodingstatus";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/appointments/{$this->appointmentid}/thirdpartycodingstatus";
-	}
-
-
-	/**
-	 * @param int $appointmentid appointmentid
-	 */
-	public function __construct(
-		protected int $appointmentid,
-	) {
-	}
+    /**
+     * @param  int  $appointmentid appointmentid
+     */
+    public function __construct(
+        protected int $appointmentid,
+    ) {
+    }
 }

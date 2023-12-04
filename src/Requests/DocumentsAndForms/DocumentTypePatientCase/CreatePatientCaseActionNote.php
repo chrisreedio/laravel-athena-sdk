@@ -14,30 +14,27 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreatePatientCaseActionNote extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/documents/patientcase/{$this->patientcaseid}/actions";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/documents/patientcase/{$this->patientcaseid}/actions";
-	}
+    /**
+     * @param  int  $patientcaseid patientcaseid
+     * @param  string  $actionnote The new action note to add to the document.
+     */
+    public function __construct(
+        protected int $patientcaseid,
+        protected string $actionnote,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientcaseid patientcaseid
-	 * @param string $actionnote The new action note to add to the document.
-	 */
-	public function __construct(
-		protected int $patientcaseid,
-		protected string $actionnote,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['actionnote' => $this->actionnote]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['actionnote' => $this->actionnote]);
+    }
 }

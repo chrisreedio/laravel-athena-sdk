@@ -12,16 +12,14 @@ use Saloon\Http\Request;
  */
 class ListChartSharingGroups extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/configuration/chartsharinggroups';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/configuration/chartsharinggroups";
-	}
-
-
-	public function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 }

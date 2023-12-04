@@ -12,16 +12,14 @@ use Saloon\Http\Request;
  */
 class ListModifiers extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/encounter/configuration/modifiers';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/encounter/configuration/modifiers";
-	}
-
-
-	public function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 }

@@ -14,34 +14,31 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class UpdateObEpisodeProblemsList extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::PUT;
+    protected Method $method = Method::PUT;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/{$this->patientid}/obepisodes/{$this->obepisodeid}/problemslist";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/{$this->patientid}/obepisodes/{$this->obepisodeid}/problemslist";
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $obepisodeid obepisodeid
+     * @param  null|string  $note Free text notes for the entire problems list.
+     * @param  null|array  $problems A list of problems that should be updated.
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $obepisodeid,
+        protected ?string $note = null,
+        protected ?array $problems = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $obepisodeid obepisodeid
-	 * @param null|string $note Free text notes for the entire problems list.
-	 * @param null|array $problems A list of problems that should be updated.
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $obepisodeid,
-		protected ?string $note = null,
-		protected ?array $problems = null,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['note' => $this->note, 'problems' => $this->problems]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['note' => $this->note, 'problems' => $this->problems]);
+    }
 }

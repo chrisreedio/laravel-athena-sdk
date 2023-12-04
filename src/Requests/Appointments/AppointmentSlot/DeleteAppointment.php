@@ -13,20 +13,18 @@ use Saloon\Http\Request;
  */
 class DeleteAppointment extends Request
 {
-	protected Method $method = Method::DELETE;
+    protected Method $method = Method::DELETE;
 
+    public function resolveEndpoint(): string
+    {
+        return "/appointments/{$this->appointmentid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/appointments/{$this->appointmentid}";
-	}
-
-
-	/**
-	 * @param int $appointmentid appointmentid
-	 */
-	public function __construct(
-		protected int $appointmentid,
-	) {
-	}
+    /**
+     * @param  int  $appointmentid appointmentid
+     */
+    public function __construct(
+        protected int $appointmentid,
+    ) {
+    }
 }

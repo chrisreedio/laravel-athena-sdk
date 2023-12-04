@@ -12,22 +12,20 @@ use Saloon\Http\Request;
  */
 class UpdatePatientReferralOrderReopen extends Request
 {
-	protected Method $method = Method::PUT;
+    protected Method $method = Method::PUT;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/documents/orders/referral/{$this->referraldocumentid}/reopen";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/documents/orders/referral/{$this->referraldocumentid}/reopen";
-	}
-
-
-	/**
-	 * @param int $referraldocumentid referraldocumentid
-	 * @param int $patientid patientid
-	 */
-	public function __construct(
-		protected int $referraldocumentid,
-		protected int $patientid,
-	) {
-	}
+    /**
+     * @param  int  $referraldocumentid referraldocumentid
+     * @param  int  $patientid patientid
+     */
+    public function __construct(
+        protected int $referraldocumentid,
+        protected int $patientid,
+    ) {
+    }
 }

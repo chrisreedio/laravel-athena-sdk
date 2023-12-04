@@ -12,24 +12,22 @@ use Saloon\Http\Request;
  */
 class DeleteObEpisodeFlowsheet extends Request
 {
-	protected Method $method = Method::DELETE;
+    protected Method $method = Method::DELETE;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/{$this->patientid}/obepisodes/{$this->obepisodeid}/flowsheets/{$this->flowsheetid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/{$this->patientid}/obepisodes/{$this->obepisodeid}/flowsheets/{$this->flowsheetid}";
-	}
-
-
-	/**
-	 * @param int $flowsheetid flowsheetid
-	 * @param int $patientid patientid
-	 * @param int $obepisodeid obepisodeid
-	 */
-	public function __construct(
-		protected int $flowsheetid,
-		protected int $patientid,
-		protected int $obepisodeid,
-	) {
-	}
+    /**
+     * @param  int  $flowsheetid flowsheetid
+     * @param  int  $patientid patientid
+     * @param  int  $obepisodeid obepisodeid
+     */
+    public function __construct(
+        protected int $flowsheetid,
+        protected int $patientid,
+        protected int $obepisodeid,
+    ) {
+    }
 }

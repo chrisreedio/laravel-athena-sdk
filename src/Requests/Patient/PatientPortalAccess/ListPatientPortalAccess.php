@@ -12,28 +12,25 @@ use Saloon\Http\Request;
  */
 class ListPatientPortalAccess extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/portalaccess";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/portalaccess";
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  null|int  $communicatorbrandid The athenaNet Communicator brand ID
+     */
+    public function __construct(
+        protected int $patientid,
+        protected ?int $communicatorbrandid = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 * @param null|int $communicatorbrandid The athenaNet Communicator brand ID
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected ?int $communicatorbrandid = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['communicatorbrandid' => $this->communicatorbrandid]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['communicatorbrandid' => $this->communicatorbrandid]);
+    }
 }

@@ -14,41 +14,38 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreateClaimAttachment extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/claims/{$this->claimid}/attachments";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/claims/{$this->claimid}/attachments";
-	}
+    /**
+     * @param  int  $claimid claimid
+     * @param  string  $attachmentcontents The claim attachment content. Currently only PDF files are supported.
+     * @param  string  $attachmenttype The claim attachment type class ID.
+     * @param  string  $filename The attachment file name.
+     * @param  null|string  $note The claim attachment notes.
+     */
+    public function __construct(
+        protected int $claimid,
+        protected string $attachmentcontents,
+        protected string $attachmenttype,
+        protected string $filename,
+        protected ?string $note = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $claimid claimid
-	 * @param string $attachmentcontents The claim attachment content. Currently only PDF files are supported.
-	 * @param string $attachmenttype The claim attachment type class ID.
-	 * @param string $filename The attachment file name.
-	 * @param null|string $note The claim attachment notes.
-	 */
-	public function __construct(
-		protected int $claimid,
-		protected string $attachmentcontents,
-		protected string $attachmenttype,
-		protected string $filename,
-		protected ?string $note = null,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter([
-			'attachmentcontents' => $this->attachmentcontents,
-			'attachmenttype' => $this->attachmenttype,
-			'filename' => $this->filename,
-			'note' => $this->note,
-		]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter([
+            'attachmentcontents' => $this->attachmentcontents,
+            'attachmenttype' => $this->attachmenttype,
+            'filename' => $this->filename,
+            'note' => $this->note,
+        ]);
+    }
 }

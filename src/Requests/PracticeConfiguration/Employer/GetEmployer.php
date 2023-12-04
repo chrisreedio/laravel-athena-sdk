@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class GetEmployer extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/employers/{$this->employerid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/employers/{$this->employerid}";
-	}
+    /**
+     * @param  int  $employerid employerid
+     */
+    public function __construct(
+        protected int $employerid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $employerid employerid
-	 */
-	public function __construct(
-		protected int $employerid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([]);
+    }
 }

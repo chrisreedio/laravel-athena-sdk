@@ -14,38 +14,35 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreatePatientOrderGroups extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/{$this->patientid}/ordergroups";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/{$this->patientid}/ordergroups";
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $departmentid The department to use for the order group.
+     * @param  null|int  $patientcaseid The ID of the patient case generating this new order group.
+     * @param  null|int  $orderingproviderid The ordering provider ID, if not given a random provider from that department will be used.
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $departmentid,
+        protected ?int $patientcaseid = null,
+        protected ?int $orderingproviderid = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $departmentid The department to use for the order group.
-	 * @param null|int $patientcaseid The ID of the patient case generating this new order group.
-	 * @param null|int $orderingproviderid The ordering provider ID, if not given a random provider from that department will be used.
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $departmentid,
-		protected ?int $patientcaseid = null,
-		protected ?int $orderingproviderid = null,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter([
-			'departmentid' => $this->departmentid,
-			'patientcaseid' => $this->patientcaseid,
-			'orderingproviderid' => $this->orderingproviderid,
-		]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter([
+            'departmentid' => $this->departmentid,
+            'patientcaseid' => $this->patientcaseid,
+            'orderingproviderid' => $this->orderingproviderid,
+        ]);
+    }
 }

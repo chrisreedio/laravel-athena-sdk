@@ -14,28 +14,25 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreateInventoryItems extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return '/inventory/items';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/inventory/items";
-	}
+    /**
+     * @param  array  $inventoryitems An array of JSON objects representing inventory items to add.
+     */
+    public function __construct(
+        protected array $inventoryitems,
+    ) {
+    }
 
-
-	/**
-	 * @param array $inventoryitems An array of JSON objects representing inventory items to add.
-	 */
-	public function __construct(
-		protected array $inventoryitems,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['inventoryitems' => $this->inventoryitems]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['inventoryitems' => $this->inventoryitems]);
+    }
 }

@@ -12,22 +12,20 @@ use Saloon\Http\Request;
  */
 class DeleteEncounterVital extends Request
 {
-	protected Method $method = Method::DELETE;
+    protected Method $method = Method::DELETE;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/encounter/{$this->encounterid}/vitals/{$this->vitalid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/encounter/{$this->encounterid}/vitals/{$this->vitalid}";
-	}
-
-
-	/**
-	 * @param int $encounterid encounterid
-	 * @param int $vitalid vitalid
-	 */
-	public function __construct(
-		protected int $encounterid,
-		protected int $vitalid,
-	) {
-	}
+    /**
+     * @param  int  $encounterid encounterid
+     * @param  int  $vitalid vitalid
+     */
+    public function __construct(
+        protected int $encounterid,
+        protected int $vitalid,
+    ) {
+    }
 }

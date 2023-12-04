@@ -14,30 +14,27 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreateTelehealthDeepLink extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return '/appointments/telehealth/deeplink';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/appointments/telehealth/deeplink";
-	}
+    /**
+     * @param  int  $patientid The athenaNet Patient ID.
+     * @param  int  $appointmentid The athenaNet appointment ID.
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $appointmentid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid The athenaNet Patient ID.
-	 * @param int $appointmentid The athenaNet appointment ID.
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $appointmentid,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['patientid' => $this->patientid, 'appointmentid' => $this->appointmentid]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['patientid' => $this->patientid, 'appointmentid' => $this->appointmentid]);
+    }
 }

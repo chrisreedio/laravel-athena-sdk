@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class ListGynHistoryQuestions extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/chart/configuration/gynhistory';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/configuration/gynhistory";
-	}
+    /**
+     * @param  null|bool  $showdeleted Include deleted questions
+     */
+    public function __construct(
+        protected ?bool $showdeleted = null,
+    ) {
+    }
 
-
-	/**
-	 * @param null|bool $showdeleted Include deleted questions
-	 */
-	public function __construct(
-		protected ?bool $showdeleted = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['showdeleted' => $this->showdeleted]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['showdeleted' => $this->showdeleted]);
+    }
 }

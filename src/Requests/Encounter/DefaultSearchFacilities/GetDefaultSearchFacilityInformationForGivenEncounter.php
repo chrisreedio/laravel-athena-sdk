@@ -13,20 +13,18 @@ use Saloon\Http\Request;
  */
 class GetDefaultSearchFacilityInformationForGivenEncounter extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/encounter/{$this->encounterid}/defaultsearchfacilities";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/encounter/{$this->encounterid}/defaultsearchfacilities";
-	}
-
-
-	/**
-	 * @param int $encounterid encounterid
-	 */
-	public function __construct(
-		protected int $encounterid,
-	) {
-	}
+    /**
+     * @param  int  $encounterid encounterid
+     */
+    public function __construct(
+        protected int $encounterid,
+    ) {
+    }
 }

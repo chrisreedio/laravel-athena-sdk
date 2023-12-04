@@ -12,16 +12,14 @@ use Saloon\Http\Request;
  */
 class ListProblemChangeSubscriptions extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/chart/healthhistory/problems/changed/subscription';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/healthhistory/problems/changed/subscription";
-	}
-
-
-	public function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 }

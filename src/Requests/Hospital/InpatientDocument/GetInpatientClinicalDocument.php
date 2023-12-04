@@ -12,28 +12,25 @@ use Saloon\Http\Request;
  */
 class GetInpatientClinicalDocument extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/inpatient/document/clinical/{$this->clinicaldocumentid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/inpatient/document/clinical/{$this->clinicaldocumentid}";
-	}
+    /**
+     * @param  int  $clinicaldocumentid clinicaldocumentid
+     * @param  null|string  $pageids Returns only the corresponding pages from the document (Ignores invalid pageids).
+     */
+    public function __construct(
+        protected int $clinicaldocumentid,
+        protected ?string $pageids = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $clinicaldocumentid clinicaldocumentid
-	 * @param null|string $pageids Returns only the corresponding pages from the document (Ignores invalid pageids).
-	 */
-	public function __construct(
-		protected int $clinicaldocumentid,
-		protected ?string $pageids = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['pageids' => $this->pageids]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['pageids' => $this->pageids]);
+    }
 }

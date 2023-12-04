@@ -12,20 +12,18 @@ use Saloon\Http\Request;
  */
 class CreateAppointmentCancelCheckin extends Request
 {
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/appointments/{$this->appointmentid}/cancelcheckin";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/appointments/{$this->appointmentid}/cancelcheckin";
-	}
-
-
-	/**
-	 * @param int $appointmentid appointmentid
-	 */
-	public function __construct(
-		protected int $appointmentid,
-	) {
-	}
+    /**
+     * @param  int  $appointmentid appointmentid
+     */
+    public function __construct(
+        protected int $appointmentid,
+    ) {
+    }
 }

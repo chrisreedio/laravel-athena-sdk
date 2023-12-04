@@ -14,32 +14,29 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreateAppointmentChargeEntryNotRequiredIndicator extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/appointments/{$this->appointmentid}/chargeentrynotrequired";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/appointments/{$this->appointmentid}/chargeentrynotrequired";
-	}
+    /**
+     * @param  int  $appointmentid appointmentid
+     * @param  string  $athenausername athenaNet username of the person marking this appointment as not requiring charge entry.
+     * @param  string  $chargeentrynotrequiredreason Reason that this appointment is being marked as not requiring charge entry. This reason is specific to each practice and must be configured by that practice in athenaNet. The reasons, with descriptions, can be listed with the /configuration/appointments/chargeentrynotrequiredreasons endpoint.
+     */
+    public function __construct(
+        protected int $appointmentid,
+        protected string $athenausername,
+        protected string $chargeentrynotrequiredreason,
+    ) {
+    }
 
-
-	/**
-	 * @param int $appointmentid appointmentid
-	 * @param string $athenausername athenaNet username of the person marking this appointment as not requiring charge entry.
-	 * @param string $chargeentrynotrequiredreason Reason that this appointment is being marked as not requiring charge entry. This reason is specific to each practice and must be configured by that practice in athenaNet. The reasons, with descriptions, can be listed with the /configuration/appointments/chargeentrynotrequiredreasons endpoint.
-	 */
-	public function __construct(
-		protected int $appointmentid,
-		protected string $athenausername,
-		protected string $chargeentrynotrequiredreason,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['athenausername' => $this->athenausername, 'chargeentrynotrequiredreason' => $this->chargeentrynotrequiredreason]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['athenausername' => $this->athenausername, 'chargeentrynotrequiredreason' => $this->chargeentrynotrequiredreason]);
+    }
 }

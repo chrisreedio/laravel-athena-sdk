@@ -17,30 +17,27 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreatePatientStatementRecord extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patientpayvendors/{$this->vendorcode}/statements";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patientpayvendors/{$this->vendorcode}/statements";
-	}
+    /**
+     * @param  string  $vendorcode vendorcode
+     * @param  array  $data Patient charge and statement sent details
+     */
+    public function __construct(
+        protected string $vendorcode,
+        protected array $data,
+    ) {
+    }
 
-
-	/**
-	 * @param string $vendorcode vendorcode
-	 * @param array $data Patient charge and statement sent details
-	 */
-	public function __construct(
-		protected string $vendorcode,
-		protected array $data,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['data' => $this->data]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['data' => $this->data]);
+    }
 }

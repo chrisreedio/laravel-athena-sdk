@@ -12,16 +12,14 @@ use Saloon\Http\Request;
  */
 class ListPatientLocations extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/misc/patientlocations';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/misc/patientlocations";
-	}
-
-
-	public function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 }

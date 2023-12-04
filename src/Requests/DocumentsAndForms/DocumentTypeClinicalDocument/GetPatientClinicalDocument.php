@@ -12,32 +12,29 @@ use Saloon\Http\Request;
  */
 class GetPatientClinicalDocument extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/documents/clinicaldocument/{$this->clinicaldocumentid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/documents/clinicaldocument/{$this->clinicaldocumentid}";
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $clinicaldocumentid clinicaldocumentid
+     * @param  null|bool  $getentityinfo If true, entityid and entitytype will be returned. entityid will be populated in createduser attribute.
+     * @param  null|bool  $showccdaxml Default false. If set to true, will include CCDAXML string.
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $clinicaldocumentid,
+        protected ?bool $getentityinfo = null,
+        protected ?bool $showccdaxml = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $clinicaldocumentid clinicaldocumentid
-	 * @param null|bool $getentityinfo If true, entityid and entitytype will be returned. entityid will be populated in createduser attribute.
-	 * @param null|bool $showccdaxml Default false. If set to true, will include CCDAXML string.
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $clinicaldocumentid,
-		protected ?bool $getentityinfo = null,
-		protected ?bool $showccdaxml = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['getentityinfo' => $this->getentityinfo, 'showccdaxml' => $this->showccdaxml]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['getentityinfo' => $this->getentityinfo, 'showccdaxml' => $this->showccdaxml]);
+    }
 }

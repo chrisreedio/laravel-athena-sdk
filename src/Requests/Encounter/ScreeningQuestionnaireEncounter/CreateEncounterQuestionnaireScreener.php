@@ -14,30 +14,27 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreateEncounterQuestionnaireScreener extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/encounter/{$this->encounterid}/questionnairescreeners";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/encounter/{$this->encounterid}/questionnairescreeners";
-	}
+    /**
+     * @param  int  $encounterid encounterid
+     * @param  int  $templateid The template ID for the screener that will be activated.
+     */
+    public function __construct(
+        protected int $encounterid,
+        protected int $templateid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $encounterid encounterid
-	 * @param int $templateid The template ID for the screener that will be activated.
-	 */
-	public function __construct(
-		protected int $encounterid,
-		protected int $templateid,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['templateid' => $this->templateid]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['templateid' => $this->templateid]);
+    }
 }

@@ -12,20 +12,18 @@ use Saloon\Http\Request;
  */
 class GetAppointmentSpecificMspQualifier extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/appointments/{$this->appointmentid}/mspq";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/appointments/{$this->appointmentid}/mspq";
-	}
-
-
-	/**
-	 * @param int $appointmentid appointmentid
-	 */
-	public function __construct(
-		protected int $appointmentid,
-	) {
-	}
+    /**
+     * @param  int  $appointmentid appointmentid
+     */
+    public function __construct(
+        protected int $appointmentid,
+    ) {
+    }
 }

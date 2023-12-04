@@ -15,22 +15,20 @@ use Saloon\Http\Request;
  */
 class GetPatientOriginalClinicalDocument extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/documents/clinicaldocument/{$this->clinicaldocumentid}/originaldocument";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/documents/clinicaldocument/{$this->clinicaldocumentid}/originaldocument";
-	}
-
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $clinicaldocumentid clinicaldocumentid
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $clinicaldocumentid,
-	) {
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $clinicaldocumentid clinicaldocumentid
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $clinicaldocumentid,
+    ) {
+    }
 }

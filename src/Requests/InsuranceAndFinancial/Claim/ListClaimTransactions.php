@@ -12,20 +12,18 @@ use Saloon\Http\Request;
  */
 class ListClaimTransactions extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/claims/{$this->claimid}/claimtransactions";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/claims/{$this->claimid}/claimtransactions";
-	}
-
-
-	/**
-	 * @param int $claimid claimid
-	 */
-	public function __construct(
-		protected int $claimid,
-	) {
-	}
+    /**
+     * @param  int  $claimid claimid
+     */
+    public function __construct(
+        protected int $claimid,
+    ) {
+    }
 }

@@ -14,28 +14,25 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreateRiskAdjustmentGaps extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return '/riskgaps/condition';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/riskgaps/condition";
-	}
+    /**
+     * @param  null|array  $entry Array of risk gaps to be ingested for patient
+     */
+    public function __construct(
+        protected ?array $entry = null,
+    ) {
+    }
 
-
-	/**
-	 * @param null|array $entry Array of risk gaps to be ingested for patient
-	 */
-	public function __construct(
-		protected ?array $entry = null,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['entry' => $this->entry]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['entry' => $this->entry]);
+    }
 }

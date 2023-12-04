@@ -15,32 +15,29 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class SubmitOrderForEncounter extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/encounter/{$this->encounterid}/orders/{$this->orderid}/submit";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/encounter/{$this->encounterid}/orders/{$this->orderid}/submit";
-	}
+    /**
+     * @param  int  $encounterid encounterid
+     * @param  int  $orderid orderid
+     * @param  string  $submitvia The route to submit via (ATHENAFAX, MANUALFAX, MANUALPRINT, and MANUALPHONE are currently the only supported options)
+     */
+    public function __construct(
+        protected int $encounterid,
+        protected int $orderid,
+        protected string $submitvia,
+    ) {
+    }
 
-
-	/**
-	 * @param int $encounterid encounterid
-	 * @param int $orderid orderid
-	 * @param string $submitvia The route to submit via (ATHENAFAX, MANUALFAX, MANUALPRINT, and MANUALPHONE are currently the only supported options)
-	 */
-	public function __construct(
-		protected int $encounterid,
-		protected int $orderid,
-		protected string $submitvia,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['submitvia' => $this->submitvia]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['submitvia' => $this->submitvia]);
+    }
 }

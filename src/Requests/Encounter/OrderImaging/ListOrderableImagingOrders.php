@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class ListOrderableImagingOrders extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/reference/order/imaging';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/reference/order/imaging";
-	}
+    /**
+     * @param  string  $searchvalue A term to search for. Must be at least 2 characters
+     */
+    public function __construct(
+        protected string $searchvalue,
+    ) {
+    }
 
-
-	/**
-	 * @param string $searchvalue A term to search for. Must be at least 2 characters
-	 */
-	public function __construct(
-		protected string $searchvalue,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['searchvalue' => $this->searchvalue]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['searchvalue' => $this->searchvalue]);
+    }
 }

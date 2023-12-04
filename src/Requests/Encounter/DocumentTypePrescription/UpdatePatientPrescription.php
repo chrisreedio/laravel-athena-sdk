@@ -14,49 +14,46 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class UpdatePatientPrescription extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::PUT;
+    protected Method $method = Method::PUT;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/documents/prescriptions/{$this->prescriptionid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/documents/prescriptions/{$this->prescriptionid}";
-	}
+    /**
+     * @param  int  $prescriptionid prescriptionid
+     * @param  int  $patientid patientid
+     * @param  int  $departmentid The ID of the department.
+     * @param  null|string  $note The note to be appended to the document. This field supports line breaks in the form of '\n' and '\r\n'.
+     * @param  null|bool  $pintotop If set, pins the ACTIONNOTE to the top of the workflow.
+     * @param  null|string  $actionnote The note appended to the action taken on the document. This field supports line breaks in the form of '\n' and '\r\n'.
+     * @param  null|string  $assignedto This field accepts a username and assigns the order to that username.
+     * @param  null|string  $internalnote The internal note for the document. This field supports line breaks in the form of '\n' and '\r\n'.
+     */
+    public function __construct(
+        protected int $prescriptionid,
+        protected int $patientid,
+        protected int $departmentid,
+        protected ?string $note = null,
+        protected ?bool $pintotop = null,
+        protected ?string $actionnote = null,
+        protected ?string $assignedto = null,
+        protected ?string $internalnote = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $prescriptionid prescriptionid
-	 * @param int $patientid patientid
-	 * @param int $departmentid The ID of the department.
-	 * @param null|string $note The note to be appended to the document. This field supports line breaks in the form of '\n' and '\r\n'.
-	 * @param null|bool $pintotop If set, pins the ACTIONNOTE to the top of the workflow.
-	 * @param null|string $actionnote The note appended to the action taken on the document. This field supports line breaks in the form of '\n' and '\r\n'.
-	 * @param null|string $assignedto This field accepts a username and assigns the order to that username.
-	 * @param null|string $internalnote The internal note for the document. This field supports line breaks in the form of '\n' and '\r\n'.
-	 */
-	public function __construct(
-		protected int $prescriptionid,
-		protected int $patientid,
-		protected int $departmentid,
-		protected ?string $note = null,
-		protected ?bool $pintotop = null,
-		protected ?string $actionnote = null,
-		protected ?string $assignedto = null,
-		protected ?string $internalnote = null,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter([
-			'departmentid' => $this->departmentid,
-			'note' => $this->note,
-			'pintotop' => $this->pintotop,
-			'actionnote' => $this->actionnote,
-			'assignedto' => $this->assignedto,
-			'internalnote' => $this->internalnote,
-		]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter([
+            'departmentid' => $this->departmentid,
+            'note' => $this->note,
+            'pintotop' => $this->pintotop,
+            'actionnote' => $this->actionnote,
+            'assignedto' => $this->assignedto,
+            'internalnote' => $this->internalnote,
+        ]);
+    }
 }

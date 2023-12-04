@@ -12,20 +12,18 @@ use Saloon\Http\Request;
  */
 class GetHealthHistoryForm extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/healthhistoryforms/{$this->formid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/healthhistoryforms/{$this->formid}";
-	}
-
-
-	/**
-	 * @param int $formid formid
-	 */
-	public function __construct(
-		protected int $formid,
-	) {
-	}
+    /**
+     * @param  int  $formid formid
+     */
+    public function __construct(
+        protected int $formid,
+    ) {
+    }
 }

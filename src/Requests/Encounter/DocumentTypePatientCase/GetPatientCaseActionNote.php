@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class GetPatientCaseActionNote extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/documents/patientcase/{$this->patientcaseid}/actions";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/documents/patientcase/{$this->patientcaseid}/actions";
-	}
+    /**
+     * @param  int  $patientcaseid patientcaseid
+     */
+    public function __construct(
+        protected int $patientcaseid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientcaseid patientcaseid
-	 */
-	public function __construct(
-		protected int $patientcaseid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([]);
+    }
 }

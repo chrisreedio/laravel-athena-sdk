@@ -12,22 +12,20 @@ use Saloon\Http\Request;
  */
 class GetPatientDocumentXml extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/documents/clinicaldocument/{$this->documentid}/xml";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/documents/clinicaldocument/{$this->documentid}/xml";
-	}
-
-
-	/**
-	 * @param int $documentid documentid
-	 * @param int $patientid patientid
-	 */
-	public function __construct(
-		protected int $documentid,
-		protected int $patientid,
-	) {
-	}
+    /**
+     * @param  int  $documentid documentid
+     * @param  int  $patientid patientid
+     */
+    public function __construct(
+        protected int $documentid,
+        protected int $patientid,
+    ) {
+    }
 }

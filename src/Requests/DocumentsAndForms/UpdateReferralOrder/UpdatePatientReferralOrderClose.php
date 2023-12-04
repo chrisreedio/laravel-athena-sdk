@@ -14,32 +14,29 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class UpdatePatientReferralOrderClose extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::PUT;
+    protected Method $method = Method::PUT;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/documents/orders/referral/{$this->referraldocumentid}/close";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/documents/orders/referral/{$this->referraldocumentid}/close";
-	}
+    /**
+     * @param  int  $referraldocumentid referraldocumentid
+     * @param  int  $patientid patientid
+     * @param  null|int  $actionreasonid ID of the document action reason.
+     */
+    public function __construct(
+        protected int $referraldocumentid,
+        protected int $patientid,
+        protected ?int $actionreasonid = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $referraldocumentid referraldocumentid
-	 * @param int $patientid patientid
-	 * @param null|int $actionreasonid ID of the document action reason.
-	 */
-	public function __construct(
-		protected int $referraldocumentid,
-		protected int $patientid,
-		protected ?int $actionreasonid = null,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['actionreasonid' => $this->actionreasonid]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['actionreasonid' => $this->actionreasonid]);
+    }
 }

@@ -14,32 +14,29 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreateEncounterReason extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/encounter/{$this->encounterid}/encounterreasons";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/encounter/{$this->encounterid}/encounterreasons";
-	}
+    /**
+     * @param  int  $encounterid encounterid
+     * @param  int  $encounterreasonid Encounter reason ID. Must be from the list returned by /configuration/encounterreason
+     * @param  null|string  $laterality Optional laterality value (left or right)
+     */
+    public function __construct(
+        protected int $encounterid,
+        protected int $encounterreasonid,
+        protected ?string $laterality = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $encounterid encounterid
-	 * @param int $encounterreasonid Encounter reason ID. Must be from the list returned by /configuration/encounterreason
-	 * @param null|string $laterality Optional laterality value (left or right)
-	 */
-	public function __construct(
-		protected int $encounterid,
-		protected int $encounterreasonid,
-		protected ?string $laterality = null,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['encounterreasonid' => $this->encounterreasonid, 'laterality' => $this->laterality]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['encounterreasonid' => $this->encounterreasonid, 'laterality' => $this->laterality]);
+    }
 }

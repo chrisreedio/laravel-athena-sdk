@@ -12,22 +12,19 @@ use Saloon\Http\Request;
  */
 class ListProviderTypes extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/reference/providertypes';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/reference/providertypes";
-	}
+    public function __construct()
+    {
+    }
 
-
-	public function __construct()
-	{
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([]);
+    }
 }

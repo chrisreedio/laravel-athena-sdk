@@ -14,30 +14,27 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class UpdateAppointmentThirdPartyCodingStatus extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::PUT;
+    protected Method $method = Method::PUT;
 
+    public function resolveEndpoint(): string
+    {
+        return "/appointments/{$this->appointmentid}/thirdpartycodingstatus";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/appointments/{$this->appointmentid}/thirdpartycodingstatus";
-	}
+    /**
+     * @param  int  $appointmentid appointmentid
+     * @param  string  $status The status to set this appointment's third party coding status to.
+     */
+    public function __construct(
+        protected int $appointmentid,
+        protected string $status,
+    ) {
+    }
 
-
-	/**
-	 * @param int $appointmentid appointmentid
-	 * @param string $status The status to set this appointment's third party coding status to.
-	 */
-	public function __construct(
-		protected int $appointmentid,
-		protected string $status,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['status' => $this->status]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['status' => $this->status]);
+    }
 }

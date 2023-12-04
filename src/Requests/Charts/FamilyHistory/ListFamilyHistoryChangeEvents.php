@@ -12,16 +12,14 @@ use Saloon\Http\Request;
  */
 class ListFamilyHistoryChangeEvents extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/chart/healthhistory/familyhistory/changed/subscription/events';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/healthhistory/familyhistory/changed/subscription/events";
-	}
-
-
-	public function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 }

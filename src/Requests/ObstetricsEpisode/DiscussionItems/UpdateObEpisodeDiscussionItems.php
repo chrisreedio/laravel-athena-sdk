@@ -14,32 +14,29 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class UpdateObEpisodeDiscussionItems extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::PUT;
+    protected Method $method = Method::PUT;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/{$this->patientid}/obepisodes/{$this->obepisodeid}/discussionitems";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/{$this->patientid}/obepisodes/{$this->obepisodeid}/discussionitems";
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $obepisodeid obepisodeid
+     * @param  array  $discussions This is a JSON array of objects that is used to update the question specific information. Note that while DISCUSSIONNOTES and DISCUSSEDBY are not required, they will be reset if you update the question and do not pass them in.
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $obepisodeid,
+        protected array $discussions,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $obepisodeid obepisodeid
-	 * @param array $discussions This is a JSON array of objects that is used to update the question specific information. Note that while DISCUSSIONNOTES and DISCUSSEDBY are not required, they will be reset if you update the question and do not pass them in.
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $obepisodeid,
-		protected array $discussions,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['discussions' => $this->discussions]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['discussions' => $this->discussions]);
+    }
 }

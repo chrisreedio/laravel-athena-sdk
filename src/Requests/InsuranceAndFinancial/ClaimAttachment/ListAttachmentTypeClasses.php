@@ -12,16 +12,14 @@ use Saloon\Http\Request;
  */
 class ListAttachmentTypeClasses extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/claims/attachmenttypeclass';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/claims/attachmenttypeclass";
-	}
-
-
-	public function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 }

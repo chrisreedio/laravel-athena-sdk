@@ -14,30 +14,27 @@ use Saloon\Traits\Body\HasMultipartBody;
  */
 class CreateOrUpdatePatientInsurancePrescriptionCard extends Request implements HasBody
 {
-	use HasMultipartBody;
+    use HasMultipartBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/insurances/prescription/card";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/insurances/prescription/card";
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  string  $image Base64 encoded image, or, if multipart/form-data, unencoded image. This image may be scaled down after submission. PUT is not recommended when using multipart/form-data. Since POST and PUT have identical functionality, POST is recommended.
+     */
+    public function __construct(
+        protected int $patientid,
+        protected string $image,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 * @param string $image Base64 encoded image, or, if multipart/form-data, unencoded image. This image may be scaled down after submission. PUT is not recommended when using multipart/form-data. Since POST and PUT have identical functionality, POST is recommended.
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected string $image,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['image' => $this->image]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['image' => $this->image]);
+    }
 }

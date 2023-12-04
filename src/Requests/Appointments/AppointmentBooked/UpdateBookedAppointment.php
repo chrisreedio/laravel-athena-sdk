@@ -14,44 +14,41 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class UpdateBookedAppointment extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::PUT;
+    protected Method $method = Method::PUT;
 
+    public function resolveEndpoint(): string
+    {
+        return "/appointments/booked/{$this->appointmentid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/appointments/booked/{$this->appointmentid}";
-	}
+    /**
+     * @param  int  $appointmentid appointmentid
+     * @param  null|int  $appointmenttypeid New appointment type ID for this appointment.
+     * @param  null|int  $departmentid New department ID for this appointment.
+     * @param  null|int  $providerid New rendering provider for this appointment.
+     * @param  null|int  $schedulingproviderid New scheduling provider ID for this appointment.
+     * @param  null|int  $supervisingproviderid New supervisingprovider ID for this appointment.
+     */
+    public function __construct(
+        protected int $appointmentid,
+        protected ?int $appointmenttypeid = null,
+        protected ?int $departmentid = null,
+        protected ?int $providerid = null,
+        protected ?int $schedulingproviderid = null,
+        protected ?int $supervisingproviderid = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $appointmentid appointmentid
-	 * @param null|int $appointmenttypeid New appointment type ID for this appointment.
-	 * @param null|int $departmentid New department ID for this appointment.
-	 * @param null|int $providerid New rendering provider for this appointment.
-	 * @param null|int $schedulingproviderid New scheduling provider ID for this appointment.
-	 * @param null|int $supervisingproviderid New supervisingprovider ID for this appointment.
-	 */
-	public function __construct(
-		protected int $appointmentid,
-		protected ?int $appointmenttypeid = null,
-		protected ?int $departmentid = null,
-		protected ?int $providerid = null,
-		protected ?int $schedulingproviderid = null,
-		protected ?int $supervisingproviderid = null,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter([
-			'appointmenttypeid' => $this->appointmenttypeid,
-			'departmentid' => $this->departmentid,
-			'providerid' => $this->providerid,
-			'schedulingproviderid' => $this->schedulingproviderid,
-			'supervisingproviderid' => $this->supervisingproviderid,
-		]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter([
+            'appointmenttypeid' => $this->appointmenttypeid,
+            'departmentid' => $this->departmentid,
+            'providerid' => $this->providerid,
+            'schedulingproviderid' => $this->schedulingproviderid,
+            'supervisingproviderid' => $this->supervisingproviderid,
+        ]);
+    }
 }

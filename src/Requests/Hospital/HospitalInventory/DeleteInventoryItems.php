@@ -13,26 +13,23 @@ use Saloon\Http\Request;
  */
 class DeleteInventoryItems extends Request
 {
-	protected Method $method = Method::DELETE;
+    protected Method $method = Method::DELETE;
 
+    public function resolveEndpoint(): string
+    {
+        return '/inventory/items';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/inventory/items";
-	}
+    /**
+     * @param  array  $athenainventoryitemids Array of athena inventory item ids to delete
+     */
+    public function __construct(
+        protected array $athenainventoryitemids,
+    ) {
+    }
 
-
-	/**
-	 * @param array $athenainventoryitemids Array of athena inventory item ids to delete
-	 */
-	public function __construct(
-		protected array $athenainventoryitemids,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['athenainventoryitemids' => $this->athenainventoryitemids]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['athenainventoryitemids' => $this->athenainventoryitemids]);
+    }
 }

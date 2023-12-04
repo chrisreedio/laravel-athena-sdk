@@ -12,16 +12,14 @@ use Saloon\Http\Request;
  */
 class ListReferringProviderChangeEvents extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/referringproviders/changed/subscription/events';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/referringproviders/changed/subscription/events";
-	}
-
-
-	public function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 }

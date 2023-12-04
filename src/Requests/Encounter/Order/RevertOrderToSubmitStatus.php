@@ -12,22 +12,20 @@ use Saloon\Http\Request;
  */
 class RevertOrderToSubmitStatus extends Request
 {
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/encounter/{$this->encounterid}/orders/{$this->orderid}/returntosubmit";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/encounter/{$this->encounterid}/orders/{$this->orderid}/returntosubmit";
-	}
-
-
-	/**
-	 * @param int $encounterid encounterid
-	 * @param int $orderid orderid
-	 */
-	public function __construct(
-		protected int $encounterid,
-		protected int $orderid,
-	) {
-	}
+    /**
+     * @param  int  $encounterid encounterid
+     * @param  int  $orderid orderid
+     */
+    public function __construct(
+        protected int $encounterid,
+        protected int $orderid,
+    ) {
+    }
 }

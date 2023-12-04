@@ -12,28 +12,25 @@ use Saloon\Http\Request;
  */
 class DeletePatientChartAlert extends Request
 {
-	protected Method $method = Method::DELETE;
+    protected Method $method = Method::DELETE;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/chartalert";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/chartalert";
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $departmentid The department ID; needed because charts, and thus chart notes, may be department-specific
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $departmentid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $departmentid The department ID; needed because charts, and thus chart notes, may be department-specific
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $departmentid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['departmentid' => $this->departmentid]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['departmentid' => $this->departmentid]);
+    }
 }

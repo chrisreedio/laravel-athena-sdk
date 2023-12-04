@@ -16,16 +16,14 @@ use Saloon\Http\Request;
  */
 class ListPrescriptionSubscriptions extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/prescriptions/changed/subscription';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/prescriptions/changed/subscription";
-	}
-
-
-	public function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 }

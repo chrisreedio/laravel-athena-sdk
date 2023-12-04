@@ -12,28 +12,25 @@ use Saloon\Http\Request;
  */
 class ListAppointmentNotes extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/appointments/{$this->appointmentid}/notes";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/appointments/{$this->appointmentid}/notes";
-	}
+    /**
+     * @param  int  $appointmentid appointmentid
+     * @param  null|bool  $showdeleted By default, we prevent deleted appointment notes from being returned via the API.   This flag allows you to show deleted notes in the set of results returned.
+     */
+    public function __construct(
+        protected int $appointmentid,
+        protected ?bool $showdeleted = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $appointmentid appointmentid
-	 * @param null|bool $showdeleted By default, we prevent deleted appointment notes from being returned via the API.   This flag allows you to show deleted notes in the set of results returned.
-	 */
-	public function __construct(
-		protected int $appointmentid,
-		protected ?bool $showdeleted = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['showdeleted' => $this->showdeleted]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['showdeleted' => $this->showdeleted]);
+    }
 }

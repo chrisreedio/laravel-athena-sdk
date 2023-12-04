@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class ListAssignableUsers extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/configuration/inbox/staff';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/configuration/inbox/staff";
-	}
+    /**
+     * @param  int  $departmentid The athenaNet department id.
+     */
+    public function __construct(
+        protected int $departmentid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $departmentid The athenaNet department id.
-	 */
-	public function __construct(
-		protected int $departmentid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['departmentid' => $this->departmentid]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['departmentid' => $this->departmentid]);
+    }
 }

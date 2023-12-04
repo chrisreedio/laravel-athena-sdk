@@ -14,32 +14,29 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class UpdatePatientEncounter extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::PUT;
+    protected Method $method = Method::PUT;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/encounter/{$this->encounterid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/encounter/{$this->encounterid}";
-	}
+    /**
+     * @param  int  $encounterid encounterid
+     * @param  null|int  $patientstatusid The practice patient status id. You can get a list of valid values by department via GET /chart/configuration/patientstatuses.
+     * @param  null|int  $patientlocationid The practice patient location id. You can get a list of valid values by department via GET /chart/configuration/patientlocations.
+     */
+    public function __construct(
+        protected int $encounterid,
+        protected ?int $patientstatusid = null,
+        protected ?int $patientlocationid = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $encounterid encounterid
-	 * @param null|int $patientstatusid The practice patient status id. You can get a list of valid values by department via GET /chart/configuration/patientstatuses.
-	 * @param null|int $patientlocationid The practice patient location id. You can get a list of valid values by department via GET /chart/configuration/patientlocations.
-	 */
-	public function __construct(
-		protected int $encounterid,
-		protected ?int $patientstatusid = null,
-		protected ?int $patientlocationid = null,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['patientstatusid' => $this->patientstatusid, 'patientlocationid' => $this->patientlocationid]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['patientstatusid' => $this->patientstatusid, 'patientlocationid' => $this->patientlocationid]);
+    }
 }

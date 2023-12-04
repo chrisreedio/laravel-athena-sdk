@@ -13,26 +13,23 @@ use Saloon\Http\Request;
  */
 class ListAppointmentSpecificMspQualifiers extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/mspinsurancetypes';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/mspinsurancetypes";
-	}
+    /**
+     * @param  null|int  $departmentid The department id
+     */
+    public function __construct(
+        protected ?int $departmentid = null,
+    ) {
+    }
 
-
-	/**
-	 * @param null|int $departmentid The department id
-	 */
-	public function __construct(
-		protected ?int $departmentid = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['departmentid' => $this->departmentid]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['departmentid' => $this->departmentid]);
+    }
 }

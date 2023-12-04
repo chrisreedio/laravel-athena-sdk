@@ -12,16 +12,14 @@ use Saloon\Http\Request;
  */
 class ListSignedOffOrderChangeSubscriptionEvents extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/orders/signedoff/subscription/events';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/orders/signedoff/subscription/events";
-	}
-
-
-	public function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 }

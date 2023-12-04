@@ -12,20 +12,18 @@ use Saloon\Http\Request;
  */
 class ListEncounterServices extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/encounter/{$this->encounterid}/services";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/encounter/{$this->encounterid}/services";
-	}
-
-
-	/**
-	 * @param int $encounterid encounterid
-	 */
-	public function __construct(
-		protected int $encounterid,
-	) {
-	}
+    /**
+     * @param  int  $encounterid encounterid
+     */
+    public function __construct(
+        protected int $encounterid,
+    ) {
+    }
 }

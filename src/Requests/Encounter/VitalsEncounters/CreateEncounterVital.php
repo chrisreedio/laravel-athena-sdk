@@ -14,30 +14,27 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreateEncounterVital extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/encounter/{$this->encounterid}/vitals";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/encounter/{$this->encounterid}/vitals";
-	}
+    /**
+     * @param  int  $encounterid encounterid
+     * @param  array  $vitals This is an array of arrays in JSON.  Each subarray contains a group of related readings, like systolic and diastolic blood pressure. They will be assigned the same readingID
+     */
+    public function __construct(
+        protected int $encounterid,
+        protected array $vitals,
+    ) {
+    }
 
-
-	/**
-	 * @param int $encounterid encounterid
-	 * @param array $vitals This is an array of arrays in JSON.  Each subarray contains a group of related readings, like systolic and diastolic blood pressure. They will be assigned the same readingID
-	 */
-	public function __construct(
-		protected int $encounterid,
-		protected array $vitals,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['vitals' => $this->vitals]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['vitals' => $this->vitals]);
+    }
 }

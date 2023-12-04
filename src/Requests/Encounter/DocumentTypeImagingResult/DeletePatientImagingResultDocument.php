@@ -12,22 +12,20 @@ use Saloon\Http\Request;
  */
 class DeletePatientImagingResultDocument extends Request
 {
-	protected Method $method = Method::DELETE;
+    protected Method $method = Method::DELETE;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/documents/imagingresult/{$this->imagingresultid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/documents/imagingresult/{$this->imagingresultid}";
-	}
-
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $imagingresultid imagingresultid
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $imagingresultid,
-	) {
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $imagingresultid imagingresultid
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $imagingresultid,
+    ) {
+    }
 }

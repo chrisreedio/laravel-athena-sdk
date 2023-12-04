@@ -12,20 +12,18 @@ use Saloon\Http\Request;
  */
 class GetLabOrderDetails extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/stays/orders/lab/{$this->orderid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/stays/orders/lab/{$this->orderid}";
-	}
-
-
-	/**
-	 * @param int $orderid orderid
-	 */
-	public function __construct(
-		protected int $orderid,
-	) {
-	}
+    /**
+     * @param  int  $orderid orderid
+     */
+    public function __construct(
+        protected int $orderid,
+    ) {
+    }
 }

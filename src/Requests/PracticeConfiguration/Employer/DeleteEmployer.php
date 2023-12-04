@@ -12,20 +12,18 @@ use Saloon\Http\Request;
  */
 class DeleteEmployer extends Request
 {
-	protected Method $method = Method::DELETE;
+    protected Method $method = Method::DELETE;
 
+    public function resolveEndpoint(): string
+    {
+        return "/employers/{$this->employerid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/employers/{$this->employerid}";
-	}
-
-
-	/**
-	 * @param int $employerid employerid
-	 */
-	public function __construct(
-		protected int $employerid,
-	) {
-	}
+    /**
+     * @param  int  $employerid employerid
+     */
+    public function __construct(
+        protected int $employerid,
+    ) {
+    }
 }

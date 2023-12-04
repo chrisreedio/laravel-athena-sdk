@@ -12,16 +12,14 @@ use Saloon\Http\Request;
  */
 class GetSmsTermsAndConditions extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/misc/smstermsandconditions';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/misc/smstermsandconditions";
-	}
-
-
-	public function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 }

@@ -14,34 +14,31 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class UpdatePatientRiskContract extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::PUT;
+    protected Method $method = Method::PUT;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/{$this->patientid}/riskcontract";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/{$this->patientid}/riskcontract";
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $riskcontractid Risk Contract ID
+     * @param  null|bool  $allcharts If true, apply this update to all charts associated with the given patient.
+     * @param  null|int  $departmentid Department ID
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $riskcontractid,
+        protected ?bool $allcharts = null,
+        protected ?int $departmentid = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $riskcontractid Risk Contract ID
-	 * @param null|bool $allcharts If true, apply this update to all charts associated with the given patient.
-	 * @param null|int $departmentid Department ID
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $riskcontractid,
-		protected ?bool $allcharts = null,
-		protected ?int $departmentid = null,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['riskcontractid' => $this->riskcontractid, 'allcharts' => $this->allcharts, 'departmentid' => $this->departmentid]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['riskcontractid' => $this->riskcontractid, 'allcharts' => $this->allcharts, 'departmentid' => $this->departmentid]);
+    }
 }

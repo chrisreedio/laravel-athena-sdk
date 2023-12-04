@@ -12,22 +12,20 @@ use Saloon\Http\Request;
  */
 class GetPatientPhysicianAuth extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/documents/physicianauth/{$this->physicianauthid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/documents/physicianauth/{$this->physicianauthid}";
-	}
-
-
-	/**
-	 * @param int $physicianauthid physicianauthid
-	 * @param int $patientid patientid
-	 */
-	public function __construct(
-		protected int $physicianauthid,
-		protected int $patientid,
-	) {
-	}
+    /**
+     * @param  int  $physicianauthid physicianauthid
+     * @param  int  $patientid patientid
+     */
+    public function __construct(
+        protected int $physicianauthid,
+        protected int $patientid,
+    ) {
+    }
 }

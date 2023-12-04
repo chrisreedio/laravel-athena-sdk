@@ -12,28 +12,24 @@ use Saloon\Http\Request;
  */
 class ListPatientCustomFields extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/customfields";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/customfields";
-	}
+    /**
+     * @param  int  $patientid patientid
+     */
+    public function __construct(
+        protected int $patientid,
+        protected string $departmentid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 * @param string $departmentid
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected string $departmentid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['departmentid' => $this->departmentid]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['departmentid' => $this->departmentid]);
+    }
 }

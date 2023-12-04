@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class ListAdminDocumentActions extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/documents/admin/{$this->adminid}/actions";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/documents/admin/{$this->adminid}/actions";
-	}
+    /**
+     * @param  int  $adminid adminid
+     */
+    public function __construct(
+        protected int $adminid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $adminid adminid
-	 */
-	public function __construct(
-		protected int $adminid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([]);
+    }
 }

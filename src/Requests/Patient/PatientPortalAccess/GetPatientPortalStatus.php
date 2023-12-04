@@ -12,20 +12,18 @@ use Saloon\Http\Request;
  */
 class GetPatientPortalStatus extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/portalstatus";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/portalstatus";
-	}
-
-
-	/**
-	 * @param int $patientid patientid
-	 */
-	public function __construct(
-		protected int $patientid,
-	) {
-	}
+    /**
+     * @param  int  $patientid patientid
+     */
+    public function __construct(
+        protected int $patientid,
+    ) {
+    }
 }

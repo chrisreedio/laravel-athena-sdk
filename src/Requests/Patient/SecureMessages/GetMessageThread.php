@@ -12,22 +12,20 @@ use Saloon\Http\Request;
  */
 class GetMessageThread extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/securemessage/{$this->messagethreadid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/securemessage/{$this->messagethreadid}";
-	}
-
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $messagethreadid messagethreadid
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $messagethreadid,
-	) {
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $messagethreadid messagethreadid
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $messagethreadid,
+    ) {
+    }
 }

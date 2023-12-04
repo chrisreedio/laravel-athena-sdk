@@ -12,30 +12,27 @@ use Saloon\Http\Request;
  */
 class GetPatientChartExportDocument extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/{$this->patientid}/documentexport/{$this->documentid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/{$this->patientid}/documentexport/{$this->documentid}";
-	}
+    /**
+     * @param  int  $documentid documentid
+     * @param  int  $patientid patientid
+     * @param  null|int  $departmentid Department ID for the patient.
+     */
+    public function __construct(
+        protected int $documentid,
+        protected int $patientid,
+        protected ?int $departmentid = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $documentid documentid
-	 * @param int $patientid patientid
-	 * @param null|int $departmentid Department ID for the patient.
-	 */
-	public function __construct(
-		protected int $documentid,
-		protected int $patientid,
-		protected ?int $departmentid = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['departmentid' => $this->departmentid]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['departmentid' => $this->departmentid]);
+    }
 }

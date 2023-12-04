@@ -13,28 +13,25 @@ use Saloon\Http\Request;
  */
 class ListPatientsByCustomFields extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/customfields/{$this->customfieldid}/{$this->customfieldvalue}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/customfields/{$this->customfieldid}/{$this->customfieldvalue}";
-	}
+    /**
+     * @param  int  $customfieldid customfieldid
+     * @param  string  $customfieldvalue customfieldvalue
+     */
+    public function __construct(
+        protected int $customfieldid,
+        protected string $customfieldvalue,
+    ) {
+    }
 
-
-	/**
-	 * @param int $customfieldid customfieldid
-	 * @param string $customfieldvalue customfieldvalue
-	 */
-	public function __construct(
-		protected int $customfieldid,
-		protected string $customfieldvalue,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([]);
+    }
 }

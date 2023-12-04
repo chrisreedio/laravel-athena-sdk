@@ -12,30 +12,27 @@ use Saloon\Http\Request;
  */
 class DeletePatientSpecificInsurance extends Request
 {
-	protected Method $method = Method::DELETE;
+    protected Method $method = Method::DELETE;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/insurances/{$this->insuranceid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/insurances/{$this->insuranceid}";
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $insuranceid insuranceid
+     * @param  null|string  $cancellationnote Optional note as to why this is being cancelled.
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $insuranceid,
+        protected ?string $cancellationnote = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $insuranceid insuranceid
-	 * @param null|string $cancellationnote Optional note as to why this is being cancelled.
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $insuranceid,
-		protected ?string $cancellationnote = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['cancellationnote' => $this->cancellationnote]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['cancellationnote' => $this->cancellationnote]);
+    }
 }

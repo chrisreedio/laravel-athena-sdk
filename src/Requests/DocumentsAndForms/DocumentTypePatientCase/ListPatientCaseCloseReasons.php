@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class ListPatientCaseCloseReasons extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/reference/documents/patientcase/closereasons';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/reference/documents/patientcase/closereasons";
-	}
+    /**
+     * @param  int  $patientcaseid denotes the id of the patient case.
+     */
+    public function __construct(
+        protected int $patientcaseid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientcaseid denotes the id of the patient case.
-	 */
-	public function __construct(
-		protected int $patientcaseid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['patientcaseid' => $this->patientcaseid]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['patientcaseid' => $this->patientcaseid]);
+    }
 }

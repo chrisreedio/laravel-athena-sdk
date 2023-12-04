@@ -12,20 +12,18 @@ use Saloon\Http\Request;
  */
 class GetAppointmentIdByHash extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/appointments/getappointmentidbyhash/{$this->messagehash}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/appointments/getappointmentidbyhash/{$this->messagehash}";
-	}
-
-
-	/**
-	 * @param string $messagehash messagehash
-	 */
-	public function __construct(
-		protected string $messagehash,
-	) {
-	}
+    /**
+     * @param  string  $messagehash messagehash
+     */
+    public function __construct(
+        protected string $messagehash,
+    ) {
+    }
 }

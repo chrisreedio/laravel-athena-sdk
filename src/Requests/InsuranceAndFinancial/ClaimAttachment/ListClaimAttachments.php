@@ -12,20 +12,18 @@ use Saloon\Http\Request;
  */
 class ListClaimAttachments extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/claims/{$this->claimid}/attachments";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/claims/{$this->claimid}/attachments";
-	}
-
-
-	/**
-	 * @param int $claimid claimid
-	 */
-	public function __construct(
-		protected int $claimid,
-	) {
-	}
+    /**
+     * @param  int  $claimid claimid
+     */
+    public function __construct(
+        protected int $claimid,
+    ) {
+    }
 }

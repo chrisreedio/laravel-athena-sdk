@@ -12,16 +12,14 @@ use Saloon\Http\Request;
  */
 class DeleteStrictJsonEncodingSetting extends Request
 {
-	protected Method $method = Method::DELETE;
+    protected Method $method = Method::DELETE;
 
+    public function resolveEndpoint(): string
+    {
+        return '/misc/properjsonencoding';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/misc/properjsonencoding";
-	}
-
-
-	public function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 }

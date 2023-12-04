@@ -14,44 +14,41 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class UpdatePatientMedications extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::PUT;
+    protected Method $method = Method::PUT;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/{$this->patientid}/medications";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/{$this->patientid}/medications";
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $departmentid The athenanet department ID
+     * @param  null|string  $sectionnote The section-wide note for medications.
+     * @param  null|bool  $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
+     * @param  null|string  $thirdpartyusername User name of the patient in the third party application.
+     * @param  null|bool  $nomedicationsreported Set the "None Reported" checkbox indicating that no medications were reported for this patient.
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $departmentid,
+        protected ?string $sectionnote = null,
+        protected ?bool $patientfacingcall = null,
+        protected ?string $thirdpartyusername = null,
+        protected ?bool $nomedicationsreported = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $departmentid The athenanet department ID
-	 * @param null|string $sectionnote The section-wide note for medications.
-	 * @param null|bool $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
-	 * @param null|string $thirdpartyusername User name of the patient in the third party application.
-	 * @param null|bool $nomedicationsreported Set the "None Reported" checkbox indicating that no medications were reported for this patient.
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $departmentid,
-		protected ?string $sectionnote = null,
-		protected ?bool $patientfacingcall = null,
-		protected ?string $thirdpartyusername = null,
-		protected ?bool $nomedicationsreported = null,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter([
-			'departmentid' => $this->departmentid,
-			'sectionnote' => $this->sectionnote,
-			'PATIENTFACINGCALL' => $this->patientfacingcall,
-			'THIRDPARTYUSERNAME' => $this->thirdpartyusername,
-			'nomedicationsreported' => $this->nomedicationsreported,
-		]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter([
+            'departmentid' => $this->departmentid,
+            'sectionnote' => $this->sectionnote,
+            'PATIENTFACINGCALL' => $this->patientfacingcall,
+            'THIRDPARTYUSERNAME' => $this->thirdpartyusername,
+            'nomedicationsreported' => $this->nomedicationsreported,
+        ]);
+    }
 }
