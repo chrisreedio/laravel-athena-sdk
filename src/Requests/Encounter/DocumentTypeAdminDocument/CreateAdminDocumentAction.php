@@ -24,14 +24,13 @@ class CreateAdminDocumentAction extends Request implements HasBody
     }
 
     /**
-     * @param string $actionnote The new action note to add to the document.
-     * @param int $adminid adminid
+     * @param  string  $actionnote The new action note to add to the document.
+     * @param  int  $adminid adminid
      */
     public function __construct(
         protected string $actionnote,
-        protected int    $adminid,
-    )
-    {
+        protected int $adminid,
+    ) {
     }
 
     public function defaultBody(): array

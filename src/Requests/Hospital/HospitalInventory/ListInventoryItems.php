@@ -20,20 +20,19 @@ class ListInventoryItems extends Request
     }
 
     /**
-     * @param null|array $athenaids An array of Athena IDs.
-     * @param null|array $externalinventorysystemids An array of External Inventory System IDs.
-     * @param null|bool $showdeleted Whether to return deleted items.
-     * @param null|array $skus An array of SKUs
-     * @param null|array $vendorids An array of Vendor IDs
+     * @param  null|array  $athenaids An array of Athena IDs.
+     * @param  null|array  $externalinventorysystemids An array of External Inventory System IDs.
+     * @param  null|bool  $showdeleted Whether to return deleted items.
+     * @param  null|array  $skus An array of SKUs
+     * @param  null|array  $vendorids An array of Vendor IDs
      */
     public function __construct(
         protected ?array $athenaids = null,
         protected ?array $externalinventorysystemids = null,
-        protected ?bool  $showdeleted = null,
+        protected ?bool $showdeleted = null,
         protected ?array $skus = null,
         protected ?array $vendorids = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

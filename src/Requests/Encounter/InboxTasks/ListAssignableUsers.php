@@ -20,12 +20,11 @@ class ListAssignableUsers extends Request
     }
 
     /**
-     * @param int $departmentid The athenaNet department id.
+     * @param  int  $departmentid The athenaNet department id.
      */
     public function __construct(
         protected int $departmentid,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

@@ -20,13 +20,12 @@ class DeletePatientEncounterDocument extends Request
     }
 
     /**
-     * @param int $encounterdocumentid encounterdocumentid
-     * @param int $patientid patientid
+     * @param  int  $encounterdocumentid encounterdocumentid
+     * @param  int  $patientid patientid
      */
     public function __construct(
         protected int $encounterdocumentid,
         protected int $patientid,
-    )
-    {
+    ) {
     }
 }

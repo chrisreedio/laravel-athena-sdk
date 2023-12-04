@@ -20,11 +20,10 @@ class GetAppointmentIdByHash extends Request
     }
 
     /**
-     * @param string $messagehash messagehash
+     * @param  string  $messagehash messagehash
      */
     public function __construct(
         protected string $messagehash,
-    )
-    {
+    ) {
     }
 }

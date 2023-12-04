@@ -20,16 +20,15 @@ class GetPatientAcogDocumentHtml extends Request
     }
 
     /**
-     * @param int $acogid acogid
-     * @param int $patientid patientid
-     * @param null|bool $includewrapper If true, will include a wrapper with standard HTML tags
+     * @param  int  $acogid acogid
+     * @param  int  $patientid patientid
+     * @param  null|bool  $includewrapper If true, will include a wrapper with standard HTML tags
      */
     public function __construct(
-        protected int   $acogid,
-        protected int   $patientid,
+        protected int $acogid,
+        protected int $patientid,
         protected ?bool $includewrapper = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

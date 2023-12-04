@@ -24,14 +24,13 @@ class UpdateAppointmentConfirmationStatus extends Request implements HasBody
     }
 
     /**
-     * @param int $appointmentconfirmationid The appointment's confirmation status.
-     * @param int $appointmentid appointmentid
+     * @param  int  $appointmentconfirmationid The appointment's confirmation status.
+     * @param  int  $appointmentid appointmentid
      */
     public function __construct(
         protected int $appointmentconfirmationid,
         protected int $appointmentid,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array

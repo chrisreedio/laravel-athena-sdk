@@ -24,23 +24,22 @@ class UpdateCloseImagingResult extends Request implements HasBody
     }
 
     /**
-     * @param int $imagingresultid imagingresultid
-     * @param null|string $actionnote The note to be added to the document
-     * @param null|int $actionreasonid An alternate action reason to be applied the document
+     * @param  int  $imagingresultid imagingresultid
+     * @param  null|string  $actionnote The note to be added to the document
+     * @param  null|int  $actionreasonid An alternate action reason to be applied the document
      */
     public function __construct(
         protected int $imagingresultid,
         protected ?string $actionnote = null,
         protected ?int $actionreasonid = null,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array
     {
         return array_filter([
             'actionnote' => $this->actionnote,
-            'actionreasonid' => $this->actionreasonid
+            'actionreasonid' => $this->actionreasonid,
         ]);
     }
 }

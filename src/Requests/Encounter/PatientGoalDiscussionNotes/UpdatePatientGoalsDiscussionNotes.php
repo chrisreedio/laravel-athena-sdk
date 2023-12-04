@@ -24,18 +24,17 @@ class UpdatePatientGoalsDiscussionNotes extends Request implements HasBody
     }
 
     /**
-     * @param int $encounterid encounterid
-     * @param null|string $discussionnotes A free text field used for discussion notes.
-     * @param null|bool $replacediscussionnotes If true, will replace the existing section note with the new one. If false, will append to the existing note.
-     * @param null|string $versiontoken A token specifying a unique version of data in the database. If it's specified and does not match the version token on the server, the update will fail.
+     * @param  int  $encounterid encounterid
+     * @param  null|string  $discussionnotes A free text field used for discussion notes.
+     * @param  null|bool  $replacediscussionnotes If true, will replace the existing section note with the new one. If false, will append to the existing note.
+     * @param  null|string  $versiontoken A token specifying a unique version of data in the database. If it's specified and does not match the version token on the server, the update will fail.
      */
     public function __construct(
-        protected int     $encounterid,
+        protected int $encounterid,
         protected ?string $discussionnotes = null,
-        protected ?bool   $replacediscussionnotes = null,
+        protected ?bool $replacediscussionnotes = null,
         protected ?string $versiontoken = null,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array

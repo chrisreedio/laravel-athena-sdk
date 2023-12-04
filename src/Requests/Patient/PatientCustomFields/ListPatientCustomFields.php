@@ -20,14 +20,12 @@ class ListPatientCustomFields extends Request
     }
 
     /**
-     * @param string $departmentid
-     * @param int $patientid patientid
+     * @param  int  $patientid patientid
      */
     public function __construct(
         protected string $departmentid,
-        protected int    $patientid,
-    )
-    {
+        protected int $patientid,
+    ) {
     }
 
     public function defaultQuery(): array

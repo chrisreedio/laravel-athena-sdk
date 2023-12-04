@@ -20,12 +20,11 @@ class ListHpiTemplates extends Request
     }
 
     /**
-     * @param int $encounterid encounterid
+     * @param  int  $encounterid encounterid
      */
     public function __construct(
         protected int $encounterid,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

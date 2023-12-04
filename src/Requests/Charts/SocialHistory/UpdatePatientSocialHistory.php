@@ -24,18 +24,17 @@ class UpdatePatientSocialHistory extends Request implements HasBody
     }
 
     /**
-     * @param int $departmentid The department for this patient. A patient may have multiple charts, and the department determines which chart to retrieve.
-     * @param int $patientid patientid
-     * @param null|array $questions The list of question/answer pairs to be submitted. A JSON array of questions mimicking <a href="https://developer.athenahealth.com/docs/read/chart/Social_History">the inputs</a> described in the PUT call. Only the questions submitted will be added/updated/deleted.
-     * @param null|string $sectionnote A section-wide note
+     * @param  int  $departmentid The department for this patient. A patient may have multiple charts, and the department determines which chart to retrieve.
+     * @param  int  $patientid patientid
+     * @param  null|array  $questions The list of question/answer pairs to be submitted. A JSON array of questions mimicking <a href="https://developer.athenahealth.com/docs/read/chart/Social_History">the inputs</a> described in the PUT call. Only the questions submitted will be added/updated/deleted.
+     * @param  null|string  $sectionnote A section-wide note
      */
     public function __construct(
-        protected int     $departmentid,
-        protected int     $patientid,
-        protected ?array  $questions = null,
+        protected int $departmentid,
+        protected int $patientid,
+        protected ?array $questions = null,
         protected ?string $sectionnote = null,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array
@@ -43,7 +42,7 @@ class UpdatePatientSocialHistory extends Request implements HasBody
         return array_filter([
             'departmentid' => $this->departmentid,
             'questions' => $this->questions,
-            'sectionnote' => $this->sectionnote
+            'sectionnote' => $this->sectionnote,
         ]);
     }
 }

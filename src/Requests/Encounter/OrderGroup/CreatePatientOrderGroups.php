@@ -24,18 +24,17 @@ class CreatePatientOrderGroups extends Request implements HasBody
     }
 
     /**
-     * @param int $departmentid The department to use for the order group.
-     * @param int $patientid patientid
-     * @param null|int $orderingproviderid The ordering provider ID, if not given a random provider from that department will be used.
-     * @param null|int $patientcaseid The ID of the patient case generating this new order group.
+     * @param  int  $departmentid The department to use for the order group.
+     * @param  int  $patientid patientid
+     * @param  null|int  $orderingproviderid The ordering provider ID, if not given a random provider from that department will be used.
+     * @param  null|int  $patientcaseid The ID of the patient case generating this new order group.
      */
     public function __construct(
-        protected int  $departmentid,
-        protected int  $patientid,
+        protected int $departmentid,
+        protected int $patientid,
         protected ?int $orderingproviderid = null,
         protected ?int $patientcaseid = null,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array

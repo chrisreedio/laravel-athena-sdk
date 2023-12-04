@@ -24,20 +24,19 @@ class GetPatientOrderDocument extends Request
     }
 
     /**
-     * @param int $orderid orderid
-     * @param int $patientid patientid
-     * @param null|bool $showpreschedulingchecklist Return any pre-scheduling checklist.
-     * @param null|bool $showquestions BETA FIELD: Some order types like labs and imaging orders have additional pertinant information in a question/answer format. Setting this will return that data.
-     * @param null|bool $showstructuredauthorizationdetails BETA FIELD: When set, returns Prior Authorization and insurances for some order types, separately and in a structured version than those returned in showquestions.
+     * @param  int  $orderid orderid
+     * @param  int  $patientid patientid
+     * @param  null|bool  $showpreschedulingchecklist Return any pre-scheduling checklist.
+     * @param  null|bool  $showquestions BETA FIELD: Some order types like labs and imaging orders have additional pertinant information in a question/answer format. Setting this will return that data.
+     * @param  null|bool  $showstructuredauthorizationdetails BETA FIELD: When set, returns Prior Authorization and insurances for some order types, separately and in a structured version than those returned in showquestions.
      */
     public function __construct(
-        protected int   $orderid,
-        protected int   $patientid,
+        protected int $orderid,
+        protected int $patientid,
         protected ?bool $showpreschedulingchecklist = null,
         protected ?bool $showquestions = null,
         protected ?bool $showstructuredauthorizationdetails = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

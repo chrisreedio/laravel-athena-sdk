@@ -20,11 +20,10 @@ class GetEncounterIntraocularPressure extends Request
     }
 
     /**
-     * @param int $encounterid encounterid
+     * @param  int  $encounterid encounterid
      */
     public function __construct(
         protected int $encounterid,
-    )
-    {
+    ) {
     }
 }

@@ -24,25 +24,24 @@ class CreatePatientOneYearContractEmailAgreement extends Request implements HasB
     }
 
     /**
-     * @param int $contractid contractid
-     * @param int $departmentid The id of an active department for the patient.
-     * @param string $email The email address that we want to send the Card on File Agreement to
-     * @param int $patientid patientid
+     * @param  int  $contractid contractid
+     * @param  int  $departmentid The id of an active department for the patient.
+     * @param  string  $email The email address that we want to send the Card on File Agreement to
+     * @param  int  $patientid patientid
      */
     public function __construct(
         protected int $contractid,
         protected int $departmentid,
         protected string $email,
         protected int $patientid,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array
     {
         return array_filter([
             'departmentid' => $this->departmentid,
-            'email' => $this->email
+            'email' => $this->email,
         ]);
     }
 }

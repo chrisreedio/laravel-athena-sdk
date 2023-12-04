@@ -20,12 +20,11 @@ class ListPhoneMessageActions extends Request
     }
 
     /**
-     * @param int $phonemessageid phonemessageid
+     * @param  int  $phonemessageid phonemessageid
      */
     public function __construct(
         protected int $phonemessageid,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

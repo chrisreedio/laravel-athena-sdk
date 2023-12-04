@@ -20,14 +20,13 @@ class GetAppointmentType extends Request
     }
 
     /**
-     * @param int $appointmenttypeid appointmenttypeid
-     * @param null|bool $showappointmenttypeclasses If set to true, returns the appointment type class ID and name for each appointment type.
+     * @param  int  $appointmenttypeid appointmenttypeid
+     * @param  null|bool  $showappointmenttypeclasses If set to true, returns the appointment type class ID and name for each appointment type.
      */
     public function __construct(
-        protected int   $appointmenttypeid,
+        protected int $appointmenttypeid,
         protected ?bool $showappointmenttypeclasses = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

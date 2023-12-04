@@ -20,18 +20,17 @@ class GetClinicalProvider extends Request
     }
 
     /**
-     * @param int $clinicalproviderid clinicalproviderid
-     * @param null|bool $showdeleted By default, a deleted clinical provider is not returned.  Set to return if deleted.
-     * @param null|int $showfederalidnumber Include federal ID number in output.
-     * @param null|int $shownpi Include NPI in output.
+     * @param  int  $clinicalproviderid clinicalproviderid
+     * @param  null|bool  $showdeleted By default, a deleted clinical provider is not returned.  Set to return if deleted.
+     * @param  null|int  $showfederalidnumber Include federal ID number in output.
+     * @param  null|int  $shownpi Include NPI in output.
      */
     public function __construct(
         protected int $clinicalproviderid,
         protected ?bool $showdeleted = null,
         protected ?int $showfederalidnumber = null,
         protected ?int $shownpi = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array
@@ -39,7 +38,7 @@ class GetClinicalProvider extends Request
         return array_filter([
             'showdeleted' => $this->showdeleted,
             'showfederalidnumber' => $this->showfederalidnumber,
-            'shownpi' => $this->shownpi
+            'shownpi' => $this->shownpi,
         ]);
     }
 }

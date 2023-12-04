@@ -20,13 +20,12 @@ class DeleteUserMessage extends Request
     }
 
     /**
-     * @param int $messageid messageid
-     * @param string $username username
+     * @param  int  $messageid messageid
+     * @param  string  $username username
      */
     public function __construct(
-        protected int    $messageid,
+        protected int $messageid,
         protected string $username,
-    )
-    {
+    ) {
     }
 }

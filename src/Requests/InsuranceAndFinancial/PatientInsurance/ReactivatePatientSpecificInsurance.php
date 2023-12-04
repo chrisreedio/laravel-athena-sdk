@@ -24,16 +24,15 @@ class ReactivatePatientSpecificInsurance extends Request implements HasBody
     }
 
     /**
-     * @param int $insuranceid insuranceid
-     * @param int $patientid patientid
-     * @param null|string $expirationdate New date on which this insurance package should expire.
+     * @param  int  $insuranceid insuranceid
+     * @param  int  $patientid patientid
+     * @param  null|string  $expirationdate New date on which this insurance package should expire.
      */
     public function __construct(
-        protected int     $insuranceid,
-        protected int     $patientid,
+        protected int $insuranceid,
+        protected int $patientid,
         protected ?string $expirationdate = null,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array

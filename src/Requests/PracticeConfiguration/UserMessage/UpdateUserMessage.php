@@ -24,20 +24,19 @@ class UpdateUserMessage extends Request implements HasBody
     }
 
     /**
-     * @param int $messageid messageid
-     * @param string $username username
-     * @param null|bool $flag Set whether this message is flagged for followup.
-     * @param null|string $folder Move the message to this folder. Can be INBOX, SENT, SAVED, TRASH.
-     * @param null|bool $read Set whether this message is read.
+     * @param  int  $messageid messageid
+     * @param  string  $username username
+     * @param  null|bool  $flag Set whether this message is flagged for followup.
+     * @param  null|string  $folder Move the message to this folder. Can be INBOX, SENT, SAVED, TRASH.
+     * @param  null|bool  $read Set whether this message is read.
      */
     public function __construct(
-        protected int     $messageid,
-        protected string  $username,
-        protected ?bool   $flag = null,
+        protected int $messageid,
+        protected string $username,
+        protected ?bool $flag = null,
         protected ?string $folder = null,
-        protected ?bool   $read = null,
-    )
-    {
+        protected ?bool $read = null,
+    ) {
     }
 
     public function defaultBody(): array
@@ -45,7 +44,7 @@ class UpdateUserMessage extends Request implements HasBody
         return array_filter([
             'flag' => $this->flag,
             'folder' => $this->folder,
-            'read' => $this->read
+            'read' => $this->read,
         ]);
     }
 }

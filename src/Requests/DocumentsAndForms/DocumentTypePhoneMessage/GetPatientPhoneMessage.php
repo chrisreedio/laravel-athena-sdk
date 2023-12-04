@@ -20,13 +20,12 @@ class GetPatientPhoneMessage extends Request
     }
 
     /**
-     * @param int $patientid patientid
-     * @param int $phonemessageid phonemessageid
+     * @param  int  $patientid patientid
+     * @param  int  $phonemessageid phonemessageid
      */
     public function __construct(
         protected int $patientid,
         protected int $phonemessageid,
-    )
-    {
+    ) {
     }
 }

@@ -20,12 +20,11 @@ class GetClinicalDocumentActions extends Request
     }
 
     /**
-     * @param int $clinicaldocumentid clinicaldocumentid
+     * @param  int  $clinicaldocumentid clinicaldocumentid
      */
     public function __construct(
         protected int $clinicaldocumentid,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

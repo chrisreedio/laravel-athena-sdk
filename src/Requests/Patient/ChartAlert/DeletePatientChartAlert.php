@@ -20,14 +20,13 @@ class DeletePatientChartAlert extends Request
     }
 
     /**
-     * @param int $departmentid The department ID; needed because charts, and thus chart notes, may be department-specific
-     * @param int $patientid patientid
+     * @param  int  $departmentid The department ID; needed because charts, and thus chart notes, may be department-specific
+     * @param  int  $patientid patientid
      */
     public function __construct(
         protected int $departmentid,
         protected int $patientid,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

@@ -21,14 +21,13 @@ class GetAmbulatorySurgicalContent extends Request
     }
 
     /**
-     * @param int $encounterid encounterid
-     * @param string $location Location of the forms in an encounter workflow.
+     * @param  int  $encounterid encounterid
+     * @param  string  $location Location of the forms in an encounter workflow.
      */
     public function __construct(
-        protected int    $encounterid,
+        protected int $encounterid,
         protected string $location,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

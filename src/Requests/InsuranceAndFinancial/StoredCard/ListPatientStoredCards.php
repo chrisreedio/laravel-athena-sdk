@@ -20,14 +20,13 @@ class ListPatientStoredCards extends Request
     }
 
     /**
-     * @param int $patientid patientid
-     * @param null|int $departmentid The ID of the department where the payment or contract is being collected. This parameter is currently not formally required. However, it will be in a future patch so it is highly recommended that this parameter is used.
+     * @param  int  $patientid patientid
+     * @param  null|int  $departmentid The ID of the department where the payment or contract is being collected. This parameter is currently not formally required. However, it will be in a future patch so it is highly recommended that this parameter is used.
      */
     public function __construct(
-        protected int  $patientid,
+        protected int $patientid,
         protected ?int $departmentid = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

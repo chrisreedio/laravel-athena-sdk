@@ -24,20 +24,19 @@ class CreateClaimAttachment extends Request implements HasBody
     }
 
     /**
-     * @param string $attachmentcontents The claim attachment content. Currently only PDF files are supported.
-     * @param string $attachmenttype The claim attachment type class ID.
-     * @param int $claimid claimid
-     * @param string $filename The attachment file name.
-     * @param null|string $note The claim attachment notes.
+     * @param  string  $attachmentcontents The claim attachment content. Currently only PDF files are supported.
+     * @param  string  $attachmenttype The claim attachment type class ID.
+     * @param  int  $claimid claimid
+     * @param  string  $filename The attachment file name.
+     * @param  null|string  $note The claim attachment notes.
      */
     public function __construct(
-        protected string  $attachmentcontents,
-        protected string  $attachmenttype,
-        protected int     $claimid,
-        protected string  $filename,
+        protected string $attachmentcontents,
+        protected string $attachmenttype,
+        protected int $claimid,
+        protected string $filename,
         protected ?string $note = null,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array

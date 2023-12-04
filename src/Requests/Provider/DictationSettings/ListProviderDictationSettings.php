@@ -20,12 +20,11 @@ class ListProviderDictationSettings extends Request
     }
 
     /**
-     * @param null|array $providerid If provided, this will filter the results to only included the given providers. Multiple IDs (either as a comma delimited list or multiple POSTed values) are allowed.
+     * @param  null|array  $providerid If provided, this will filter the results to only included the given providers. Multiple IDs (either as a comma delimited list or multiple POSTed values) are allowed.
      */
     public function __construct(
         protected ?array $providerid = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

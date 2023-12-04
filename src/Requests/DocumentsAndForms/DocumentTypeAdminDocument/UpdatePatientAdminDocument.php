@@ -28,25 +28,24 @@ class UpdatePatientAdminDocument extends Request implements HasBody
     }
 
     /**
-     * @param int $adminid adminid
-     * @param int $patientid patientid
-     * @param null|int $adminid The document ID of the edited document.
-     * @param null|string $documentdate The date an observation was made (mm/dd/yyyy).
-     * @param null|int $documenttypeid A specific document type identifier.
-     * @param null|string $internalnote An internal note for the provider or staff. Updating this will append to any previous notes.
-     * @param null|string $priority Priority of this result.  1 is high; 2 is normal.
-     * @param null|int $providerid The ID of the ordering provider.
+     * @param  int  $adminid adminid
+     * @param  int  $patientid patientid
+     * @param  null|int  $adminid The document ID of the edited document.
+     * @param  null|string  $documentdate The date an observation was made (mm/dd/yyyy).
+     * @param  null|int  $documenttypeid A specific document type identifier.
+     * @param  null|string  $internalnote An internal note for the provider or staff. Updating this will append to any previous notes.
+     * @param  null|string  $priority Priority of this result.  1 is high; 2 is normal.
+     * @param  null|int  $providerid The ID of the ordering provider.
      */
     public function __construct(
-        protected ?int    $adminid = null,
-        protected int     $patientid,
+        protected ?int $adminid,
+        protected int $patientid,
         protected ?string $documentdate = null,
-        protected ?int    $documenttypeid = null,
+        protected ?int $documenttypeid = null,
         protected ?string $internalnote = null,
         protected ?string $priority = null,
-        protected ?int    $providerid = null,
-    )
-    {
+        protected ?int $providerid = null,
+    ) {
     }
 
     public function defaultBody(): array

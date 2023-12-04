@@ -20,13 +20,12 @@ class GetPatientPrescription extends Request
     }
 
     /**
-     * @param int $patientid patientid
-     * @param int $prescriptionid prescriptionid
+     * @param  int  $patientid patientid
+     * @param  int  $prescriptionid prescriptionid
      */
     public function __construct(
         protected int $patientid,
         protected int $prescriptionid,
-    )
-    {
+    ) {
     }
 }

@@ -30,7 +30,7 @@ class Athena extends Connector
 
     public function resolveBaseUrl(): string
     {
-        return $this->baseUrl . '/v1/' . $this->practiceId;
+        return $this->baseUrl.'/v1/'.$this->practiceId;
     }
 
     protected function defaultOauthConfig(): OAuthConfig
@@ -39,11 +39,11 @@ class Athena extends Connector
             ->setClientId(config('athena-sdk.client_id'))
             ->setClientSecret(config('athena-sdk.client_secret'))
             // ->setTokenEndpoint('/oauth/token')
-            ->setTokenEndpoint( $this->baseUrl . '/oauth2/v1/token')
+            ->setTokenEndpoint($this->baseUrl.'/oauth2/v1/token')
             ->setDefaultScopes(['athena/service/Athenanet.MDP.*']);
-            // ->setRequestModifier(function (Request $request) {
-            //     // $request->headers->set('Accept', 'application/json');
-            // });
+        // ->setRequestModifier(function (Request $request) {
+        //     // $request->headers->set('Accept', 'application/json');
+        // });
     }
 
     // public function appointments(): Appointments

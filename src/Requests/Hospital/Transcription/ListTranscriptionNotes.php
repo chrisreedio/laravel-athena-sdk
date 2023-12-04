@@ -20,23 +20,22 @@ class ListTranscriptionNotes extends Request
     }
 
     /**
-     * @param int $stayid stayid
-     * @param null|int $departmentid The department ID tied to the note.
-     * @param null|string $notetype Type of transcription note.
+     * @param  int  $stayid stayid
+     * @param  null|int  $departmentid The department ID tied to the note.
+     * @param  null|string  $notetype Type of transcription note.
      */
     public function __construct(
-        protected int     $stayid,
-        protected ?int    $departmentid = null,
+        protected int $stayid,
+        protected ?int $departmentid = null,
         protected ?string $notetype = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
             'departmentid' => $this->departmentid,
-            'notetype' => $this->notetype
+            'notetype' => $this->notetype,
         ]);
     }
 }

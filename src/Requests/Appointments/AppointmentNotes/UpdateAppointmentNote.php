@@ -24,25 +24,24 @@ class UpdateAppointmentNote extends Request implements HasBody
     }
 
     /**
-     * @param int $appointmentid appointmentid
-     * @param int $noteid noteid
-     * @param string $notetext The note text.
-     * @param null|bool $displayonschedule Add appointment note to homepage display.
+     * @param  int  $appointmentid appointmentid
+     * @param  int  $noteid noteid
+     * @param  string  $notetext The note text.
+     * @param  null|bool  $displayonschedule Add appointment note to homepage display.
      */
     public function __construct(
         protected int $appointmentid,
         protected int $noteid,
         protected string $notetext,
         protected ?bool $displayonschedule = null,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array
     {
         return array_filter([
             'notetext' => $this->notetext,
-            'displayonschedule' => $this->displayonschedule
+            'displayonschedule' => $this->displayonschedule,
         ]);
     }
 }

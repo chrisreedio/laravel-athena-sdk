@@ -20,25 +20,24 @@ class DeletePatientVaccine extends Request
     }
 
     /**
-     * @param int $departmentid The athenaNet department id.
-     * @param int $patientid patientid
-     * @param string $vaccineid vaccineid
-     * @param null|string $deleteddate Date when this vaccine record was deleted from athenaNet (defaults to today)
+     * @param  int  $departmentid The athenaNet department id.
+     * @param  int  $patientid patientid
+     * @param  string  $vaccineid vaccineid
+     * @param  null|string  $deleteddate Date when this vaccine record was deleted from athenaNet (defaults to today)
      */
     public function __construct(
-        protected int     $departmentid,
-        protected int     $patientid,
-        protected string  $vaccineid,
+        protected int $departmentid,
+        protected int $patientid,
+        protected string $vaccineid,
         protected ?string $deleteddate = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
             'departmentid' => $this->departmentid,
-            'deleteddate' => $this->deleteddate
+            'deleteddate' => $this->deleteddate,
         ]);
     }
 }

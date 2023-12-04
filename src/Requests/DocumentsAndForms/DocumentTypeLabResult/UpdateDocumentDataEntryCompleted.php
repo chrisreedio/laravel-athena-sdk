@@ -24,14 +24,13 @@ class UpdateDocumentDataEntryCompleted extends Request implements HasBody
     }
 
     /**
-     * @param int $documentid documentid
-     * @param null|string $actionnote The note to be added to the document
+     * @param  int  $documentid documentid
+     * @param  null|string  $actionnote The note to be added to the document
      */
     public function __construct(
-        protected int     $documentid,
+        protected int $documentid,
         protected ?string $actionnote = null,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array

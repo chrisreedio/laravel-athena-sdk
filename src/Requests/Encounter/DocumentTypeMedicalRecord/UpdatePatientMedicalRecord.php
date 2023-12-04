@@ -28,11 +28,11 @@ class UpdatePatientMedicalRecord extends Request implements HasBody
     }
 
     /**
-     * @param int $medicalrecordid medicalrecordid
-     * @param int $patientid patientid
-     * @param null|string $internalnote An internal note for the provider or staff. Updating this will append to any previous notes.
-     * @param null|string $priority Priority of this result.  1 is high; 2 is normal.
-     * @param null|int $providerid The ID of the ordering provider.
+     * @param  int  $medicalrecordid medicalrecordid
+     * @param  int  $patientid patientid
+     * @param  null|string  $internalnote An internal note for the provider or staff. Updating this will append to any previous notes.
+     * @param  null|string  $priority Priority of this result.  1 is high; 2 is normal.
+     * @param  null|int  $providerid The ID of the ordering provider.
      */
     public function __construct(
         protected int $medicalrecordid,
@@ -40,8 +40,7 @@ class UpdatePatientMedicalRecord extends Request implements HasBody
         protected ?string $internalnote = null,
         protected ?string $priority = null,
         protected ?int $providerid = null,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array
@@ -49,7 +48,7 @@ class UpdatePatientMedicalRecord extends Request implements HasBody
         return array_filter([
             'internalnote' => $this->internalnote,
             'priority' => $this->priority,
-            'providerid' => $this->providerid
+            'providerid' => $this->providerid,
         ]);
     }
 }

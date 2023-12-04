@@ -24,14 +24,13 @@ class CreatePhoneMessageAction extends Request implements HasBody
     }
 
     /**
-     * @param string $actionnote The new action note to add to the document.
-     * @param int $phonemessageid phonemessageid
+     * @param  string  $actionnote The new action note to add to the document.
+     * @param  int  $phonemessageid phonemessageid
      */
     public function __construct(
         protected string $actionnote,
-        protected int    $phonemessageid,
-    )
-    {
+        protected int $phonemessageid,
+    ) {
     }
 
     public function defaultBody(): array

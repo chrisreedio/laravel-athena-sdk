@@ -20,16 +20,15 @@ class GetPatientMedicalRecord extends Request
     }
 
     /**
-     * @param int $medicalrecordid medicalrecordid
-     * @param int $patientid patientid
-     * @param null|bool $getentityinfo If true, entityid and entitytype will be returned. entityid will be populated in createduser attribute.
+     * @param  int  $medicalrecordid medicalrecordid
+     * @param  int  $patientid patientid
+     * @param  null|bool  $getentityinfo If true, entityid and entitytype will be returned. entityid will be populated in createduser attribute.
      */
     public function __construct(
-        protected int   $medicalrecordid,
-        protected int   $patientid,
+        protected int $medicalrecordid,
+        protected int $patientid,
         protected ?bool $getentityinfo = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

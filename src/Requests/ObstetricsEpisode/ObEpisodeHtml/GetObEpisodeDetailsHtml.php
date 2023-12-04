@@ -20,25 +20,24 @@ class GetObEpisodeDetailsHtml extends Request
     }
 
     /**
-     * @param int $obepisodeid obepisodeid
-     * @param int $patientid patientid
-     * @param null|bool $includewrapper If true, will include a wrapper with standard HTML tags
-     * @param null|bool $showhiddenproblems Designates whether we will also show hidden problems. The default value is false.
+     * @param  int  $obepisodeid obepisodeid
+     * @param  int  $patientid patientid
+     * @param  null|bool  $includewrapper If true, will include a wrapper with standard HTML tags
+     * @param  null|bool  $showhiddenproblems Designates whether we will also show hidden problems. The default value is false.
      */
     public function __construct(
         protected int $obepisodeid,
         protected int $patientid,
         protected ?bool $includewrapper = null,
         protected ?bool $showhiddenproblems = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
             'includewrapper' => $this->includewrapper,
-            'showhiddenproblems' => $this->showhiddenproblems
+            'showhiddenproblems' => $this->showhiddenproblems,
         ]);
     }
 }

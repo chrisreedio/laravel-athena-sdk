@@ -24,14 +24,13 @@ class CreateClinicalDocumentActionNote extends Request implements HasBody
     }
 
     /**
-     * @param string $actionnote The new action note to add to the document.
-     * @param int $clinicaldocumentid clinicaldocumentid
+     * @param  string  $actionnote The new action note to add to the document.
+     * @param  int  $clinicaldocumentid clinicaldocumentid
      */
     public function __construct(
         protected string $actionnote,
-        protected int    $clinicaldocumentid,
-    )
-    {
+        protected int $clinicaldocumentid,
+    ) {
     }
 
     public function defaultBody(): array

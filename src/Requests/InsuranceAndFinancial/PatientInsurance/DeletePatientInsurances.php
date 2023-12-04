@@ -20,18 +20,17 @@ class DeletePatientInsurances extends Request
     }
 
     /**
-     * @param int $patientid patientid
-     * @param int $sequencenumber 1 = primary, 2 = secondary.
-     * @param null|string $cancellationnote Optional note as to why this is being cancelled. Maximum 400 characters
-     * @param null|int $departmentid If set, we will use the department id in an attempt to cancel insurance for the local patient.
+     * @param  int  $patientid patientid
+     * @param  int  $sequencenumber 1 = primary, 2 = secondary.
+     * @param  null|string  $cancellationnote Optional note as to why this is being cancelled. Maximum 400 characters
+     * @param  null|int  $departmentid If set, we will use the department id in an attempt to cancel insurance for the local patient.
      */
     public function __construct(
-        protected int     $patientid,
-        protected int     $sequencenumber,
+        protected int $patientid,
+        protected int $sequencenumber,
         protected ?string $cancellationnote = null,
-        protected ?int    $departmentid = null,
-    )
-    {
+        protected ?int $departmentid = null,
+    ) {
     }
 
     public function defaultQuery(): array

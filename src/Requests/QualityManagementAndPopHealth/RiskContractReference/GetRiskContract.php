@@ -20,21 +20,20 @@ class GetRiskContract extends Request
     }
 
     /**
-     * @param null|string $name Title of the risk contract
-     * @param null|int $riskcontractid ID of the risk contract
+     * @param  null|string  $name Title of the risk contract
+     * @param  null|int  $riskcontractid ID of the risk contract
      */
     public function __construct(
         protected ?string $name = null,
-        protected ?int    $riskcontractid = null,
-    )
-    {
+        protected ?int $riskcontractid = null,
+    ) {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
             'name' => $this->name,
-            'riskcontractid' => $this->riskcontractid
+            'riskcontractid' => $this->riskcontractid,
         ]);
     }
 }

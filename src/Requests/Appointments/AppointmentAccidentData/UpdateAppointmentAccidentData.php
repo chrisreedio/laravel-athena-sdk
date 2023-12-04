@@ -24,22 +24,21 @@ class UpdateAppointmentAccidentData extends Request implements HasBody
     }
 
     /**
-     * @param int $appointmentid appointmentid
-     * @param null|bool $anotherpartyresponsible A boolean field describing whether this appointment is created because of an accident caused by another party.
-     * @param null|string $autoaccidentstate The two letter state abbreviation. This field is only valid if the relatedtoautoaccident field is set (or is being set) to true. If this field is set and relatedtoautoaccident is subsequently set to false, this field will be cleared.
-     * @param null|bool $relatedtoautoaccident A boolean field describing whether this appointment is created because of an automobile accident. Mutually exclusive with the relatedtootheraccident field.
-     * @param null|bool $relatedtoemployment A boolean field describing whether this appointment is created because of an accident related to the patient's employment.
-     * @param null|bool $relatedtootheraccident A boolean field describing whether this appointment is created because of an accident other than those listed above. This is mutually exclusive with the automobile accident field.
+     * @param  int  $appointmentid appointmentid
+     * @param  null|bool  $anotherpartyresponsible A boolean field describing whether this appointment is created because of an accident caused by another party.
+     * @param  null|string  $autoaccidentstate The two letter state abbreviation. This field is only valid if the relatedtoautoaccident field is set (or is being set) to true. If this field is set and relatedtoautoaccident is subsequently set to false, this field will be cleared.
+     * @param  null|bool  $relatedtoautoaccident A boolean field describing whether this appointment is created because of an automobile accident. Mutually exclusive with the relatedtootheraccident field.
+     * @param  null|bool  $relatedtoemployment A boolean field describing whether this appointment is created because of an accident related to the patient's employment.
+     * @param  null|bool  $relatedtootheraccident A boolean field describing whether this appointment is created because of an accident other than those listed above. This is mutually exclusive with the automobile accident field.
      */
     public function __construct(
-        protected int     $appointmentid,
-        protected ?bool   $anotherpartyresponsible = null,
+        protected int $appointmentid,
+        protected ?bool $anotherpartyresponsible = null,
         protected ?string $autoaccidentstate = null,
-        protected ?bool   $relatedtoautoaccident = null,
-        protected ?bool   $relatedtoemployment = null,
-        protected ?bool   $relatedtootheraccident = null,
-    )
-    {
+        protected ?bool $relatedtoautoaccident = null,
+        protected ?bool $relatedtoemployment = null,
+        protected ?bool $relatedtootheraccident = null,
+    ) {
     }
 
     public function defaultBody(): array

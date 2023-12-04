@@ -4,7 +4,6 @@ namespace ChrisReedIO\AthenaSDK;
 
 // use ChrisReedIO\AthenaSDK\Resource\Appointments;
 use Illuminate\Http\Request;
-use OAuth;
 use Saloon\Helpers\OAuth2\OAuthConfig;
 use Saloon\Http\Connector;
 use Saloon\Traits\OAuth2\ClientCredentialsGrant;
@@ -33,11 +32,10 @@ class AthenaAuthenticator extends Connector
         return OAuthConfig::make()
             ->setClientId(config('athena-sdk.client_id'))
             ->setClientSecret(config('athena-sdk.client_secret'))
-            ->setTokenEndpoint( '/oauth2/v1/token')
+            ->setTokenEndpoint('/oauth2/v1/token')
             ->setDefaultScopes(['athena/service/Athenanet.MDP.*'])
             ->setRequestModifier(function (Request $request) {
                 // $request->headers->set('Accept', 'application/json');
             });
     }
-
 }

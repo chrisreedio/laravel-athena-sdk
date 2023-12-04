@@ -20,16 +20,15 @@ class DeletePatientMedicationEntry extends Request
     }
 
     /**
-     * @param int $departmentid The athenanet department ID
-     * @param string $medicationentryid medicationentryid
-     * @param int $patientid patientid
+     * @param  int  $departmentid The athenanet department ID
+     * @param  string  $medicationentryid medicationentryid
+     * @param  int  $patientid patientid
      */
     public function __construct(
-        protected int    $departmentid,
+        protected int $departmentid,
         protected string $medicationentryid,
-        protected int    $patientid,
-    )
-    {
+        protected int $patientid,
+    ) {
     }
 
     public function defaultQuery(): array

@@ -27,14 +27,13 @@ class CreatePatientClaimCollections extends Request implements HasBody
     }
 
     /**
-     * @param array $claimids List of Claim IDs.Example: [123,124]
-     * @param string $vendorcode vendorcode
+     * @param  array  $claimids List of Claim IDs.Example: [123,124]
+     * @param  string  $vendorcode vendorcode
      */
     public function __construct(
-        protected array  $claimids,
+        protected array $claimids,
         protected string $vendorcode,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array

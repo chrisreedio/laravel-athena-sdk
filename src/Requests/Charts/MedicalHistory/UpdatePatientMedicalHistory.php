@@ -24,18 +24,17 @@ class UpdatePatientMedicalHistory extends Request implements HasBody
     }
 
     /**
-     * @param int $departmentid The athenaNet department ID.
-     * @param int $patientid patientid
-     * @param null|array $questions A complex JSON object containing the patient medical history. See the Chart documentation for more details.
-     * @param null|string $sectionnote Any additional section notes
+     * @param  int  $departmentid The athenaNet department ID.
+     * @param  int  $patientid patientid
+     * @param  null|array  $questions A complex JSON object containing the patient medical history. See the Chart documentation for more details.
+     * @param  null|string  $sectionnote Any additional section notes
      */
     public function __construct(
-        protected int     $departmentid,
-        protected int     $patientid,
-        protected ?array  $questions = null,
+        protected int $departmentid,
+        protected int $patientid,
+        protected ?array $questions = null,
         protected ?string $sectionnote = null,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array
@@ -43,7 +42,7 @@ class UpdatePatientMedicalHistory extends Request implements HasBody
         return array_filter([
             'departmentid' => $this->departmentid,
             'questions' => $this->questions,
-            'sectionnote' => $this->sectionnote
+            'sectionnote' => $this->sectionnote,
         ]);
     }
 }

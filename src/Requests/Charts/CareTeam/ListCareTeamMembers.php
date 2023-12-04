@@ -20,18 +20,17 @@ class ListCareTeamMembers extends Request
     }
 
     /**
-     * @param int $departmentid The athenaNet department ID.
-     * @param int $patientid patientid
-     * @param null|bool $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
-     * @param null|string $thirdpartyusername User name of the patient in the third party application.
+     * @param  int  $departmentid The athenaNet department ID.
+     * @param  int  $patientid patientid
+     * @param  null|bool  $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
+     * @param  null|string  $thirdpartyusername User name of the patient in the third party application.
      */
     public function __construct(
-        protected int     $departmentid,
-        protected int     $patientid,
-        protected ?bool   $patientfacingcall = null,
+        protected int $departmentid,
+        protected int $patientid,
+        protected ?bool $patientfacingcall = null,
         protected ?string $thirdpartyusername = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

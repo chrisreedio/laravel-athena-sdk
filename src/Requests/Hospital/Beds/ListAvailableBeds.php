@@ -20,18 +20,17 @@ class ListAvailableBeds extends Request
     }
 
     /**
-     * @param null|int $bedid The bed ID.
-     * @param null|int $departmentid The department ID.
-     * @param null|int $hospitalroomid The hospital room id.
-     * @param null|int $unitid The unit id.
+     * @param  null|int  $bedid The bed ID.
+     * @param  null|int  $departmentid The department ID.
+     * @param  null|int  $hospitalroomid The hospital room id.
+     * @param  null|int  $unitid The unit id.
      */
     public function __construct(
         protected ?int $bedid = null,
         protected ?int $departmentid = null,
         protected ?int $hospitalroomid = null,
         protected ?int $unitid = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

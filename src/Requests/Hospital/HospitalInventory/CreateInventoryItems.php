@@ -24,12 +24,11 @@ class CreateInventoryItems extends Request implements HasBody
     }
 
     /**
-     * @param array $inventoryitems An array of JSON objects representing inventory items to add.
+     * @param  array  $inventoryitems An array of JSON objects representing inventory items to add.
      */
     public function __construct(
         protected array $inventoryitems,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array

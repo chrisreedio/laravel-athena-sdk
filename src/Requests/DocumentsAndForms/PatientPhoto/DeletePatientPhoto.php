@@ -20,11 +20,10 @@ class DeletePatientPhoto extends Request
     }
 
     /**
-     * @param int $patientid patientid
+     * @param  int  $patientid patientid
      */
     public function __construct(
         protected int $patientid,
-    )
-    {
+    ) {
     }
 }

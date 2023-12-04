@@ -20,12 +20,11 @@ class ListTextMacros extends Request
     }
 
     /**
-     * @param null|string $username The username of the person for which to get the accessible macros.
+     * @param  null|string  $username The username of the person for which to get the accessible macros.
      */
     public function __construct(
         protected ?string $username = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

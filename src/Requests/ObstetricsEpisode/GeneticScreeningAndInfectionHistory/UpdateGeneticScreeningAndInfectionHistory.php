@@ -24,16 +24,15 @@ class UpdateGeneticScreeningAndInfectionHistory extends Request implements HasBo
     }
 
     /**
-     * @param array $answers This is a JSON array of objects that is used to update the question specific information.
-     * @param int $obepisodeid obepisodeid
-     * @param int $patientid patientid
+     * @param  array  $answers This is a JSON array of objects that is used to update the question specific information.
+     * @param  int  $obepisodeid obepisodeid
+     * @param  int  $patientid patientid
      */
     public function __construct(
         protected array $answers,
-        protected int   $obepisodeid,
-        protected int   $patientid,
-    )
-    {
+        protected int $obepisodeid,
+        protected int $patientid,
+    ) {
     }
 
     public function defaultBody(): array

@@ -24,14 +24,13 @@ class CreateEncounterDocumentActionNote extends Request implements HasBody
     }
 
     /**
-     * @param string $actionnote The new action note to add to the document.
-     * @param int $encounterdocumentid encounterdocumentid
+     * @param  string  $actionnote The new action note to add to the document.
+     * @param  int  $encounterdocumentid encounterdocumentid
      */
     public function __construct(
         protected string $actionnote,
-        protected int    $encounterdocumentid,
-    )
-    {
+        protected int $encounterdocumentid,
+    ) {
     }
 
     public function defaultBody(): array

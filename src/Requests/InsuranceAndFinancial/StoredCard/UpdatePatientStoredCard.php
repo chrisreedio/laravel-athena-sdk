@@ -24,25 +24,24 @@ class UpdatePatientStoredCard extends Request implements HasBody
     }
 
     /**
-     * @param int $departmentid The ID of the department where the payment or contract is being collected.
-     * @param int $patientid patientid
-     * @param bool $preferredcard Flag to make a STOREDCARD contract the default one for the patient
-     * @param int $storedcardid storedcardid
+     * @param  int  $departmentid The ID of the department where the payment or contract is being collected.
+     * @param  int  $patientid patientid
+     * @param  bool  $preferredcard Flag to make a STOREDCARD contract the default one for the patient
+     * @param  int  $storedcardid storedcardid
      */
     public function __construct(
         protected int $departmentid,
         protected int $patientid,
         protected bool $preferredcard,
         protected int $storedcardid,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array
     {
         return array_filter([
             'departmentid' => $this->departmentid,
-            'preferredcard' => $this->preferredcard
+            'preferredcard' => $this->preferredcard,
         ]);
     }
 }

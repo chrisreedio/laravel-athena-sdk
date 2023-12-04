@@ -20,18 +20,17 @@ class ListConfigurationQuestionnaireScreeners extends Request
     }
 
     /**
-     * @param int $departmentid The department ID.
-     * @param int $patientid The patient ID.
-     * @param null|int $appointmentid The appointment ID. It is used solely to determine the specialty ID to determine possible questionnaires. If an encounter ID is passed in, it will take priority over the appointment ID.
-     * @param null|int $encounterid The encounter ID. It is used solely to determine the specialty ID to determine the possible questionnaires.
+     * @param  int  $departmentid The department ID.
+     * @param  int  $patientid The patient ID.
+     * @param  null|int  $appointmentid The appointment ID. It is used solely to determine the specialty ID to determine possible questionnaires. If an encounter ID is passed in, it will take priority over the appointment ID.
+     * @param  null|int  $encounterid The encounter ID. It is used solely to determine the specialty ID to determine the possible questionnaires.
      */
     public function __construct(
-        protected int  $departmentid,
-        protected int  $patientid,
+        protected int $departmentid,
+        protected int $patientid,
         protected ?int $appointmentid = null,
         protected ?int $encounterid = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

@@ -20,12 +20,11 @@ class ListClaimChangeEvents extends Request
     }
 
     /**
-     * @param null|bool $showadditionalevents Include non-default events
+     * @param  null|bool  $showadditionalevents Include non-default events
      */
     public function __construct(
         protected ?bool $showadditionalevents = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

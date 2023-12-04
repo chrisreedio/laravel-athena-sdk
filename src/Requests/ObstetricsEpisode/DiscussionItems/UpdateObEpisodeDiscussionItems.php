@@ -24,16 +24,15 @@ class UpdateObEpisodeDiscussionItems extends Request implements HasBody
     }
 
     /**
-     * @param array $discussions This is a JSON array of objects that is used to update the question specific information. Note that while DISCUSSIONNOTES and DISCUSSEDBY are not required, they will be reset if you update the question and do not pass them in.
-     * @param int $obepisodeid obepisodeid
-     * @param int $patientid patientid
+     * @param  array  $discussions This is a JSON array of objects that is used to update the question specific information. Note that while DISCUSSIONNOTES and DISCUSSEDBY are not required, they will be reset if you update the question and do not pass them in.
+     * @param  int  $obepisodeid obepisodeid
+     * @param  int  $patientid patientid
      */
     public function __construct(
         protected array $discussions,
-        protected int   $obepisodeid,
-        protected int   $patientid,
-    )
-    {
+        protected int $obepisodeid,
+        protected int $patientid,
+    ) {
     }
 
     public function defaultBody(): array

@@ -24,23 +24,22 @@ class CreateQualityManagementRefresh extends Request implements HasBody
     }
 
     /**
-     * @param int $departmentid The athenaNet department id.
-     * @param int $patientid patientid
-     * @param null|int $providerid The ID of the provider. If not specified, the default provider is used -- usually the provider that has seen the patient most often / recently.
+     * @param  int  $departmentid The athenaNet department id.
+     * @param  int  $patientid patientid
+     * @param  null|int  $providerid The ID of the provider. If not specified, the default provider is used -- usually the provider that has seen the patient most often / recently.
      */
     public function __construct(
         protected int $departmentid,
         protected int $patientid,
         protected ?int $providerid = null,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array
     {
         return array_filter([
             'departmentid' => $this->departmentid,
-            'providerid' => $this->providerid
+            'providerid' => $this->providerid,
         ]);
     }
 }

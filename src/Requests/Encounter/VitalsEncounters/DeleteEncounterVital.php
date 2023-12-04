@@ -20,13 +20,12 @@ class DeleteEncounterVital extends Request
     }
 
     /**
-     * @param int $encounterid encounterid
-     * @param int $vitalid vitalid
+     * @param  int  $encounterid encounterid
+     * @param  int  $vitalid vitalid
      */
     public function __construct(
         protected int $encounterid,
         protected int $vitalid,
-    )
-    {
+    ) {
     }
 }

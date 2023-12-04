@@ -21,21 +21,20 @@ class ListConfiguredVitalsFields extends Request
     }
 
     /**
-     * @param null|bool $showunconfigured Show all global vitals, even if they are not configured at this practice.
-     * @param null|string $specialtyid Show only the vitals configured for this specialty
+     * @param  null|bool  $showunconfigured Show all global vitals, even if they are not configured at this practice.
+     * @param  null|string  $specialtyid Show only the vitals configured for this specialty
      */
     public function __construct(
         protected ?bool $showunconfigured = null,
         protected ?string $specialtyid = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
             'showunconfigured' => $this->showunconfigured,
-            'specialtyid' => $this->specialtyid
+            'specialtyid' => $this->specialtyid,
         ]);
     }
 }

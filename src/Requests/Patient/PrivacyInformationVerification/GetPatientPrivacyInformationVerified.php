@@ -20,14 +20,13 @@ class GetPatientPrivacyInformationVerified extends Request
     }
 
     /**
-     * @param int $departmentid The ID of the department where the privacy information was verified.
-     * @param int $patientid patientid
+     * @param  int  $departmentid The ID of the department where the privacy information was verified.
+     * @param  int  $patientid patientid
      */
     public function __construct(
         protected int $departmentid,
         protected int $patientid,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

@@ -20,16 +20,15 @@ class DeletePatientAuthorization extends Request
     }
 
     /**
-     * @param int $departmentid Department ID of the patient
-     * @param int $patientid patientid
-     * @param int $releaseauthorizationid releaseauthorizationid
+     * @param  int  $departmentid Department ID of the patient
+     * @param  int  $patientid patientid
+     * @param  int  $releaseauthorizationid releaseauthorizationid
      */
     public function __construct(
         protected int $departmentid,
         protected int $patientid,
         protected int $releaseauthorizationid,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

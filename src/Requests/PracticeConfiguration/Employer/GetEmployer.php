@@ -20,12 +20,11 @@ class GetEmployer extends Request
     }
 
     /**
-     * @param int $employerid employerid
+     * @param  int  $employerid employerid
      */
     public function __construct(
         protected int $employerid,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

@@ -20,14 +20,13 @@ class ListAppointmentNotes extends Request
     }
 
     /**
-     * @param int $appointmentid appointmentid
-     * @param null|bool $showdeleted By default, we prevent deleted appointment notes from being returned via the API.   This flag allows you to show deleted notes in the set of results returned.
+     * @param  int  $appointmentid appointmentid
+     * @param  null|bool  $showdeleted By default, we prevent deleted appointment notes from being returned via the API.   This flag allows you to show deleted notes in the set of results returned.
      */
     public function __construct(
-        protected int   $appointmentid,
+        protected int $appointmentid,
         protected ?bool $showdeleted = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

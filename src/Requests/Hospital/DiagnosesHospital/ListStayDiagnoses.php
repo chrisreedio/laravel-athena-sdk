@@ -20,12 +20,11 @@ class ListStayDiagnoses extends Request
     }
 
     /**
-     * @param int $stayid stayid
+     * @param  int  $stayid stayid
      */
     public function __construct(
         protected int $stayid,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

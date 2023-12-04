@@ -24,18 +24,17 @@ class CreatePatientSatisfactionScoreData extends Request implements HasBody
     }
 
     /**
-     * @param string $enddate This should be the last day of the reporting period that we are working with. For instance if you are submitting report data for the month of october, you would send a date such as '10/31/2015'.
-     * @param string $providerdata JSON object that is an array of objects containing "providerid", "departmentid", "score", and "datapointcount" which is the number of surveys thatmake up our average score.
-     * @param string $startdate This should be the last day of the reporting period that we are working with. For instance if you are submitting report data for the month of october, you would send a date such as '10/31/2015'.
-     * @param null|string $averagescore This is the average score that we should be comparing our providers to. It should be a number between 0 and 999.99
+     * @param  string  $enddate This should be the last day of the reporting period that we are working with. For instance if you are submitting report data for the month of october, you would send a date such as '10/31/2015'.
+     * @param  string  $providerdata JSON object that is an array of objects containing "providerid", "departmentid", "score", and "datapointcount" which is the number of surveys thatmake up our average score.
+     * @param  string  $startdate This should be the last day of the reporting period that we are working with. For instance if you are submitting report data for the month of october, you would send a date such as '10/31/2015'.
+     * @param  null|string  $averagescore This is the average score that we should be comparing our providers to. It should be a number between 0 and 999.99
      */
     public function __construct(
-        protected string  $enddate,
-        protected string  $providerdata,
-        protected string  $startdate,
+        protected string $enddate,
+        protected string $providerdata,
+        protected string $startdate,
         protected ?string $averagescore = null,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array

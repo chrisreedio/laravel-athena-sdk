@@ -20,21 +20,20 @@ class ListInpatientDocumentLabels extends Request
     }
 
     /**
-     * @param string $documentclass The document class to get the label for.
-     * @param string $searchvalue Search by the name of the document label, at least 3 characters are required.
+     * @param  string  $documentclass The document class to get the label for.
+     * @param  string  $searchvalue Search by the name of the document label, at least 3 characters are required.
      */
     public function __construct(
         protected string $documentclass,
         protected string $searchvalue,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
             'documentclass' => $this->documentclass,
-            'searchvalue' => $this->searchvalue
+            'searchvalue' => $this->searchvalue,
         ]);
     }
 }

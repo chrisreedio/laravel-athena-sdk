@@ -24,14 +24,13 @@ class CreatePhysicianAuthAction extends Request implements HasBody
     }
 
     /**
-     * @param string $actionnote The new action note to add to the document.
-     * @param int $physicianauthid physicianauthid
+     * @param  string  $actionnote The new action note to add to the document.
+     * @param  int  $physicianauthid physicianauthid
      */
     public function __construct(
         protected string $actionnote,
-        protected int    $physicianauthid,
-    )
-    {
+        protected int $physicianauthid,
+    ) {
     }
 
     public function defaultBody(): array

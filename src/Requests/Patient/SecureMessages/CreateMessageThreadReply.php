@@ -24,16 +24,15 @@ class CreateMessageThreadReply extends Request implements HasBody
     }
 
     /**
-     * @param int $messagethreadid messagethreadid
-     * @param int $patientid patientid
-     * @param string $text The body of the reply to send
+     * @param  int  $messagethreadid messagethreadid
+     * @param  int  $patientid patientid
+     * @param  string  $text The body of the reply to send
      */
     public function __construct(
-        protected int    $messagethreadid,
-        protected int    $patientid,
+        protected int $messagethreadid,
+        protected int $patientid,
         protected string $text,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array

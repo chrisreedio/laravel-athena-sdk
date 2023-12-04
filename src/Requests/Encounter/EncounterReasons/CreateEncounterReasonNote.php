@@ -24,23 +24,22 @@ class CreateEncounterReasonNote extends Request implements HasBody
     }
 
     /**
-     * @param int $encounterid encounterid
-     * @param null|bool $appendtext If true, note text will be appended to the existing note.  If false (default), the existing note text will be completely replaced by the new note text.
-     * @param null|string $notetext The text to set as or append to the note
+     * @param  int  $encounterid encounterid
+     * @param  null|bool  $appendtext If true, note text will be appended to the existing note.  If false (default), the existing note text will be completely replaced by the new note text.
+     * @param  null|string  $notetext The text to set as or append to the note
      */
     public function __construct(
-        protected int     $encounterid,
-        protected ?bool   $appendtext = null,
+        protected int $encounterid,
+        protected ?bool $appendtext = null,
         protected ?string $notetext = null,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array
     {
         return array_filter([
             'appendtext' => $this->appendtext,
-            'notetext' => $this->notetext
+            'notetext' => $this->notetext,
         ]);
     }
 }

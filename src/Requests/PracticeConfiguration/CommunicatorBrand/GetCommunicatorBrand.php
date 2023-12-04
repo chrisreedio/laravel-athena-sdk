@@ -20,11 +20,10 @@ class GetCommunicatorBrand extends Request
     }
 
     /**
-     * @param int $communicatorbrandid communicatorbrandid
+     * @param  int  $communicatorbrandid communicatorbrandid
      */
     public function __construct(
         protected int $communicatorbrandid,
-    )
-    {
+    ) {
     }
 }

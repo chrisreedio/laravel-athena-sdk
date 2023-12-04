@@ -20,26 +20,25 @@ class ListPatientVaccines extends Request
     }
 
     /**
-     * @param int $departmentid The athenaNet department id.
-     * @param int $patientid patientid
-     * @param null|bool $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
-     * @param null|string $thirdpartyusername User name of the patient in the third party application.
-     * @param null|bool $showdeclinedorders If set, include orders that were declined
-     * @param null|bool $showdeleted Include deleted vaccines in the result
-     * @param null|bool $showprescribednotadministered Include vaccines that were prescribed but were not administered in the result
-     * @param null|bool $showrefused Include refused vaccines in the result
+     * @param  int  $departmentid The athenaNet department id.
+     * @param  int  $patientid patientid
+     * @param  null|bool  $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
+     * @param  null|string  $thirdpartyusername User name of the patient in the third party application.
+     * @param  null|bool  $showdeclinedorders If set, include orders that were declined
+     * @param  null|bool  $showdeleted Include deleted vaccines in the result
+     * @param  null|bool  $showprescribednotadministered Include vaccines that were prescribed but were not administered in the result
+     * @param  null|bool  $showrefused Include refused vaccines in the result
      */
     public function __construct(
-        protected int     $departmentid,
-        protected int     $patientid,
-        protected ?bool   $patientfacingcall = null,
+        protected int $departmentid,
+        protected int $patientid,
+        protected ?bool $patientfacingcall = null,
         protected ?string $thirdpartyusername = null,
-        protected ?bool   $showdeclinedorders = null,
-        protected ?bool   $showdeleted = null,
-        protected ?bool   $showprescribednotadministered = null,
-        protected ?bool   $showrefused = null,
-    )
-    {
+        protected ?bool $showdeclinedorders = null,
+        protected ?bool $showdeleted = null,
+        protected ?bool $showprescribednotadministered = null,
+        protected ?bool $showrefused = null,
+    ) {
     }
 
     public function defaultQuery(): array

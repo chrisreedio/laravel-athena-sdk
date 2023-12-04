@@ -24,12 +24,11 @@ class CreateRiskAdjustmentGaps extends Request implements HasBody
     }
 
     /**
-     * @param null|array $entry Array of risk gaps to be ingested for patient
+     * @param  null|array  $entry Array of risk gaps to be ingested for patient
      */
     public function __construct(
         protected ?array $entry = null,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array

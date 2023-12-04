@@ -20,13 +20,12 @@ class GetPatientCaseDocument extends Request
     }
 
     /**
-     * @param int $patientcaseid patientcaseid
-     * @param int $patientid patientid
+     * @param  int  $patientcaseid patientcaseid
+     * @param  int  $patientid patientid
      */
     public function __construct(
         protected int $patientcaseid,
         protected int $patientid,
-    )
-    {
+    ) {
     }
 }

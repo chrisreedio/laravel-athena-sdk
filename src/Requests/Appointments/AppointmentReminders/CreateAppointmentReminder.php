@@ -25,24 +25,23 @@ class CreateAppointmentReminder extends Request implements HasBody
     }
 
     /**
-     * @param string $approximatedate The approximate date on which an appointment for this reminder should be scheduled.
-     * @param int $departmentid An athenaNet department ID.
-     * @param int $patientid An athenaNet patient ID.
-     * @param null|int $appointmenttypeid An athenaNet appointment type ID.
-     * @param null|string $note Miscellaneous notes for this reminder.
-     * @param null|string $patientinstructions Patient instructions regarding this reminder.
-     * @param null|int $providerid An athenaNet provider ID.
+     * @param  string  $approximatedate The approximate date on which an appointment for this reminder should be scheduled.
+     * @param  int  $departmentid An athenaNet department ID.
+     * @param  int  $patientid An athenaNet patient ID.
+     * @param  null|int  $appointmenttypeid An athenaNet appointment type ID.
+     * @param  null|string  $note Miscellaneous notes for this reminder.
+     * @param  null|string  $patientinstructions Patient instructions regarding this reminder.
+     * @param  null|int  $providerid An athenaNet provider ID.
      */
     public function __construct(
-        protected string  $approximatedate,
-        protected int     $departmentid,
-        protected int     $patientid,
-        protected ?int    $appointmenttypeid = null,
+        protected string $approximatedate,
+        protected int $departmentid,
+        protected int $patientid,
+        protected ?int $appointmenttypeid = null,
         protected ?string $note = null,
         protected ?string $patientinstructions = null,
-        protected ?int    $providerid = null,
-    )
-    {
+        protected ?int $providerid = null,
+    ) {
     }
 
     public function defaultBody(): array

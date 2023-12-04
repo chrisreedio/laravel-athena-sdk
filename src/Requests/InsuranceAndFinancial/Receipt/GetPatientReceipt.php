@@ -20,25 +20,24 @@ class GetPatientReceipt extends Request
     }
 
     /**
-     * @param int $epaymentid epaymentid
-     * @param int $patientid patientid
-     * @param null|bool $customerversion If true, returns the customer (patient) version of the receipt.
-     * @param null|bool $merchantversion If true, returns the merchant version of the receipt.
+     * @param  int  $epaymentid epaymentid
+     * @param  int  $patientid patientid
+     * @param  null|bool  $customerversion If true, returns the customer (patient) version of the receipt.
+     * @param  null|bool  $merchantversion If true, returns the merchant version of the receipt.
      */
     public function __construct(
         protected int $epaymentid,
         protected int $patientid,
         protected ?bool $customerversion = null,
         protected ?bool $merchantversion = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
             'customerversion' => $this->customerversion,
-            'merchantversion' => $this->merchantversion
+            'merchantversion' => $this->merchantversion,
         ]);
     }
 }

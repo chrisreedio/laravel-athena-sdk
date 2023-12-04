@@ -25,23 +25,22 @@ class UpdateAppointmentFreeze extends Request implements HasBody
     }
 
     /**
-     * @param int $appointmentid appointmentid
-     * @param bool $freeze If true, slot will be frozen, if false, slot will be unfrozen
-     * @param null|bool $requirescancellation If true, appointment can be cancelled, if false, cannot cancel the appointment
+     * @param  int  $appointmentid appointmentid
+     * @param  bool  $freeze If true, slot will be frozen, if false, slot will be unfrozen
+     * @param  null|bool  $requirescancellation If true, appointment can be cancelled, if false, cannot cancel the appointment
      */
     public function __construct(
-        protected int   $appointmentid,
-        protected bool  $freeze,
+        protected int $appointmentid,
+        protected bool $freeze,
         protected ?bool $requirescancellation = null,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array
     {
         return array_filter([
             'freeze' => $this->freeze,
-            'requirescancellation' => $this->requirescancellation
+            'requirescancellation' => $this->requirescancellation,
         ]);
     }
 }

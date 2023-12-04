@@ -20,13 +20,12 @@ class DeleteAppointmentNote extends Request
     }
 
     /**
-     * @param int $appointmentid appointmentid
-     * @param int $noteid noteid
+     * @param  int  $appointmentid appointmentid
+     * @param  int  $noteid noteid
      */
     public function __construct(
         protected int $appointmentid,
         protected int $noteid,
-    )
-    {
+    ) {
     }
 }

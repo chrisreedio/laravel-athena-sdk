@@ -20,12 +20,11 @@ class ListLetterDocumentActions extends Request
     }
 
     /**
-     * @param int $letterid letterid
+     * @param  int  $letterid letterid
      */
     public function __construct(
         protected int $letterid,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

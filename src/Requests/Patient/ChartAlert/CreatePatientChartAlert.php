@@ -24,23 +24,22 @@ class CreatePatientChartAlert extends Request implements HasBody
     }
 
     /**
-     * @param int $departmentid The department ID; needed because charts, and thus chart notes, may be department-specific
-     * @param string $notetext The note text.  Use PUT to add to any existing text and POST if you want to add new or replace the full note
-     * @param int $patientid patientid
+     * @param  int  $departmentid The department ID; needed because charts, and thus chart notes, may be department-specific
+     * @param  string  $notetext The note text.  Use PUT to add to any existing text and POST if you want to add new or replace the full note
+     * @param  int  $patientid patientid
      */
     public function __construct(
         protected int $departmentid,
         protected string $notetext,
         protected int $patientid,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array
     {
         return array_filter([
             'departmentid' => $this->departmentid,
-            'notetext' => $this->notetext
+            'notetext' => $this->notetext,
         ]);
     }
 }

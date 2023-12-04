@@ -24,25 +24,24 @@ class UpdateVitalsReading extends Request implements HasBody
     }
 
     /**
-     * @param int $departmentid The department ID.
-     * @param int $patientid patientid
-     * @param string $value The reading value. See the configuration for the proper units.
-     * @param int $vitalid vitalid
+     * @param  int  $departmentid The department ID.
+     * @param  int  $patientid patientid
+     * @param  string  $value The reading value. See the configuration for the proper units.
+     * @param  int  $vitalid vitalid
      */
     public function __construct(
         protected int $departmentid,
         protected int $patientid,
         protected string $value,
         protected int $vitalid,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array
     {
         return array_filter([
             'departmentid' => $this->departmentid,
-            'value' => $this->value
+            'value' => $this->value,
         ]);
     }
 }

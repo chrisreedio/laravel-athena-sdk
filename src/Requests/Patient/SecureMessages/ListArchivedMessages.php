@@ -20,14 +20,13 @@ class ListArchivedMessages extends Request
     }
 
     /**
-     * @param int $patientid patientid
-     * @param null|string $showplaintext If Y, returns the TEXT attribute in plaintext.
+     * @param  int  $patientid patientid
+     * @param  null|string  $showplaintext If Y, returns the TEXT attribute in plaintext.
      */
     public function __construct(
-        protected int     $patientid,
+        protected int $patientid,
         protected ?string $showplaintext = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

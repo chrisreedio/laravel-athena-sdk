@@ -24,24 +24,23 @@ class CreatePatientVaccine extends Request implements HasBody
     }
 
     /**
-     * @param string $administerdate Date when this vaccine was administered (if administered). Can be in YYYY, MM/YYYY, or MM/DD/YYYY format.
-     * @param int $cvx Vaccine Administered Code
-     * @param int $departmentid The athenaNet department id.
-     * @param int $patientid patientid
-     * @param null|bool $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
-     * @param null|string $thirdpartyusername User name of the patient in the third party application.
-     * @param null|string $ndc The National Drug Code for the administered vaccine
+     * @param  string  $administerdate Date when this vaccine was administered (if administered). Can be in YYYY, MM/YYYY, or MM/DD/YYYY format.
+     * @param  int  $cvx Vaccine Administered Code
+     * @param  int  $departmentid The athenaNet department id.
+     * @param  int  $patientid patientid
+     * @param  null|bool  $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
+     * @param  null|string  $thirdpartyusername User name of the patient in the third party application.
+     * @param  null|string  $ndc The National Drug Code for the administered vaccine
      */
     public function __construct(
-        protected string  $administerdate,
-        protected int     $cvx,
-        protected int     $departmentid,
-        protected int     $patientid,
-        protected ?bool   $patientfacingcall = null,
+        protected string $administerdate,
+        protected int $cvx,
+        protected int $departmentid,
+        protected int $patientid,
+        protected ?bool $patientfacingcall = null,
         protected ?string $thirdpartyusername = null,
         protected ?string $ndc = null,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array

@@ -20,21 +20,20 @@ class ListImagingStudies extends Request
     }
 
     /**
-     * @param int $facilityid The athena ID of the facility. Get a localized list using /chart/configuration/facilities.
-     * @param string $searchvalue A term to search for. Must be at least 2 characters
+     * @param  int  $facilityid The athena ID of the facility. Get a localized list using /chart/configuration/facilities.
+     * @param  string  $searchvalue A term to search for. Must be at least 2 characters
      */
     public function __construct(
         protected int $facilityid,
         protected string $searchvalue,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
             'facilityid' => $this->facilityid,
-            'searchvalue' => $this->searchvalue
+            'searchvalue' => $this->searchvalue,
         ]);
     }
 }

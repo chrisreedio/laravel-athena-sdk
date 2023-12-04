@@ -24,14 +24,13 @@ class CreateClaimNote extends Request implements HasBody
     }
 
     /**
-     * @param int $claimid claimid
-     * @param string $claimnote The text of the note.
+     * @param  int  $claimid claimid
+     * @param  string  $claimnote The text of the note.
      */
     public function __construct(
-        protected int    $claimid,
+        protected int $claimid,
         protected string $claimnote,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array

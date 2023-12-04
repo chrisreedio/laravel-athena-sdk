@@ -28,23 +28,21 @@ class CreateVendorAdjustingCharges extends Request implements HasBody
     }
 
     /**
-     * @param array $charges
-     * @param number $patientid Patient ID
-     * @param string $vendorcode vendorcode
+     * @param  number  $patientid Patient ID
+     * @param  string  $vendorcode vendorcode
      */
     public function __construct(
         protected array $charges,
         protected \number $patientid,
         protected string $vendorcode,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array
     {
         return array_filter([
             'charges' => $this->charges,
-            'patientid' => $this->patientid
+            'patientid' => $this->patientid,
         ]);
     }
 }

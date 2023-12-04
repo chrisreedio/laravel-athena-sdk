@@ -20,18 +20,17 @@ class GetPatientAdminDocumentPage extends Request
     }
 
     /**
-     * @param int $adminid adminid
-     * @param int $pageid pageid
-     * @param int $patientid patientid
-     * @param null|string $filesize The file size of the document being requested.
+     * @param  int  $adminid adminid
+     * @param  int  $pageid pageid
+     * @param  int  $patientid patientid
+     * @param  null|string  $filesize The file size of the document being requested.
      */
     public function __construct(
-        protected int     $adminid,
-        protected int     $pageid,
-        protected int     $patientid,
+        protected int $adminid,
+        protected int $pageid,
+        protected int $patientid,
         protected ?string $filesize = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

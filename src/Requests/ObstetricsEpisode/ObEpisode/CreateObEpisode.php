@@ -24,23 +24,22 @@ class CreateObEpisode extends Request implements HasBody
     }
 
     /**
-     * @param int $departmentid The department ID
-     * @param int $patientid patientid
-     * @param null|string $numberofgestations Used to track multiple gestation pregnancies. If more than one fetus is present, additional columns are inserted into the flowsheet to track findings specific to each fetus: presentation, fetal heart rate, and fetal movement.
+     * @param  int  $departmentid The department ID
+     * @param  int  $patientid patientid
+     * @param  null|string  $numberofgestations Used to track multiple gestation pregnancies. If more than one fetus is present, additional columns are inserted into the flowsheet to track findings specific to each fetus: presentation, fetal heart rate, and fetal movement.
      */
     public function __construct(
         protected int $departmentid,
         protected int $patientid,
         protected ?string $numberofgestations = null,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array
     {
         return array_filter([
             'departmentid' => $this->departmentid,
-            'numberofgestations' => $this->numberofgestations
+            'numberofgestations' => $this->numberofgestations,
         ]);
     }
 }

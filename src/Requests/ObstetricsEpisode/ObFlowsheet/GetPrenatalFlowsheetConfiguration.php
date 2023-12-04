@@ -20,13 +20,12 @@ class GetPrenatalFlowsheetConfiguration extends Request
     }
 
     /**
-     * @param int $obepisodeid obepisodeid
-     * @param int $patientid patientid
+     * @param  int  $obepisodeid obepisodeid
+     * @param  int  $patientid patientid
      */
     public function __construct(
         protected int $obepisodeid,
         protected int $patientid,
-    )
-    {
+    ) {
     }
 }

@@ -24,23 +24,22 @@ class UpdatePatientInterfaceConsents extends Request implements HasBody
     }
 
     /**
-     * @param int $patientid patientid
-     * @param null|array $consents A JSON array of consents to be updated.
-     * @param null|int $departmentid Department ID
+     * @param  int  $patientid patientid
+     * @param  null|array  $consents A JSON array of consents to be updated.
+     * @param  null|int  $departmentid Department ID
      */
     public function __construct(
         protected int $patientid,
         protected ?array $consents = null,
         protected ?int $departmentid = null,
-    )
-    {
+    ) {
     }
 
     public function defaultBody(): array
     {
         return array_filter([
             'consents' => $this->consents,
-            'departmentid' => $this->departmentid
+            'departmentid' => $this->departmentid,
         ]);
     }
 }

@@ -20,12 +20,11 @@ class GetLabResultActionNote extends Request
     }
 
     /**
-     * @param int $labresultid labresultid
+     * @param  int  $labresultid labresultid
      */
     public function __construct(
         protected int $labresultid,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array

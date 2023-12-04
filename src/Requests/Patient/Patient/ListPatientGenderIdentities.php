@@ -20,12 +20,11 @@ class ListPatientGenderIdentities extends Request
     }
 
     /**
-     * @param null|bool $show2015edcehrtvalues If passed, will return the 2015 Ed. CEHRT values for describing gender identity for a patient that should be used with the genderidentity argument to POST /patients and PUT /patients/{patientid}. Otherwise, will return a list of strings that can be used with the genderidentity argument to POST /patients and PUT /patients/{patientid} for those clients that are using the 'Gender Identity/Sexual Orientation Workflows (Transgender Patient)' or 'Population Demographics - Social Determinant Fields (Sexual orientation/Gender identity)' setting in athenaNet.
+     * @param  null|bool  $show2015edcehrtvalues If passed, will return the 2015 Ed. CEHRT values for describing gender identity for a patient that should be used with the genderidentity argument to POST /patients and PUT /patients/{patientid}. Otherwise, will return a list of strings that can be used with the genderidentity argument to POST /patients and PUT /patients/{patientid} for those clients that are using the 'Gender Identity/Sexual Orientation Workflows (Transgender Patient)' or 'Population Demographics - Social Determinant Fields (Sexual orientation/Gender identity)' setting in athenaNet.
      */
     public function __construct(
         protected ?bool $show2015edcehrtvalues = null,
-    )
-    {
+    ) {
     }
 
     public function defaultQuery(): array
