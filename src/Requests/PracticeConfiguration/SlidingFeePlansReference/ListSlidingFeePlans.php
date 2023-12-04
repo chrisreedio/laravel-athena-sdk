@@ -12,22 +12,19 @@ use Saloon\Http\Request;
  */
 class ListSlidingFeePlans extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/slidingfeeplans';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/slidingfeeplans";
-	}
+    public function __construct()
+    {
+    }
 
-
-	public function __construct()
-	{
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([]);
+    }
 }

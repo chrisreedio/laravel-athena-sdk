@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class ListEncounterDocumentsReview extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/encounter/{$this->encounterid}/documentsreview";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/encounter/{$this->encounterid}/documentsreview";
-	}
+    /**
+     * @param  int  $encounterid encounterid
+     */
+    public function __construct(
+        protected int $encounterid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $encounterid encounterid
-	 */
-	public function __construct(
-		protected int $encounterid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([]);
+    }
 }

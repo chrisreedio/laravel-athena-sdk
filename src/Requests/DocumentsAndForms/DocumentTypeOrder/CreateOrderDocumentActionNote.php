@@ -14,30 +14,27 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreateOrderDocumentActionNote extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/documents/order/{$this->orderid}/actions";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/documents/order/{$this->orderid}/actions";
-	}
+    /**
+     * @param  int  $orderid orderid
+     * @param  string  $actionnote The new action note to add to the document.
+     */
+    public function __construct(
+        protected int $orderid,
+        protected string $actionnote,
+    ) {
+    }
 
-
-	/**
-	 * @param int $orderid orderid
-	 * @param string $actionnote The new action note to add to the document.
-	 */
-	public function __construct(
-		protected int $orderid,
-		protected string $actionnote,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['actionnote' => $this->actionnote]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['actionnote' => $this->actionnote]);
+    }
 }

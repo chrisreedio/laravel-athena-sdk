@@ -14,30 +14,27 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class UpdateDocumentDataEntryCompleted extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::PUT;
+    protected Method $method = Method::PUT;
 
+    public function resolveEndpoint(): string
+    {
+        return "/documents/labresult/{$this->documentid}/dataentrycompleted";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/documents/labresult/{$this->documentid}/dataentrycompleted";
-	}
+    /**
+     * @param  int  $documentid documentid
+     * @param  null|string  $actionnote The note to be added to the document
+     */
+    public function __construct(
+        protected int $documentid,
+        protected ?string $actionnote = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $documentid documentid
-	 * @param null|string $actionnote The note to be added to the document
-	 */
-	public function __construct(
-		protected int $documentid,
-		protected ?string $actionnote = null,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['actionnote' => $this->actionnote]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['actionnote' => $this->actionnote]);
+    }
 }

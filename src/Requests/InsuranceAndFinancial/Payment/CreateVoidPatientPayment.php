@@ -13,22 +13,20 @@ use Saloon\Http\Request;
  */
 class CreateVoidPatientPayment extends Request
 {
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/voidpayment/{$this->epaymentid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/voidpayment/{$this->epaymentid}";
-	}
-
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $epaymentid epaymentid
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $epaymentid,
-	) {
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $epaymentid epaymentid
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $epaymentid,
+    ) {
+    }
 }

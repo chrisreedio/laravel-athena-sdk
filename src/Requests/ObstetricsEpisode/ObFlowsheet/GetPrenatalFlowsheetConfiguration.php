@@ -12,22 +12,20 @@ use Saloon\Http\Request;
  */
 class GetPrenatalFlowsheetConfiguration extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/{$this->patientid}/obepisodes/{$this->obepisodeid}/flowsheet/configuration";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/{$this->patientid}/obepisodes/{$this->obepisodeid}/flowsheet/configuration";
-	}
-
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $obepisodeid obepisodeid
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $obepisodeid,
-	) {
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $obepisodeid obepisodeid
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $obepisodeid,
+    ) {
+    }
 }

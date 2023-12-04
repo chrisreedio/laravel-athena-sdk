@@ -17,38 +17,35 @@ use Saloon\Http\Request;
  */
 class GetOrderDetails extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/encounter/{$this->encounterid}/orders/{$this->orderid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/encounter/{$this->encounterid}/orders/{$this->orderid}";
-	}
+    /**
+     * @param  int  $encounterid encounterid
+     * @param  int  $orderid orderid
+     * @param  null|bool  $showquestions Some order types like labs and imaging orders have additional pertinant information in a question/answer format. Setting this will return that data.
+     * @param  null|bool  $showexternalcodes If set, translate the order information to relevant external vocabularies, where available. Examples are medictions to RxNorm and NDC, vaccines to CVX and MVX, labs to LOINC, etc. Our mappings are not exhaustive.
+     * @param  null|bool  $showstructuredauthorizationdetails When set, returns Prior Authorization and insurances for some order types, separately and in a structured version than those returned in showquestions.
+     */
+    public function __construct(
+        protected int $encounterid,
+        protected int $orderid,
+        protected ?bool $showquestions = null,
+        protected ?bool $showexternalcodes = null,
+        protected ?bool $showstructuredauthorizationdetails = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $encounterid encounterid
-	 * @param int $orderid orderid
-	 * @param null|bool $showquestions Some order types like labs and imaging orders have additional pertinant information in a question/answer format. Setting this will return that data.
-	 * @param null|bool $showexternalcodes If set, translate the order information to relevant external vocabularies, where available. Examples are medictions to RxNorm and NDC, vaccines to CVX and MVX, labs to LOINC, etc. Our mappings are not exhaustive.
-	 * @param null|bool $showstructuredauthorizationdetails When set, returns Prior Authorization and insurances for some order types, separately and in a structured version than those returned in showquestions.
-	 */
-	public function __construct(
-		protected int $encounterid,
-		protected int $orderid,
-		protected ?bool $showquestions = null,
-		protected ?bool $showexternalcodes = null,
-		protected ?bool $showstructuredauthorizationdetails = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([
-			'showquestions' => $this->showquestions,
-			'showexternalcodes' => $this->showexternalcodes,
-			'showstructuredauthorizationdetails' => $this->showstructuredauthorizationdetails,
-		]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'showquestions' => $this->showquestions,
+            'showexternalcodes' => $this->showexternalcodes,
+            'showstructuredauthorizationdetails' => $this->showstructuredauthorizationdetails,
+        ]);
+    }
 }

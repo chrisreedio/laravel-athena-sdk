@@ -16,67 +16,64 @@ use Saloon\Http\Request;
  */
 class ListAppointmentChanges extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/appointments/changed';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/appointments/changed";
-	}
+    /**
+     * @param  null|bool  $leaveunprocessed For testing purposes, do not mark records as processed.
+     * @param  null|array  $patientid Patient ID. Multiple Patient IDs are allowed, either comma separated or with multiple values.
+     * @param  null|bool  $showcopay Return copay information with the appointment data.
+     * @param  null|bool  $showinsurance Include patient insurance information. Shows insurance packages for the appointment if any are selected, and all patient packages otherwise.
+     * @param  null|bool  $showexpectedprocedurecodes Show the expected procedurecodes.
+     * @param  null|bool  $showpatientdetail Include patient information for each patient associated with an appointment.
+     * @param  null|bool  $ignorerestrictions When showing patient detail for appointments, the patient information for patients with record restrictions and blocked patients will not be shown.  Setting this flag to true will show that information for those patients. No effect if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
+     * @param  null|array  $departmentid Department ID. Multiple departments are allowed, either comma separated or with multiple values.
+     * @param  null|array  $providerid Provider ID.  Multiple providers are allowed using comma separated values.
+     * @param  null|string  $showprocessedenddatetime See showprocessedstartdatetime.
+     * @param  null|array  $confidentialitycode A comma separated list of confidentiality codes to filter patients by. If not set defaults to include all confidentiality codes. Supported codes: 'N' and 'R'. Only functions if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
+     * @param  null|bool  $showclaimdetail Include claim information, if available, associated with an appointment.
+     * @param  null|bool  $showremindercalldetail Include all remindercall related results, if available, associated with an appointment.
+     * @param  null|string  $showprocessedstartdatetime Show already processed changes.  This will show changes that you previously retrieved at some point after this datetime mm/dd/yyyy hh24:mi:ss (Eastern). Can be used to refetch data if there was an error, such as a timeout, and records are marked as already retrieved. This is intended to be used with showprocessedenddatetime and for a short period of time only. Also note that all messages will eventually be deleted.
+     */
+    public function __construct(
+        protected ?bool $leaveunprocessed = null,
+        protected ?array $patientid = null,
+        protected ?bool $showcopay = null,
+        protected ?bool $showinsurance = null,
+        protected ?bool $showexpectedprocedurecodes = null,
+        protected ?bool $showpatientdetail = null,
+        protected ?bool $ignorerestrictions = null,
+        protected ?array $departmentid = null,
+        protected ?array $providerid = null,
+        protected ?string $showprocessedenddatetime = null,
+        protected ?array $confidentialitycode = null,
+        protected ?bool $showclaimdetail = null,
+        protected ?bool $showremindercalldetail = null,
+        protected ?string $showprocessedstartdatetime = null,
+    ) {
+    }
 
-
-	/**
-	 * @param null|bool $leaveunprocessed For testing purposes, do not mark records as processed.
-	 * @param null|array $patientid Patient ID. Multiple Patient IDs are allowed, either comma separated or with multiple values.
-	 * @param null|bool $showcopay Return copay information with the appointment data.
-	 * @param null|bool $showinsurance Include patient insurance information. Shows insurance packages for the appointment if any are selected, and all patient packages otherwise.
-	 * @param null|bool $showexpectedprocedurecodes Show the expected procedurecodes.
-	 * @param null|bool $showpatientdetail Include patient information for each patient associated with an appointment.
-	 * @param null|bool $ignorerestrictions When showing patient detail for appointments, the patient information for patients with record restrictions and blocked patients will not be shown.  Setting this flag to true will show that information for those patients. No effect if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
-	 * @param null|array $departmentid Department ID. Multiple departments are allowed, either comma separated or with multiple values.
-	 * @param null|array $providerid Provider ID.  Multiple providers are allowed using comma separated values.
-	 * @param null|string $showprocessedenddatetime See showprocessedstartdatetime.
-	 * @param null|array $confidentialitycode A comma separated list of confidentiality codes to filter patients by. If not set defaults to include all confidentiality codes. Supported codes: 'N' and 'R'. Only functions if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
-	 * @param null|bool $showclaimdetail Include claim information, if available, associated with an appointment.
-	 * @param null|bool $showremindercalldetail Include all remindercall related results, if available, associated with an appointment.
-	 * @param null|string $showprocessedstartdatetime Show already processed changes.  This will show changes that you previously retrieved at some point after this datetime mm/dd/yyyy hh24:mi:ss (Eastern). Can be used to refetch data if there was an error, such as a timeout, and records are marked as already retrieved. This is intended to be used with showprocessedenddatetime and for a short period of time only. Also note that all messages will eventually be deleted.
-	 */
-	public function __construct(
-		protected ?bool $leaveunprocessed = null,
-		protected ?array $patientid = null,
-		protected ?bool $showcopay = null,
-		protected ?bool $showinsurance = null,
-		protected ?bool $showexpectedprocedurecodes = null,
-		protected ?bool $showpatientdetail = null,
-		protected ?bool $ignorerestrictions = null,
-		protected ?array $departmentid = null,
-		protected ?array $providerid = null,
-		protected ?string $showprocessedenddatetime = null,
-		protected ?array $confidentialitycode = null,
-		protected ?bool $showclaimdetail = null,
-		protected ?bool $showremindercalldetail = null,
-		protected ?string $showprocessedstartdatetime = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([
-			'leaveunprocessed' => $this->leaveunprocessed,
-			'patientid' => $this->patientid,
-			'showcopay' => $this->showcopay,
-			'showinsurance' => $this->showinsurance,
-			'showexpectedprocedurecodes' => $this->showexpectedprocedurecodes,
-			'showpatientdetail' => $this->showpatientdetail,
-			'ignorerestrictions' => $this->ignorerestrictions,
-			'departmentid' => $this->departmentid,
-			'providerid' => $this->providerid,
-			'showprocessedenddatetime' => $this->showprocessedenddatetime,
-			'confidentialitycode' => $this->confidentialitycode,
-			'showclaimdetail' => $this->showclaimdetail,
-			'showremindercalldetail' => $this->showremindercalldetail,
-			'showprocessedstartdatetime' => $this->showprocessedstartdatetime,
-		]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'leaveunprocessed' => $this->leaveunprocessed,
+            'patientid' => $this->patientid,
+            'showcopay' => $this->showcopay,
+            'showinsurance' => $this->showinsurance,
+            'showexpectedprocedurecodes' => $this->showexpectedprocedurecodes,
+            'showpatientdetail' => $this->showpatientdetail,
+            'ignorerestrictions' => $this->ignorerestrictions,
+            'departmentid' => $this->departmentid,
+            'providerid' => $this->providerid,
+            'showprocessedenddatetime' => $this->showprocessedenddatetime,
+            'confidentialitycode' => $this->confidentialitycode,
+            'showclaimdetail' => $this->showclaimdetail,
+            'showremindercalldetail' => $this->showremindercalldetail,
+            'showprocessedstartdatetime' => $this->showprocessedstartdatetime,
+        ]);
+    }
 }

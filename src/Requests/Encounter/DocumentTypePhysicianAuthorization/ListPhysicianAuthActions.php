@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class ListPhysicianAuthActions extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/documents/physicianauth/{$this->physicianauthid}/actions";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/documents/physicianauth/{$this->physicianauthid}/actions";
-	}
+    /**
+     * @param  int  $physicianauthid physicianauthid
+     */
+    public function __construct(
+        protected int $physicianauthid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $physicianauthid physicianauthid
-	 */
-	public function __construct(
-		protected int $physicianauthid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([]);
+    }
 }

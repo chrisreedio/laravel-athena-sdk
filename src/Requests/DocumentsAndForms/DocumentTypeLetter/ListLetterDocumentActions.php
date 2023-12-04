@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class ListLetterDocumentActions extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/documents/letter/{$this->letterid}/actions";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/documents/letter/{$this->letterid}/actions";
-	}
+    /**
+     * @param  int  $letterid letterid
+     */
+    public function __construct(
+        protected int $letterid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $letterid letterid
-	 */
-	public function __construct(
-		protected int $letterid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([]);
+    }
 }

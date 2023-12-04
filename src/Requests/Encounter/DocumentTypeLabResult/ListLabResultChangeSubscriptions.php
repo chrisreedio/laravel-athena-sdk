@@ -12,16 +12,14 @@ use Saloon\Http\Request;
  */
 class ListLabResultChangeSubscriptions extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/labresults/changed/subscription';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/labresults/changed/subscription";
-	}
-
-
-	public function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 }

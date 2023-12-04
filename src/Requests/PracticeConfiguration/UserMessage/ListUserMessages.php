@@ -12,30 +12,27 @@ use Saloon\Http\Request;
  */
 class ListUserMessages extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/usermessages/{$this->username}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/usermessages/{$this->username}";
-	}
+    /**
+     * @param  string  $username username
+     * @param  null|bool  $showunreadonly Only return unread messages. Defaults to false.
+     * @param  null|string  $folder Requested message folder. Can be INBOX, SENT, SAVED, TRASH. Defaults to INBOX.
+     */
+    public function __construct(
+        protected string $username,
+        protected ?bool $showunreadonly = null,
+        protected ?string $folder = null,
+    ) {
+    }
 
-
-	/**
-	 * @param string $username username
-	 * @param null|bool $showunreadonly Only return unread messages. Defaults to false.
-	 * @param null|string $folder Requested message folder. Can be INBOX, SENT, SAVED, TRASH. Defaults to INBOX.
-	 */
-	public function __construct(
-		protected string $username,
-		protected ?bool $showunreadonly = null,
-		protected ?string $folder = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['showunreadonly' => $this->showunreadonly, 'folder' => $this->folder]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['showunreadonly' => $this->showunreadonly, 'folder' => $this->folder]);
+    }
 }

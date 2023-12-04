@@ -15,34 +15,31 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreateChangeAgingOwnership extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patientpayvendors/{$this->vendorcode}/changeageingownership";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patientpayvendors/{$this->vendorcode}/changeageingownership";
-	}
+    /**
+     * @param  string  $vendorcode vendorcode
+     * @param  string  $action Represents who should own the Ageing of claims.Valid values are "AGEINGBYATHENA" , "AGEINGBYVENDOR"
+     * @param  array  $claims List of Claim IDs Example: ["123","124"]
+     * @param  string  $patientid Patientid of claims given in the input
+     */
+    public function __construct(
+        protected string $vendorcode,
+        protected string $action,
+        protected array $claims,
+        protected string $patientid,
+    ) {
+    }
 
-
-	/**
-	 * @param string $vendorcode vendorcode
-	 * @param string $action Represents who should own the Ageing of claims.Valid values are "AGEINGBYATHENA" , "AGEINGBYVENDOR"
-	 * @param array $claims List of Claim IDs Example: ["123","124"]
-	 * @param string $patientid Patientid of claims given in the input
-	 */
-	public function __construct(
-		protected string $vendorcode,
-		protected string $action,
-		protected array $claims,
-		protected string $patientid,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['action' => $this->action, 'claims' => $this->claims, 'patientid' => $this->patientid]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['action' => $this->action, 'claims' => $this->claims, 'patientid' => $this->patientid]);
+    }
 }

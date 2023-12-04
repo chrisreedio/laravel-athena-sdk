@@ -14,34 +14,31 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class UpdatePatientMedicalHistory extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::PUT;
+    protected Method $method = Method::PUT;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/{$this->patientid}/medicalhistory";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/{$this->patientid}/medicalhistory";
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $departmentid The athenaNet department ID.
+     * @param  null|array  $questions A complex JSON object containing the patient medical history. See the Chart documentation for more details.
+     * @param  null|string  $sectionnote Any additional section notes
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $departmentid,
+        protected ?array $questions = null,
+        protected ?string $sectionnote = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $departmentid The athenaNet department ID.
-	 * @param null|array $questions A complex JSON object containing the patient medical history. See the Chart documentation for more details.
-	 * @param null|string $sectionnote Any additional section notes
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $departmentid,
-		protected ?array $questions = null,
-		protected ?string $sectionnote = null,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['departmentid' => $this->departmentid, 'questions' => $this->questions, 'sectionnote' => $this->sectionnote]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['departmentid' => $this->departmentid, 'questions' => $this->questions, 'sectionnote' => $this->sectionnote]);
+    }
 }

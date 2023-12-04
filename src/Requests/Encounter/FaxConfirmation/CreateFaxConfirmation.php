@@ -14,30 +14,27 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreateFaxConfirmation extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return '/faxconfirmations';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/faxconfirmations";
-	}
+    /**
+     * @param  array  $confirmations the list of fax confirmations
+     * @param  string  $vendorname vendor name pushing fax confirmations
+     */
+    public function __construct(
+        protected array $confirmations,
+        protected string $vendorname,
+    ) {
+    }
 
-
-	/**
-	 * @param array $confirmations the list of fax confirmations
-	 * @param string $vendorname vendor name pushing fax confirmations
-	 */
-	public function __construct(
-		protected array $confirmations,
-		protected string $vendorname,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['confirmations' => $this->confirmations, 'vendorname' => $this->vendorname]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['confirmations' => $this->confirmations, 'vendorname' => $this->vendorname]);
+    }
 }

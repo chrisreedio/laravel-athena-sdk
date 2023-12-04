@@ -12,16 +12,14 @@ use Saloon\Http\Request;
  */
 class ListDosageFrequencies extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/reference/order/prescription/frequencies';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/reference/order/prescription/frequencies";
-	}
-
-
-	public function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 }

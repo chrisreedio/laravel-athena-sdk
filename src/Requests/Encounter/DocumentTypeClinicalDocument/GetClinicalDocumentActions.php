@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class GetClinicalDocumentActions extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/documents/clinicaldocument/{$this->clinicaldocumentid}/actions";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/documents/clinicaldocument/{$this->clinicaldocumentid}/actions";
-	}
+    /**
+     * @param  int  $clinicaldocumentid clinicaldocumentid
+     */
+    public function __construct(
+        protected int $clinicaldocumentid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $clinicaldocumentid clinicaldocumentid
-	 */
-	public function __construct(
-		protected int $clinicaldocumentid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([]);
+    }
 }

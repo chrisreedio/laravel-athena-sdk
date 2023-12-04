@@ -14,32 +14,29 @@ use Saloon\Traits\Body\HasMultipartBody;
  */
 class CreatePatientReceiptAuthorization extends Request implements HasBody
 {
-	use HasMultipartBody;
+    use HasMultipartBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/receipts/{$this->epaymentid}/signed";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/receipts/{$this->epaymentid}/signed";
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $epaymentid epaymentid
+     * @param  string  $attachmentcontents The PDF of the signed receipt. This implies that this is a multipart/form-data content type. This does NOT work correctly in I/O Docs. The filename itself is not used by athenaNet.
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $epaymentid,
+        protected string $attachmentcontents,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $epaymentid epaymentid
-	 * @param string $attachmentcontents The PDF of the signed receipt. This implies that this is a multipart/form-data content type. This does NOT work correctly in I/O Docs. The filename itself is not used by athenaNet.
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $epaymentid,
-		protected string $attachmentcontents,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['attachmentcontents' => $this->attachmentcontents]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['attachmentcontents' => $this->attachmentcontents]);
+    }
 }

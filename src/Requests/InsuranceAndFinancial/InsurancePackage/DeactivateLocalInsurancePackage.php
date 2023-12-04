@@ -15,30 +15,27 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class DeactivateLocalInsurancePackage extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::PUT;
+    protected Method $method = Method::PUT;
 
+    public function resolveEndpoint(): string
+    {
+        return "/insurancepackages/configuration/locallyadministered/{$this->insurancepackageid}/deactivate";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/insurancepackages/configuration/locallyadministered/{$this->insurancepackageid}/deactivate";
-	}
+    /**
+     * @param  int  $insurancepackageid insurancepackageid
+     * @param  null|string  $expirationdate The expiration date of the locally administered insurance package.
+     */
+    public function __construct(
+        protected int $insurancepackageid,
+        protected ?string $expirationdate = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $insurancepackageid insurancepackageid
-	 * @param null|string $expirationdate The expiration date of the locally administered insurance package.
-	 */
-	public function __construct(
-		protected int $insurancepackageid,
-		protected ?string $expirationdate = null,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['expirationdate' => $this->expirationdate]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['expirationdate' => $this->expirationdate]);
+    }
 }

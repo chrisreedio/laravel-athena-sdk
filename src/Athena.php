@@ -12,7 +12,6 @@ class Athena extends Connector
         return 'https://api.preview.platform.athenahealth.com';
     }
 
-
     public function appointments(): Appointments
     {
         return new Appointments($this);

@@ -14,30 +14,27 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreatePhoneMessageAction extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/documents/phonemessage/{$this->phonemessageid}/actions";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/documents/phonemessage/{$this->phonemessageid}/actions";
-	}
+    /**
+     * @param  int  $phonemessageid phonemessageid
+     * @param  string  $actionnote The new action note to add to the document.
+     */
+    public function __construct(
+        protected int $phonemessageid,
+        protected string $actionnote,
+    ) {
+    }
 
-
-	/**
-	 * @param int $phonemessageid phonemessageid
-	 * @param string $actionnote The new action note to add to the document.
-	 */
-	public function __construct(
-		protected int $phonemessageid,
-		protected string $actionnote,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['actionnote' => $this->actionnote]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['actionnote' => $this->actionnote]);
+    }
 }

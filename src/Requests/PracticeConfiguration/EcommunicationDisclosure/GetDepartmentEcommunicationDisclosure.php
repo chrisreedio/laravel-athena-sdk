@@ -12,20 +12,18 @@ use Saloon\Http\Request;
  */
 class GetDepartmentEcommunicationDisclosure extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/departments/{$this->departmentid}/ecommunicationdisclosure";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/departments/{$this->departmentid}/ecommunicationdisclosure";
-	}
-
-
-	/**
-	 * @param int $departmentid departmentid
-	 */
-	public function __construct(
-		protected int $departmentid,
-	) {
-	}
+    /**
+     * @param  int  $departmentid departmentid
+     */
+    public function __construct(
+        protected int $departmentid,
+    ) {
+    }
 }

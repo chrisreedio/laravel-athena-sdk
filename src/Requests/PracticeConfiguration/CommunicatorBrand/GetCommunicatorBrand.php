@@ -12,20 +12,18 @@ use Saloon\Http\Request;
  */
 class GetCommunicatorBrand extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/communicatorbrands/{$this->communicatorbrandid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/communicatorbrands/{$this->communicatorbrandid}";
-	}
-
-
-	/**
-	 * @param int $communicatorbrandid communicatorbrandid
-	 */
-	public function __construct(
-		protected int $communicatorbrandid,
-	) {
-	}
+    /**
+     * @param  int  $communicatorbrandid communicatorbrandid
+     */
+    public function __construct(
+        protected int $communicatorbrandid,
+    ) {
+    }
 }

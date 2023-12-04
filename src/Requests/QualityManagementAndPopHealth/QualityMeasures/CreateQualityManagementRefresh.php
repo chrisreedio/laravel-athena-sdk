@@ -14,32 +14,29 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreateQualityManagementRefresh extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/{$this->patientid}/qualitymanagement/refresh";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/{$this->patientid}/qualitymanagement/refresh";
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $departmentid The athenaNet department id.
+     * @param  null|int  $providerid The ID of the provider. If not specified, the default provider is used -- usually the provider that has seen the patient most often / recently.
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $departmentid,
+        protected ?int $providerid = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $departmentid The athenaNet department id.
-	 * @param null|int $providerid The ID of the provider. If not specified, the default provider is used -- usually the provider that has seen the patient most often / recently.
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $departmentid,
-		protected ?int $providerid = null,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['departmentid' => $this->departmentid, 'providerid' => $this->providerid]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['departmentid' => $this->departmentid, 'providerid' => $this->providerid]);
+    }
 }

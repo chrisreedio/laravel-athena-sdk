@@ -13,22 +13,19 @@ use Saloon\Http\Request;
  */
 class GetGeneticScreeningAndInfectionHistoryQuestions extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/chart/configuration/obepisodes/geneticscreeningandinfectionhistory/questions';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/configuration/obepisodes/geneticscreeningandinfectionhistory/questions";
-	}
+    public function __construct()
+    {
+    }
 
-
-	public function __construct()
-	{
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([]);
+    }
 }

@@ -12,16 +12,14 @@ use Saloon\Http\Request;
  */
 class ListLanguages extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/languages';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/languages";
-	}
-
-
-	public function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 }

@@ -13,28 +13,25 @@ use Saloon\Http\Request;
  */
 class ListPatientPrepaymentPlans extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/prepaymentplans";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/prepaymentplans";
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  null|array  $prepaymentplanids array of plan IDs to retrieve
+     */
+    public function __construct(
+        protected int $patientid,
+        protected ?array $prepaymentplanids = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 * @param null|array $prepaymentplanids array of plan IDs to retrieve
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected ?array $prepaymentplanids = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['prepaymentplanids' => $this->prepaymentplanids]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['prepaymentplanids' => $this->prepaymentplanids]);
+    }
 }

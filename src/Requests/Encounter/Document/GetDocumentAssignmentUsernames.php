@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class GetDocumentAssignmentUsernames extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/documentassignment/{$this->documentid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/documentassignment/{$this->documentid}";
-	}
+    /**
+     * @param  int  $documentid documentid
+     */
+    public function __construct(
+        protected int $documentid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $documentid documentid
-	 */
-	public function __construct(
-		protected int $documentid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([]);
+    }
 }

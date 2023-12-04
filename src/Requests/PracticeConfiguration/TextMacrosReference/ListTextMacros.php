@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class ListTextMacros extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/textmacros';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/textmacros";
-	}
+    /**
+     * @param  null|string  $username The username of the person for which to get the accessible macros.
+     */
+    public function __construct(
+        protected ?string $username = null,
+    ) {
+    }
 
-
-	/**
-	 * @param null|string $username The username of the person for which to get the accessible macros.
-	 */
-	public function __construct(
-		protected ?string $username = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['username' => $this->username]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['username' => $this->username]);
+    }
 }

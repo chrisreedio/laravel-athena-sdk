@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class ListStayProceduresPerformed extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/stays/{$this->stayid}/procedures/performed";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/stays/{$this->stayid}/procedures/performed";
-	}
+    /**
+     * @param  int  $stayid stayid
+     */
+    public function __construct(
+        protected int $stayid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $stayid stayid
-	 */
-	public function __construct(
-		protected int $stayid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([]);
+    }
 }

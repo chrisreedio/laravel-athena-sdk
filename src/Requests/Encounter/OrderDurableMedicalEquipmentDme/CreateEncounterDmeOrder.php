@@ -14,59 +14,56 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreateEncounterDmeOrder extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/encounter/{$this->encounterid}/orders/dme";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/encounter/{$this->encounterid}/orders/dme";
-	}
+    /**
+     * @param  int  $encounterid encounterid
+     * @param  int  $ordertypeid The athena ID of the DME to order. Get the IDs using /reference/order/dme
+     * @param  int  $diagnosissnomedcode The SNOMED code for diagnosis this order is for.
+     * @param  null|string  $facilityid The athena id of the supplier you want to send the prescription to. Defaults to the patient default supplier. Get a localized list using /chart/configuration/facilities.
+     * @param  null|string  $facilitynote A note to send to the supplying facility.
+     * @param  null|string  $orderingmode Selects whether you wish to prescribe, or dispense this DME.
+     * @param  null|string  $providernote An internal note for the provider or staff.
+     * @param  null|number  $totalquantity The total amount of units of the DME being prescribed.
+     * @param  null|string  $unstructuredsig The unstructured sig.
+     * @param  null|bool  $dispenseaswritten Whether the DME should be marked as dispense as written (i.e., no substitutions without consulting the doctor).
+     * @param  null|int  $numrefillsallowed The number of refills allowed for this DME. Defaults to 0.
+     */
+    public function __construct(
+        protected int $encounterid,
+        protected int $ordertypeid,
+        protected int $diagnosissnomedcode,
+        protected ?string $facilityid = null,
+        protected ?string $facilitynote = null,
+        protected ?string $orderingmode = null,
+        protected ?string $providernote = null,
+        protected ?\number $totalquantity = null,
+        protected ?string $unstructuredsig = null,
+        protected ?bool $dispenseaswritten = null,
+        protected ?int $numrefillsallowed = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $encounterid encounterid
-	 * @param int $ordertypeid The athena ID of the DME to order. Get the IDs using /reference/order/dme
-	 * @param int $diagnosissnomedcode The SNOMED code for diagnosis this order is for.
-	 * @param null|string $facilityid The athena id of the supplier you want to send the prescription to. Defaults to the patient default supplier. Get a localized list using /chart/configuration/facilities.
-	 * @param null|string $facilitynote A note to send to the supplying facility.
-	 * @param null|string $orderingmode Selects whether you wish to prescribe, or dispense this DME.
-	 * @param null|string $providernote An internal note for the provider or staff.
-	 * @param null|number $totalquantity The total amount of units of the DME being prescribed.
-	 * @param null|string $unstructuredsig The unstructured sig.
-	 * @param null|bool $dispenseaswritten Whether the DME should be marked as dispense as written (i.e., no substitutions without consulting the doctor).
-	 * @param null|int $numrefillsallowed The number of refills allowed for this DME. Defaults to 0.
-	 */
-	public function __construct(
-		protected int $encounterid,
-		protected int $ordertypeid,
-		protected int $diagnosissnomedcode,
-		protected ?string $facilityid = null,
-		protected ?string $facilitynote = null,
-		protected ?string $orderingmode = null,
-		protected ?string $providernote = null,
-		protected ?\number $totalquantity = null,
-		protected ?string $unstructuredsig = null,
-		protected ?bool $dispenseaswritten = null,
-		protected ?int $numrefillsallowed = null,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter([
-			'ordertypeid' => $this->ordertypeid,
-			'diagnosissnomedcode' => $this->diagnosissnomedcode,
-			'facilityid' => $this->facilityid,
-			'facilitynote' => $this->facilitynote,
-			'orderingmode' => $this->orderingmode,
-			'providernote' => $this->providernote,
-			'totalquantity' => $this->totalquantity,
-			'unstructuredsig' => $this->unstructuredsig,
-			'dispenseaswritten' => $this->dispenseaswritten,
-			'numrefillsallowed' => $this->numrefillsallowed,
-		]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter([
+            'ordertypeid' => $this->ordertypeid,
+            'diagnosissnomedcode' => $this->diagnosissnomedcode,
+            'facilityid' => $this->facilityid,
+            'facilitynote' => $this->facilitynote,
+            'orderingmode' => $this->orderingmode,
+            'providernote' => $this->providernote,
+            'totalquantity' => $this->totalquantity,
+            'unstructuredsig' => $this->unstructuredsig,
+            'dispenseaswritten' => $this->dispenseaswritten,
+            'numrefillsallowed' => $this->numrefillsallowed,
+        ]);
+    }
 }

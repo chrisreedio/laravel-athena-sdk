@@ -12,30 +12,27 @@ use Saloon\Http\Request;
  */
 class GetDepartment extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/departments/{$this->departmentid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/departments/{$this->departmentid}";
-	}
+    /**
+     * @param  int  $departmentid departmentid
+     * @param  null|bool  $showalldepartments By default, departments hidden in the portal do not appear. When this is set to true, that restriction is not applied. Default is false.
+     * @param  null|bool  $providerlist If set to true, list providers who see patients in this department. Default is false.
+     */
+    public function __construct(
+        protected int $departmentid,
+        protected ?bool $showalldepartments = null,
+        protected ?bool $providerlist = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $departmentid departmentid
-	 * @param null|bool $showalldepartments By default, departments hidden in the portal do not appear. When this is set to true, that restriction is not applied. Default is false.
-	 * @param null|bool $providerlist If set to true, list providers who see patients in this department. Default is false.
-	 */
-	public function __construct(
-		protected int $departmentid,
-		protected ?bool $showalldepartments = null,
-		protected ?bool $providerlist = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['showalldepartments' => $this->showalldepartments, 'providerlist' => $this->providerlist]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['showalldepartments' => $this->showalldepartments, 'providerlist' => $this->providerlist]);
+    }
 }

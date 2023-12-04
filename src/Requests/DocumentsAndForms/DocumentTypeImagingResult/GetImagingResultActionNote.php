@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class GetImagingResultActionNote extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/documents/imagingresult/{$this->imagingresultid}/actions";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/documents/imagingresult/{$this->imagingresultid}/actions";
-	}
+    /**
+     * @param  int  $imagingresultid imagingresultid
+     */
+    public function __construct(
+        protected int $imagingresultid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $imagingresultid imagingresultid
-	 */
-	public function __construct(
-		protected int $imagingresultid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([]);
+    }
 }

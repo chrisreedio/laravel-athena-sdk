@@ -12,28 +12,25 @@ use Saloon\Http\Request;
  */
 class ListCommonInsurancePackages extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/misc/commoninsurancepackages';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/misc/commoninsurancepackages";
-	}
+    /**
+     * @param  null|bool  $showonlycasepolicies If true only show the case policies.
+     * @param  int  $departmentid The ID of the department to check for common insurances. This is used to determine which provider group that we are working with.
+     */
+    public function __construct(
+        protected ?bool $showonlycasepolicies,
+        protected int $departmentid,
+    ) {
+    }
 
-
-	/**
-	 * @param null|bool $showonlycasepolicies If true only show the case policies.
-	 * @param int $departmentid The ID of the department to check for common insurances. This is used to determine which provider group that we are working with.
-	 */
-	public function __construct(
-		protected ?bool $showonlycasepolicies = null,
-		protected int $departmentid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['showonlycasepolicies' => $this->showonlycasepolicies, 'departmentid' => $this->departmentid]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['showonlycasepolicies' => $this->showonlycasepolicies, 'departmentid' => $this->departmentid]);
+    }
 }

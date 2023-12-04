@@ -12,22 +12,20 @@ use Saloon\Http\Request;
  */
 class GetPatientPhoneMessage extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/documents/phonemessage/{$this->phonemessageid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/documents/phonemessage/{$this->phonemessageid}";
-	}
-
-
-	/**
-	 * @param int $phonemessageid phonemessageid
-	 * @param int $patientid patientid
-	 */
-	public function __construct(
-		protected int $phonemessageid,
-		protected int $patientid,
-	) {
-	}
+    /**
+     * @param  int  $phonemessageid phonemessageid
+     * @param  int  $patientid patientid
+     */
+    public function __construct(
+        protected int $phonemessageid,
+        protected int $patientid,
+    ) {
+    }
 }

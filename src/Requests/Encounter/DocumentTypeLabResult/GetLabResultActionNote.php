@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class GetLabResultActionNote extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/documents/labresult/{$this->labresultid}/actions";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/documents/labresult/{$this->labresultid}/actions";
-	}
+    /**
+     * @param  int  $labresultid labresultid
+     */
+    public function __construct(
+        protected int $labresultid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $labresultid labresultid
-	 */
-	public function __construct(
-		protected int $labresultid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([]);
+    }
 }

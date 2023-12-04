@@ -12,28 +12,25 @@ use Saloon\Http\Request;
  */
 class ListPatientAdministeredQuestionnaireScreeners extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/{$this->patientid}/administeredquestionnairescreeners";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/{$this->patientid}/administeredquestionnairescreeners";
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $departmentid The athenaNet department ID.
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $departmentid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $departmentid The athenaNet department ID.
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $departmentid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['departmentid' => $this->departmentid]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['departmentid' => $this->departmentid]);
+    }
 }

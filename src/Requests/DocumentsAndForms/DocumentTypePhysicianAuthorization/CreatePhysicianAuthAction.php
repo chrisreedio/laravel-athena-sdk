@@ -14,30 +14,27 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreatePhysicianAuthAction extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/documents/physicianauth/{$this->physicianauthid}/actions";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/documents/physicianauth/{$this->physicianauthid}/actions";
-	}
+    /**
+     * @param  int  $physicianauthid physicianauthid
+     * @param  string  $actionnote The new action note to add to the document.
+     */
+    public function __construct(
+        protected int $physicianauthid,
+        protected string $actionnote,
+    ) {
+    }
 
-
-	/**
-	 * @param int $physicianauthid physicianauthid
-	 * @param string $actionnote The new action note to add to the document.
-	 */
-	public function __construct(
-		protected int $physicianauthid,
-		protected string $actionnote,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['actionnote' => $this->actionnote]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['actionnote' => $this->actionnote]);
+    }
 }

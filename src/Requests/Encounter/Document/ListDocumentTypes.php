@@ -12,28 +12,25 @@ use Saloon\Http\Request;
  */
 class ListDocumentTypes extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/documenttypes';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/documenttypes";
-	}
+    /**
+     * @param  string  $searchvalue The search string as a list of search words.
+     * @param  null|string  $documentsubclass Limit the results to document types that could apply to a document of the type specified.  If omitted, the results will not be filtered.
+     */
+    public function __construct(
+        protected string $searchvalue,
+        protected ?string $documentsubclass = null,
+    ) {
+    }
 
-
-	/**
-	 * @param string $searchvalue The search string as a list of search words.
-	 * @param null|string $documentsubclass Limit the results to document types that could apply to a document of the type specified.  If omitted, the results will not be filtered.
-	 */
-	public function __construct(
-		protected string $searchvalue,
-		protected ?string $documentsubclass = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['searchvalue' => $this->searchvalue, 'documentsubclass' => $this->documentsubclass]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['searchvalue' => $this->searchvalue, 'documentsubclass' => $this->documentsubclass]);
+    }
 }

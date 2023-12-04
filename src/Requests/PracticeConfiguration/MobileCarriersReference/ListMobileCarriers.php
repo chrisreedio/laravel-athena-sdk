@@ -12,16 +12,14 @@ use Saloon\Http\Request;
  */
 class ListMobileCarriers extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/mobilecarriers';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/mobilecarriers";
-	}
-
-
-	public function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 }

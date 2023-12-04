@@ -17,30 +17,27 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreatePatientClaimCollections extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patientpayvendors/{$this->vendorcode}/claimcollections";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patientpayvendors/{$this->vendorcode}/claimcollections";
-	}
+    /**
+     * @param  string  $vendorcode vendorcode
+     * @param  array  $claimids List of Claim IDs.Example: [123,124]
+     */
+    public function __construct(
+        protected string $vendorcode,
+        protected array $claimids,
+    ) {
+    }
 
-
-	/**
-	 * @param string $vendorcode vendorcode
-	 * @param array $claimids List of Claim IDs.Example: [123,124]
-	 */
-	public function __construct(
-		protected string $vendorcode,
-		protected array $claimids,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['claimids' => $this->claimids]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['claimids' => $this->claimids]);
+    }
 }

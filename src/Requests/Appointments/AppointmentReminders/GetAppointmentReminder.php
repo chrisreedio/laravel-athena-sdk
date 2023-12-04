@@ -12,20 +12,18 @@ use Saloon\Http\Request;
  */
 class GetAppointmentReminder extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/appointments/appointmentreminders/{$this->appointmentreminderid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/appointments/appointmentreminders/{$this->appointmentreminderid}";
-	}
-
-
-	/**
-	 * @param int $appointmentreminderid appointmentreminderid
-	 */
-	public function __construct(
-		protected int $appointmentreminderid,
-	) {
-	}
+    /**
+     * @param  int  $appointmentreminderid appointmentreminderid
+     */
+    public function __construct(
+        protected int $appointmentreminderid,
+    ) {
+    }
 }

@@ -12,28 +12,25 @@ use Saloon\Http\Request;
  */
 class ListOutstandingOrders extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/encounter/{$this->encounterid}/orders/outstanding";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/encounter/{$this->encounterid}/orders/outstanding";
-	}
+    /**
+     * @param  int  $encounterid encounterid
+     * @param  null|bool  $showdeclinedorders If set, include orders that were declined
+     */
+    public function __construct(
+        protected int $encounterid,
+        protected ?bool $showdeclinedorders = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $encounterid encounterid
-	 * @param null|bool $showdeclinedorders If set, include orders that were declined
-	 */
-	public function __construct(
-		protected int $encounterid,
-		protected ?bool $showdeclinedorders = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['showdeclinedorders' => $this->showdeclinedorders]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['showdeclinedorders' => $this->showdeclinedorders]);
+    }
 }

@@ -13,22 +13,20 @@ use Saloon\Http\Request;
  */
 class CreateLabResultReadStatus extends Request
 {
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/patientsecuremessage/marklabresultread/{$this->messagethreadid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/patientsecuremessage/marklabresultread/{$this->messagethreadid}";
-	}
-
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $messagethreadid messagethreadid
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $messagethreadid,
-	) {
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $messagethreadid messagethreadid
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $messagethreadid,
+    ) {
+    }
 }

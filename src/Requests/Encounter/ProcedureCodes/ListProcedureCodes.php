@@ -12,28 +12,25 @@ use Saloon\Http\Request;
  */
 class ListProcedureCodes extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/encounter/{$this->encounterid}/procedurecodes";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/encounter/{$this->encounterid}/procedurecodes";
-	}
+    /**
+     * @param  int  $encounterid encounterid
+     * @param  string  $searchvalue The name of the procedure you want to search for. This can be the code or the description.
+     */
+    public function __construct(
+        protected int $encounterid,
+        protected string $searchvalue,
+    ) {
+    }
 
-
-	/**
-	 * @param int $encounterid encounterid
-	 * @param string $searchvalue The name of the procedure you want to search for. This can be the code or the description.
-	 */
-	public function __construct(
-		protected int $encounterid,
-		protected string $searchvalue,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['searchvalue' => $this->searchvalue]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['searchvalue' => $this->searchvalue]);
+    }
 }

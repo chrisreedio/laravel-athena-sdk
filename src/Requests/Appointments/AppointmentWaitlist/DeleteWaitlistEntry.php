@@ -12,20 +12,18 @@ use Saloon\Http\Request;
  */
 class DeleteWaitlistEntry extends Request
 {
-	protected Method $method = Method::DELETE;
+    protected Method $method = Method::DELETE;
 
+    public function resolveEndpoint(): string
+    {
+        return "/appointments/waitlist/{$this->waitlistid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/appointments/waitlist/{$this->waitlistid}";
-	}
-
-
-	/**
-	 * @param int $waitlistid waitlistid
-	 */
-	public function __construct(
-		protected int $waitlistid,
-	) {
-	}
+    /**
+     * @param  int  $waitlistid waitlistid
+     */
+    public function __construct(
+        protected int $waitlistid,
+    ) {
+    }
 }

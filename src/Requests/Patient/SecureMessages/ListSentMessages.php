@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class ListSentMessages extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/securemessage/sentmessages";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/securemessage/sentmessages";
-	}
+    /**
+     * @param  int  $patientid patientid
+     */
+    public function __construct(
+        protected int $patientid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 */
-	public function __construct(
-		protected int $patientid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([]);
+    }
 }

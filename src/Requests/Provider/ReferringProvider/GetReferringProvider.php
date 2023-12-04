@@ -12,20 +12,18 @@ use Saloon\Http\Request;
  */
 class GetReferringProvider extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/referringproviders/{$this->referringproviderid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/referringproviders/{$this->referringproviderid}";
-	}
-
-
-	/**
-	 * @param int $referringproviderid referringproviderid
-	 */
-	public function __construct(
-		protected int $referringproviderid,
-	) {
-	}
+    /**
+     * @param  int  $referringproviderid referringproviderid
+     */
+    public function __construct(
+        protected int $referringproviderid,
+    ) {
+    }
 }

@@ -14,32 +14,29 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class UpdateAppointmentInsurances extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::PUT;
+    protected Method $method = Method::PUT;
 
+    public function resolveEndpoint(): string
+    {
+        return "/appointments/{$this->appointmentid}/insurances";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/appointments/{$this->appointmentid}/insurances";
-	}
+    /**
+     * @param  int  $appointmentid appointmentid
+     * @param  null|int  $primaryinsuranceid The athenaNet patient insurance ID for the policy you want to use as primary for this appointment.
+     * @param  null|int  $secondaryinsuranceid The athenaNet patient insurance ID for the policy you want to use as secondary for this appointment.
+     */
+    public function __construct(
+        protected int $appointmentid,
+        protected ?int $primaryinsuranceid = null,
+        protected ?int $secondaryinsuranceid = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $appointmentid appointmentid
-	 * @param null|int $primaryinsuranceid The athenaNet patient insurance ID for the policy you want to use as primary for this appointment.
-	 * @param null|int $secondaryinsuranceid The athenaNet patient insurance ID for the policy you want to use as secondary for this appointment.
-	 */
-	public function __construct(
-		protected int $appointmentid,
-		protected ?int $primaryinsuranceid = null,
-		protected ?int $secondaryinsuranceid = null,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['primaryinsuranceid' => $this->primaryinsuranceid, 'secondaryinsuranceid' => $this->secondaryinsuranceid]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['primaryinsuranceid' => $this->primaryinsuranceid, 'secondaryinsuranceid' => $this->secondaryinsuranceid]);
+    }
 }

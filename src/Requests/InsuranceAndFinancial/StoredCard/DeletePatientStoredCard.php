@@ -12,30 +12,27 @@ use Saloon\Http\Request;
  */
 class DeletePatientStoredCard extends Request
 {
-	protected Method $method = Method::DELETE;
+    protected Method $method = Method::DELETE;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/collectpayment/storedcard/{$this->storedcardid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/collectpayment/storedcard/{$this->storedcardid}";
-	}
+    /**
+     * @param  int  $storedcardid storedcardid
+     * @param  int  $patientid patientid
+     * @param  int  $departmentid The ID of the department where the payment or contract is being collected.
+     */
+    public function __construct(
+        protected int $storedcardid,
+        protected int $patientid,
+        protected int $departmentid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $storedcardid storedcardid
-	 * @param int $patientid patientid
-	 * @param int $departmentid The ID of the department where the payment or contract is being collected.
-	 */
-	public function __construct(
-		protected int $storedcardid,
-		protected int $patientid,
-		protected int $departmentid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['departmentid' => $this->departmentid]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['departmentid' => $this->departmentid]);
+    }
 }

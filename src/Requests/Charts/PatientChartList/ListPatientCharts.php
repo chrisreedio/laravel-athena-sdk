@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class ListPatientCharts extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/{$this->patientid}/patientchartlist";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/{$this->patientid}/patientchartlist";
-	}
+    /**
+     * @param  int  $patientid patientid
+     */
+    public function __construct(
+        protected int $patientid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 */
-	public function __construct(
-		protected int $patientid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([]);
+    }
 }

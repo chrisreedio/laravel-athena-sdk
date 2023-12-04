@@ -14,38 +14,35 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class UpdatePatientGoalsDiscussionNotes extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::PUT;
+    protected Method $method = Method::PUT;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/encounter/{$this->encounterid}/patientgoals/discussionnotes";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/encounter/{$this->encounterid}/patientgoals/discussionnotes";
-	}
+    /**
+     * @param  int  $encounterid encounterid
+     * @param  null|string  $versiontoken A token specifying a unique version of data in the database. If it's specified and does not match the version token on the server, the update will fail.
+     * @param  null|string  $discussionnotes A free text field used for discussion notes.
+     * @param  null|bool  $replacediscussionnotes If true, will replace the existing section note with the new one. If false, will append to the existing note.
+     */
+    public function __construct(
+        protected int $encounterid,
+        protected ?string $versiontoken = null,
+        protected ?string $discussionnotes = null,
+        protected ?bool $replacediscussionnotes = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $encounterid encounterid
-	 * @param null|string $versiontoken A token specifying a unique version of data in the database. If it's specified and does not match the version token on the server, the update will fail.
-	 * @param null|string $discussionnotes A free text field used for discussion notes.
-	 * @param null|bool $replacediscussionnotes If true, will replace the existing section note with the new one. If false, will append to the existing note.
-	 */
-	public function __construct(
-		protected int $encounterid,
-		protected ?string $versiontoken = null,
-		protected ?string $discussionnotes = null,
-		protected ?bool $replacediscussionnotes = null,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter([
-			'versiontoken' => $this->versiontoken,
-			'discussionnotes' => $this->discussionnotes,
-			'replacediscussionnotes' => $this->replacediscussionnotes,
-		]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter([
+            'versiontoken' => $this->versiontoken,
+            'discussionnotes' => $this->discussionnotes,
+            'replacediscussionnotes' => $this->replacediscussionnotes,
+        ]);
+    }
 }

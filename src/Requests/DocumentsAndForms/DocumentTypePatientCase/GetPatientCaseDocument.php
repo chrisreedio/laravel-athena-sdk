@@ -12,22 +12,20 @@ use Saloon\Http\Request;
  */
 class GetPatientCaseDocument extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/documents/patientcase/{$this->patientcaseid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/documents/patientcase/{$this->patientcaseid}";
-	}
-
-
-	/**
-	 * @param int $patientcaseid patientcaseid
-	 * @param int $patientid patientid
-	 */
-	public function __construct(
-		protected int $patientcaseid,
-		protected int $patientid,
-	) {
-	}
+    /**
+     * @param  int  $patientcaseid patientcaseid
+     * @param  int  $patientid patientid
+     */
+    public function __construct(
+        protected int $patientcaseid,
+        protected int $patientid,
+    ) {
+    }
 }

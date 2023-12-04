@@ -14,32 +14,29 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreateObEpisode extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/{$this->patientid}/obepisodes";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/{$this->patientid}/obepisodes";
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $departmentid The department ID
+     * @param  null|string  $numberofgestations Used to track multiple gestation pregnancies. If more than one fetus is present, additional columns are inserted into the flowsheet to track findings specific to each fetus: presentation, fetal heart rate, and fetal movement.
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $departmentid,
+        protected ?string $numberofgestations = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $departmentid The department ID
-	 * @param null|string $numberofgestations Used to track multiple gestation pregnancies. If more than one fetus is present, additional columns are inserted into the flowsheet to track findings specific to each fetus: presentation, fetal heart rate, and fetal movement.
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $departmentid,
-		protected ?string $numberofgestations = null,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['departmentid' => $this->departmentid, 'numberofgestations' => $this->numberofgestations]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['departmentid' => $this->departmentid, 'numberofgestations' => $this->numberofgestations]);
+    }
 }

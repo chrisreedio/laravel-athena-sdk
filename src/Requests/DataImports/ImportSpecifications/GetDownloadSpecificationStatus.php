@@ -12,20 +12,18 @@ use Saloon\Http\Request;
  */
 class GetDownloadSpecificationStatus extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/import/downloadspecification/{$this->requestid}/status";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/import/downloadspecification/{$this->requestid}/status";
-	}
-
-
-	/**
-	 * @param int $requestid requestid
-	 */
-	public function __construct(
-		protected int $requestid,
-	) {
-	}
+    /**
+     * @param  int  $requestid requestid
+     */
+    public function __construct(
+        protected int $requestid,
+    ) {
+    }
 }

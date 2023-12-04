@@ -13,16 +13,14 @@ use Saloon\Http\Request;
  */
 class CreateStrictJsonEncodingSetting extends Request
 {
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return '/misc/properjsonencoding';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/misc/properjsonencoding";
-	}
-
-
-	public function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 }

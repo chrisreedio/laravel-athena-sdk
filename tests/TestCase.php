@@ -2,9 +2,9 @@
 
 namespace ChrisReedIO\AthenaSDK\Tests;
 
+use ChrisReedIO\AthenaSDK\AthenaServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use ChrisReedIO\AthenaSDK\AthenaServiceProvider;
 
 class TestCase extends Orchestra
 {

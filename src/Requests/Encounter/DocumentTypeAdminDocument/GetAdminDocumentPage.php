@@ -12,30 +12,27 @@ use Saloon\Http\Request;
  */
 class GetAdminDocumentPage extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/documents/admin/{$this->adminid}/pages/{$this->pageid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/documents/admin/{$this->adminid}/pages/{$this->pageid}";
-	}
+    /**
+     * @param  int  $pageid pageid
+     * @param  int  $adminid adminid
+     * @param  null|string  $filesize The file size of the document being requested.
+     */
+    public function __construct(
+        protected int $pageid,
+        protected int $adminid,
+        protected ?string $filesize = null,
+    ) {
+    }
 
-
-	/**
-	 * @param int $pageid pageid
-	 * @param int $adminid adminid
-	 * @param null|string $filesize The file size of the document being requested.
-	 */
-	public function __construct(
-		protected int $pageid,
-		protected int $adminid,
-		protected ?string $filesize = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['filesize' => $this->filesize]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['filesize' => $this->filesize]);
+    }
 }

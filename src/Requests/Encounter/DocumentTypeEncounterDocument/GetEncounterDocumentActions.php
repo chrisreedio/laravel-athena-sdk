@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class GetEncounterDocumentActions extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/documents/encounterdocument/{$this->encounterdocumentid}/actions";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/documents/encounterdocument/{$this->encounterdocumentid}/actions";
-	}
+    /**
+     * @param  int  $encounterdocumentid encounterdocumentid
+     */
+    public function __construct(
+        protected int $encounterdocumentid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $encounterdocumentid encounterdocumentid
-	 */
-	public function __construct(
-		protected int $encounterdocumentid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([]);
+    }
 }

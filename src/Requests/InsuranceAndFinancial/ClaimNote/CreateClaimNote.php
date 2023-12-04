@@ -14,30 +14,27 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreateClaimNote extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/claims/{$this->claimid}/note";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/claims/{$this->claimid}/note";
-	}
+    /**
+     * @param  int  $claimid claimid
+     * @param  string  $claimnote The text of the note.
+     */
+    public function __construct(
+        protected int $claimid,
+        protected string $claimnote,
+    ) {
+    }
 
-
-	/**
-	 * @param int $claimid claimid
-	 * @param string $claimnote The text of the note.
-	 */
-	public function __construct(
-		protected int $claimid,
-		protected string $claimnote,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['claimnote' => $this->claimnote]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['claimnote' => $this->claimnote]);
+    }
 }

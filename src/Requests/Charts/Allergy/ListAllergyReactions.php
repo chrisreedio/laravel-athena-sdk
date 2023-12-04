@@ -12,16 +12,14 @@ use Saloon\Http\Request;
  */
 class ListAllergyReactions extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/reference/allergies/reactions';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/reference/allergies/reactions";
-	}
-
-
-	public function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 }

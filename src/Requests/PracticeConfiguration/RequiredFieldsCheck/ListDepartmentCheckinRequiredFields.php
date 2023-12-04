@@ -12,20 +12,18 @@ use Saloon\Http\Request;
  */
 class ListDepartmentCheckinRequiredFields extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/departments/{$this->departmentid}/checkinrequired";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/departments/{$this->departmentid}/checkinrequired";
-	}
-
-
-	/**
-	 * @param int $departmentid departmentid
-	 */
-	public function __construct(
-		protected int $departmentid,
-	) {
-	}
+    /**
+     * @param  int  $departmentid departmentid
+     */
+    public function __construct(
+        protected int $departmentid,
+    ) {
+    }
 }

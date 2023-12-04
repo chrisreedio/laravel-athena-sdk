@@ -18,32 +18,28 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class CreateVendorAdjustingCharges extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patientpayvendors/{$this->vendorcode}/adjustingcharges";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patientpayvendors/{$this->vendorcode}/adjustingcharges";
-	}
+    /**
+     * @param  string  $vendorcode vendorcode
+     * @param  number  $patientid Patient ID
+     */
+    public function __construct(
+        protected string $vendorcode,
+        protected array $charges,
+        protected \number $patientid,
+    ) {
+    }
 
-
-	/**
-	 * @param string $vendorcode vendorcode
-	 * @param array $charges
-	 * @param number $patientid Patient ID
-	 */
-	public function __construct(
-		protected string $vendorcode,
-		protected array $charges,
-		protected \number $patientid,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['charges' => $this->charges, 'patientid' => $this->patientid]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['charges' => $this->charges, 'patientid' => $this->patientid]);
+    }
 }

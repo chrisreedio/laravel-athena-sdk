@@ -12,28 +12,25 @@ use Saloon\Http\Request;
  */
 class GetPatientPrivacyInformationVerified extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/privacyinformationverified";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/privacyinformationverified";
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $departmentid The ID of the department where the privacy information was verified.
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $departmentid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $departmentid The ID of the department where the privacy information was verified.
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $departmentid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['departmentid' => $this->departmentid]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['departmentid' => $this->departmentid]);
+    }
 }

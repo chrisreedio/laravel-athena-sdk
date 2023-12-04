@@ -2,9 +2,9 @@
 
 namespace ChrisReedIO\AthenaSDK;
 
+use ChrisReedIO\AthenaSDK\Commands\AthenaCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use ChrisReedIO\AthenaSDK\Commands\AthenaCommand;
 
 class AthenaServiceProvider extends PackageServiceProvider
 {

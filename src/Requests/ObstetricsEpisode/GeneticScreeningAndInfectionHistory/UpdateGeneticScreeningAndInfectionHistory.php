@@ -14,32 +14,29 @@ use Saloon\Traits\Body\HasFormBody;
  */
 class UpdateGeneticScreeningAndInfectionHistory extends Request implements HasBody
 {
-	use HasFormBody;
+    use HasFormBody;
 
-	protected Method $method = Method::PUT;
+    protected Method $method = Method::PUT;
 
+    public function resolveEndpoint(): string
+    {
+        return "/chart/{$this->patientid}/obepisodes/{$this->obepisodeid}/geneticscreeningandinfectionhistory";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/{$this->patientid}/obepisodes/{$this->obepisodeid}/geneticscreeningandinfectionhistory";
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $obepisodeid obepisodeid
+     * @param  array  $answers This is a JSON array of objects that is used to update the question specific information.
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $obepisodeid,
+        protected array $answers,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $obepisodeid obepisodeid
-	 * @param array $answers This is a JSON array of objects that is used to update the question specific information.
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $obepisodeid,
-		protected array $answers,
-	) {
-	}
-
-
-	public function defaultBody(): array
-	{
-		return array_filter(['answers' => $this->answers]);
-	}
+    public function defaultBody(): array
+    {
+        return array_filter(['answers' => $this->answers]);
+    }
 }

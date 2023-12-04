@@ -12,20 +12,18 @@ use Saloon\Http\Request;
  */
 class GetInpatientAdminDocument extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/inpatient/document/admin/{$this->admindocumentid}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/inpatient/document/admin/{$this->admindocumentid}";
-	}
-
-
-	/**
-	 * @param int $admindocumentid admindocumentid
-	 */
-	public function __construct(
-		protected int $admindocumentid,
-	) {
-	}
+    /**
+     * @param  int  $admindocumentid admindocumentid
+     */
+    public function __construct(
+        protected int $admindocumentid,
+    ) {
+    }
 }

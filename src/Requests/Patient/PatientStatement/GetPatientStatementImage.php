@@ -12,28 +12,25 @@ use Saloon\Http\Request;
  */
 class GetPatientStatementImage extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/patients/{$this->patientid}/patientstatementimage";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/patients/{$this->patientid}/patientstatementimage";
-	}
+    /**
+     * @param  int  $patientid patientid
+     * @param  int  $statementid The patient statement ID.
+     */
+    public function __construct(
+        protected int $patientid,
+        protected int $statementid,
+    ) {
+    }
 
-
-	/**
-	 * @param int $patientid patientid
-	 * @param int $statementid The patient statement ID.
-	 */
-	public function __construct(
-		protected int $patientid,
-		protected int $statementid,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['statementid' => $this->statementid]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['statementid' => $this->statementid]);
+    }
 }

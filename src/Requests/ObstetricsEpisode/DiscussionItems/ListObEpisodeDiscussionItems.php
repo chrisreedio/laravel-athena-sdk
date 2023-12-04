@@ -12,26 +12,23 @@ use Saloon\Http\Request;
  */
 class ListObEpisodeDiscussionItems extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/chart/configuration/obepisodes/discussionitems';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/chart/configuration/obepisodes/discussionitems";
-	}
+    /**
+     * @param  null|int  $trimester Optionally, only include elements from this trimester.
+     */
+    public function __construct(
+        protected ?int $trimester = null,
+    ) {
+    }
 
-
-	/**
-	 * @param null|int $trimester Optionally, only include elements from this trimester.
-	 */
-	public function __construct(
-		protected ?int $trimester = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['trimester' => $this->trimester]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['trimester' => $this->trimester]);
+    }
 }
