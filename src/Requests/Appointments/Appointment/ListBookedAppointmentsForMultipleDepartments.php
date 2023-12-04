@@ -24,8 +24,8 @@ class ListBookedAppointmentsForMultipleDepartments extends Request
     }
 
     /**
-     * @param string $enddate End of the appointment search date range (mm/dd/yyyy).  Inclusive.
      * @param string $startdate Start of the appointment search date range (mm/dd/yyyy).  Inclusive.
+     * @param string $enddate End of the appointment search date range (mm/dd/yyyy).  Inclusive.
      * @param null|string $appointmentstatus Filter appointments by status.
      * @param null|int $appointmenttypeid Filter by appointment type ID.
      * @param null|array $confidentialitycode A comma separated list of confidentiality codes to filter patients by. If not set defaults to include all confidentiality codes. Supported codes: 'N' and 'R'. Only functions if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
@@ -46,8 +46,8 @@ class ListBookedAppointmentsForMultipleDepartments extends Request
      * @param null|string $startlastmodified Identify appointments modified after this date/time (mm/dd/yyyy hh:mi:ss).  Inclusive.
      */
     public function __construct(
-        protected string  $enddate,
         protected string  $startdate,
+        protected string  $enddate,
         protected ?string $appointmentstatus = null,
         protected ?int    $appointmenttypeid = null,
         protected ?array  $confidentialitycode = null,

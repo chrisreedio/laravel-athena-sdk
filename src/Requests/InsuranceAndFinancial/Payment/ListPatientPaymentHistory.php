@@ -20,15 +20,15 @@ class ListPatientPaymentHistory extends Request
     }
 
     /**
-     * @param string $enddate End date
      * @param array $patientidlist Array of Patient IDs
      * @param string $startdate Start Date
+     * @param string $enddate End date
      * @param null|bool $additionalpaymentinfo Get additional payment information includes date of service, original plan, supervising provider.
      */
     public function __construct(
-        protected string $enddate,
         protected array  $patientidlist,
         protected string $startdate,
+        protected string $enddate,
         protected ?bool  $additionalpaymentinfo = null,
     )
     {
@@ -37,9 +37,9 @@ class ListPatientPaymentHistory extends Request
     public function defaultQuery(): array
     {
         return array_filter([
-            'enddate' => $this->enddate,
             'patientidlist' => $this->patientidlist,
             'startdate' => $this->startdate,
+            'enddate' => $this->enddate,
             'additionalpaymentinfo' => $this->additionalpaymentinfo,
         ]);
     }

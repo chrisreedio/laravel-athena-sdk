@@ -31,8 +31,8 @@ class ListPhoneMessages extends Request
      */
     public function __construct(
         protected int     $departmentid,
-        protected string  $enddate,
         protected string  $startdate,
+        protected string  $enddate,
         protected ?int    $providerid = null,
         protected ?bool   $showclosed = null,
         protected ?bool   $showdeleted = null,

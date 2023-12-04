@@ -28,8 +28,8 @@ class ListPatientSatisfactionScores extends Request
      */
     public function __construct(
         protected int     $departmentid,
-        protected string  $enddate,
         protected string  $startdate,
+        protected string  $enddate,
         protected ?string $lastmodified = null,
         protected ?int    $providerid = null,
     )
