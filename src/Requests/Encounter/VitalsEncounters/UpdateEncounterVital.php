@@ -24,15 +24,16 @@ class UpdateEncounterVital extends Request implements HasBody
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  int  $vitalid vitalid
-     * @param  string  $value The reading value. See the configuration for the proper units.
+     * @param int $encounterid encounterid
+     * @param string $value The reading value. See the configuration for the proper units.
+     * @param int $vitalid vitalid
      */
     public function __construct(
-        protected int $encounterid,
-        protected int $vitalid,
+        protected int    $encounterid,
         protected string $value,
-    ) {
+        protected int    $vitalid,
+    )
+    {
     }
 
     public function defaultBody(): array

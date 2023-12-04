@@ -24,21 +24,25 @@ class CreatePatientInsuranceBenefitDetails extends Request implements HasBody
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $insuranceid insuranceid
-     * @param  null|string  $dateofservice Checks the eligibility on that specific date.
-     * @param  null|string  $servicetypecode STC Code for which we are checking the eligibility
+     * @param int $insuranceid insuranceid
+     * @param int $patientid patientid
+     * @param null|string $dateofservice Checks the eligibility on that specific date.
+     * @param null|string $servicetypecode STC Code for which we are checking the eligibility
      */
     public function __construct(
-        protected int $patientid,
         protected int $insuranceid,
+        protected int $patientid,
         protected ?string $dateofservice = null,
         protected ?string $servicetypecode = null,
-    ) {
+    )
+    {
     }
 
     public function defaultBody(): array
     {
-        return array_filter(['dateofservice' => $this->dateofservice, 'servicetypecode' => $this->servicetypecode]);
+        return array_filter([
+            'dateofservice' => $this->dateofservice,
+            'servicetypecode' => $this->servicetypecode
+        ]);
     }
 }

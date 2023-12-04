@@ -24,13 +24,14 @@ class UpdateEncounterServicesNote extends Request implements HasBody
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  string  $note Text of the note that you want attached to the billing slip of an encounter.
+     * @param int $encounterid encounterid
+     * @param string $note Text of the note that you want attached to the billing slip of an encounter.
      */
     public function __construct(
-        protected int $encounterid,
+        protected int    $encounterid,
         protected string $note,
-    ) {
+    )
+    {
     }
 
     public function defaultBody(): array

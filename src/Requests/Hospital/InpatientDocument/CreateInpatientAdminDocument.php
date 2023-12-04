@@ -24,21 +24,22 @@ class CreateInpatientAdminDocument extends Request implements HasBody
     }
 
     /**
-     * @param  string  $attachmentcontents The file that will become the document. Currently only a base 64 encoded pdf is supported.
-     * @param  int  $departmentid The department id associated with the document.
-     * @param  int  $patientid The patient ID.
-     * @param  null|int  $documentlabelid The type of document being uploaded (this is the label that will be displayed to the user). Use GET /inpatient/configuration/documentlabels to search for valid IDs.
-     * @param  null|string  $observationdatetime If this document is tied to a clinical event it is the date the event occurred. Please use the format YYYY-M-DThh:mi:ss
-     * @param  null|int  $stayid The stay ID associated with the document.
+     * @param string $attachmentcontents The file that will become the document. Currently only a base 64 encoded pdf is supported.
+     * @param int $departmentid The department id associated with the document.
+     * @param int $patientid The patient ID.
+     * @param null|int $documentlabelid The type of document being uploaded (this is the label that will be displayed to the user). Use GET /inpatient/configuration/documentlabels to search for valid IDs.
+     * @param null|string $observationdatetime If this document is tied to a clinical event it is the date the event occurred. Please use the format YYYY-M-DThh:mi:ss
+     * @param null|int $stayid The stay ID associated with the document.
      */
     public function __construct(
-        protected string $attachmentcontents,
-        protected int $departmentid,
-        protected int $patientid,
-        protected ?int $documentlabelid = null,
+        protected string  $attachmentcontents,
+        protected int     $departmentid,
+        protected int     $patientid,
+        protected ?int    $documentlabelid = null,
         protected ?string $observationdatetime = null,
-        protected ?int $stayid = null,
-    ) {
+        protected ?int    $stayid = null,
+    )
+    {
     }
 
     public function defaultBody(): array

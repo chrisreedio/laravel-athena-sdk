@@ -24,13 +24,14 @@ class CreateImagingResultActionNote extends Request implements HasBody
     }
 
     /**
-     * @param  int  $imagingresultid imagingresultid
-     * @param  string  $actionnote The new action note to add to the document.
+     * @param string $actionnote The new action note to add to the document.
+     * @param int $imagingresultid imagingresultid
      */
     public function __construct(
-        protected int $imagingresultid,
         protected string $actionnote,
-    ) {
+        protected int    $imagingresultid,
+    )
+    {
     }
 
     public function defaultBody(): array

@@ -20,12 +20,13 @@ class GetPatientReplyAccess extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $messagethreadid messagethreadid
+     * @param int $messagethreadid messagethreadid
+     * @param int $patientid patientid
      */
     public function __construct(
-        protected int $patientid,
         protected int $messagethreadid,
-    ) {
+        protected int $patientid,
+    )
+    {
     }
 }

@@ -20,10 +20,11 @@ class GetReferringProvider extends Request
     }
 
     /**
-     * @param  int  $referringproviderid referringproviderid
+     * @param int $referringproviderid referringproviderid
      */
     public function __construct(
         protected int $referringproviderid,
-    ) {
+    )
+    {
     }
 }

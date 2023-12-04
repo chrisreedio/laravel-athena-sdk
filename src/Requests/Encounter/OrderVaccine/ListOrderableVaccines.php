@@ -20,17 +20,21 @@ class ListOrderableVaccines extends Request
     }
 
     /**
-     * @param  null|string  $searchvalue A term to search for. Must be at least 2 characters
-     * @param  null|string  $cvx The CVX code of the vaccine. Matching vaccines will be returned. A list of CVX codes can be retrieved at https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=vg
+     * @param null|string $cvx The CVX code of the vaccine. Matching vaccines will be returned. A list of CVX codes can be retrieved at https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=vg
+     * @param null|string $searchvalue A term to search for. Must be at least 2 characters
      */
     public function __construct(
-        protected ?string $searchvalue = null,
         protected ?string $cvx = null,
-    ) {
+        protected ?string $searchvalue = null,
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
-        return array_filter(['searchvalue' => $this->searchvalue, 'cvx' => $this->cvx]);
+        return array_filter([
+            'cvx' => $this->cvx,
+            'searchvalue' => $this->searchvalue
+        ]);
     }
 }

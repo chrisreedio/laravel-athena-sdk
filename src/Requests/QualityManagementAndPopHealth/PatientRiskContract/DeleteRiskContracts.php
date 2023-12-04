@@ -20,23 +20,24 @@ class DeleteRiskContracts extends Request
     }
 
     /**
-     * @param  null|bool  $allriskcontracts If true, deletes all patient risk contract associations
-     * @param  null|int  $riskcontractid Risk Contract ID
-     * @param  null|array  $patients List of patients to delete risk contracts.
+     * @param null|bool $allriskcontracts If true, deletes all patient risk contract associations
+     * @param null|array $patients List of patients to delete risk contracts.
+     * @param null|int $riskcontractid Risk Contract ID
      */
     public function __construct(
-        protected ?bool $allriskcontracts = null,
-        protected ?int $riskcontractid = null,
+        protected ?bool  $allriskcontracts = null,
         protected ?array $patients = null,
-    ) {
+        protected ?int   $riskcontractid = null,
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
             'allriskcontracts' => $this->allriskcontracts,
-            'riskcontractid' => $this->riskcontractid,
             'patients' => $this->patients,
+            'riskcontractid' => $this->riskcontractid,
         ]);
     }
 }

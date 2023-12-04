@@ -28,23 +28,28 @@ class UpdatePatientMedicalRecord extends Request implements HasBody
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $medicalrecordid medicalrecordid
-     * @param  null|string  $priority Priority of this result.  1 is high; 2 is normal.
-     * @param  null|int  $providerid The ID of the ordering provider.
-     * @param  null|string  $internalnote An internal note for the provider or staff. Updating this will append to any previous notes.
+     * @param int $medicalrecordid medicalrecordid
+     * @param int $patientid patientid
+     * @param null|string $internalnote An internal note for the provider or staff. Updating this will append to any previous notes.
+     * @param null|string $priority Priority of this result.  1 is high; 2 is normal.
+     * @param null|int $providerid The ID of the ordering provider.
      */
     public function __construct(
-        protected int $patientid,
         protected int $medicalrecordid,
+        protected int $patientid,
+        protected ?string $internalnote = null,
         protected ?string $priority = null,
         protected ?int $providerid = null,
-        protected ?string $internalnote = null,
-    ) {
+    )
+    {
     }
 
     public function defaultBody(): array
     {
-        return array_filter(['priority' => $this->priority, 'providerid' => $this->providerid, 'internalnote' => $this->internalnote]);
+        return array_filter([
+            'internalnote' => $this->internalnote,
+            'priority' => $this->priority,
+            'providerid' => $this->providerid
+        ]);
     }
 }

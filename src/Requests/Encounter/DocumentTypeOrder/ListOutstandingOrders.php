@@ -20,26 +20,27 @@ class ListOutstandingOrders extends Request
     }
 
     /**
-     * @param  null|bool  $showdeclinedorders If set, include orders that were declined
-     * @param  null|int  $departmentid The athenaNet department ID.
-     * @param  null|int  $patientid The athena patient ID.
-     * @param  null|int  $encounterid The ID for the clinical encounter the outstanding order was created in or the ID of the clinical encounter that the order will be performed in.
+     * @param null|int $departmentid The athenaNet department ID.
+     * @param null|int $encounterid The ID for the clinical encounter the outstanding order was created in or the ID of the clinical encounter that the order will be performed in.
+     * @param null|int $patientid The athena patient ID.
+     * @param null|bool $showdeclinedorders If set, include orders that were declined
      */
     public function __construct(
+        protected ?int  $departmentid = null,
+        protected ?int  $encounterid = null,
+        protected ?int  $patientid = null,
         protected ?bool $showdeclinedorders = null,
-        protected ?int $departmentid = null,
-        protected ?int $patientid = null,
-        protected ?int $encounterid = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
-            'showdeclinedorders' => $this->showdeclinedorders,
             'departmentid' => $this->departmentid,
-            'patientid' => $this->patientid,
             'encounterid' => $this->encounterid,
+            'patientid' => $this->patientid,
+            'showdeclinedorders' => $this->showdeclinedorders,
         ]);
     }
 }

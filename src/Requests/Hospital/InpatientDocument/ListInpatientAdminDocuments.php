@@ -20,25 +20,26 @@ class ListInpatientAdminDocuments extends Request
     }
 
     /**
-     * @param  null|string  $status Status of the document
-     * @param  int  $departmentid The department id associated with the document.
-     * @param  int  $patientid The patient ID.
-     * @param  null|int  $stayid The stay ID. If this field is used, the departmentid must also match one of the departments returned in GET /stays/{stayid}.
+     * @param int $departmentid The department id associated with the document.
+     * @param int $patientid The patient ID.
+     * @param null|string $status Status of the document
+     * @param null|int $stayid The stay ID. If this field is used, the departmentid must also match one of the departments returned in GET /stays/{stayid}.
      */
     public function __construct(
-        protected ?string $status,
-        protected int $departmentid,
-        protected int $patientid,
-        protected ?int $stayid = null,
-    ) {
+        protected int     $departmentid,
+        protected int     $patientid,
+        protected ?string $status = null,
+        protected ?int    $stayid = null,
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
-            'status' => $this->status,
             'departmentid' => $this->departmentid,
             'patientid' => $this->patientid,
+            'status' => $this->status,
             'stayid' => $this->stayid,
         ]);
     }

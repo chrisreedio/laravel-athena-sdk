@@ -25,21 +25,26 @@ class CreateChangeAgingOwnership extends Request implements HasBody
     }
 
     /**
-     * @param  string  $vendorcode vendorcode
-     * @param  string  $action Represents who should own the Ageing of claims.Valid values are "AGEINGBYATHENA" , "AGEINGBYVENDOR"
-     * @param  array  $claims List of Claim IDs Example: ["123","124"]
-     * @param  string  $patientid Patientid of claims given in the input
+     * @param string $action Represents who should own the Ageing of claims.Valid values are "AGEINGBYATHENA" , "AGEINGBYVENDOR"
+     * @param array $claims List of Claim IDs Example: ["123","124"]
+     * @param string $patientid Patientid of claims given in the input
+     * @param string $vendorcode vendorcode
      */
     public function __construct(
-        protected string $vendorcode,
         protected string $action,
-        protected array $claims,
+        protected array  $claims,
         protected string $patientid,
-    ) {
+        protected string $vendorcode,
+    )
+    {
     }
 
     public function defaultBody(): array
     {
-        return array_filter(['action' => $this->action, 'claims' => $this->claims, 'patientid' => $this->patientid]);
+        return array_filter([
+            'action' => $this->action,
+            'claims' => $this->claims,
+            'patientid' => $this->patientid
+        ]);
     }
 }

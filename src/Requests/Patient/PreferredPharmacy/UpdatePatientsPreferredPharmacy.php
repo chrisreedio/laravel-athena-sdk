@@ -24,21 +24,26 @@ class UpdatePatientsPreferredPharmacy extends Request implements HasBody
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $departmentid The athenaNet department id.
-     * @param  null|int  $ncpdpid The <a href="http://www.ncpdp.org">NCPDP</a> ID of the clinical provider. Can be used instead of clinicalproviderid. Only one can be used.
-     * @param  null|int  $clinicalproviderid The clinical provider ID that you wish to set as the default pharmacy or add as a preferred pharmacy. This or the NCPDPID must be provided.
+     * @param int $departmentid The athenaNet department id.
+     * @param int $patientid patientid
+     * @param null|int $clinicalproviderid The clinical provider ID that you wish to set as the default pharmacy or add as a preferred pharmacy. This or the NCPDPID must be provided.
+     * @param null|int $ncpdpid The <a href="http://www.ncpdp.org">NCPDP</a> ID of the clinical provider. Can be used instead of clinicalproviderid. Only one can be used.
      */
     public function __construct(
-        protected int $patientid,
         protected int $departmentid,
-        protected ?int $ncpdpid = null,
+        protected int $patientid,
         protected ?int $clinicalproviderid = null,
-    ) {
+        protected ?int $ncpdpid = null,
+    )
+    {
     }
 
     public function defaultBody(): array
     {
-        return array_filter(['departmentid' => $this->departmentid, 'ncpdpid' => $this->ncpdpid, 'clinicalproviderid' => $this->clinicalproviderid]);
+        return array_filter([
+            'departmentid' => $this->departmentid,
+            'clinicalproviderid' => $this->clinicalproviderid,
+            'ncpdpid' => $this->ncpdpid
+        ]);
     }
 }

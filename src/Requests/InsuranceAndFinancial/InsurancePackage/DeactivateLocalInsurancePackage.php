@@ -25,13 +25,14 @@ class DeactivateLocalInsurancePackage extends Request implements HasBody
     }
 
     /**
-     * @param  int  $insurancepackageid insurancepackageid
-     * @param  null|string  $expirationdate The expiration date of the locally administered insurance package.
+     * @param int $insurancepackageid insurancepackageid
+     * @param null|string $expirationdate The expiration date of the locally administered insurance package.
      */
     public function __construct(
-        protected int $insurancepackageid,
+        protected int     $insurancepackageid,
         protected ?string $expirationdate = null,
-    ) {
+    )
+    {
     }
 
     public function defaultBody(): array

@@ -24,13 +24,14 @@ class CreateLabResultActionNote extends Request implements HasBody
     }
 
     /**
-     * @param  int  $labresultid labresultid
-     * @param  string  $actionnote The new action note to add to the document.
+     * @param string $actionnote The new action note to add to the document.
+     * @param int $labresultid labresultid
      */
     public function __construct(
-        protected int $labresultid,
         protected string $actionnote,
-    ) {
+        protected int    $labresultid,
+    )
+    {
     }
 
     public function defaultBody(): array

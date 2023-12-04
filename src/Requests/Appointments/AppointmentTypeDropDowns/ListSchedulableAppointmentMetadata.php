@@ -20,26 +20,27 @@ class ListSchedulableAppointmentMetadata extends Request
     }
 
     /**
-     * @param  null|int  $appointmenttypeid ID of the Appointment.
-     * @param  null|bool  $showenabledonly By default we show all appointmenttypes available to provider/department combination Setting this flag to true and giving either provider, appointmenttypeid, departmentid, or any combination will show whats actually configured in the appointmenttypes drop down table for the given parameters.
-     * @param  null|int  $departmentid Id of the Department.
-     * @param  null|int  $providerid ID of the Provider.
+     * @param null|int $appointmenttypeid ID of the Appointment.
+     * @param null|int $departmentid Id of the Department.
+     * @param null|int $providerid ID of the Provider.
+     * @param null|bool $showenabledonly By default we show all appointmenttypes available to provider/department combination Setting this flag to true and giving either provider, appointmenttypeid, departmentid, or any combination will show whats actually configured in the appointmenttypes drop down table for the given parameters.
      */
     public function __construct(
-        protected ?int $appointmenttypeid = null,
+        protected ?int  $appointmenttypeid = null,
+        protected ?int  $departmentid = null,
+        protected ?int  $providerid = null,
         protected ?bool $showenabledonly = null,
-        protected ?int $departmentid = null,
-        protected ?int $providerid = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
             'appointmenttypeid' => $this->appointmenttypeid,
-            'showenabledonly' => $this->showenabledonly,
             'departmentid' => $this->departmentid,
             'providerid' => $this->providerid,
+            'showenabledonly' => $this->showenabledonly,
         ]);
     }
 }

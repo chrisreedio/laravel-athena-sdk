@@ -20,17 +20,21 @@ class ListRiskContracts extends Request
     }
 
     /**
-     * @param  null|int  $riskcontractid Risk Contract ID
-     * @param  null|int  $departmentid Department ID
+     * @param null|int $departmentid Department ID
+     * @param null|int $riskcontractid Risk Contract ID
      */
     public function __construct(
-        protected ?int $riskcontractid = null,
         protected ?int $departmentid = null,
-    ) {
+        protected ?int $riskcontractid = null,
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
-        return array_filter(['riskcontractid' => $this->riskcontractid, 'departmentid' => $this->departmentid]);
+        return array_filter([
+            'departmentid' => $this->departmentid,
+            'riskcontractid' => $this->riskcontractid
+        ]);
     }
 }

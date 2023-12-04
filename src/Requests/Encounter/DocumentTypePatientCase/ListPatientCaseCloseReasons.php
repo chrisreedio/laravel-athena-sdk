@@ -20,11 +20,12 @@ class ListPatientCaseCloseReasons extends Request
     }
 
     /**
-     * @param  int  $patientcaseid denotes the id of the patient case.
+     * @param int $patientcaseid denotes the id of the patient case.
      */
     public function __construct(
         protected int $patientcaseid,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array

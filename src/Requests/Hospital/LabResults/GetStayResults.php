@@ -20,19 +20,23 @@ class GetStayResults extends Request
     }
 
     /**
-     * @param  int  $stayid stayid
-     * @param  null|string  $thirdpartyusername User name of the patient in the third party application.
-     * @param  null|bool  $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
+     * @param int $stayid stayid
+     * @param null|bool $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
+     * @param null|string $thirdpartyusername User name of the patient in the third party application.
      */
     public function __construct(
-        protected int $stayid,
+        protected int     $stayid,
+        protected ?bool   $patientfacingcall = null,
         protected ?string $thirdpartyusername = null,
-        protected ?bool $patientfacingcall = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
-        return array_filter(['THIRDPARTYUSERNAME' => $this->thirdpartyusername, 'PATIENTFACINGCALL' => $this->patientfacingcall]);
+        return array_filter([
+            'PATIENTFACINGCALL' => $this->patientfacingcall,
+            'THIRDPARTYUSERNAME' => $this->thirdpartyusername
+        ]);
     }
 }

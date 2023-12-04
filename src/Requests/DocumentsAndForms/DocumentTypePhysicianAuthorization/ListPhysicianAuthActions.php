@@ -20,11 +20,12 @@ class ListPhysicianAuthActions extends Request
     }
 
     /**
-     * @param  int  $physicianauthid physicianauthid
+     * @param int $physicianauthid physicianauthid
      */
     public function __construct(
         protected int $physicianauthid,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array

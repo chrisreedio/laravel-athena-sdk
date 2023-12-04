@@ -20,11 +20,12 @@ class GetEncounterDocumentActions extends Request
     }
 
     /**
-     * @param  int  $encounterdocumentid encounterdocumentid
+     * @param int $encounterdocumentid encounterdocumentid
      */
     public function __construct(
         protected int $encounterdocumentid,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array

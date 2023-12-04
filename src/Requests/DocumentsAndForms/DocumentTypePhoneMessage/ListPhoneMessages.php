@@ -20,38 +20,39 @@ class ListPhoneMessages extends Request
     }
 
     /**
-     * @param  null|bool  $showdeleted Allow documents that have been deleted to be returned.
-     * @param  null|string  $status Show only documents of this status.  CLOSED will also set SHOWCLOSED to true.  DELETED will set SHOWDELETED to true.
-     * @param  string  $startdate The start date in a range (mm/dd/yyyy).
-     * @param  null|bool  $showdocumentswithpatientid Allow documents with patient IDs assigned to be returned.
-     * @param  string  $enddate The end date in a range (mm/dd/yyyy).
-     * @param  null|int  $providerid The ID of the ordering provider.
-     * @param  int  $departmentid The athenaNet department ID associated with the uploaded document.
-     * @param  null|bool  $showclosed Allow documents in the CLOSED status to be returned.
+     * @param int $departmentid The athenaNet department ID associated with the uploaded document.
+     * @param string $enddate The end date in a range (mm/dd/yyyy).
+     * @param string $startdate The start date in a range (mm/dd/yyyy).
+     * @param null|int $providerid The ID of the ordering provider.
+     * @param null|bool $showclosed Allow documents in the CLOSED status to be returned.
+     * @param null|bool $showdeleted Allow documents that have been deleted to be returned.
+     * @param null|bool $showdocumentswithpatientid Allow documents with patient IDs assigned to be returned.
+     * @param null|string $status Show only documents of this status.  CLOSED will also set SHOWCLOSED to true.  DELETED will set SHOWDELETED to true.
      */
     public function __construct(
-        protected ?bool $showdeleted,
-        protected ?string $status,
-        protected string $startdate,
-        protected ?bool $showdocumentswithpatientid,
-        protected string $enddate,
-        protected ?int $providerid,
-        protected int $departmentid,
-        protected ?bool $showclosed = null,
-    ) {
+        protected int     $departmentid,
+        protected string  $enddate,
+        protected string  $startdate,
+        protected ?int    $providerid = null,
+        protected ?bool   $showclosed = null,
+        protected ?bool   $showdeleted = null,
+        protected ?bool   $showdocumentswithpatientid = null,
+        protected ?string $status = null,
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
-            'showdeleted' => $this->showdeleted,
-            'status' => $this->status,
-            'startdate' => $this->startdate,
-            'showdocumentswithpatientid' => $this->showdocumentswithpatientid,
-            'enddate' => $this->enddate,
-            'providerid' => $this->providerid,
             'departmentid' => $this->departmentid,
+            'enddate' => $this->enddate,
+            'startdate' => $this->startdate,
+            'providerid' => $this->providerid,
             'showclosed' => $this->showclosed,
+            'showdeleted' => $this->showdeleted,
+            'showdocumentswithpatientid' => $this->showdocumentswithpatientid,
+            'status' => $this->status,
         ]);
     }
 }

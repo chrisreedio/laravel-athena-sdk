@@ -24,19 +24,23 @@ class UpdateAppointmentInsurances extends Request implements HasBody
     }
 
     /**
-     * @param  int  $appointmentid appointmentid
-     * @param  null|int  $primaryinsuranceid The athenaNet patient insurance ID for the policy you want to use as primary for this appointment.
-     * @param  null|int  $secondaryinsuranceid The athenaNet patient insurance ID for the policy you want to use as secondary for this appointment.
+     * @param int $appointmentid appointmentid
+     * @param null|int $primaryinsuranceid The athenaNet patient insurance ID for the policy you want to use as primary for this appointment.
+     * @param null|int $secondaryinsuranceid The athenaNet patient insurance ID for the policy you want to use as secondary for this appointment.
      */
     public function __construct(
         protected int $appointmentid,
         protected ?int $primaryinsuranceid = null,
         protected ?int $secondaryinsuranceid = null,
-    ) {
+    )
+    {
     }
 
     public function defaultBody(): array
     {
-        return array_filter(['primaryinsuranceid' => $this->primaryinsuranceid, 'secondaryinsuranceid' => $this->secondaryinsuranceid]);
+        return array_filter([
+            'primaryinsuranceid' => $this->primaryinsuranceid,
+            'secondaryinsuranceid' => $this->secondaryinsuranceid
+        ]);
     }
 }

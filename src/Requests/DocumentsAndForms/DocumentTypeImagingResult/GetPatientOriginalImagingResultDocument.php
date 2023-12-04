@@ -23,12 +23,13 @@ class GetPatientOriginalImagingResultDocument extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $imagingresultid imagingresultid
+     * @param int $imagingresultid imagingresultid
+     * @param int $patientid patientid
      */
     public function __construct(
-        protected int $patientid,
         protected int $imagingresultid,
-    ) {
+        protected int $patientid,
+    )
+    {
     }
 }

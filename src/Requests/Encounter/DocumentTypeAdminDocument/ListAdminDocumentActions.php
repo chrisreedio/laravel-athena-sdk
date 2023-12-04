@@ -20,11 +20,12 @@ class ListAdminDocumentActions extends Request
     }
 
     /**
-     * @param  int  $adminid adminid
+     * @param int $adminid adminid
      */
     public function __construct(
         protected int $adminid,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array

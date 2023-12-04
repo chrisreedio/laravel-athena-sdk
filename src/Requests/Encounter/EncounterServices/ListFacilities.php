@@ -20,17 +20,18 @@ class ListFacilities extends Request
     }
 
     /**
-     * @param  int  $departmentid Used to help determine both whether to include which practice-configured facilities as well as help sort the results.
-     * @param  string  $name The facility to search for. This can include the name or address of the facility, in space delimited form
-     * @param  null|int  $patientid Used to help determine which matches to return based on distance to patient and practice.
-     * @param  string  $ordertype The type of facility to search for.
+     * @param int $departmentid Used to help determine both whether to include which practice-configured facilities as well as help sort the results.
+     * @param string $name The facility to search for. This can include the name or address of the facility, in space delimited form
+     * @param string $ordertype The type of facility to search for.
+     * @param null|int $patientid Used to help determine which matches to return based on distance to patient and practice.
      */
     public function __construct(
-        protected int $departmentid,
+        protected int    $departmentid,
         protected string $name,
-        protected ?int $patientid,
         protected string $ordertype,
-    ) {
+        protected ?int   $patientid = null,
+    )
+    {
     }
 
     public function defaultQuery(): array
@@ -38,8 +39,8 @@ class ListFacilities extends Request
         return array_filter([
             'departmentid' => $this->departmentid,
             'name' => $this->name,
-            'patientid' => $this->patientid,
             'ordertype' => $this->ordertype,
+            'patientid' => $this->patientid,
         ]);
     }
 }

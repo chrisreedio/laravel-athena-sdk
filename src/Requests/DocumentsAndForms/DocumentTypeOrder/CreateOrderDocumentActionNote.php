@@ -24,13 +24,14 @@ class CreateOrderDocumentActionNote extends Request implements HasBody
     }
 
     /**
-     * @param  int  $orderid orderid
-     * @param  string  $actionnote The new action note to add to the document.
+     * @param string $actionnote The new action note to add to the document.
+     * @param int $orderid orderid
      */
     public function __construct(
-        protected int $orderid,
         protected string $actionnote,
-    ) {
+        protected int    $orderid,
+    )
+    {
     }
 
     public function defaultBody(): array

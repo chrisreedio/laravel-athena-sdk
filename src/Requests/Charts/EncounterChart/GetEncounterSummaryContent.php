@@ -20,19 +20,23 @@ class GetEncounterSummaryContent extends Request
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  null|bool  $mobile Flag to skip many details to make the html smaller
-     * @param  null|bool  $skipamendments Flag to skip encounter amendments
+     * @param int $encounterid encounterid
+     * @param null|bool $mobile Flag to skip many details to make the html smaller
+     * @param null|bool $skipamendments Flag to skip encounter amendments
      */
     public function __construct(
         protected int $encounterid,
         protected ?bool $mobile = null,
         protected ?bool $skipamendments = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
-        return array_filter(['mobile' => $this->mobile, 'skipamendments' => $this->skipamendments]);
+        return array_filter([
+            'mobile' => $this->mobile,
+            'skipamendments' => $this->skipamendments
+        ]);
     }
 }

@@ -24,13 +24,14 @@ class CreateOrUpdatePatientInsurancePrescriptionCard extends Request implements 
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  string  $image Base64 encoded image, or, if multipart/form-data, unencoded image. This image may be scaled down after submission. PUT is not recommended when using multipart/form-data. Since POST and PUT have identical functionality, POST is recommended.
+     * @param string $image Base64 encoded image, or, if multipart/form-data, unencoded image. This image may be scaled down after submission. PUT is not recommended when using multipart/form-data. Since POST and PUT have identical functionality, POST is recommended.
+     * @param int $patientid patientid
      */
     public function __construct(
-        protected int $patientid,
         protected string $image,
-    ) {
+        protected int    $patientid,
+    )
+    {
     }
 
     public function defaultBody(): array

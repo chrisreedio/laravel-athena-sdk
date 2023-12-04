@@ -20,10 +20,11 @@ class GetInpatientAdminDocument extends Request
     }
 
     /**
-     * @param  int  $admindocumentid admindocumentid
+     * @param int $admindocumentid admindocumentid
      */
     public function __construct(
         protected int $admindocumentid,
-    ) {
+    )
+    {
     }
 }

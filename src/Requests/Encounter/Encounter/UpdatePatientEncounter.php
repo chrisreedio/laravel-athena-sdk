@@ -24,19 +24,23 @@ class UpdatePatientEncounter extends Request implements HasBody
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  null|int  $patientstatusid The practice patient status id. You can get a list of valid values by department via GET /chart/configuration/patientstatuses.
-     * @param  null|int  $patientlocationid The practice patient location id. You can get a list of valid values by department via GET /chart/configuration/patientlocations.
+     * @param int $encounterid encounterid
+     * @param null|int $patientlocationid The practice patient location id. You can get a list of valid values by department via GET /chart/configuration/patientlocations.
+     * @param null|int $patientstatusid The practice patient status id. You can get a list of valid values by department via GET /chart/configuration/patientstatuses.
      */
     public function __construct(
         protected int $encounterid,
-        protected ?int $patientstatusid = null,
         protected ?int $patientlocationid = null,
-    ) {
+        protected ?int $patientstatusid = null,
+    )
+    {
     }
 
     public function defaultBody(): array
     {
-        return array_filter(['patientstatusid' => $this->patientstatusid, 'patientlocationid' => $this->patientlocationid]);
+        return array_filter([
+            'patientlocationid' => $this->patientlocationid,
+            'patientstatusid' => $this->patientstatusid
+        ]);
     }
 }

@@ -20,17 +20,18 @@ class GetPhysicianAuthPage extends Request
     }
 
     /**
-     * @param  int  $pageid pageid
-     * @param  int  $physicianauthid physicianauthid
-     * @param  int  $patientid patientid
-     * @param  null|string  $filesize The file size of the document being requested.
+     * @param int $pageid pageid
+     * @param int $patientid patientid
+     * @param int $physicianauthid physicianauthid
+     * @param null|string $filesize The file size of the document being requested.
      */
     public function __construct(
-        protected int $pageid,
-        protected int $physicianauthid,
-        protected int $patientid,
+        protected int     $pageid,
+        protected int     $patientid,
+        protected int     $physicianauthid,
         protected ?string $filesize = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array

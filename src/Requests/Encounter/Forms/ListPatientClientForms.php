@@ -20,17 +20,21 @@ class ListPatientClientForms extends Request
     }
 
     /**
-     * @param  null|bool  $hidepdfs Hides PDF forms if set
-     * @param  int  $departmentid The department id
+     * @param int $departmentid The department id
+     * @param null|bool $hidepdfs Hides PDF forms if set
      */
     public function __construct(
-        protected ?bool $hidepdfs,
         protected int $departmentid,
-    ) {
+        protected ?bool $hidepdfs = null,
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
-        return array_filter(['hidepdfs' => $this->hidepdfs, 'departmentid' => $this->departmentid]);
+        return array_filter([
+            'departmentid' => $this->departmentid,
+            'hidepdfs' => $this->hidepdfs
+        ]);
     }
 }

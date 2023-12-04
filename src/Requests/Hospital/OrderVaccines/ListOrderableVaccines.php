@@ -20,11 +20,12 @@ class ListOrderableVaccines extends Request
     }
 
     /**
-     * @param  string  $searchvalue A term to search for. Must be at least 2 characters
+     * @param string $searchvalue A term to search for. Must be at least 2 characters
      */
     public function __construct(
         protected string $searchvalue,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array

@@ -24,19 +24,23 @@ class UpdatePatientPreferredImagingService extends Request implements HasBody
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $departmentid The athenaNet department id.
-     * @param  int  $clinicalproviderid The clinical provider ID that you wish to add.
+     * @param int $clinicalproviderid The clinical provider ID that you wish to add.
+     * @param int $departmentid The athenaNet department id.
+     * @param int $patientid patientid
      */
     public function __construct(
-        protected int $patientid,
-        protected int $departmentid,
         protected int $clinicalproviderid,
-    ) {
+        protected int $departmentid,
+        protected int $patientid,
+    )
+    {
     }
 
     public function defaultBody(): array
     {
-        return array_filter(['departmentid' => $this->departmentid, 'clinicalproviderid' => $this->clinicalproviderid]);
+        return array_filter([
+            'clinicalproviderid' => $this->clinicalproviderid,
+            'departmentid' => $this->departmentid
+        ]);
     }
 }

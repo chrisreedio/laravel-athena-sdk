@@ -21,11 +21,12 @@ class DeleteInventoryItems extends Request
     }
 
     /**
-     * @param  array  $athenainventoryitemids Array of athena inventory item ids to delete
+     * @param array $athenainventoryitemids Array of athena inventory item ids to delete
      */
     public function __construct(
         protected array $athenainventoryitemids,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array

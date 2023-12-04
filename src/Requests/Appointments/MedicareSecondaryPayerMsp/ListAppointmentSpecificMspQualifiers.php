@@ -21,11 +21,12 @@ class ListAppointmentSpecificMspQualifiers extends Request
     }
 
     /**
-     * @param  null|int  $departmentid The department id
+     * @param null|int $departmentid The department id
      */
     public function __construct(
         protected ?int $departmentid = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array

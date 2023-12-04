@@ -20,21 +20,26 @@ class ListPatientAcogDocuments extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  null|bool  $showdeleted By default, deleted documents are not listed.  Set to list these.
-     * @param  null|string  $status The status of the task to filter document results.
-     * @param  int  $departmentid The athenaNet department id.
+     * @param int $departmentid The athenaNet department id.
+     * @param int $patientid patientid
+     * @param null|bool $showdeleted By default, deleted documents are not listed.  Set to list these.
+     * @param null|string $status The status of the task to filter document results.
      */
     public function __construct(
-        protected int $patientid,
-        protected ?bool $showdeleted,
-        protected ?string $status,
-        protected int $departmentid,
-    ) {
+        protected int     $departmentid,
+        protected int     $patientid,
+        protected ?bool   $showdeleted = null,
+        protected ?string $status = null,
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
-        return array_filter(['showdeleted' => $this->showdeleted, 'status' => $this->status, 'departmentid' => $this->departmentid]);
+        return array_filter([
+            'departmentid' => $this->departmentid,
+            'showdeleted' => $this->showdeleted,
+            'status' => $this->status
+        ]);
     }
 }

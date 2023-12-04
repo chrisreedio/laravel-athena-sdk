@@ -24,17 +24,21 @@ class CreateTelehealthDeepLink extends Request implements HasBody
     }
 
     /**
-     * @param  int  $patientid The athenaNet Patient ID.
-     * @param  int  $appointmentid The athenaNet appointment ID.
+     * @param int $appointmentid The athenaNet appointment ID.
+     * @param int $patientid The athenaNet Patient ID.
      */
     public function __construct(
-        protected int $patientid,
         protected int $appointmentid,
-    ) {
+        protected int $patientid,
+    )
+    {
     }
 
     public function defaultBody(): array
     {
-        return array_filter(['patientid' => $this->patientid, 'appointmentid' => $this->appointmentid]);
+        return array_filter([
+            'appointmentid' => $this->appointmentid,
+            'patientid' => $this->patientid
+        ]);
     }
 }

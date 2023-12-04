@@ -20,21 +20,25 @@ class GetPatientImagingResultDocument extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $imagingresultid imagingresultid
-     * @param  null|bool  $getentityinfo If true, entityid and entitytype will be returned. entityid will be populated in createduser attribute.
-     * @param  null|bool  $showtemplate If true, interpretation template added to the document is also returned.
+     * @param int $imagingresultid imagingresultid
+     * @param int $patientid patientid
+     * @param null|bool $getentityinfo If true, entityid and entitytype will be returned. entityid will be populated in createduser attribute.
+     * @param null|bool $showtemplate If true, interpretation template added to the document is also returned.
      */
     public function __construct(
-        protected int $patientid,
         protected int $imagingresultid,
+        protected int $patientid,
         protected ?bool $getentityinfo = null,
         protected ?bool $showtemplate = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
-        return array_filter(['getentityinfo' => $this->getentityinfo, 'showtemplate' => $this->showtemplate]);
+        return array_filter([
+            'getentityinfo' => $this->getentityinfo,
+            'showtemplate' => $this->showtemplate
+        ]);
     }
 }

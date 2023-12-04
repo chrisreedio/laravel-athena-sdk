@@ -20,21 +20,25 @@ class GetPatientClinicalDocument extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $clinicaldocumentid clinicaldocumentid
-     * @param  null|bool  $getentityinfo If true, entityid and entitytype will be returned. entityid will be populated in createduser attribute.
-     * @param  null|bool  $showccdaxml Default false. If set to true, will include CCDAXML string.
+     * @param int $clinicaldocumentid clinicaldocumentid
+     * @param int $patientid patientid
+     * @param null|bool $getentityinfo If true, entityid and entitytype will be returned. entityid will be populated in createduser attribute.
+     * @param null|bool $showccdaxml Default false. If set to true, will include CCDAXML string.
      */
     public function __construct(
-        protected int $patientid,
         protected int $clinicaldocumentid,
+        protected int $patientid,
         protected ?bool $getentityinfo = null,
         protected ?bool $showccdaxml = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
-        return array_filter(['getentityinfo' => $this->getentityinfo, 'showccdaxml' => $this->showccdaxml]);
+        return array_filter([
+            'getentityinfo' => $this->getentityinfo,
+            'showccdaxml' => $this->showccdaxml
+        ]);
     }
 }

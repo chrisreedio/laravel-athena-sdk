@@ -24,29 +24,30 @@ class ListPatientsBySearchCriteria extends Request
     }
 
     /**
-     * @param  null|string  $athenanetuser Username to check permissions against, required for restricted patients
-     * @param  null|string  $maxresults Maximum number of results to return (default 50)
-     * @param  null|string  $searchtype The search type to search by. The types can be retrieved in /configuration/patients/searchtypes
-     * @param  string  $searchterm The search term for finding patients, partial name or full patient id
-     * @param  null|array  $confidentialitycode A comma separated list of confidentiality codes to filter patients by. If not set defaults to include all confidentiality codes. Supported codes: 'N' and 'R'. Only functions if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
+     * @param string $searchterm The search term for finding patients, partial name or full patient id
+     * @param null|string $athenanetuser Username to check permissions against, required for restricted patients
+     * @param null|array $confidentialitycode A comma separated list of confidentiality codes to filter patients by. If not set defaults to include all confidentiality codes. Supported codes: 'N' and 'R'. Only functions if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
+     * @param null|string $maxresults Maximum number of results to return (default 50)
+     * @param null|string $searchtype The search type to search by. The types can be retrieved in /configuration/patients/searchtypes
      */
     public function __construct(
-        protected ?string $athenanetuser,
-        protected ?string $maxresults,
-        protected ?string $searchtype,
-        protected string $searchterm,
-        protected ?array $confidentialitycode = null,
-    ) {
+        protected string  $searchterm,
+        protected ?string $athenanetuser = null,
+        protected ?array  $confidentialitycode = null,
+        protected ?string $maxresults = null,
+        protected ?string $searchtype = null,
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
+            'searchterm' => $this->searchterm,
             'athenanetuser' => $this->athenanetuser,
+            'confidentialitycode' => $this->confidentialitycode,
             'maxresults' => $this->maxresults,
             'searchtype' => $this->searchtype,
-            'searchterm' => $this->searchterm,
-            'confidentialitycode' => $this->confidentialitycode,
         ]);
     }
 }

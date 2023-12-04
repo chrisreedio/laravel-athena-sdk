@@ -20,21 +20,25 @@ class GetPatientInsuranceBenefitDetails extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $insuranceid insuranceid
-     * @param  null|string  $servicetypecode STC Code for which we are checking the eligibility
-     * @param  null|string  $dateofservice Fetches the eligibility on that specific date.
+     * @param int $insuranceid insuranceid
+     * @param int $patientid patientid
+     * @param null|string $dateofservice Fetches the eligibility on that specific date.
+     * @param null|string $servicetypecode STC Code for which we are checking the eligibility
      */
     public function __construct(
-        protected int $patientid,
         protected int $insuranceid,
-        protected ?string $servicetypecode = null,
+        protected int $patientid,
         protected ?string $dateofservice = null,
-    ) {
+        protected ?string $servicetypecode = null,
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
-        return array_filter(['servicetypecode' => $this->servicetypecode, 'dateofservice' => $this->dateofservice]);
+        return array_filter([
+            'dateofservice' => $this->dateofservice,
+            'servicetypecode' => $this->servicetypecode
+        ]);
     }
 }

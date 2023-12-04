@@ -20,10 +20,11 @@ class DeleteProvider extends Request
     }
 
     /**
-     * @param  int  $providerid providerid
+     * @param int $providerid providerid
      */
     public function __construct(
         protected int $providerid,
-    ) {
+    )
+    {
     }
 }

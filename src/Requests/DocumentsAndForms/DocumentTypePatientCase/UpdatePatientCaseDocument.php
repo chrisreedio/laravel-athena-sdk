@@ -28,51 +28,52 @@ class UpdatePatientCaseDocument extends Request implements HasBody
     }
 
     /**
-     * @param  int  $patientcaseid patientcaseid
-     * @param  int  $patientid patientid
-     * @param  null|string  $subject The subject of this patient case.
-     * @param  null|string  $priority Priority of this result.  1 is high; 2 is normal.
-     * @param  null|int  $providerid The ID of the ordering provider.
-     * @param  null|string  $callbackname The name of the person to call (if other than patient).
-     * @param  null|string  $internalnote An internal note for the provider or staff. Updating this will append to any previous notes.
-     * @param  null|bool  $outboundonly True/false flag indicating the patient case requires an outbound phone call and is not a response to an inbound call.
-     * @param  null|string  $callbacknumber The phone number to use to call back the patient (mutually exclusive with callbacknumbertype).
-     * @param  null|string  $documentsource Explains where this document originated.
-     * @param  null|string  $documentsubclass Subclasses for PATIENTCASE documents
-     * @param  null|string  $callbacknumbertype The phone number type to use to call back the patient (mutually exclusive with callbacknumber).
-     * @param  null|int  $clinicalproviderid The ID of the external provider/lab/pharmacy associated the document.
+     * @param int $patientcaseid patientcaseid
+     * @param int $patientid patientid
+     * @param null|string $callbackname The name of the person to call (if other than patient).
+     * @param null|string $callbacknumber The phone number to use to call back the patient (mutually exclusive with callbacknumbertype).
+     * @param null|string $callbacknumbertype The phone number type to use to call back the patient (mutually exclusive with callbacknumber).
+     * @param null|int $clinicalproviderid The ID of the external provider/lab/pharmacy associated the document.
+     * @param null|string $documentsource Explains where this document originated.
+     * @param null|string $documentsubclass Subclasses for PATIENTCASE documents
+     * @param null|string $internalnote An internal note for the provider or staff. Updating this will append to any previous notes.
+     * @param null|bool $outboundonly True/false flag indicating the patient case requires an outbound phone call and is not a response to an inbound call.
+     * @param null|string $priority Priority of this result.  1 is high; 2 is normal.
+     * @param null|int $providerid The ID of the ordering provider.
+     * @param null|string $subject The subject of this patient case.
      */
     public function __construct(
-        protected int $patientcaseid,
-        protected int $patientid,
-        protected ?string $subject = null,
-        protected ?string $priority = null,
-        protected ?int $providerid = null,
+        protected int     $patientcaseid,
+        protected int     $patientid,
         protected ?string $callbackname = null,
-        protected ?string $internalnote = null,
-        protected ?bool $outboundonly = null,
         protected ?string $callbacknumber = null,
+        protected ?string $callbacknumbertype = null,
+        protected ?int    $clinicalproviderid = null,
         protected ?string $documentsource = null,
         protected ?string $documentsubclass = null,
-        protected ?string $callbacknumbertype = null,
-        protected ?int $clinicalproviderid = null,
-    ) {
+        protected ?string $internalnote = null,
+        protected ?bool   $outboundonly = null,
+        protected ?string $priority = null,
+        protected ?int    $providerid = null,
+        protected ?string $subject = null,
+    )
+    {
     }
 
     public function defaultBody(): array
     {
         return array_filter([
-            'subject' => $this->subject,
-            'priority' => $this->priority,
-            'providerid' => $this->providerid,
             'callbackname' => $this->callbackname,
-            'internalnote' => $this->internalnote,
-            'outboundonly' => $this->outboundonly,
             'callbacknumber' => $this->callbacknumber,
-            'documentsource' => $this->documentsource,
-            'documentsubclass' => $this->documentsubclass,
             'callbacknumbertype' => $this->callbacknumbertype,
             'clinicalproviderid' => $this->clinicalproviderid,
+            'documentsource' => $this->documentsource,
+            'documentsubclass' => $this->documentsubclass,
+            'internalnote' => $this->internalnote,
+            'outboundonly' => $this->outboundonly,
+            'priority' => $this->priority,
+            'providerid' => $this->providerid,
+            'subject' => $this->subject,
         ]);
     }
 }

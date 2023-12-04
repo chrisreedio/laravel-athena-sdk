@@ -20,15 +20,16 @@ class GetPatientChartExportDocument extends Request
     }
 
     /**
-     * @param  int  $documentid documentid
-     * @param  int  $patientid patientid
-     * @param  null|int  $departmentid Department ID for the patient.
+     * @param int $documentid documentid
+     * @param int $patientid patientid
+     * @param null|int $departmentid Department ID for the patient.
      */
     public function __construct(
-        protected int $documentid,
-        protected int $patientid,
+        protected int  $documentid,
+        protected int  $patientid,
         protected ?int $departmentid = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array

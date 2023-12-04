@@ -24,31 +24,32 @@ class CreatePatientPaymentRecord extends Request implements HasBody
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $departmentid The ID of the department where the payment or contract is being collected.
-     * @param  string  $paymentmethod Valid values include CASH or CHECK or anything as a result of /configuration/validnonccpcreditcardmethods. Note that practices using Credit Card Plus (CCP) should typically NOT be using this call and should instead use the collectpayment endpoints to charge the card. In addition, all payments recorded via this method are subject to the same policies as any other money collected by athenahealth.
-     * @param  null|string  $postdate The date the payment was made.  Defaulted to today.
-     * @param  null|string  $checknumber The check number.  This is required if the payment is made by check.
-     * @param  null|string  $copayamount The amount associated with a particular appointment for a copay.
-     * @param  null|string  $otheramount The amount being collected that is not associated with individual appointment. This money goes into the "unapplied" bucket. In the future, these payments will be able to be broken down by individual claim level. Co-pay amounts should be in "copayamount".
-     * @param  null|array  $claimpayment A JSON representation of claim ID and payment combinations.  For example, '[ { "1":"1.00"}, { "2":"5.00"} ].'  This indicates a payment of $1 for claim ID #1 and a payment of $5 for claim ID #2.
-     * @param  null|string  $todayservice Apply the other amount value to today's service.
-     * @param  null|int  $appointmentid The ID of the appointment where the copay should be applied.
-     * @param  null|string  $cardnumberlast4 The last 4 digits of the credit card number.  This is required if the payment method is a credit card.
+     * @param int $departmentid The ID of the department where the payment or contract is being collected.
+     * @param int $patientid patientid
+     * @param string $paymentmethod Valid values include CASH or CHECK or anything as a result of /configuration/validnonccpcreditcardmethods. Note that practices using Credit Card Plus (CCP) should typically NOT be using this call and should instead use the collectpayment endpoints to charge the card. In addition, all payments recorded via this method are subject to the same policies as any other money collected by athenahealth.
+     * @param null|int $appointmentid The ID of the appointment where the copay should be applied.
+     * @param null|string $cardnumberlast4 The last 4 digits of the credit card number.  This is required if the payment method is a credit card.
+     * @param null|string $checknumber The check number.  This is required if the payment is made by check.
+     * @param null|array $claimpayment A JSON representation of claim ID and payment combinations.  For example, '[ { "1":"1.00"}, { "2":"5.00"} ].'  This indicates a payment of $1 for claim ID #1 and a payment of $5 for claim ID #2.
+     * @param null|string $copayamount The amount associated with a particular appointment for a copay.
+     * @param null|string $otheramount The amount being collected that is not associated with individual appointment. This money goes into the "unapplied" bucket. In the future, these payments will be able to be broken down by individual claim level. Co-pay amounts should be in "copayamount".
+     * @param null|string $postdate The date the payment was made.  Defaulted to today.
+     * @param null|string $todayservice Apply the other amount value to today's service.
      */
     public function __construct(
-        protected int $patientid,
-        protected int $departmentid,
-        protected string $paymentmethod,
-        protected ?string $postdate = null,
+        protected int     $departmentid,
+        protected int     $patientid,
+        protected string  $paymentmethod,
+        protected ?int    $appointmentid = null,
+        protected ?string $cardnumberlast4 = null,
         protected ?string $checknumber = null,
+        protected ?array  $claimpayment = null,
         protected ?string $copayamount = null,
         protected ?string $otheramount = null,
-        protected ?array $claimpayment = null,
+        protected ?string $postdate = null,
         protected ?string $todayservice = null,
-        protected ?int $appointmentid = null,
-        protected ?string $cardnumberlast4 = null,
-    ) {
+    )
+    {
     }
 
     public function defaultBody(): array
@@ -56,14 +57,14 @@ class CreatePatientPaymentRecord extends Request implements HasBody
         return array_filter([
             'departmentid' => $this->departmentid,
             'paymentmethod' => $this->paymentmethod,
-            'postdate' => $this->postdate,
-            'checknumber' => $this->checknumber,
-            'copayamount' => $this->copayamount,
-            'otheramount' => $this->otheramount,
-            'claimpayment' => $this->claimpayment,
-            'todayservice' => $this->todayservice,
             'appointmentid' => $this->appointmentid,
             'cardnumberlast4' => $this->cardnumberlast4,
+            'checknumber' => $this->checknumber,
+            'claimpayment' => $this->claimpayment,
+            'copayamount' => $this->copayamount,
+            'otheramount' => $this->otheramount,
+            'postdate' => $this->postdate,
+            'todayservice' => $this->todayservice,
         ]);
     }
 }

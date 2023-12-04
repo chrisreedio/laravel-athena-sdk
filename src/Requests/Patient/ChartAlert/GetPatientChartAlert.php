@@ -20,13 +20,14 @@ class GetPatientChartAlert extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $departmentid The department ID; needed because charts, and thus chart notes, may be department-specific
+     * @param int $departmentid The department ID; needed because charts, and thus chart notes, may be department-specific
+     * @param int $patientid patientid
      */
     public function __construct(
-        protected int $patientid,
         protected int $departmentid,
-    ) {
+        protected int $patientid,
+    )
+    {
     }
 
     public function defaultQuery(): array

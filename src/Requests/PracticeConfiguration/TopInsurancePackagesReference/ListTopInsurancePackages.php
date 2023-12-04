@@ -20,11 +20,12 @@ class ListTopInsurancePackages extends Request
     }
 
     /**
-     * @param  null|int  $departmentid Only look at patients who are associated with this department's provider group in determining which insurance packages to list. Note that insurance packages do not "belong" to a department and thus department ID is not returned in the output. The same insurance packages will (and often do) appear across multiple departments.
+     * @param null|int $departmentid Only look at patients who are associated with this department's provider group in determining which insurance packages to list. Note that insurance packages do not "belong" to a department and thus department ID is not returned in the output. The same insurance packages will (and often do) appear across multiple departments.
      */
     public function __construct(
         protected ?int $departmentid = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array

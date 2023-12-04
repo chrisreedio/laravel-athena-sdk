@@ -20,30 +20,31 @@ class ListEncounterOrders extends Request
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  null|bool  $showdeclinedorders If set, include orders that were declined
-     * @param  null|bool  $allowdischargetype If set, this will allow getting orders for a discharge encounter type.
-     * @param  null|bool  $showdiagnoseswithoutorders If set, this will return diagnoses with empty orders lists.
-     * @param  null|bool  $showclinicalprovider If set, this will show the information about the provider receiving the order.
-     * @param  null|bool  $showexternalcodes If set, translate the order information to relevant external vocabularies, where available. Examples are medictions to RxNorm and NDC, vaccines to CVX and MVX, labs to LOINC, etc. Our mappings are not exhaustive.
+     * @param int $encounterid encounterid
+     * @param null|bool $allowdischargetype If set, this will allow getting orders for a discharge encounter type.
+     * @param null|bool $showclinicalprovider If set, this will show the information about the provider receiving the order.
+     * @param null|bool $showdeclinedorders If set, include orders that were declined
+     * @param null|bool $showdiagnoseswithoutorders If set, this will return diagnoses with empty orders lists.
+     * @param null|bool $showexternalcodes If set, translate the order information to relevant external vocabularies, where available. Examples are medictions to RxNorm and NDC, vaccines to CVX and MVX, labs to LOINC, etc. Our mappings are not exhaustive.
      */
     public function __construct(
-        protected int $encounterid,
-        protected ?bool $showdeclinedorders = null,
+        protected int   $encounterid,
         protected ?bool $allowdischargetype = null,
-        protected ?bool $showdiagnoseswithoutorders = null,
         protected ?bool $showclinicalprovider = null,
+        protected ?bool $showdeclinedorders = null,
+        protected ?bool $showdiagnoseswithoutorders = null,
         protected ?bool $showexternalcodes = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
-            'showdeclinedorders' => $this->showdeclinedorders,
             'allowdischargetype' => $this->allowdischargetype,
-            'showdiagnoseswithoutorders' => $this->showdiagnoseswithoutorders,
             'showclinicalprovider' => $this->showclinicalprovider,
+            'showdeclinedorders' => $this->showdeclinedorders,
+            'showdiagnoseswithoutorders' => $this->showdiagnoseswithoutorders,
             'showexternalcodes' => $this->showexternalcodes,
         ]);
     }

@@ -20,19 +20,23 @@ class GetProcedureVitals extends Request
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  string  $stage Procedure stage to the retrieve the procedure vitals for.
-     * @param  null|bool  $showunits Show units on vitals where applicable.
+     * @param int $encounterid encounterid
+     * @param string $stage Procedure stage to the retrieve the procedure vitals for.
+     * @param null|bool $showunits Show units on vitals where applicable.
      */
     public function __construct(
         protected int $encounterid,
         protected string $stage,
         protected ?bool $showunits = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
-        return array_filter(['stage' => $this->stage, 'showunits' => $this->showunits]);
+        return array_filter([
+            'stage' => $this->stage,
+            'showunits' => $this->showunits
+        ]);
     }
 }

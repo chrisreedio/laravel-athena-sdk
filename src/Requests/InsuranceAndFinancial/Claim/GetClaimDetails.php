@@ -20,19 +20,23 @@ class GetClaimDetails extends Request
     }
 
     /**
-     * @param  int  $claimid claimid
-     * @param  null|bool  $showservicetypeaddons Include service type add-ons for the claim.
-     * @param  null|bool  $showcustomfields Include custom fields for the claim.
+     * @param int $claimid claimid
+     * @param null|bool $showcustomfields Include custom fields for the claim.
+     * @param null|bool $showservicetypeaddons Include service type add-ons for the claim.
      */
     public function __construct(
         protected int $claimid,
-        protected ?bool $showservicetypeaddons = null,
         protected ?bool $showcustomfields = null,
-    ) {
+        protected ?bool $showservicetypeaddons = null,
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
-        return array_filter(['showservicetypeaddons' => $this->showservicetypeaddons, 'showcustomfields' => $this->showcustomfields]);
+        return array_filter([
+            'showcustomfields' => $this->showcustomfields,
+            'showservicetypeaddons' => $this->showservicetypeaddons
+        ]);
     }
 }

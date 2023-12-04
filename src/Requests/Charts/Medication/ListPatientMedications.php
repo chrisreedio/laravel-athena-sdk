@@ -20,37 +20,38 @@ class ListPatientMedications extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  null|bool  $showpend Include pending medications associated with approved future orders. These medications have not yet been submitted.
-     * @param  null|bool  $showrxnorm Shows the list of RxNorm Identifiers related to the medication. The list may contain both branded and generic identifiers. Note: Not All medications would include RX Norm.
-     * @param  int  $departmentid The athenanet department ID
-     * @param  null|string  $medicationtype Historical or Active or Denied. Will return a list of a patient's active or historical or denied medications.
-     * @param  null|bool  $showndc Shows the list of NDC numbers related to the medication.
-     * @param  null|string  $thirdpartyusername User name of the patient in the third party application.
-     * @param  null|bool  $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
+     * @param int $departmentid The athenanet department ID
+     * @param int $patientid patientid
+     * @param null|bool $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
+     * @param null|string $thirdpartyusername User name of the patient in the third party application.
+     * @param null|string $medicationtype Historical or Active or Denied. Will return a list of a patient's active or historical or denied medications.
+     * @param null|bool $showndc Shows the list of NDC numbers related to the medication.
+     * @param null|bool $showpend Include pending medications associated with approved future orders. These medications have not yet been submitted.
+     * @param null|bool $showrxnorm Shows the list of RxNorm Identifiers related to the medication. The list may contain both branded and generic identifiers. Note: Not All medications would include RX Norm.
      */
     public function __construct(
-        protected int $patientid,
-        protected ?bool $showpend,
-        protected ?bool $showrxnorm,
-        protected int $departmentid,
-        protected ?string $medicationtype = null,
-        protected ?bool $showndc = null,
+        protected int     $departmentid,
+        protected int     $patientid,
+        protected ?bool   $patientfacingcall = null,
         protected ?string $thirdpartyusername = null,
-        protected ?bool $patientfacingcall = null,
-    ) {
+        protected ?string $medicationtype = null,
+        protected ?bool   $showndc = null,
+        protected ?bool   $showpend = null,
+        protected ?bool   $showrxnorm = null,
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
-            'showpend' => $this->showpend,
-            'showrxnorm' => $this->showrxnorm,
             'departmentid' => $this->departmentid,
+            'PATIENTFACINGCALL' => $this->patientfacingcall,
+            'THIRDPARTYUSERNAME' => $this->thirdpartyusername,
             'medicationtype' => $this->medicationtype,
             'showndc' => $this->showndc,
-            'THIRDPARTYUSERNAME' => $this->thirdpartyusername,
-            'PATIENTFACINGCALL' => $this->patientfacingcall,
+            'showpend' => $this->showpend,
+            'showrxnorm' => $this->showrxnorm,
         ]);
     }
 }

@@ -20,52 +20,53 @@ class GetCcdaExport extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  null|string  $version version USCDI/MU3
-     * @param  null|int  $chartsharinggroupid CHARTSHARING GROUP ID.
-     * @param  null|string  $startdate Start date for filtering results within a specific time period. Only for DataPortability document. Example: startdate=2013-01-01T00:00:00
-     * @param  null|int  $encounterid Encounter ID.
-     * @param  null|int  $enterpriseid ENTERPRISE ID.
-     * @param  null|int  $documentid Document ID.
-     * @param  null|string  $enddate End date for filtering results within a specific time period. Only for DataPortability document. Example: enddate=2014-01-01T00:00:00
-     * @param  null|int  $departmentid Department ID.
-     * @param  string  $documenttype Valid types are DataPortability, ReferralNote, CarePlan, DischargeSummary, and CCD.
-     * @param  bool  $inpatient Inpatient or ambulatory
-     * @param  null|string  $thirdpartyusername User name of the patient in the third party application.
-     * @param  null|bool  $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
+     * @param string $documenttype Valid types are DataPortability, ReferralNote, CarePlan, DischargeSummary, and CCD.
+     * @param bool $inpatient Inpatient or ambulatory
+     * @param int $patientid patientid
+     * @param null|bool $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
+     * @param null|string $thirdpartyusername User name of the patient in the third party application.
+     * @param null|int $chartsharinggroupid CHARTSHARING GROUP ID.
+     * @param null|int $departmentid Department ID.
+     * @param null|int $documentid Document ID.
+     * @param null|int $encounterid Encounter ID.
+     * @param null|string $enddate End date for filtering results within a specific time period. Only for DataPortability document. Example: enddate=2014-01-01T00:00:00
+     * @param null|int $enterpriseid ENTERPRISE ID.
+     * @param null|string $startdate Start date for filtering results within a specific time period. Only for DataPortability document. Example: startdate=2013-01-01T00:00:00
+     * @param null|string $version version USCDI/MU3
      */
     public function __construct(
-        protected int $patientid,
-        protected ?string $version,
-        protected ?int $chartsharinggroupid,
-        protected ?string $startdate,
-        protected ?int $encounterid,
-        protected ?int $enterpriseid,
-        protected ?int $documentid,
-        protected ?string $enddate,
-        protected ?int $departmentid,
-        protected string $documenttype,
-        protected bool $inpatient,
+        protected string  $documenttype,
+        protected bool    $inpatient,
+        protected int     $patientid,
+        protected ?bool   $patientfacingcall = null,
         protected ?string $thirdpartyusername = null,
-        protected ?bool $patientfacingcall = null,
-    ) {
+        protected ?int    $chartsharinggroupid = null,
+        protected ?int    $departmentid = null,
+        protected ?int    $documentid = null,
+        protected ?int    $encounterid = null,
+        protected ?string $enddate = null,
+        protected ?int    $enterpriseid = null,
+        protected ?string $startdate = null,
+        protected ?string $version = null,
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
-            'version' => $this->version,
-            'chartsharinggroupid' => $this->chartsharinggroupid,
-            'startdate' => $this->startdate,
-            'encounterid' => $this->encounterid,
-            'enterpriseid' => $this->enterpriseid,
-            'documentid' => $this->documentid,
-            'enddate' => $this->enddate,
-            'departmentid' => $this->departmentid,
             'documenttype' => $this->documenttype,
             'inpatient' => $this->inpatient,
-            'THIRDPARTYUSERNAME' => $this->thirdpartyusername,
             'PATIENTFACINGCALL' => $this->patientfacingcall,
+            'THIRDPARTYUSERNAME' => $this->thirdpartyusername,
+            'chartsharinggroupid' => $this->chartsharinggroupid,
+            'departmentid' => $this->departmentid,
+            'documentid' => $this->documentid,
+            'encounterid' => $this->encounterid,
+            'enddate' => $this->enddate,
+            'enterpriseid' => $this->enterpriseid,
+            'startdate' => $this->startdate,
+            'version' => $this->version,
         ]);
     }
 }

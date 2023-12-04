@@ -24,29 +24,30 @@ class UpdatePatientMedicationEntry extends Request implements HasBody
     }
 
     /**
-     * @param  string  $medicationentryid medicationentryid
-     * @param  int  $patientid patientid
-     * @param  int  $departmentid The athenanet department ID
-     * @param  null|bool  $hidden Set whether the medication is hidden in the UI.
-     * @param  null|string  $stopdate Stop date for this medication
-     * @param  null|string  $startdate Start date for this medication
-     * @param  null|string  $stopreason The reason the medication was stopped. If set, it it recommended but not required that a stop date is also set.
-     * @param  null|string  $patientnote A patient-facing note
-     * @param  null|string  $providernote An internal note
-     * @param  null|string  $unstructuredsig Can only be used to update historical (entered, downloaded, etc) medications. Will override a structured sig if there is one.
+     * @param int $departmentid The athenanet department ID
+     * @param string $medicationentryid medicationentryid
+     * @param int $patientid patientid
+     * @param null|bool $hidden Set whether the medication is hidden in the UI.
+     * @param null|string $patientnote A patient-facing note
+     * @param null|string $providernote An internal note
+     * @param null|string $startdate Start date for this medication
+     * @param null|string $stopdate Stop date for this medication
+     * @param null|string $stopreason The reason the medication was stopped. If set, it it recommended but not required that a stop date is also set.
+     * @param null|string $unstructuredsig Can only be used to update historical (entered, downloaded, etc) medications. Will override a structured sig if there is one.
      */
     public function __construct(
-        protected string $medicationentryid,
-        protected int $patientid,
-        protected int $departmentid,
-        protected ?bool $hidden = null,
-        protected ?string $stopdate = null,
-        protected ?string $startdate = null,
-        protected ?string $stopreason = null,
+        protected int     $departmentid,
+        protected string  $medicationentryid,
+        protected int     $patientid,
+        protected ?bool   $hidden = null,
         protected ?string $patientnote = null,
         protected ?string $providernote = null,
+        protected ?string $startdate = null,
+        protected ?string $stopdate = null,
+        protected ?string $stopreason = null,
         protected ?string $unstructuredsig = null,
-    ) {
+    )
+    {
     }
 
     public function defaultBody(): array
@@ -54,11 +55,11 @@ class UpdatePatientMedicationEntry extends Request implements HasBody
         return array_filter([
             'departmentid' => $this->departmentid,
             'hidden' => $this->hidden,
-            'stopdate' => $this->stopdate,
-            'startdate' => $this->startdate,
-            'stopreason' => $this->stopreason,
             'patientnote' => $this->patientnote,
             'providernote' => $this->providernote,
+            'startdate' => $this->startdate,
+            'stopdate' => $this->stopdate,
+            'stopreason' => $this->stopreason,
             'unstructuredsig' => $this->unstructuredsig,
         ]);
     }

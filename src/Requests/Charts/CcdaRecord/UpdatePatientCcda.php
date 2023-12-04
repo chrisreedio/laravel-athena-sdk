@@ -24,19 +24,20 @@ class UpdatePatientCcda extends Request implements HasBody
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  string  $ccda The CCDA in XML format.
-     * @param  int  $departmentid The department ID from which to retrieve the patient's chart.
-     * @param  null|bool  $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
-     * @param  null|string  $thirdpartyusername User name of the patient in the third party application.
+     * @param string $ccda The CCDA in XML format.
+     * @param int $departmentid The department ID from which to retrieve the patient's chart.
+     * @param int $patientid patientid
+     * @param null|bool $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
+     * @param null|string $thirdpartyusername User name of the patient in the third party application.
      */
     public function __construct(
-        protected int $patientid,
-        protected string $ccda,
-        protected int $departmentid,
-        protected ?bool $patientfacingcall = null,
+        protected string  $ccda,
+        protected int     $departmentid,
+        protected int     $patientid,
+        protected ?bool   $patientfacingcall = null,
         protected ?string $thirdpartyusername = null,
-    ) {
+    )
+    {
     }
 
     public function defaultBody(): array

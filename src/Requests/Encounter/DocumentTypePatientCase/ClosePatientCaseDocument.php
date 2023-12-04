@@ -24,15 +24,16 @@ class ClosePatientCaseDocument extends Request implements HasBody
     }
 
     /**
-     * @param  int  $patientcaseid patientcaseid
-     * @param  int  $patientid patientid
-     * @param  int  $actionreasonid Valid Document Action Reason ID for closure of Patient Case.
+     * @param int $actionreasonid Valid Document Action Reason ID for closure of Patient Case.
+     * @param int $patientcaseid patientcaseid
+     * @param int $patientid patientid
      */
     public function __construct(
+        protected int $actionreasonid,
         protected int $patientcaseid,
         protected int $patientid,
-        protected int $actionreasonid,
-    ) {
+    )
+    {
     }
 
     public function defaultBody(): array

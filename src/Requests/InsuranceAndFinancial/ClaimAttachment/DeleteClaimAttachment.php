@@ -20,13 +20,14 @@ class DeleteClaimAttachment extends Request
     }
 
     /**
-     * @param  int  $claimid claimid
-     * @param  int  $claimattachmentid The claim attachment type class ID.
+     * @param int $claimattachmentid The claim attachment type class ID.
+     * @param int $claimid claimid
      */
     public function __construct(
-        protected int $claimid,
         protected int $claimattachmentid,
-    ) {
+        protected int $claimid,
+    )
+    {
     }
 
     public function defaultQuery(): array

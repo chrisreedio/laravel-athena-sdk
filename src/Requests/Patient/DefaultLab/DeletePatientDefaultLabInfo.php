@@ -20,19 +20,23 @@ class DeletePatientDefaultLabInfo extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $clinicalproviderid The clinical provider ID that you wish to add.
-     * @param  int  $departmentid The athenaNet department id.
+     * @param int $clinicalproviderid The clinical provider ID that you wish to add.
+     * @param int $departmentid The athenaNet department id.
+     * @param int $patientid patientid
      */
     public function __construct(
-        protected int $patientid,
         protected int $clinicalproviderid,
         protected int $departmentid,
-    ) {
+        protected int $patientid,
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
-        return array_filter(['clinicalproviderid' => $this->clinicalproviderid, 'departmentid' => $this->departmentid]);
+        return array_filter([
+            'clinicalproviderid' => $this->clinicalproviderid,
+            'departmentid' => $this->departmentid
+        ]);
     }
 }

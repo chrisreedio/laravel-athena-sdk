@@ -24,31 +24,32 @@ class CreatePatientEncounterDocument extends Request implements HasBody
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $departmentid The athenaNet department ID associated with the uploaded document.
-     * @param  string  $documentsubclass Subclasses for ENCOUNTERDOCUMENT documents
-     * @param  null|int  $appointmentid The appointment ID for this document
-     * @param  null|string  $attachmentcontents The file contents that will be attached to this document. PDFs are recommended.
-     * @param  null|string  $documentdata Text data stored with document
-     * @param  null|int  $encounterid The encounter ID
-     * @param  null|string  $entityid Identifier of entity creating the document. entitytype is required while passing entityid.
-     * @param  null|string  $entitytype Type of entity creating the document. entityid is required while passing entitytype.
-     * @param  null|string  $internalnote An internal note for the provider or staff. Updating this will append to any previous notes.
-     * @param  null|string  $priority Priority of this result.  1 is high; 2 is normal.
+     * @param int $departmentid The athenaNet department ID associated with the uploaded document.
+     * @param string $documentsubclass Subclasses for ENCOUNTERDOCUMENT documents
+     * @param int $patientid patientid
+     * @param null|int $appointmentid The appointment ID for this document
+     * @param null|string $attachmentcontents The file contents that will be attached to this document. PDFs are recommended.
+     * @param null|string $documentdata Text data stored with document
+     * @param null|int $encounterid The encounter ID
+     * @param null|string $entityid Identifier of entity creating the document. entitytype is required while passing entityid.
+     * @param null|string $entitytype Type of entity creating the document. entityid is required while passing entitytype.
+     * @param null|string $internalnote An internal note for the provider or staff. Updating this will append to any previous notes.
+     * @param null|string $priority Priority of this result.  1 is high; 2 is normal.
      */
     public function __construct(
-        protected int $patientid,
-        protected int $departmentid,
-        protected string $documentsubclass,
-        protected ?int $appointmentid = null,
+        protected int     $departmentid,
+        protected string  $documentsubclass,
+        protected int     $patientid,
+        protected ?int    $appointmentid = null,
         protected ?string $attachmentcontents = null,
         protected ?string $documentdata = null,
-        protected ?int $encounterid = null,
+        protected ?int    $encounterid = null,
         protected ?string $entityid = null,
         protected ?string $entitytype = null,
         protected ?string $internalnote = null,
         protected ?string $priority = null,
-    ) {
+    )
+    {
     }
 
     public function defaultBody(): array

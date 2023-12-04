@@ -20,28 +20,29 @@ class DeleteCareTeamMember extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $memberid The member ID of the care team.
-     * @param  int  $departmentid The athenaNet department ID.
-     * @param  null|string  $thirdpartyusername User name of the patient in the third party application.
-     * @param  null|bool  $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
+     * @param int $departmentid The athenaNet department ID.
+     * @param int $memberid The member ID of the care team.
+     * @param int $patientid patientid
+     * @param null|bool $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
+     * @param null|string $thirdpartyusername User name of the patient in the third party application.
      */
     public function __construct(
-        protected int $patientid,
-        protected int $memberid,
-        protected int $departmentid,
+        protected int     $departmentid,
+        protected int     $memberid,
+        protected int     $patientid,
+        protected ?bool   $patientfacingcall = null,
         protected ?string $thirdpartyusername = null,
-        protected ?bool $patientfacingcall = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
-            'memberid' => $this->memberid,
             'departmentid' => $this->departmentid,
-            'THIRDPARTYUSERNAME' => $this->thirdpartyusername,
+            'memberid' => $this->memberid,
             'PATIENTFACINGCALL' => $this->patientfacingcall,
+            'THIRDPARTYUSERNAME' => $this->thirdpartyusername,
         ]);
     }
 }

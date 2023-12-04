@@ -20,12 +20,13 @@ class DeletePatientLabResultDocument extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $labresultid labresultid
+     * @param int $labresultid labresultid
+     * @param int $patientid patientid
      */
     public function __construct(
-        protected int $patientid,
         protected int $labresultid,
-    ) {
+        protected int $patientid,
+    )
+    {
     }
 }

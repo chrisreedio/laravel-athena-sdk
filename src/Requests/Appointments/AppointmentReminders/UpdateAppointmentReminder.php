@@ -24,34 +24,35 @@ class UpdateAppointmentReminder extends Request implements HasBody
     }
 
     /**
-     * @param  int  $appointmentreminderid appointmentreminderid
-     * @param  null|string  $note Miscellaneous notes for this reminder.
-     * @param  null|string  $status Status of the reminder.
-     * @param  null|int  $providerid An athenaNet provider ID.
-     * @param  null|string  $approximatedate The approximate date on which an appointment for this reminder should be scheduled.
-     * @param  null|int  $appointmenttypeid An athenaNet appointment type ID.
-     * @param  null|string  $patientinstructions Patient instructions regarding this reminder.
+     * @param int $appointmentreminderid appointmentreminderid
+     * @param null|int $appointmenttypeid An athenaNet appointment type ID.
+     * @param null|string $approximatedate The approximate date on which an appointment for this reminder should be scheduled.
+     * @param null|string $note Miscellaneous notes for this reminder.
+     * @param null|string $patientinstructions Patient instructions regarding this reminder.
+     * @param null|int $providerid An athenaNet provider ID.
+     * @param null|string $status Status of the reminder.
      */
     public function __construct(
-        protected int $appointmentreminderid,
-        protected ?string $note = null,
-        protected ?string $status = null,
-        protected ?int $providerid = null,
+        protected int     $appointmentreminderid,
+        protected ?int    $appointmenttypeid = null,
         protected ?string $approximatedate = null,
-        protected ?int $appointmenttypeid = null,
+        protected ?string $note = null,
         protected ?string $patientinstructions = null,
-    ) {
+        protected ?int    $providerid = null,
+        protected ?string $status = null,
+    )
+    {
     }
 
     public function defaultBody(): array
     {
         return array_filter([
-            'note' => $this->note,
-            'status' => $this->status,
-            'providerid' => $this->providerid,
-            'approximatedate' => $this->approximatedate,
             'appointmenttypeid' => $this->appointmenttypeid,
+            'approximatedate' => $this->approximatedate,
+            'note' => $this->note,
             'patientinstructions' => $this->patientinstructions,
+            'providerid' => $this->providerid,
+            'status' => $this->status,
         ]);
     }
 }

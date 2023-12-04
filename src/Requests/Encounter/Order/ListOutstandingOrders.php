@@ -20,13 +20,14 @@ class ListOutstandingOrders extends Request
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  null|bool  $showdeclinedorders If set, include orders that were declined
+     * @param int $encounterid encounterid
+     * @param null|bool $showdeclinedorders If set, include orders that were declined
      */
     public function __construct(
-        protected int $encounterid,
+        protected int   $encounterid,
         protected ?bool $showdeclinedorders = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array

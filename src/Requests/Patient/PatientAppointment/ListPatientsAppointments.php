@@ -20,40 +20,41 @@ class ListPatientsAppointments extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  null|string  $showcancelled Show cancelled appointments
-     * @param  null|string  $showpast Show appointments that were before today
-     * @param  null|string  $enddate End of the appointment search date range (mm/dd/yyyy).  Inclusive.
-     * @param  null|bool  $showcopay By default, the expected co-pay is returned. For performance purposes, you can set this to false and copay will not be populated.
-     * @param  null|string  $startdate Start of the appointment search date range (mm/dd/yyyy).  Inclusive.
-     * @param  null|string  $sortorder Sort order by appointment date
-     * @param  null|string  $showexpectedprocedurecodes Show expected procedure codes.
-     * @param  null|bool  $showtelehealth Show indicator for if this is a native athenatelehealth appointment
+     * @param int $patientid patientid
+     * @param null|string $enddate End of the appointment search date range (mm/dd/yyyy).  Inclusive.
+     * @param null|string $showcancelled Show cancelled appointments
+     * @param null|bool $showcopay By default, the expected co-pay is returned. For performance purposes, you can set this to false and copay will not be populated.
+     * @param null|string $showexpectedprocedurecodes Show expected procedure codes.
+     * @param null|string $showpast Show appointments that were before today
+     * @param null|bool $showtelehealth Show indicator for if this is a native athenatelehealth appointment
+     * @param null|string $sortorder Sort order by appointment date
+     * @param null|string $startdate Start of the appointment search date range (mm/dd/yyyy).  Inclusive.
      */
     public function __construct(
-        protected int $patientid,
-        protected ?string $showcancelled = null,
-        protected ?string $showpast = null,
+        protected int     $patientid,
         protected ?string $enddate = null,
-        protected ?bool $showcopay = null,
-        protected ?string $startdate = null,
-        protected ?string $sortorder = null,
+        protected ?string $showcancelled = null,
+        protected ?bool   $showcopay = null,
         protected ?string $showexpectedprocedurecodes = null,
-        protected ?bool $showtelehealth = null,
-    ) {
+        protected ?string $showpast = null,
+        protected ?bool   $showtelehealth = null,
+        protected ?string $sortorder = null,
+        protected ?string $startdate = null,
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
-            'showcancelled' => $this->showcancelled,
-            'showpast' => $this->showpast,
             'enddate' => $this->enddate,
+            'showcancelled' => $this->showcancelled,
             'showcopay' => $this->showcopay,
-            'startdate' => $this->startdate,
-            'sortorder' => $this->sortorder,
             'showexpectedprocedurecodes' => $this->showexpectedprocedurecodes,
+            'showpast' => $this->showpast,
             'showtelehealth' => $this->showtelehealth,
+            'sortorder' => $this->sortorder,
+            'startdate' => $this->startdate,
         ]);
     }
 }

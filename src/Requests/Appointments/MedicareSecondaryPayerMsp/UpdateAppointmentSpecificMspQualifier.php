@@ -24,28 +24,29 @@ class UpdateAppointmentSpecificMspQualifier extends Request implements HasBody
     }
 
     /**
-     * @param  int  $appointmentid appointmentid
-     * @param  int  $mspinsurancetypeid The MSP insurance type id
-     * @param  null|int  $patientid The athenaNet patient ID.
-     * @param  null|int  $departmentid The department ID.
-     * @param  null|bool  $mspinsurancetypesetyn Set the MSP Insurance Type
+     * @param int $appointmentid appointmentid
+     * @param int $mspinsurancetypeid The MSP insurance type id
+     * @param null|int $departmentid The department ID.
+     * @param null|bool $mspinsurancetypesetyn Set the MSP Insurance Type
+     * @param null|int $patientid The athenaNet patient ID.
      */
     public function __construct(
-        protected int $appointmentid,
-        protected int $mspinsurancetypeid,
-        protected ?int $patientid = null,
-        protected ?int $departmentid = null,
+        protected int   $appointmentid,
+        protected int   $mspinsurancetypeid,
+        protected ?int  $departmentid = null,
         protected ?bool $mspinsurancetypesetyn = null,
-    ) {
+        protected ?int  $patientid = null,
+    )
+    {
     }
 
     public function defaultBody(): array
     {
         return array_filter([
             'mspinsurancetypeid' => $this->mspinsurancetypeid,
-            'patientid' => $this->patientid,
             'departmentid' => $this->departmentid,
             'mspinsurancetypesetyn' => $this->mspinsurancetypesetyn,
+            'patientid' => $this->patientid,
         ]);
     }
 }

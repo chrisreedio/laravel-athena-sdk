@@ -20,11 +20,12 @@ class ListOrderSets extends Request
     }
 
     /**
-     * @param  null|string  $username Username to find all available order sets for.  Will return all order sets configured for this user as well as order sets configured for all users.
+     * @param null|string $username Username to find all available order sets for.  Will return all order sets configured for this user as well as order sets configured for all users.
      */
     public function __construct(
         protected ?string $username = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array

@@ -20,21 +20,25 @@ class GetObEpisodeDetails extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $obepisodeid obepisodeid
-     * @param  null|bool  $showhiddenproblems Designates whether we will also show hidden problems. The default value is false.
-     * @param  null|bool  $showeddcalculationsdays Designates whether we will also show eddcalucation days. The default value is false.
+     * @param int $obepisodeid obepisodeid
+     * @param int $patientid patientid
+     * @param null|bool $showeddcalculationsdays Designates whether we will also show eddcalucation days. The default value is false.
+     * @param null|bool $showhiddenproblems Designates whether we will also show hidden problems. The default value is false.
      */
     public function __construct(
-        protected int $patientid,
         protected int $obepisodeid,
-        protected ?bool $showhiddenproblems = null,
+        protected int $patientid,
         protected ?bool $showeddcalculationsdays = null,
-    ) {
+        protected ?bool $showhiddenproblems = null,
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
-        return array_filter(['showhiddenproblems' => $this->showhiddenproblems, 'showeddcalculationsdays' => $this->showeddcalculationsdays]);
+        return array_filter([
+            'showeddcalculationsdays' => $this->showeddcalculationsdays,
+            'showhiddenproblems' => $this->showhiddenproblems
+        ]);
     }
 }

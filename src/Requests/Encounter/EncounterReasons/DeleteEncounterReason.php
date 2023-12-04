@@ -20,13 +20,14 @@ class DeleteEncounterReason extends Request
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  int  $encounterreasonid Encounter reason ID. Must be from the list returned by /configuration/encounterreason
+     * @param int $encounterid encounterid
+     * @param int $encounterreasonid Encounter reason ID. Must be from the list returned by /configuration/encounterreason
      */
     public function __construct(
         protected int $encounterid,
         protected int $encounterreasonid,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array

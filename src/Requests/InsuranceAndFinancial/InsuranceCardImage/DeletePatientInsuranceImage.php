@@ -20,12 +20,13 @@ class DeletePatientInsuranceImage extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $insuranceid insuranceid
+     * @param int $insuranceid insuranceid
+     * @param int $patientid patientid
      */
     public function __construct(
-        protected int $patientid,
         protected int $insuranceid,
-    ) {
+        protected int $patientid,
+    )
+    {
     }
 }

@@ -24,29 +24,30 @@ class UpdatePatientVaccine extends Request implements HasBody
     }
 
     /**
-     * @param  string  $vaccineid vaccineid
-     * @param  int  $patientid patientid
-     * @param  int  $cvx Vaccine Administered Code
-     * @param  int  $departmentid The athenaNet department id.
-     * @param  string  $administerdate Date when this vaccine was administered (if administered). Can be in YYYY, MM/YYYY, or MM/DD/YYYY format.
-     * @param  null|string  $ndc The National Drug Code for the administered vaccine
+     * @param string $administerdate Date when this vaccine was administered (if administered). Can be in YYYY, MM/YYYY, or MM/DD/YYYY format.
+     * @param int $cvx Vaccine Administered Code
+     * @param int $departmentid The athenaNet department id.
+     * @param int $patientid patientid
+     * @param string $vaccineid vaccineid
+     * @param null|string $ndc The National Drug Code for the administered vaccine
      */
     public function __construct(
-        protected string $vaccineid,
-        protected int $patientid,
-        protected int $cvx,
-        protected int $departmentid,
-        protected string $administerdate,
+        protected string  $administerdate,
+        protected int     $cvx,
+        protected int     $departmentid,
+        protected int     $patientid,
+        protected string  $vaccineid,
         protected ?string $ndc = null,
-    ) {
+    )
+    {
     }
 
     public function defaultBody(): array
     {
         return array_filter([
+            'administerdate' => $this->administerdate,
             'cvx' => $this->cvx,
             'departmentid' => $this->departmentid,
-            'administerdate' => $this->administerdate,
             'ndc' => $this->ndc,
         ]);
     }

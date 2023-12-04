@@ -24,25 +24,26 @@ class CreatePatientAuthorization extends Request implements HasBody
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $departmentid Department ID of the patient
-     * @param  string  $effectivedate The starting date that the release authorization takes effect
-     * @param  string  $signeddate The date the release authorization release is signed
-     * @param  null|int  $clientformid The client form ID that the release authorization is for
-     * @param  null|string  $expirationdate The last date that the release authorization is valid
-     * @param  null|string  $note Any additional notes for the release authorization
-     * @param  null|string  $revokeddate The date the release authorization was revoked
+     * @param int $departmentid Department ID of the patient
+     * @param string $effectivedate The starting date that the release authorization takes effect
+     * @param int $patientid patientid
+     * @param string $signeddate The date the release authorization release is signed
+     * @param null|int $clientformid The client form ID that the release authorization is for
+     * @param null|string $expirationdate The last date that the release authorization is valid
+     * @param null|string $note Any additional notes for the release authorization
+     * @param null|string $revokeddate The date the release authorization was revoked
      */
     public function __construct(
-        protected int $patientid,
-        protected int $departmentid,
-        protected string $effectivedate,
-        protected string $signeddate,
-        protected ?int $clientformid = null,
+        protected int     $departmentid,
+        protected string  $effectivedate,
+        protected int     $patientid,
+        protected string  $signeddate,
+        protected ?int    $clientformid = null,
         protected ?string $expirationdate = null,
         protected ?string $note = null,
         protected ?string $revokeddate = null,
-    ) {
+    )
+    {
     }
 
     public function defaultBody(): array

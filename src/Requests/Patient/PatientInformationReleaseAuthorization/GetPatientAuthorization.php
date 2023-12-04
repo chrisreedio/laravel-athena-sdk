@@ -20,23 +20,28 @@ class GetPatientAuthorization extends Request
     }
 
     /**
-     * @param  int  $releaseauthorizationid releaseauthorizationid
-     * @param  int  $patientid patientid
-     * @param  null|bool  $showdeleted Show deleted authorizations
-     * @param  null|string  $status Release authorization status (VALID, EXPIRED, REVOKED)
-     * @param  int  $departmentid Department ID of the patient
+     * @param int $departmentid Department ID of the patient
+     * @param int $patientid patientid
+     * @param int $releaseauthorizationid releaseauthorizationid
+     * @param null|bool $showdeleted Show deleted authorizations
+     * @param null|string $status Release authorization status (VALID, EXPIRED, REVOKED)
      */
     public function __construct(
-        protected int $releaseauthorizationid,
-        protected int $patientid,
-        protected ?bool $showdeleted,
-        protected ?string $status,
-        protected int $departmentid,
-    ) {
+        protected int     $departmentid,
+        protected int     $patientid,
+        protected int     $releaseauthorizationid,
+        protected ?bool   $showdeleted = null,
+        protected ?string $status = null,
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
-        return array_filter(['showdeleted' => $this->showdeleted, 'status' => $this->status, 'departmentid' => $this->departmentid]);
+        return array_filter([
+            'departmentid' => $this->departmentid,
+            'showdeleted' => $this->showdeleted,
+            'status' => $this->status
+        ]);
     }
 }

@@ -20,20 +20,21 @@ class ListAppointmentChangeSubscriptions extends Request
     }
 
     /**
-     * @param  null|bool  $includesuggestedoverbooking If this is set, we will include the UpdateSuggestedOverbooking event as if it is one of the default events. Otherwise we will ignore that it exists.
-     * @param  null|bool  $includeremindercall If this is set, we will include the UpdateRemiderCall event as if it is one of the default events. Otherwise we will ignore that it exists.
+     * @param null|bool $includeremindercall If this is set, we will include the UpdateRemiderCall event as if it is one of the default events. Otherwise we will ignore that it exists.
+     * @param null|bool $includesuggestedoverbooking If this is set, we will include the UpdateSuggestedOverbooking event as if it is one of the default events. Otherwise we will ignore that it exists.
      */
     public function __construct(
-        protected ?bool $includesuggestedoverbooking = null,
         protected ?bool $includeremindercall = null,
-    ) {
+        protected ?bool $includesuggestedoverbooking = null,
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
-            'includesuggestedoverbooking' => $this->includesuggestedoverbooking,
             'includeremindercall' => $this->includeremindercall,
+            'includesuggestedoverbooking' => $this->includesuggestedoverbooking,
         ]);
     }
 }

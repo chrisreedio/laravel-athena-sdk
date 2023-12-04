@@ -23,12 +23,13 @@ class GetPatientOriginalClinicalDocument extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $clinicaldocumentid clinicaldocumentid
+     * @param int $clinicaldocumentid clinicaldocumentid
+     * @param int $patientid patientid
      */
     public function __construct(
-        protected int $patientid,
         protected int $clinicaldocumentid,
-    ) {
+        protected int $patientid,
+    )
+    {
     }
 }

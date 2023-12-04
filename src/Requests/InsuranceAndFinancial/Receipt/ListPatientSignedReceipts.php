@@ -20,12 +20,13 @@ class ListPatientSignedReceipts extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $epaymentid epaymentid
+     * @param int $epaymentid epaymentid
+     * @param int $patientid patientid
      */
     public function __construct(
-        protected int $patientid,
         protected int $epaymentid,
-    ) {
+        protected int $patientid,
+    )
+    {
     }
 }

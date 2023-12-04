@@ -20,26 +20,27 @@ class GetDepartmentsMapping extends Request
     }
 
     /**
-     * @param  null|array  $providerids One or more ID's of the Provider
-     * @param  null|array  $departmentids One or more ID's of the Department
-     * @param  null|int  $communicatorbrandid ID of the Brand
-     * @param  null|array  $providergroupids One or more ID's of the ProviderGroup
+     * @param null|int $communicatorbrandid ID of the Brand
+     * @param null|array $departmentids One or more ID's of the Department
+     * @param null|array $providergroupids One or more ID's of the ProviderGroup
+     * @param null|array $providerids One or more ID's of the Provider
      */
     public function __construct(
-        protected ?array $providerids = null,
+        protected ?int   $communicatorbrandid = null,
         protected ?array $departmentids = null,
-        protected ?int $communicatorbrandid = null,
         protected ?array $providergroupids = null,
-    ) {
+        protected ?array $providerids = null,
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
-            'providerids' => $this->providerids,
-            'departmentids' => $this->departmentids,
             'communicatorbrandid' => $this->communicatorbrandid,
+            'departmentids' => $this->departmentids,
             'providergroupids' => $this->providergroupids,
+            'providerids' => $this->providerids,
         ]);
     }
 }

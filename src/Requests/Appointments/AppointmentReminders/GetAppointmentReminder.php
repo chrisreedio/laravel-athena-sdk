@@ -20,10 +20,11 @@ class GetAppointmentReminder extends Request
     }
 
     /**
-     * @param  int  $appointmentreminderid appointmentreminderid
+     * @param int $appointmentreminderid appointmentreminderid
      */
     public function __construct(
         protected int $appointmentreminderid,
-    ) {
+    )
+    {
     }
 }

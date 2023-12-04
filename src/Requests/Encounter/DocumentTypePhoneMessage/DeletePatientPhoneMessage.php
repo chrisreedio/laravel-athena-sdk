@@ -20,12 +20,13 @@ class DeletePatientPhoneMessage extends Request
     }
 
     /**
-     * @param  int  $phonemessageid phonemessageid
-     * @param  int  $patientid patientid
+     * @param int $patientid patientid
+     * @param int $phonemessageid phonemessageid
      */
     public function __construct(
-        protected int $phonemessageid,
         protected int $patientid,
-    ) {
+        protected int $phonemessageid,
+    )
+    {
     }
 }

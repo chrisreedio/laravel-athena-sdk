@@ -24,13 +24,14 @@ class CreateLetterDocumentAction extends Request implements HasBody
     }
 
     /**
-     * @param  int  $letterid letterid
-     * @param  string  $actionnote The new action note to add to the document.
+     * @param string $actionnote The new action note to add to the document.
+     * @param int $letterid letterid
      */
     public function __construct(
-        protected int $letterid,
         protected string $actionnote,
-    ) {
+        protected int    $letterid,
+    )
+    {
     }
 
     public function defaultBody(): array

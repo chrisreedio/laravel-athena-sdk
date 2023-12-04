@@ -21,17 +21,21 @@ class ListActiveStayVaccineOrders extends Request
     }
 
     /**
-     * @param  null|string  $statusgroup Active: Orders that are not yet completed. Signed orders: Orders that are signed by a doctor. Unsigned orders: Orders that have not yet been signed.
-     * @param  int  $ordertypeid The athena ID for the type of order being placed. Get the IDs using /stays/configuration/orders/vaccine.
+     * @param int $ordertypeid The athena ID for the type of order being placed. Get the IDs using /stays/configuration/orders/vaccine.
+     * @param null|string $statusgroup Active: Orders that are not yet completed. Signed orders: Orders that are signed by a doctor. Unsigned orders: Orders that have not yet been signed.
      */
     public function __construct(
-        protected ?string $statusgroup,
         protected int $ordertypeid,
-    ) {
+        protected ?string $statusgroup = null,
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
-        return array_filter(['statusgroup' => $this->statusgroup, 'ordertypeid' => $this->ordertypeid]);
+        return array_filter([
+            'ordertypeid' => $this->ordertypeid,
+            'statusgroup' => $this->statusgroup
+        ]);
     }
 }

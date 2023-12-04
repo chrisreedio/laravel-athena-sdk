@@ -20,10 +20,11 @@ class GetDepartmentEcommunicationDisclosure extends Request
     }
 
     /**
-     * @param  int  $departmentid departmentid
+     * @param int $departmentid departmentid
      */
     public function __construct(
         protected int $departmentid,
-    ) {
+    )
+    {
     }
 }

@@ -24,33 +24,34 @@ class UpdatePatientProblemDetails extends Request implements HasBody
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $problemid problemid
-     * @param  int  $departmentid The athenaNet department id.
-     * @param  null|string  $note The note to be attached to this problem.
-     * @param  null|string  $status Whether the problem is chronic or acute.
-     * @param  null|string  $startdate The onset date to be updated for this problem in MM/DD/YYYY format.
-     * @param  null|string  $laterality Update the laterality of this problem. Can be null, LEFT, RIGHT, or BILATERAL.
+     * @param int $departmentid The athenaNet department id.
+     * @param int $patientid patientid
+     * @param int $problemid problemid
+     * @param null|string $laterality Update the laterality of this problem. Can be null, LEFT, RIGHT, or BILATERAL.
+     * @param null|string $note The note to be attached to this problem.
+     * @param null|string $startdate The onset date to be updated for this problem in MM/DD/YYYY format.
+     * @param null|string $status Whether the problem is chronic or acute.
      */
     public function __construct(
-        protected int $patientid,
-        protected int $problemid,
-        protected int $departmentid,
-        protected ?string $note = null,
-        protected ?string $status = null,
-        protected ?string $startdate = null,
+        protected int     $departmentid,
+        protected int     $patientid,
+        protected int     $problemid,
         protected ?string $laterality = null,
-    ) {
+        protected ?string $note = null,
+        protected ?string $startdate = null,
+        protected ?string $status = null,
+    )
+    {
     }
 
     public function defaultBody(): array
     {
         return array_filter([
             'departmentid' => $this->departmentid,
-            'note' => $this->note,
-            'status' => $this->status,
-            'startdate' => $this->startdate,
             'laterality' => $this->laterality,
+            'note' => $this->note,
+            'startdate' => $this->startdate,
+            'status' => $this->status,
         ]);
     }
 }

@@ -24,11 +24,12 @@ class UpdateRiskContractsBulk extends Request implements HasBody
     }
 
     /**
-     * @param  null|array  $patientriskcontracts List of patient risk contracts to update.
+     * @param null|array $patientriskcontracts List of patient risk contracts to update.
      */
     public function __construct(
         protected ?array $patientriskcontracts = null,
-    ) {
+    )
+    {
     }
 
     public function defaultBody(): array

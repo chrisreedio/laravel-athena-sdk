@@ -28,30 +28,31 @@ class UpdatePatientPhoneMessage extends Request implements HasBody
     }
 
     /**
-     * @param  int  $phonemessageid phonemessageid
-     * @param  int  $patientid patientid
-     * @param  null|string  $priority Priority of this result.  1 is high; 2 is normal.
-     * @param  null|int  $providerid The ID of the ordering provider.
-     * @param  null|string  $internalnote An internal note for the provider or staff. Updating this will append to any previous notes.
-     * @param  null|int  $documenttypeid A specific document type identifier.
+     * @param int $patientid patientid
+     * @param int $phonemessageid phonemessageid
+     * @param null|int $documenttypeid A specific document type identifier.
+     * @param null|string $internalnote An internal note for the provider or staff. Updating this will append to any previous notes.
+     * @param null|string $priority Priority of this result.  1 is high; 2 is normal.
+     * @param null|int $providerid The ID of the ordering provider.
      */
     public function __construct(
-        protected int $phonemessageid,
-        protected int $patientid,
-        protected ?string $priority = null,
-        protected ?int $providerid = null,
+        protected int     $patientid,
+        protected int     $phonemessageid,
+        protected ?int    $documenttypeid = null,
         protected ?string $internalnote = null,
-        protected ?int $documenttypeid = null,
-    ) {
+        protected ?string $priority = null,
+        protected ?int    $providerid = null,
+    )
+    {
     }
 
     public function defaultBody(): array
     {
         return array_filter([
+            'documenttypeid' => $this->documenttypeid,
+            'internalnote' => $this->internalnote,
             'priority' => $this->priority,
             'providerid' => $this->providerid,
-            'internalnote' => $this->internalnote,
-            'documenttypeid' => $this->documenttypeid,
         ]);
     }
 }

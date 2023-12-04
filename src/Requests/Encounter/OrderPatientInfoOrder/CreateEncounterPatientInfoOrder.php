@@ -24,26 +24,27 @@ class CreateEncounterPatientInfoOrder extends Request implements HasBody
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  int  $ordertypeid The athena ID of the patient information to order. Get the IDs using /reference/order/patientinfo.
-     * @param  int  $diagnosissnomedcode The SNOMED code for diagnosis this order is for.
-     * @param  null|string  $externalnote An external note for the patient.
-     * @param  null|string  $providernote An internal note for the provider or staff.
+     * @param int $diagnosissnomedcode The SNOMED code for diagnosis this order is for.
+     * @param int $encounterid encounterid
+     * @param int $ordertypeid The athena ID of the patient information to order. Get the IDs using /reference/order/patientinfo.
+     * @param null|string $externalnote An external note for the patient.
+     * @param null|string $providernote An internal note for the provider or staff.
      */
     public function __construct(
-        protected int $encounterid,
-        protected int $ordertypeid,
-        protected int $diagnosissnomedcode,
+        protected int     $diagnosissnomedcode,
+        protected int     $encounterid,
+        protected int     $ordertypeid,
         protected ?string $externalnote = null,
         protected ?string $providernote = null,
-    ) {
+    )
+    {
     }
 
     public function defaultBody(): array
     {
         return array_filter([
-            'ordertypeid' => $this->ordertypeid,
             'diagnosissnomedcode' => $this->diagnosissnomedcode,
+            'ordertypeid' => $this->ordertypeid,
             'externalnote' => $this->externalnote,
             'providernote' => $this->providernote,
         ]);

@@ -20,19 +20,23 @@ class GetPatientPerinatalHistory extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $departmentid The athenaNet department ID.
-     * @param  null|bool  $showunansweredquestions Include questions where there is no current answer.
+     * @param int $departmentid The athenaNet department ID.
+     * @param int $patientid patientid
+     * @param null|bool $showunansweredquestions Include questions where there is no current answer.
      */
     public function __construct(
-        protected int $patientid,
         protected int $departmentid,
+        protected int $patientid,
         protected ?bool $showunansweredquestions = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
-        return array_filter(['departmentid' => $this->departmentid, 'showunansweredquestions' => $this->showunansweredquestions]);
+        return array_filter([
+            'departmentid' => $this->departmentid,
+            'showunansweredquestions' => $this->showunansweredquestions
+        ]);
     }
 }

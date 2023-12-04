@@ -20,12 +20,13 @@ class DeletePatientPhysicianAuth extends Request
     }
 
     /**
-     * @param  int  $physicianauthid physicianauthid
-     * @param  int  $patientid patientid
+     * @param int $patientid patientid
+     * @param int $physicianauthid physicianauthid
      */
     public function __construct(
-        protected int $physicianauthid,
         protected int $patientid,
-    ) {
+        protected int $physicianauthid,
+    )
+    {
     }
 }

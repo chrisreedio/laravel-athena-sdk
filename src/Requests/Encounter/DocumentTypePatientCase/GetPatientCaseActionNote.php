@@ -20,11 +20,12 @@ class GetPatientCaseActionNote extends Request
     }
 
     /**
-     * @param  int  $patientcaseid patientcaseid
+     * @param int $patientcaseid patientcaseid
      */
     public function __construct(
         protected int $patientcaseid,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array

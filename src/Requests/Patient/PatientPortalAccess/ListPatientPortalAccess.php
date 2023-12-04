@@ -20,13 +20,14 @@ class ListPatientPortalAccess extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  null|int  $communicatorbrandid The athenaNet Communicator brand ID
+     * @param int $patientid patientid
+     * @param null|int $communicatorbrandid The athenaNet Communicator brand ID
      */
     public function __construct(
-        protected int $patientid,
+        protected int  $patientid,
         protected ?int $communicatorbrandid = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array

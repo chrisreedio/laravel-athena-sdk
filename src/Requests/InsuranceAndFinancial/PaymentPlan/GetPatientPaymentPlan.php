@@ -20,24 +20,25 @@ class GetPatientPaymentPlan extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  null|bool  $linkedclaiminfo Get claims covered by the payment plan
-     * @param  int  $departmentid The department ID.
-     * @param  null|array  $paymentplanids One or more payment plan IDs.
+     * @param int $departmentid The department ID.
+     * @param int $patientid patientid
+     * @param null|bool $linkedclaiminfo Get claims covered by the payment plan
+     * @param null|array $paymentplanids One or more payment plan IDs.
      */
     public function __construct(
-        protected int $patientid,
-        protected ?bool $linkedclaiminfo,
-        protected int $departmentid,
+        protected int    $departmentid,
+        protected int    $patientid,
+        protected ?bool  $linkedclaiminfo = null,
         protected ?array $paymentplanids = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
-            'linkedclaiminfo' => $this->linkedclaiminfo,
             'departmentid' => $this->departmentid,
+            'linkedclaiminfo' => $this->linkedclaiminfo,
             'paymentplanids' => $this->paymentplanids,
         ]);
     }

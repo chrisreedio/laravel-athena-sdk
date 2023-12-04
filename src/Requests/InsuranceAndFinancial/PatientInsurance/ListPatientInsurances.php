@@ -24,28 +24,29 @@ class ListPatientInsurances extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  null|bool  $showcancelled If set, include cancelled and expired insurances.
-     * @param  null|bool  $showfullssn If set, will show full SSN instead of a masked number.
-     * @param  null|int  $departmentid If set, we will use the department id in an attempt to find the local patient.
-     * @param  null|bool  $ignorerestrictions Set to true to allow ability to find patients with record restrictions and blocked patients. No effect if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
+     * @param int $patientid patientid
+     * @param null|int $departmentid If set, we will use the department id in an attempt to find the local patient.
+     * @param null|bool $ignorerestrictions Set to true to allow ability to find patients with record restrictions and blocked patients. No effect if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
+     * @param null|bool $showcancelled If set, include cancelled and expired insurances.
+     * @param null|bool $showfullssn If set, will show full SSN instead of a masked number.
      */
     public function __construct(
-        protected int $patientid,
+        protected int   $patientid,
+        protected ?int  $departmentid = null,
+        protected ?bool $ignorerestrictions = null,
         protected ?bool $showcancelled = null,
         protected ?bool $showfullssn = null,
-        protected ?int $departmentid = null,
-        protected ?bool $ignorerestrictions = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
-            'showcancelled' => $this->showcancelled,
-            'showfullssn' => $this->showfullssn,
             'departmentid' => $this->departmentid,
             'ignorerestrictions' => $this->ignorerestrictions,
+            'showcancelled' => $this->showcancelled,
+            'showfullssn' => $this->showfullssn,
         ]);
     }
 }

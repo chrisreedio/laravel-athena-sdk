@@ -20,15 +20,16 @@ class GetOrderDenialReasons extends Request
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  int  $orderid orderid
-     * @param  null|string  $username The username of the person/entity denying the order.  Will return any denial reason that is valid for that user, or error if none exist.  This is NOT used for authentication.
+     * @param int $encounterid encounterid
+     * @param int $orderid orderid
+     * @param null|string $username The username of the person/entity denying the order.  Will return any denial reason that is valid for that user, or error if none exist.  This is NOT used for authentication.
      */
     public function __construct(
-        protected int $encounterid,
-        protected int $orderid,
+        protected int     $encounterid,
+        protected int     $orderid,
         protected ?string $username = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array

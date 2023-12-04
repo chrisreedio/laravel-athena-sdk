@@ -20,11 +20,12 @@ class ListVaccineDeclineReasons extends Request
     }
 
     /**
-     * @param  null|bool  $showinactive Include deactivated declined reasons
+     * @param null|bool $showinactive Include deactivated declined reasons
      */
     public function __construct(
         protected ?bool $showinactive = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array

@@ -20,19 +20,23 @@ class ListReferralAuths extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  null|int  $insuranceid The insurance ID.
-     * @param  null|bool  $showexpired If set, results will include expired authorizations/referrals. This defaults to false.
+     * @param int $patientid patientid
+     * @param null|int $insuranceid The insurance ID.
+     * @param null|bool $showexpired If set, results will include expired authorizations/referrals. This defaults to false.
      */
     public function __construct(
-        protected int $patientid,
-        protected ?int $insuranceid = null,
+        protected int   $patientid,
+        protected ?int  $insuranceid = null,
         protected ?bool $showexpired = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
-        return array_filter(['insuranceid' => $this->insuranceid, 'showexpired' => $this->showexpired]);
+        return array_filter([
+            'insuranceid' => $this->insuranceid,
+            'showexpired' => $this->showexpired
+        ]);
     }
 }

@@ -24,19 +24,24 @@ class UpdateRiskContract extends Request implements HasBody
     }
 
     /**
-     * @param  null|string  $name Risk contract title.
-     * @param  null|string  $description Risk contract description
-     * @param  null|int  $riskcontractid Risk contract id.
+     * @param null|string $description Risk contract description
+     * @param null|string $name Risk contract title.
+     * @param null|int $riskcontractid Risk contract id.
      */
     public function __construct(
-        protected ?string $name = null,
         protected ?string $description = null,
-        protected ?int $riskcontractid = null,
-    ) {
+        protected ?string $name = null,
+        protected ?int    $riskcontractid = null,
+    )
+    {
     }
 
     public function defaultBody(): array
     {
-        return array_filter(['name' => $this->name, 'description' => $this->description, 'riskcontractid' => $this->riskcontractid]);
+        return array_filter([
+            'description' => $this->description,
+            'name' => $this->name,
+            'riskcontractid' => $this->riskcontractid
+        ]);
     }
 }

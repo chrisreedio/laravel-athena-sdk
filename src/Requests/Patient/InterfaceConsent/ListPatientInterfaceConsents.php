@@ -20,13 +20,14 @@ class ListPatientInterfaceConsents extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $departmentid Department ID
+     * @param int $departmentid Department ID
+     * @param int $patientid patientid
      */
     public function __construct(
-        protected int $patientid,
         protected int $departmentid,
-    ) {
+        protected int $patientid,
+    )
+    {
     }
 
     public function defaultQuery(): array

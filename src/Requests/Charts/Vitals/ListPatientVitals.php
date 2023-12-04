@@ -20,34 +20,35 @@ class ListPatientVitals extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  null|string  $enddate Only retrieve vitals that were taking on or before this date
-     * @param  int  $departmentid The department for this patient. A patient may have multiple charts, and the department determines which chart to retrieve.
-     * @param  null|string  $startdate Only retrieve vitals that were taking on or after this date
-     * @param  null|bool  $showemptyvitals Show configured vitals that have no readings for this patient.
-     * @param  null|string  $thirdpartyusername User name of the patient in the third party application.
-     * @param  null|bool  $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
+     * @param int $departmentid The department for this patient. A patient may have multiple charts, and the department determines which chart to retrieve.
+     * @param int $patientid patientid
+     * @param null|bool $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
+     * @param null|string $thirdpartyusername User name of the patient in the third party application.
+     * @param null|string $enddate Only retrieve vitals that were taking on or before this date
+     * @param null|bool $showemptyvitals Show configured vitals that have no readings for this patient.
+     * @param null|string $startdate Only retrieve vitals that were taking on or after this date
      */
     public function __construct(
-        protected int $patientid,
-        protected ?string $enddate,
-        protected int $departmentid,
-        protected ?string $startdate = null,
-        protected ?bool $showemptyvitals = null,
+        protected int     $departmentid,
+        protected int     $patientid,
+        protected ?bool   $patientfacingcall = null,
         protected ?string $thirdpartyusername = null,
-        protected ?bool $patientfacingcall = null,
-    ) {
+        protected ?string $enddate = null,
+        protected ?bool   $showemptyvitals = null,
+        protected ?string $startdate = null,
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
-            'enddate' => $this->enddate,
             'departmentid' => $this->departmentid,
-            'startdate' => $this->startdate,
-            'showemptyvitals' => $this->showemptyvitals,
-            'THIRDPARTYUSERNAME' => $this->thirdpartyusername,
             'PATIENTFACINGCALL' => $this->patientfacingcall,
+            'THIRDPARTYUSERNAME' => $this->thirdpartyusername,
+            'enddate' => $this->enddate,
+            'showemptyvitals' => $this->showemptyvitals,
+            'startdate' => $this->startdate,
         ]);
     }
 }

@@ -20,12 +20,13 @@ class GetPatientAcogDocument extends Request
     }
 
     /**
-     * @param  int  $acogid acogid
-     * @param  int  $patientid patientid
+     * @param int $acogid acogid
+     * @param int $patientid patientid
      */
     public function __construct(
         protected int $acogid,
         protected int $patientid,
-    ) {
+    )
+    {
     }
 }

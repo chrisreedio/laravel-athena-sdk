@@ -20,17 +20,18 @@ class GetPatientPhoneMessagePage extends Request
     }
 
     /**
-     * @param  int  $pageid pageid
-     * @param  int  $phonemessageid phonemessageid
-     * @param  int  $patientid patientid
-     * @param  null|string  $filesize The file size of the document being requested.
+     * @param int $pageid pageid
+     * @param int $patientid patientid
+     * @param int $phonemessageid phonemessageid
+     * @param null|string $filesize The file size of the document being requested.
      */
     public function __construct(
-        protected int $pageid,
-        protected int $phonemessageid,
-        protected int $patientid,
+        protected int     $pageid,
+        protected int     $patientid,
+        protected int     $phonemessageid,
         protected ?string $filesize = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array

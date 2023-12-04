@@ -20,19 +20,23 @@ class ListUserMessages extends Request
     }
 
     /**
-     * @param  string  $username username
-     * @param  null|bool  $showunreadonly Only return unread messages. Defaults to false.
-     * @param  null|string  $folder Requested message folder. Can be INBOX, SENT, SAVED, TRASH. Defaults to INBOX.
+     * @param string $username username
+     * @param null|string $folder Requested message folder. Can be INBOX, SENT, SAVED, TRASH. Defaults to INBOX.
+     * @param null|bool $showunreadonly Only return unread messages. Defaults to false.
      */
     public function __construct(
         protected string $username,
-        protected ?bool $showunreadonly = null,
         protected ?string $folder = null,
-    ) {
+        protected ?bool $showunreadonly = null,
+    )
+    {
     }
 
     public function defaultQuery(): array
     {
-        return array_filter(['showunreadonly' => $this->showunreadonly, 'folder' => $this->folder]);
+        return array_filter([
+            'folder' => $this->folder,
+            'showunreadonly' => $this->showunreadonly
+        ]);
     }
 }

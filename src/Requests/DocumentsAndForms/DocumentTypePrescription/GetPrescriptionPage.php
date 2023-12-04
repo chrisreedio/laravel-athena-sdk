@@ -20,17 +20,18 @@ class GetPrescriptionPage extends Request
     }
 
     /**
-     * @param  int  $pageid pageid
-     * @param  int  $prescriptionid prescriptionid
-     * @param  int  $patientid patientid
-     * @param  null|string  $filesize The file size of the document being requested.
+     * @param int $pageid pageid
+     * @param int $patientid patientid
+     * @param int $prescriptionid prescriptionid
+     * @param null|string $filesize The file size of the document being requested.
      */
     public function __construct(
-        protected int $pageid,
-        protected int $prescriptionid,
-        protected int $patientid,
+        protected int     $pageid,
+        protected int     $patientid,
+        protected int     $prescriptionid,
         protected ?string $filesize = null,
-    ) {
+    )
+    {
     }
 
     public function defaultQuery(): array

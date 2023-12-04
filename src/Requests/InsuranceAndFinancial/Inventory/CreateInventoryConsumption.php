@@ -24,17 +24,21 @@ class CreateInventoryConsumption extends Request implements HasBody
     }
 
     /**
-     * @param  array  $inventory An array of inventory that has been consumed.
-     * @param  string  $datecreated Date of the consumption. Formatted as MM/DD/YYYY.
+     * @param string $datecreated Date of the consumption. Formatted as MM/DD/YYYY.
+     * @param array $inventory An array of inventory that has been consumed.
      */
     public function __construct(
-        protected array $inventory,
         protected string $datecreated,
-    ) {
+        protected array  $inventory,
+    )
+    {
     }
 
     public function defaultBody(): array
     {
-        return array_filter(['inventory' => $this->inventory, 'datecreated' => $this->datecreated]);
+        return array_filter([
+            'datecreated' => $this->datecreated,
+            'inventory' => $this->inventory
+        ]);
     }
 }
