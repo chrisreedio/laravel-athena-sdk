@@ -1,6 +1,6 @@
 <?php
 
-namespace ChrisReedIO\Athena\Commands;
+namespace ChrisReedIO\AthenaSDK\Commands;
 
 use Illuminate\Console\Command;
 

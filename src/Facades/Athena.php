@@ -1,16 +1,16 @@
 <?php
 
-namespace ChrisReedIO\Athena\Facades;
+namespace ChrisReedIO\AthenaSDK\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \ChrisReedIO\Athena\Athena
+ * @see \ChrisReedIO\AthenaSDK\Athena
  */
 class Athena extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \ChrisReedIO\Athena\Athena::class;
+        return \ChrisReedIO\AthenaSDK\Athena::class;
     }
 }

@@ -34,13 +34,13 @@
     },
     "autoload": {
         "psr-4": {
-            "ChrisReedIO\\Athena\\": "src/",
-            "ChrisReedIO\\Athena\\Database\\Factories\\": "database/factories/"
+            "ChrisReedIO\\AthenaSDK\\": "src/",
+            "ChrisReedIO\\AthenaSDK\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ChrisReedIO\\Athena\\Tests\\": "tests/",
+            "ChrisReedIO\\AthenaSDK\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -72,10 +72,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ChrisReedIO\\Athena\\AthenaServiceProvider"
+                "ChrisReedIO\\AthenaSDK\\AthenaServiceProvider"
             ],
             "aliases": {
-                "Athena": "ChrisReedIO\\Athena\\Facades\\Athena"
+                "Athena": "ChrisReedIO\\AthenaSDK\\Facades\\Athena"
             }
         }
     },

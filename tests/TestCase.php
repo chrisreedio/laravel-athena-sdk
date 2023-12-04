@@ -1,10 +1,10 @@
 <?php
 
-namespace ChrisReedIO\Athena\Tests;
+namespace ChrisReedIO\AthenaSDK\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use ChrisReedIO\Athena\AthenaServiceProvider;
+use ChrisReedIO\AthenaSDK\AthenaServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,7 +13,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'ChrisReedIO\\Athena\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'ChrisReedIO\\AthenaSDK\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
