@@ -2,8 +2,10 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\Patient\Patient;
 
+use ChrisReedIO\AthenaSDK\Data\Patient\PatientData;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
 
 /**
  * GetPatient
@@ -88,5 +90,10 @@ class GetPatient extends Request
             'showpreviouspatientids' => $this->showpreviouspatientids,
             'showprivacycustomfields' => $this->showprivacycustomfields,
         ]);
+    }
+
+    public function createDtoFromResponse(Response $response): mixed
+    {
+        return PatientData::fromArray($response->json()[0]);
     }
 }
