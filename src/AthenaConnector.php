@@ -6,6 +6,7 @@ namespace ChrisReedIO\AthenaSDK;
 use ChrisReedIO\AthenaSDK\Resources\Appointments;
 use ChrisReedIO\AthenaSDK\Resources\Departments;
 use ChrisReedIO\AthenaSDK\Resources\Patients;
+use ChrisReedIO\AthenaSDK\Resources\Providers;
 use Exception;
 // use Illuminate\Http\Request;
 use ReflectionException;
@@ -119,6 +120,11 @@ class AthenaConnector extends Connector implements HasPagination
     public function patients(): Patients
     {
         return new Patients($this);
+    }
+
+    public function providers(): Providers
+    {
+        return new Providers($this);
     }
     //endregion
 }
