@@ -54,26 +54,19 @@ class ListDepartments extends PaginatedRequest
 
     public function createDtoFromResponse(Response $response): array
     {
-        try {
-            // dd($response->json($this->itemsKey));
-            return collect($response->json($this->itemsKey))
-                ->map(fn(array $dept) => [
-                    'athena_id' => $dept['departmentid'],
-                    'name' => $dept['patientdepartmentname'],
-                    'phone' => $dept['phone'] ?? null,
-                    'address' => [
-                        'street' => $dept['address'],
-                        'suite' => $dept['address2'] ?? null,
-                        'city' => $dept['city'],
-                        'state' => $dept['state'],
-                        'zip' => $dept['zip'],
-                    ],
-                ])->all();
-        } catch (JsonException $e) {
-            dump(class_basename(__CLASS__) . ': Failed to parse response body as JSON.');
-            dd($e->getMessage());
+        return collect($response->json($this->itemsKey))
+            ->map(fn(array $dept) => [
+                'athena_id' => $dept['departmentid'],
+                'name' => $dept['patientdepartmentname'],
+                'phone' => $dept['phone'] ?? null,
+                'address' => [
+                    'street' => $dept['address'],
+                    'suite' => $dept['address2'] ?? null,
+                    'city' => $dept['city'],
+                    'state' => $dept['state'],
+                    'zip' => $dept['zip'],
+                ],
+            ])->all();
 
-            return [];
-        }
     }
 }

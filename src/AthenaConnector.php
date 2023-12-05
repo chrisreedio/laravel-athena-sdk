@@ -5,6 +5,7 @@ namespace ChrisReedIO\AthenaSDK;
 // use ChrisReedIO\AthenaSDK\Resource\Appointments;
 use ChrisReedIO\AthenaSDK\Resources\Appointments;
 use ChrisReedIO\AthenaSDK\Resources\Departments;
+use ChrisReedIO\AthenaSDK\Resources\Patients;
 use Exception;
 // use Illuminate\Http\Request;
 use ReflectionException;
@@ -88,7 +89,12 @@ class AthenaConnector extends Connector implements HasPagination
                 }
 
                 // if ($response->)
-                $dtoResult = $response->dtoOrFail();
+                try {
+                    $dtoResult = $response->dtoOrFail();
+                } catch (Throwable $e) {
+                    // throw new \Exception(class_basename($request).' failed to parse response body as JSON: '.$e->getMessage());
+                    dd($e->getMessage());
+                }
                 if (!$dtoResult) {
                     return $response->json($itemsKey);
                     // throw new \Exception('Failed to parse response body as JSON.');
@@ -108,6 +114,11 @@ class AthenaConnector extends Connector implements HasPagination
     public function departments(): Departments
     {
         return new Departments($this);
+    }
+
+    public function patients(): Patients
+    {
+        return new Patients($this);
     }
     //endregion
 }

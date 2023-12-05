@@ -2,8 +2,11 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\Patient\Patient;
 
+use ChrisReedIO\AthenaSDK\PaginatedRequest;
+use JsonException;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
 
 /**
  * ListPatients
@@ -14,9 +17,11 @@ use Saloon\Http\Request;
  * href="/api/resources/best-practices-and-troubleshooting#Handling_Beta_APIs">Permissioned Rollout of
  * APIs</a> for more information if you are experiencing issues.
  */
-class ListPatients extends Request
+class ListPatients extends PaginatedRequest
 {
     protected Method $method = Method::GET;
+
+    protected ?string $itemsKey = 'patients';
 
     public function resolveEndpoint(): string
     {
@@ -371,5 +376,24 @@ class ListPatients extends Request
             'workphone' => $this->workphone,
             'zip' => $this->zip,
         ]);
+    }
+
+    /**
+     * @throws JsonException
+     */
+    public function createDtoFromResponse(Response $response): array
+    {
+        dd($response->json());
+        return collect($response->json($this->itemsKey))
+            ->map(fn (array $patient) => [
+                'athena_id' => $patient['patientid'],
+                'first_name' => $patient['firstname'],
+                'last_name' => $patient['lastname'],
+                'mobile_phone' => $patient['mobilephone'],
+                'home_phone' => $patient['homephone'],
+                'email' => $patient['email'],
+                'sms_consent' => $patient['consenttotext'],
+                // Email consent is missing
+            ])->all();
     }
 }

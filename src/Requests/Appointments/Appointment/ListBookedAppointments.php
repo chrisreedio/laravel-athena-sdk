@@ -2,16 +2,12 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment;
 
+use ChrisReedIO\AthenaSDK\Data\Appointment\AppointmentData;
 use ChrisReedIO\AthenaSDK\PaginatedRequest;
 use JsonException;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
 use function array_filter;
-use function array_map;
-use function class_basename;
-use function dd;
-use function dump;
 
 /**
  * ListBookedAppointments
@@ -106,21 +102,10 @@ class ListBookedAppointments extends PaginatedRequest
         ]);
     }
 
-    // public function createDtoFromResponse(Response $response): array
-    // {
-    //     return collect($response->json($this->itemsKey))
-    //         ->map(fn(array $appointment) => [
-    //             'athena_id' => $appointment['departmentid'],
-    //             'name' => $appointment['patientdepartmentname'],
-    //             'phone' => $appointment['phone'] ?? null,
-    //             'address' => [
-    //                 'street' => $appointment['address'],
-    //                 'suite' => $appointment['address2'] ?? null,
-    //                 'city' => $appointment['city'],
-    //                 'state' => $appointment['state'],
-    //                 'zip' => $appointment['zip'],
-    //             ],
-    //         ])->all();
-    //
-    // }
+    public function createDtoFromResponse(Response $response): array
+    {
+        return collect($response->json($this->itemsKey))
+            ->map(fn(array $appointment) => AppointmentData::fromArray($appointment))
+            ->all();
+    }
 }

@@ -2,8 +2,13 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment;
 
+use ChrisReedIO\AthenaSDK\Data\Appointment\AppointmentData;
+use ChrisReedIO\AthenaSDK\PaginatedRequest;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
+use function collect;
+use function is_array;
 
 /**
  * ListBookedAppointmentsForMultipleDepartments
@@ -14,9 +19,11 @@ use Saloon\Http\Request;
  * href="/api/resources/best-practices-and-troubleshooting#Handling_Beta_APIs">Permissioned Rollout of
  * APIs</a> for more information if you are experiencing issues.
  */
-class ListBookedAppointmentsForMultipleDepartments extends Request
+class ListBookedAppointmentsForMultipleDepartments extends PaginatedRequest
 {
     protected Method $method = Method::GET;
+
+    protected ?string $itemsKey = 'appointments';
 
     public function resolveEndpoint(): string
     {
@@ -54,7 +61,7 @@ class ListBookedAppointmentsForMultipleDepartments extends Request
         protected ?array $departmentid = null,
         protected ?string $endlastmodified = null,
         protected ?bool $ignorerestrictions = null,
-        protected ?int $patientid = null,
+        protected ?array $patientid = null,
         protected ?array $providerid = null,
         protected ?string $scheduledenddate = null,
         protected ?string $scheduledstartdate = null,
@@ -77,11 +84,11 @@ class ListBookedAppointmentsForMultipleDepartments extends Request
             'appointmentstatus' => $this->appointmentstatus,
             'appointmenttypeid' => $this->appointmenttypeid,
             'confidentialitycode' => $this->confidentialitycode,
-            'departmentid' => $this->departmentid,
+            'departmentid' => is_array($this->departmentid) ? implode(',', $this->departmentid) : $this->departmentid,
             'endlastmodified' => $this->endlastmodified,
             'ignorerestrictions' => $this->ignorerestrictions,
-            'patientid' => $this->patientid,
-            'providerid' => $this->providerid,
+            'patientid' => is_array($this->patientid) ? implode(',', $this->patientid) : $this->patientid,
+            'providerid' => is_array($this->providerid) ? implode(',', $this->providerid) : $this->providerid,
             'scheduledenddate' => $this->scheduledenddate,
             'scheduledstartdate' => $this->scheduledstartdate,
             'showcancelled' => $this->showcancelled,
@@ -93,5 +100,12 @@ class ListBookedAppointmentsForMultipleDepartments extends Request
             'showremindercalldetail' => $this->showremindercalldetail,
             'startlastmodified' => $this->startlastmodified,
         ]);
+    }
+
+    public function createDtoFromResponse(Response $response): array
+    {
+        return collect($response->json($this->itemsKey))
+            ->map(fn(array $appointment) => AppointmentData::fromArray($appointment))
+            ->all();
     }
 }

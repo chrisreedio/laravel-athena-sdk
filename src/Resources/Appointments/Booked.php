@@ -3,7 +3,9 @@
 namespace ChrisReedIO\AthenaSDK\Resources\Appointments;
 
 use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\ListBookedAppointments;
+use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\ListBookedAppointmentsForMultipleDepartments;
 use ChrisReedIO\AthenaSDK\Resource;
+use Illuminate\Support\LazyCollection;
 use Saloon\Http\Response;
 
 class Booked extends Resource
@@ -37,8 +39,8 @@ class Booked extends Resource
         bool $showpatientdetail = null,
         bool $showremindercalldetail = null,
         string $startlastmodified = null,
-    ): Response {
-        return $this->connector->send(new ListBookedAppointments(
+    ): LazyCollection {
+        return $this->connector->paginate(new ListBookedAppointments(
             $startdate,
             $enddate,
             $appointmentstatus,
@@ -59,6 +61,53 @@ class Booked extends Resource
             $showpatientdetail,
             $showremindercalldetail,
             $startlastmodified,
-        ));
+        ))->collect();
+    }
+
+    public function listMultiDept(
+        string $startdate,
+        string $enddate,
+        string $appointmentstatus = null,
+        int $appointmenttypeid = null,
+        array $confidentialitycode = null,
+        array $departmentid = null,
+        string $endlastmodified = null,
+        bool $ignorerestrictions = null,
+        array $patientid = null,
+        array $providerid = null,
+        string $scheduledenddate = null,
+        string $scheduledstartdate = null,
+        bool $showcancelled = null,
+        bool $showclaimdetail = null,
+        bool $showcopay = null,
+        bool $showexpectedprocedurecodes = null,
+        bool $showinsurance = null,
+        bool $showpatientdetail = null,
+        bool $showremindercalldetail = null,
+        string $startlastmodified = null,
+    ): LazyCollection
+    {
+        return $this->connector->paginate(new ListBookedAppointmentsForMultipleDepartments(
+            $startdate,
+            $enddate,
+            $appointmentstatus,
+            $appointmenttypeid,
+            $confidentialitycode,
+            $departmentid,
+            $endlastmodified,
+            $ignorerestrictions,
+            $patientid,
+            $providerid,
+            $scheduledenddate,
+            $scheduledstartdate,
+            $showcancelled,
+            $showclaimdetail,
+            $showcopay,
+            $showexpectedprocedurecodes,
+            $showinsurance,
+            $showpatientdetail,
+            $showremindercalldetail,
+            $startlastmodified,
+        ))->collect();
     }
 }
