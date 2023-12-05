@@ -2,16 +2,26 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\PracticeConfiguration\DepartmentsReference;
 
+use ChrisReedIO\AthenaSDK\PaginatedRequest;
+use ChrisReedIO\AthenaSDK\Traits\PaginatableItems;
+use JsonException;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
+use Saloon\PaginationPlugin\Contracts\Paginatable;
+use function class_basename;
+use function dd;
 
 /**
  * ListDepartments
  *
  * Retrieves detailed information of the departments associated to a practice
  */
-class ListDepartments extends Request
+// class ListDepartments extends PaginatedRequest
+class ListDepartments extends PaginatedRequest
 {
+    protected ?string $itemsKey = 'departments';
+
     protected Method $method = Method::GET;
 
     public function resolveEndpoint(): string
@@ -41,5 +51,33 @@ class ListDepartments extends Request
             'providerlist' => $this->providerlist,
             'showalldepartments' => $this->showalldepartments,
         ]);
+    }
+
+    public function createDtoFromResponse(Response $response): array
+    {
+
+        try {
+            // dd($response->json($this->itemsKey));
+            return array_map(function (array $department) {
+                $dept = [
+                    'athena_id' => $department['departmentid'],
+                    'name' => $department['patientdepartmentname'],
+                    'phone' => $department['phone'] ?? null,
+                    'address' => [
+                        'street' => $department['address'],
+                        'suite' => $department['address2'] ?? null,
+                        'city' => $department['city'],
+                        'state' => $department['state'],
+                        'zip' => $department['zip'],
+                    ],
+                ];
+                return array_filter($dept);
+                // return new Department($department);
+            }, $response->json($this->itemsKey));
+        } catch (JsonException $e) {
+            dump(class_basename(__CLASS__) . ': Failed to parse response body as JSON.');
+            dd($e->getMessage());
+            return [];
+        }
     }
 }

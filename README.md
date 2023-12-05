@@ -44,7 +44,7 @@ php artisan vendor:publish --tag="laravel-athena-sdk-views"
 ## Usage
 
 ```php
-$athena = new ChrisReedIO\AthenaSDK\Athena();
+$athena = new ChrisReedIO\AthenaSDK\AthenaConnector();
 echo $athena->echoPhrase('Hello, ChrisReedIO!');
 ```
 
