@@ -2,6 +2,7 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\Appointments\AppointmentTypes;
 
+use ChrisReedIO\AthenaSDK\Data\Appointment\AppointmentTypeData;
 use ChrisReedIO\AthenaSDK\PaginatedRequest;
 use JsonException;
 use Saloon\Enums\Method;
@@ -63,17 +64,7 @@ class ListAppointmentTypes extends PaginatedRequest
     public function createDtoFromResponse(Response $response): array
     {
         return collect($response->json($this->itemsKey))
-            ->map(fn(array $type) => [
-                'athena_id' => $type['appointmenttypeid'],
-                'code' => $type['shortname'],
-                'name' => $type['name'],
-                'duration' => $type['duration'],
-                'friendly_name' => $type['patientdisplayname'],
-                'patient' => $type['patient'],
-                'generic' => $type['generic'],
-                'template_only' => $type['templatetypeonly'],
-                'creates_encounter' => $type['createencounteroncheckin'],
-            ])
+            ->map(fn(array $type) => AppointmentTypeData::fromArray($type))
             ->all();
     }
 }
