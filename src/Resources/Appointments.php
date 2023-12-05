@@ -2,23 +2,21 @@
 
 namespace ChrisReedIO\AthenaSDK\Resources;
 
-use ChrisReedIO\AthenaSDK\Requests\Appointments\CompleteAppointmentCheckout;
 use ChrisReedIO\AthenaSDK\Resource;
 use ChrisReedIO\AthenaSDK\Resources\Appointments\Booked;
+use ChrisReedIO\AthenaSDK\Resources\Appointments\Subscriptions;
 use Saloon\Http\Response;
 
 class Appointments extends Resource
 {
-    // /**
-    //  * @param int $appointmentid appointmentid
-    //  */
-    // public function completeAppointmentCheckout(): Response
-    // {
-    // 	return $this->connector->send(new ListBookedAppointments());
-    // }
-
     public function booked(): Booked
     {
         return new Booked($this->connector);
     }
+
+    public function subscriptions(): Subscriptions
+    {
+        return new Subscriptions($this->connector);
+    }
+
 }
