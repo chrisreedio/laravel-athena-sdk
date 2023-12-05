@@ -53,7 +53,6 @@ class ListDepartments extends PaginatedRequest
 
     public function createDtoFromResponse(Response $response): array
     {
-
         try {
             // dd($response->json($this->itemsKey));
             return array_map(function (array $department) {
