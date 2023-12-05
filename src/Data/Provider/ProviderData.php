@@ -11,7 +11,8 @@ readonly class ProviderData
         public string $lastName,
         public string $specialtyId,
         public string $specialty,
-    ) { }
+    ) {
+    }
 
     public static function fromArray(array $data): self
     {

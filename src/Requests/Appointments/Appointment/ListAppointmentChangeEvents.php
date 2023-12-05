@@ -30,5 +30,4 @@ class ListAppointmentChangeEvents extends Request
     {
 
     }
-
 }

@@ -5,35 +5,34 @@ namespace ChrisReedIO\AthenaSDK\Data\Appointment;
 readonly class AppointmentData
 {
     public function __construct(
-        public string    $athenaId,
-        public string    $patientId,
-        public string    $appointmentTypeId,
-        public string    $appointmentType,
-        public int       $copay,
-        public string    $appointmentStatus,
-        public string    $lastModifiedBy,
-        public string    $departmentId,
-        public string    $providerId,
-        public string    $templateAppointmentId,
-        public string    $scheduledDateTime,
-        public int       $hl7ProviderId,
-        public string    $scheduledBy,
-        public string    $patientAppointmentTypeName,
-        public string    $date,
-        public bool      $coordinatorEnterprise,
-        public string    $lastModified,
-        public array     $notes,
+        public string $athenaId,
+        public string $patientId,
+        public string $appointmentTypeId,
+        public string $appointmentType,
+        public int $copay,
+        public string $appointmentStatus,
+        public string $lastModifiedBy,
+        public string $departmentId,
+        public string $providerId,
+        public string $templateAppointmentId,
+        public string $scheduledDateTime,
+        public int $hl7ProviderId,
+        public string $scheduledBy,
+        public string $patientAppointmentTypeName,
+        public string $date,
+        public bool $coordinatorEnterprise,
+        public string $lastModified,
+        public array $notes,
         public CopayData $appointmentCopay,
-        public bool      $chargeEntryNotRequired,
-        public int       $duration,
-        public bool      $urgent,
-        public string    $startTime,
-        public string    $templateAppointmentTypeId,
-        public ?string   $referringProviderId = null,
-        public ?string   $renderingProviderId = null,
-        public ?int      $supervisingProviderId = null
-    )
-    {
+        public bool $chargeEntryNotRequired,
+        public int $duration,
+        public bool $urgent,
+        public string $startTime,
+        public string $templateAppointmentTypeId,
+        public ?string $referringProviderId = null,
+        public ?string $renderingProviderId = null,
+        public ?int $supervisingProviderId = null
+    ) {
     }
 
     public static function fromArray(array $data): self

@@ -5,8 +5,8 @@ namespace ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment;
 use ChrisReedIO\AthenaSDK\Data\Appointment\AppointmentData;
 use ChrisReedIO\AthenaSDK\PaginatedRequest;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
+
 use function collect;
 use function is_array;
 
@@ -106,7 +106,7 @@ class ListBookedAppointmentsForMultipleDepartments extends PaginatedRequest
     {
         // dd($response->json($this->itemsKey));
         return collect($response->json($this->itemsKey))
-            ->map(fn(array $appointment) => AppointmentData::fromArray($appointment))
+            ->map(fn (array $appointment) => AppointmentData::fromArray($appointment))
             ->all();
     }
 }

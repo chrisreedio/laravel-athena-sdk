@@ -96,10 +96,11 @@ class AthenaConnector extends Connector implements HasPagination
                     // throw new \Exception(class_basename($request).' failed to parse response body as JSON: '.$e->getMessage());
                     dd($e->getMessage());
                 }
-                if (!$dtoResult) {
+                if (! $dtoResult) {
                     return $response->json($itemsKey);
                     // throw new \Exception('Failed to parse response body as JSON.');
                 }
+
                 return $dtoResult;
 
             }

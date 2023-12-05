@@ -6,7 +6,6 @@ use ChrisReedIO\AthenaSDK\Data\Appointment\AppointmentTypeData;
 use ChrisReedIO\AthenaSDK\PaginatedRequest;
 use JsonException;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
 
 /**
@@ -64,7 +63,7 @@ class ListAppointmentTypes extends PaginatedRequest
     public function createDtoFromResponse(Response $response): array
     {
         return collect($response->json($this->itemsKey))
-            ->map(fn(array $type) => AppointmentTypeData::fromArray($type))
+            ->map(fn (array $type) => AppointmentTypeData::fromArray($type))
             ->all();
     }
 }

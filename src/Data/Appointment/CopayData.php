@@ -8,7 +8,8 @@ readonly class CopayData
         public int $collectedForAppointment,
         public int $insuranceCopay,
         public int $collectedForOther,
-    ) { }
+    ) {
+    }
 
     public static function fromArray(array $data): self
     {

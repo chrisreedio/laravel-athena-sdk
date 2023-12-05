@@ -85,8 +85,7 @@ class Booked extends Resource
         bool $showpatientdetail = null,
         bool $showremindercalldetail = null,
         string $startlastmodified = null,
-    ): LazyCollection
-    {
+    ): LazyCollection {
         return $this->connector->paginate(new ListBookedAppointmentsForMultipleDepartments(
             $startdate,
             $enddate,

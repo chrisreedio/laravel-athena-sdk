@@ -14,7 +14,8 @@ readonly class AppointmentTypeData
         public bool $generic, // Assuming 'generic' is a boolean, change type if necessary
         public bool $templateOnly, // Assuming 'template_only' is a boolean, change type if necessary
         public bool $createsEncounter // Assuming 'creates_encounter' is a boolean, change type if necessary
-    ) {}
+    ) {
+    }
 
     public static function fromArray(array $data): self
     {

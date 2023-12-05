@@ -3,7 +3,6 @@
 namespace ChrisReedIO\AthenaSDK\Resources\Appointments;
 
 use ChrisReedIO\AthenaSDK\Requests\Appointments\AppointmentTypes\ListAppointmentTypes;
-use ChrisReedIO\AthenaSDK\Requests\PracticeConfiguration\DepartmentsReference\ListDepartments;
 use ChrisReedIO\AthenaSDK\Resource;
 use Illuminate\Support\LazyCollection;
 
@@ -14,4 +13,3 @@ class Types extends Resource
         return $this->connector->paginate(new ListAppointmentTypes())->collect();
     }
 }
-

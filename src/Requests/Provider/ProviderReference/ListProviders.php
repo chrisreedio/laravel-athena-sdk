@@ -5,7 +5,6 @@ namespace ChrisReedIO\AthenaSDK\Requests\Provider\ProviderReference;
 use ChrisReedIO\AthenaSDK\Data\Provider\ProviderData;
 use ChrisReedIO\AthenaSDK\PaginatedRequest;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
 
 /**
@@ -51,6 +50,6 @@ class ListProviders extends PaginatedRequest
     {
         // dd($response->json());
         return collect($response->json($this->itemsKey))
-            ->map(fn(array $data) => ProviderData::fromArray($data))->all();
+            ->map(fn (array $data) => ProviderData::fromArray($data))->all();
     }
 }
