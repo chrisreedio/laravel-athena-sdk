@@ -92,8 +92,9 @@ class GetPatient extends Request
         ]);
     }
 
-    public function createDtoFromResponse(Response $response): mixed
+    public function createDtoFromResponse(Response $response): PatientData
     {
+        // dd($response->json()[0]);
         return PatientData::fromArray($response->json()[0]);
     }
 }
