@@ -71,7 +71,7 @@ readonly class PatientData
             smsOptInDate: new DateTime($data['smsoptindate']),
             guarantorState: $data['guarantorstate'],
             contactPreferenceLabPhone: $data['contactpreference_lab_phone'],
-        // ... Initialize other properties in similar fashion
+            // ... Initialize other properties in similar fashion
         );
     }
 }

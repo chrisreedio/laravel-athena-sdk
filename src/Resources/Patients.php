@@ -25,7 +25,7 @@ class Patients extends Resource
 
     public function get(
         int $patientId
-    ) : Response {
+    ): Response {
         return $this->connector->send(new GetPatient($patientId));
     }
 }
