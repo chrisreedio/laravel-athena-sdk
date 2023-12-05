@@ -87,8 +87,14 @@ class AthenaConnector extends Connector implements HasPagination
                     throw new \Exception(class_basename($request).' must set itemsKey');
                 }
 
-                return $response->dtoOrFail();
-                // return $response->json($itemsKey);
+                // if ($response->)
+                $dtoResult = $response->dtoOrFail();
+                if (!$dtoResult) {
+                    return $response->json($itemsKey);
+                    // throw new \Exception('Failed to parse response body as JSON.');
+                }
+                return $dtoResult;
+
             }
         };
     }

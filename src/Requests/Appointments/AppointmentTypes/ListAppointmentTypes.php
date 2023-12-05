@@ -2,17 +2,22 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\Appointments\AppointmentTypes;
 
+use ChrisReedIO\AthenaSDK\PaginatedRequest;
+use JsonException;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
 
 /**
  * ListAppointmentTypes
  *
  * Retrieves list of the type of appointment available in the practice
  */
-class ListAppointmentTypes extends Request
+class ListAppointmentTypes extends PaginatedRequest
 {
     protected Method $method = Method::GET;
+
+    protected ?string $itemsKey = 'appointmenttypes';
 
     public function resolveEndpoint(): string
     {
@@ -50,5 +55,25 @@ class ListAppointmentTypes extends Request
             'providerids' => $this->providerids,
             'showappointmenttypeclasses' => $this->showappointmenttypeclasses,
         ]);
+    }
+
+    /**
+     * @throws JsonException
+     */
+    public function createDtoFromResponse(Response $response): array
+    {
+        return collect($response->json($this->itemsKey))
+            ->map(fn(array $type) => [
+                'athena_id' => $type['appointmenttypeid'],
+                'code' => $type['shortname'],
+                'name' => $type['name'],
+                'duration' => $type['duration'],
+                'friendly_name' => $type['patientdisplayname'],
+                'patient' => $type['patient'],
+                'generic' => $type['generic'],
+                'template_only' => $type['templatetypeonly'],
+                'creates_encounter' => $type['createencounteroncheckin'],
+            ])
+            ->all();
     }
 }
