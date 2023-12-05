@@ -2,17 +2,22 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\Provider\ProviderReference;
 
+use ChrisReedIO\AthenaSDK\Data\Provider\ProviderData;
+use ChrisReedIO\AthenaSDK\PaginatedRequest;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
 
 /**
  * ListProviders
  *
  * Retrieve a list of all providers available in a specific practice
  */
-class ListProviders extends Request
+class ListProviders extends PaginatedRequest
 {
     protected Method $method = Method::GET;
+
+    protected ?string $itemsKey = 'providers';
 
     public function resolveEndpoint(): string
     {
@@ -40,5 +45,12 @@ class ListProviders extends Request
             'showallproviderids' => $this->showallproviderids,
             'showusualdepartmentguessthreshold' => $this->showusualdepartmentguessthreshold,
         ]);
+    }
+
+    public function createDtoFromResponse(Response $response): array
+    {
+        // dd($response->json());
+        return collect($response->json($this->itemsKey))
+            ->map(fn(array $data) => ProviderData::fromArray($data))->all();
     }
 }

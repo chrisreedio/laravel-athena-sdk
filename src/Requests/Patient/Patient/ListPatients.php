@@ -3,9 +3,9 @@
 namespace ChrisReedIO\AthenaSDK\Requests\Patient\Patient;
 
 use ChrisReedIO\AthenaSDK\PaginatedRequest;
+use ChrisReedIO\AthenaSDK\Request;
 use JsonException;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
 
 /**
@@ -17,7 +17,7 @@ use Saloon\Http\Response;
  * href="/api/resources/best-practices-and-troubleshooting#Handling_Beta_APIs">Permissioned Rollout of
  * APIs</a> for more information if you are experiencing issues.
  */
-class ListPatients extends PaginatedRequest
+class ListPatients extends Request//PaginatedRequest
 {
     protected Method $method = Method::GET;
 
