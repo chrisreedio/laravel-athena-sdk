@@ -7,16 +7,17 @@ use ChrisReedIO\AthenaSDK\Resources\Appointments;
 use ChrisReedIO\AthenaSDK\Resources\Departments;
 use Exception;
 // use Illuminate\Http\Request;
-use Saloon\Http\Request;
 use ReflectionException;
 use Saloon\Exceptions\OAuthConfigValidationException;
 use Saloon\Helpers\OAuth2\OAuthConfig;
-use Saloon\Http\Response;
-use Saloon\PaginationPlugin\OffsetPaginator;
 use Saloon\Http\Connector;
+use Saloon\Http\Request;
+use Saloon\Http\Response;
 use Saloon\PaginationPlugin\Contracts\HasPagination;
+use Saloon\PaginationPlugin\OffsetPaginator;
 use Saloon\Traits\OAuth2\ClientCredentialsGrant;
 use Throwable;
+
 use function class_basename;
 
 class AthenaConnector extends Connector implements HasPagination
@@ -72,18 +73,18 @@ class AthenaConnector extends Connector implements HasPagination
 
             protected function isLastPage(Response $response): bool
             {
-                return $this->getOffset() >= (int)$response->json('totalcount');
+                return $this->getOffset() >= (int) $response->json('totalcount');
             }
 
             protected function getPageItems(Response $response, Request $request): array
             {
-                if (!$request instanceof PaginatedRequest) {
-                    throw new \Exception( class_basename($request) . ' must extend PaginatedRequest');
+                if (! $request instanceof PaginatedRequest) {
+                    throw new \Exception(class_basename($request).' must extend PaginatedRequest');
                 }
 
                 $itemsKey = $request->getItemsKey();
-                if (!$itemsKey) {
-                    throw new \Exception( class_basename($request) . ' must set itemsKey');
+                if (! $itemsKey) {
+                    throw new \Exception(class_basename($request).' must set itemsKey');
                 }
 
                 return $response->dtoOrFail();

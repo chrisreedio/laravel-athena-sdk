@@ -10,5 +10,4 @@ trait PaginatableItems
     {
         return $this->itemsKey;
     }
-
 }

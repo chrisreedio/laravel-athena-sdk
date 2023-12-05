@@ -3,12 +3,10 @@
 namespace ChrisReedIO\AthenaSDK\Requests\PracticeConfiguration\DepartmentsReference;
 
 use ChrisReedIO\AthenaSDK\PaginatedRequest;
-use ChrisReedIO\AthenaSDK\Traits\PaginatableItems;
 use JsonException;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
-use Saloon\PaginationPlugin\Contracts\Paginatable;
+
 use function class_basename;
 use function dd;
 
@@ -71,12 +69,14 @@ class ListDepartments extends PaginatedRequest
                         'zip' => $department['zip'],
                     ],
                 ];
+
                 return array_filter($dept);
                 // return new Department($department);
             }, $response->json($this->itemsKey));
         } catch (JsonException $e) {
-            dump(class_basename(__CLASS__) . ': Failed to parse response body as JSON.');
+            dump(class_basename(__CLASS__).': Failed to parse response body as JSON.');
             dd($e->getMessage());
+
             return [];
         }
     }

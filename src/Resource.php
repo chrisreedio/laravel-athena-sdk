@@ -6,9 +6,9 @@ namespace ChrisReedIO\AthenaSDK;
 
 abstract class Resource
 {
-	public function __construct(
-		// protected Connector $connector,
-		protected AthenaConnector $connector,
-	) {
-	}
+    public function __construct(
+        // protected Connector $connector,
+        protected AthenaConnector $connector,
+    ) {
+    }
 }

@@ -9,18 +9,16 @@ use Saloon\Http\Response;
 
 class Appointments extends Resource
 {
-	// /**
-	//  * @param int $appointmentid appointmentid
-	//  */
-	// public function completeAppointmentCheckout(): Response
-	// {
-	// 	return $this->connector->send(new ListBookedAppointments());
-	// }
+    // /**
+    //  * @param int $appointmentid appointmentid
+    //  */
+    // public function completeAppointmentCheckout(): Response
+    // {
+    // 	return $this->connector->send(new ListBookedAppointments());
+    // }
 
     public function booked(): Booked
     {
         return new Booked($this->connector);
     }
-
-
 }
