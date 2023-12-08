@@ -5,6 +5,7 @@ namespace ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
+use function collect;
 
 /**
  * ListAppointmentChangeEvents
@@ -20,14 +21,14 @@ class ListAppointmentChangeEvents extends Request
         return '/appointments/changed/subscription/events';
     }
 
+    public function __construct()
+    {
+
+    }
+
     public function createDtoFromResponse(Response $response): array
     {
         // dd($response->json('subscriptions'));
         return collect($response->json('subscriptions'))->flatten()->all();
-    }
-
-    public function __construct()
-    {
-
     }
 }

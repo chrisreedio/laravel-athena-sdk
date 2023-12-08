@@ -18,8 +18,8 @@ class AthenaServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-athena-sdk')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-athena-sdk_table')
+            // ->hasViews()
+            // ->hasMigration('create_laravel-athena-sdk_table')
             ->hasCommand(AthenaCommand::class);
     }
 }

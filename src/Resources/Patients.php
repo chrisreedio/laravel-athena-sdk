@@ -5,6 +5,7 @@ namespace ChrisReedIO\AthenaSDK\Resources;
 use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\GetPatient;
 use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\ListPatients;
 use ChrisReedIO\AthenaSDK\Resource;
+use ChrisReedIO\AthenaSDK\Resources\Patients\PatientSubscriptions;
 use Illuminate\Support\LazyCollection;
 use Saloon\Http\Response;
 
@@ -27,5 +28,10 @@ class Patients extends Resource
         int $patientId
     ): Response {
         return $this->connector->send(new GetPatient($patientId));
+    }
+
+    public function subscriptions(): PatientSubscriptions
+    {
+        return new PatientSubscriptions($this->connector);
     }
 }

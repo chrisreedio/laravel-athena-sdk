@@ -4,7 +4,7 @@ namespace ChrisReedIO\AthenaSDK\Resources;
 
 use ChrisReedIO\AthenaSDK\Resource;
 use ChrisReedIO\AthenaSDK\Resources\Appointments\Booked;
-use ChrisReedIO\AthenaSDK\Resources\Appointments\Subscriptions;
+use ChrisReedIO\AthenaSDK\Resources\Appointments\AppointmentSubscriptions;
 use ChrisReedIO\AthenaSDK\Resources\Appointments\Types;
 
 class Appointments extends Resource
@@ -14,9 +14,9 @@ class Appointments extends Resource
         return new Booked($this->connector);
     }
 
-    public function subscriptions(): Subscriptions
+    public function subscriptions(): AppointmentSubscriptions
     {
-        return new Subscriptions($this->connector);
+        return new AppointmentSubscriptions($this->connector);
     }
 
     public function types(): Types

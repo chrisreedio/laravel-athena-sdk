@@ -6,7 +6,7 @@ use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\ListAppointmentChang
 use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\ListAppointmentChangeSubscriptions;
 use ChrisReedIO\AthenaSDK\Resource;
 
-class Subscriptions extends Resource
+class AppointmentSubscriptions extends Resource
 {
     public function events(): array
     {
