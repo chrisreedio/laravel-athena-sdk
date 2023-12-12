@@ -9,6 +9,7 @@ use ChrisReedIO\AthenaSDK\Resources\Patients;
 use ChrisReedIO\AthenaSDK\Resources\Providers;
 use Exception;
 // use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use ReflectionException;
 use Saloon\Exceptions\OAuthConfigValidationException;
 use Saloon\Helpers\OAuth2\OAuthConfig;
@@ -45,7 +46,12 @@ class AthenaConnector extends Connector implements HasPagination
 
         // Attempt to set up authentication
         try {
-            $authenticator = $this->getAccessToken();
+            $authenticator = Cache::get('athena_access_token');
+            if (! $authenticator) {
+                $authenticator = $this->getAccessToken();
+                $ttl = now()->diff($authenticator->getExpiresAt());
+                Cache::put('athena_access_token', $authenticator, $ttl);
+            }
             $this->authenticate($authenticator);
         } catch (ReflectionException|OAuthConfigValidationException|Throwable $e) {
             throw new \Exception('Athena SDK failed to authenticate: '.$e->getMessage());
