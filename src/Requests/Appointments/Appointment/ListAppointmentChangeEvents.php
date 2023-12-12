@@ -5,6 +5,7 @@ namespace ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
+
 use function collect;
 
 /**

@@ -19,7 +19,7 @@ class Patients extends Resource
     // }
 
     public function list(
-        string $departmentId = null,
+        ?string $departmentId = null,
     ): Response {
         return $this->connector->send(new ListPatients(departmentid: $departmentId));
     }

@@ -20,7 +20,7 @@ class ProviderSubscriptions extends Resource
         return $this->connector->send(new ListSubscribedProviderEvents());
     }
 
-    public function subscribe(string $eventName = null): Response
+    public function subscribe(?string $eventName = null): Response
     {
         return $this->connector->send(new CreateProviderSubscription($eventName));
     }

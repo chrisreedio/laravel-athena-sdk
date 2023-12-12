@@ -4,8 +4,8 @@ namespace ChrisReedIO\AthenaSDK\Resources;
 
 use ChrisReedIO\AthenaSDK\Resource;
 use ChrisReedIO\AthenaSDK\Resources\Appointments\AppointmentStatus;
-use ChrisReedIO\AthenaSDK\Resources\Appointments\Booked;
 use ChrisReedIO\AthenaSDK\Resources\Appointments\AppointmentSubscriptions;
+use ChrisReedIO\AthenaSDK\Resources\Appointments\Booked;
 use ChrisReedIO\AthenaSDK\Resources\Appointments\Types;
 
 class Appointments extends Resource
