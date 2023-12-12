@@ -4,6 +4,7 @@ namespace ChrisReedIO\AthenaSDK\Requests\Patient\Patient;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
 
 /**
  * ListPatientChangeSubscriptions
@@ -21,5 +22,10 @@ class ListPatientChangeSubscriptions extends Request
 
     public function __construct()
     {
+    }
+
+    public function createDtoFromResponse(Response $response): mixed
+    {
+        dd($response->json());
     }
 }

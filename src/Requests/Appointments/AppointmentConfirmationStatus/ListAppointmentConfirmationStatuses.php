@@ -2,6 +2,8 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\Appointments\AppointmentConfirmationStatus;
 
+use ChrisReedIO\AthenaSDK\Data\Appointment\ConfirmationStatusData;
+use Illuminate\Support\Collection;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
@@ -26,5 +28,11 @@ class ListAppointmentConfirmationStatuses extends Request
     public function defaultQuery(): array
     {
         return array_filter([]);
+    }
+
+    public function createDtoFromResponse(\Saloon\Http\Response $response): Collection
+    {
+        return collect($response->json('status'))
+            ->map(fn (array $status) => ConfirmationStatusData::fromArray($status));
     }
 }

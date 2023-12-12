@@ -2,6 +2,7 @@
 
 namespace ChrisReedIO\AthenaSDK\Resources\Appointments;
 
+use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\CreateAppointmentChangeSubscription;
 use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\ListAppointmentChangeEvents;
 use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\ListAppointmentChangeSubscriptions;
 use ChrisReedIO\AthenaSDK\Resource;
@@ -16,5 +17,10 @@ class AppointmentSubscriptions extends Resource
     public function list(): \Saloon\Http\Response
     {
         return $this->connector->send(new ListAppointmentChangeSubscriptions());
+    }
+
+    public function subscribe(?string $eventName = null): \Saloon\Http\Response
+    {
+        return $this->connector->send(new CreateAppointmentChangeSubscription($eventName));
     }
 }

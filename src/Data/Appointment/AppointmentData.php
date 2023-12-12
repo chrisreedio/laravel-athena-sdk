@@ -31,12 +31,17 @@ readonly class AppointmentData
         public string $templateAppointmentTypeId,
         public ?string $referringProviderId = null,
         public ?string $renderingProviderId = null,
-        public ?int $supervisingProviderId = null
+        public ?int $supervisingProviderId = null,
+        public ?string $confirmationId = null,
+        public ?string $confirmationStatus = null,
+        public ?string $encounterId = null,
+        public ?string $encounterStatus = null,
     ) {
     }
 
     public static function fromArray(array $data): self
     {
+        // dd('app data: ' , $data);
         return new self(
             athenaId: $data['appointmentid'],
             patientId: $data['patientid'],
@@ -64,7 +69,11 @@ readonly class AppointmentData
             templateAppointmentTypeId: $data['templateappointmenttypeid'],
             referringProviderId: $data['referringproviderid'] ?? null,
             renderingProviderId: $data['renderingproviderid'] ?? null,
-            supervisingProviderId: $data['supervisingproviderid'] ?? null
+            supervisingProviderId: $data['supervisingproviderid'] ?? null,
+            confirmationId: $data['appointmentconfirmationid'] ?? null,
+            confirmationStatus: $data['appointmentconfirmationname'] ?? null,
+            encounterId: $data['encounterid'] ?? null,
+            encounterStatus: $data['encounterstatus'] ?? null,
         );
     }
 }
