@@ -4,7 +4,6 @@ namespace ChrisReedIO\AthenaSDK\Data;
 
 readonly class SubscriptionEventData
 {
-
     public function __construct(
         public ?string $id = null,
         public ?string $name = null,
@@ -19,5 +18,4 @@ readonly class SubscriptionEventData
             name: $data['eventname'],
         );
     }
-
 }

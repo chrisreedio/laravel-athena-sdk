@@ -29,6 +29,6 @@ class ListPatientChangeSubscriptions extends Request
     public function createDtoFromResponse(Response $response): Collection
     {
         return collect($response->json('subscriptions'))
-            ->map(fn($item) => SubscriptionEventData::fromArray($item));
+            ->map(fn ($item) => SubscriptionEventData::fromArray($item));
     }
 }

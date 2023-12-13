@@ -7,6 +7,7 @@ use Illuminate\Support\Collection;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
+
 use function collect;
 
 /**
@@ -44,6 +45,6 @@ class ListAppointmentChangeSubscriptions extends Request
     public function createDtoFromResponse(Response $response): Collection
     {
         return collect($response->json('subscriptions'))
-            ->map(fn($item) => SubscriptionEventData::fromArray($item));
+            ->map(fn ($item) => SubscriptionEventData::fromArray($item));
     }
 }
