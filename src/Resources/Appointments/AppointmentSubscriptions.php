@@ -7,7 +7,6 @@ use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\DeleteAppointmentCha
 use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\ListAppointmentChangeEvents;
 use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\ListAppointmentChanges;
 use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\ListAppointmentChangeSubscriptions;
-use ChrisReedIO\AthenaSDK\Requests\Provider\Provider\ListProviderChanges;
 use ChrisReedIO\AthenaSDK\Resource;
 use Illuminate\Support\Collection;
 use Illuminate\Support\LazyCollection;

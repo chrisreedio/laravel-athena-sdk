@@ -4,10 +4,9 @@ namespace ChrisReedIO\AthenaSDK\Requests\Patient\Patient;
 
 use ChrisReedIO\AthenaSDK\Data\Patient\PatientData;
 use ChrisReedIO\AthenaSDK\PaginatedRequest;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Enumerable;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
+
 use function config;
 
 /**
@@ -59,6 +58,7 @@ class ListPatientChanges extends PaginatedRequest
     public function defaultQuery(): array
     {
         $leave = config('athena-sdk.leave_unprocessed') ?? $this->leaveUnprocessed;
+
         return array_filter([
             'confidentialityCode' => $this->confidentialityCode,
             'departmentid' => $this->departmentId,

@@ -3,11 +3,10 @@
 namespace ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment;
 
 use ChrisReedIO\AthenaSDK\Data\Appointment\AppointmentData;
-use ChrisReedIO\AthenaSDK\Data\Patient\PatientData;
 use ChrisReedIO\AthenaSDK\PaginatedRequest;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
+
 use function collect;
 use function config;
 
@@ -68,6 +67,7 @@ class ListAppointmentChanges extends PaginatedRequest
     public function defaultQuery(): array
     {
         $leave = config('athena-sdk.leave_unprocessed') ?? $this->leaveUnprocessed;
+
         return array_filter([
             'confidentialityCode' => $this->confidentialityCode,
             'departmentid' => $this->departmentId,

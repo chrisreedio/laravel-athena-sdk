@@ -2,7 +2,6 @@
 
 namespace ChrisReedIO\AthenaSDK\Resources\Providers;
 
-use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\ListPatientChanges;
 use ChrisReedIO\AthenaSDK\Requests\Provider\Provider\CreateProviderSubscription;
 use ChrisReedIO\AthenaSDK\Requests\Provider\Provider\DeleteProviderSubscription;
 use ChrisReedIO\AthenaSDK\Requests\Provider\Provider\ListProviderChangeEvents;
