@@ -21,12 +21,12 @@ class AppointmentSubscriptions extends Resource
         return $this->connector->send(new ListAppointmentChangeSubscriptions())->dtoOrFail();
     }
 
-    public function subscribe(string $eventName = null): \Saloon\Http\Response
+    public function subscribe(?string $eventName = null): \Saloon\Http\Response
     {
         return $this->connector->send(new CreateAppointmentChangeSubscription($eventName));
     }
 
-    public function unsubscribe(string $eventName = null): \Saloon\Http\Response
+    public function unsubscribe(?string $eventName = null): \Saloon\Http\Response
     {
         return $this->connector->send(new DeleteAppointmentChangeSubscription($eventName));
     }

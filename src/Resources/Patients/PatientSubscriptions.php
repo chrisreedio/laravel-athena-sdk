@@ -22,12 +22,12 @@ class PatientSubscriptions extends Resource
         return $this->connector->send(new ListPatientChangeSubscriptions())->dtoOrFail();
     }
 
-    public function subscribe(string $eventName = null, array $departmentIds = null, ): Response
+    public function subscribe(?string $eventName = null, ?array $departmentIds = null): Response
     {
         return $this->connector->send(new CreatePatientChangeSubscription($eventName, $departmentIds));
     }
 
-    public function unsubscribe(string $eventName = null): Response
+    public function unsubscribe(?string $eventName = null): Response
     {
         return $this->connector->send(new DeletePatientChangeSubscription($eventName));
     }
