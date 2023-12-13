@@ -3,6 +3,7 @@
 namespace ChrisReedIO\AthenaSDK\Resources\Providers;
 
 use ChrisReedIO\AthenaSDK\Requests\Provider\Provider\CreateProviderSubscription;
+use ChrisReedIO\AthenaSDK\Requests\Provider\Provider\DeleteProviderSubscription;
 use ChrisReedIO\AthenaSDK\Requests\Provider\Provider\ListProviderChangeEvents;
 use ChrisReedIO\AthenaSDK\Requests\Provider\Provider\ListSubscribedProviderEvents;
 use ChrisReedIO\AthenaSDK\Resource;
@@ -21,8 +22,13 @@ class ProviderSubscriptions extends Resource
         return $this->connector->send(new ListSubscribedProviderEvents())->dtoOrFail();
     }
 
-    public function subscribe(?string $eventName = null): Response
+    public function subscribe(string $eventName = null): Response
     {
         return $this->connector->send(new CreateProviderSubscription($eventName));
+    }
+
+    public function unsubscribe(string $eventName = null): Response
+    {
+        return $this->connector->send(new DeleteProviderSubscription($eventName));
     }
 }

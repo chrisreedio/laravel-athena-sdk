@@ -3,6 +3,7 @@
 namespace ChrisReedIO\AthenaSDK\Resources\Patients;
 
 use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\CreatePatientChangeSubscription;
+use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\DeletePatientChangeSubscription;
 use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\ListPatientChangeSubscriptionEvents;
 use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\ListPatientChangeSubscriptions;
 use ChrisReedIO\AthenaSDK\Resource;
@@ -21,8 +22,13 @@ class PatientSubscriptions extends Resource
         return $this->connector->send(new ListPatientChangeSubscriptions())->dtoOrFail();
     }
 
-    public function subscribe(?array $departmentIds = null, ?string $eventName = null): Response
+    public function subscribe(string $eventName = null, array $departmentIds = null, ): Response
     {
-        return $this->connector->send(new CreatePatientChangeSubscription($departmentIds, $eventName));
+        return $this->connector->send(new CreatePatientChangeSubscription($eventName, $departmentIds));
+    }
+
+    public function unsubscribe(string $eventName = null): Response
+    {
+        return $this->connector->send(new DeletePatientChangeSubscription($eventName));
     }
 }
