@@ -5,9 +5,12 @@ namespace ChrisReedIO\AthenaSDK\Resources\Appointments;
 use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\CreateAppointmentChangeSubscription;
 use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\DeleteAppointmentChangeSubscription;
 use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\ListAppointmentChangeEvents;
+use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\ListAppointmentChanges;
 use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\ListAppointmentChangeSubscriptions;
+use ChrisReedIO\AthenaSDK\Requests\Provider\Provider\ListProviderChanges;
 use ChrisReedIO\AthenaSDK\Resource;
 use Illuminate\Support\Collection;
+use Illuminate\Support\LazyCollection;
 
 class AppointmentSubscriptions extends Resource
 {
@@ -29,5 +32,12 @@ class AppointmentSubscriptions extends Resource
     public function unsubscribe(?string $eventName = null): \Saloon\Http\Response
     {
         return $this->connector->send(new DeleteAppointmentChangeSubscription($eventName));
+    }
+
+    public function changes(bool $leaveUnprocessed = false): LazyCollection
+    {
+        return $this->connector
+            ->paginate(new ListAppointmentChanges(leaveUnprocessed: $leaveUnprocessed))
+            ->collect();
     }
 }

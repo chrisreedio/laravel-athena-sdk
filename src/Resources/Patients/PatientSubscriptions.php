@@ -4,10 +4,12 @@ namespace ChrisReedIO\AthenaSDK\Resources\Patients;
 
 use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\CreatePatientChangeSubscription;
 use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\DeletePatientChangeSubscription;
+use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\ListPatientChanges;
 use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\ListPatientChangeSubscriptionEvents;
 use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\ListPatientChangeSubscriptions;
 use ChrisReedIO\AthenaSDK\Resource;
 use Illuminate\Support\Collection;
+use Illuminate\Support\LazyCollection;
 use Saloon\Http\Response;
 
 class PatientSubscriptions extends Resource
@@ -30,5 +32,12 @@ class PatientSubscriptions extends Resource
     public function unsubscribe(?string $eventName = null): Response
     {
         return $this->connector->send(new DeletePatientChangeSubscription($eventName));
+    }
+
+    public function changes(bool $leaveUnprocessed = false): LazyCollection
+    {
+        return $this->connector
+            ->paginate(new ListPatientChanges(leaveUnprocessed: $leaveUnprocessed))
+            ->collect();
     }
 }

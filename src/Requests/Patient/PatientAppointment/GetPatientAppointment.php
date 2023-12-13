@@ -52,7 +52,7 @@ class GetPatientAppointment extends Request
     public function defaultQuery(): array
     {
         return array_filter([
-            'confidentialitycode' => $this->confidentialitycode,
+            'confidentialityCode' => $this->confidentialitycode,
             'ignorerestrictions' => $this->ignorerestrictions,
             'showclaimdetail' => $this->showclaimdetail,
             'showcopay' => $this->showcopay,

@@ -7,4 +7,6 @@ return [
     'client_secret' => env('ATHENA_CLIENT_SECRET', ''),
 
     'practice_id' => env('ATHENA_PRACTICE_ID', ''),
+
+    'leave_unprocessed' => env('ATHENA_LEAVE_UNPROCESSED'),
 ];
