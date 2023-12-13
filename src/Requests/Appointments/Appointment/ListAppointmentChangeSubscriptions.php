@@ -2,8 +2,12 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment;
 
+use ChrisReedIO\AthenaSDK\Data\SubscriptionEventData;
+use Illuminate\Support\Collection;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
+use function collect;
 
 /**
  * ListAppointmentChangeSubscriptions
@@ -35,5 +39,11 @@ class ListAppointmentChangeSubscriptions extends Request
             'includeremindercall' => $this->includeremindercall,
             'includesuggestedoverbooking' => $this->includesuggestedoverbooking,
         ]);
+    }
+
+    public function createDtoFromResponse(Response $response): Collection
+    {
+        return collect($response->json('subscriptions'))
+            ->map(fn($item) => SubscriptionEventData::fromArray($item));
     }
 }

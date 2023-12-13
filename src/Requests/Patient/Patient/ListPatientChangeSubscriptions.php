@@ -2,6 +2,8 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\Patient\Patient;
 
+use ChrisReedIO\AthenaSDK\Data\SubscriptionEventData;
+use Illuminate\Support\Collection;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
@@ -24,8 +26,9 @@ class ListPatientChangeSubscriptions extends Request
     {
     }
 
-    public function createDtoFromResponse(Response $response): mixed
+    public function createDtoFromResponse(Response $response): Collection
     {
-        dd($response->json());
+        return collect($response->json('subscriptions'))
+            ->map(fn($item) => SubscriptionEventData::fromArray($item));
     }
 }

@@ -6,6 +6,7 @@ use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\CreatePatientChangeSubscripti
 use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\ListPatientChangeSubscriptionEvents;
 use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\ListPatientChangeSubscriptions;
 use ChrisReedIO\AthenaSDK\Resource;
+use Illuminate\Support\Collection;
 use Saloon\Http\Response;
 
 class PatientSubscriptions extends Resource
@@ -15,9 +16,9 @@ class PatientSubscriptions extends Resource
         return $this->connector->send(new ListPatientChangeSubscriptionEvents())->dtoOrFail();
     }
 
-    public function list(): Response
+    public function list(): Collection
     {
-        return $this->connector->send(new ListPatientChangeSubscriptions());
+        return $this->connector->send(new ListPatientChangeSubscriptions())->dtoOrFail();
     }
 
     public function subscribe(?array $departmentIds = null, ?string $eventName = null): Response

@@ -6,6 +6,7 @@ use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\CreateAppointmentCha
 use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\ListAppointmentChangeEvents;
 use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\ListAppointmentChangeSubscriptions;
 use ChrisReedIO\AthenaSDK\Resource;
+use Illuminate\Support\Collection;
 
 class AppointmentSubscriptions extends Resource
 {
@@ -14,9 +15,9 @@ class AppointmentSubscriptions extends Resource
         return $this->connector->send(new ListAppointmentChangeEvents())->dtoOrFail();
     }
 
-    public function list(): \Saloon\Http\Response
+    public function list(): Collection
     {
-        return $this->connector->send(new ListAppointmentChangeSubscriptions());
+        return $this->connector->send(new ListAppointmentChangeSubscriptions())->dtoOrFail();
     }
 
     public function subscribe(?string $eventName = null): \Saloon\Http\Response
