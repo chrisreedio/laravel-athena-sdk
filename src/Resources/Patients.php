@@ -13,23 +13,20 @@ use Saloon\Http\Response;
 
 class Patients extends Resource
 {
-    // public function list(
-    //     ?string $departmentId = null,
-    // ): LazyCollection
-    // {
-    //     return $this->connector->paginate(new ListPatients(departmentid: $departmentId))->collect();
-    // }
-
-    public function list(
-        ?string $departmentId = null,
-    ): Response {
-        return $this->connector->send(new ListPatients(departmentid: $departmentId));
+    public function list(?string $departmentId = null): LazyCollection
+    {
+        return $this->connector->paginate(new ListPatients(departmentid: $departmentId))->collect();
     }
 
-    public function get(
-        int $patientId
-    ): Response {
-        return $this->connector->send(new GetPatient($patientId));
+    // public function list(
+    //     ?string $departmentId = null,
+    // ): Response {
+    //     return $this->connector->send(new ListPatients(departmentid: $departmentId));
+    // }
+
+    public function get(int $patientId): PatientData
+    {
+        return $this->connector->send(new GetPatient($patientId))->dtoOrFail();
     }
 
     public function subscriptions(): PatientSubscriptions

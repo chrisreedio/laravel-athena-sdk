@@ -24,7 +24,7 @@ class UpdatePatient extends Request implements HasBody
 
     public function resolveEndpoint(): string
     {
-        return "/patients/{$this->patientid}";
+        return "/patients/{$this->patientId}";
     }
 
     public function __construct(public int $patientId, public PatientData $patient)
@@ -464,4 +464,5 @@ class UpdatePatient extends Request implements HasBody
         ]);
     }
     */
+    //endregion
 }
