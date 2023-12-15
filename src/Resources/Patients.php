@@ -39,9 +39,6 @@ class Patients extends Resource
 
     public function update(int $patientId, PatientData $patient): Response
     {
-        return $this->connector->send(new UpdatePatient(
-            patientid: $patientId,
-            // TODO - Extract all of the patient data into parameters
-        ));
+        return $this->connector->send(new UpdatePatient($patientId, $patient));
     }
 }

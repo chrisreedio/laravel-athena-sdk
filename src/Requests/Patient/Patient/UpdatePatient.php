@@ -2,6 +2,7 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\Patient\Patient;
 
+use ChrisReedIO\AthenaSDK\Data\Patient\PatientData;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
@@ -26,6 +27,76 @@ class UpdatePatient extends Request implements HasBody
         return "/patients/{$this->patientid}";
     }
 
+    public function __construct(public int $patientId, public PatientData $patient)
+    {
+
+    }
+
+    public function defaultBody(): array
+    {
+        // Extract guarantor and emergency contact data from the PatientData object
+        $guarantor = $this->patient->guarantor;
+        $emergencyContact = $this->patient->emergencyContact;
+
+        // Start building the request body with data from PatientData
+        $body = [
+            'firstname' => $this->patient->firstName,
+            'lastname' => $this->patient->lastName,
+            'sex' => $this->patient->sex,
+            'dob' => $this->patient->dob?->format('Y-m-d'),
+            'email' => $this->patient->email,
+            'homephone' => $this->patient->homePhone,
+            'mobilephone' => $this->patient->mobilePhone,
+
+            // Address
+            'address1' => $this->patient->street,
+            'address2' => $this->patient->suite,
+            'city' => $this->patient->city,
+            'state' => $this->patient->state,
+            'zip' => $this->patient->zip,
+            'countrycode3166' => $this->patient->countryCode3166,
+            'countrycode' => $this->patient->countryCode,
+
+            // Contact Preferences
+            'consenttocall' => $this->patient->consentToCall,
+            'consenttotext' => $this->patient->consentToText,
+        ];
+
+        // Add GuarantorData fields if available
+        if ($guarantor) {
+            $body += [
+                'guarantorfirstname' => $guarantor->first_name,
+                'guarantorlastname' => $guarantor->last_name,
+                'guarantoraddress1' => $guarantor->address1,
+                'guarantoraddress2' => $guarantor->address2,
+                'guarantorcity' => $guarantor->city,
+                'guarantorstate' => $guarantor->state,
+                'guarantorzip' => $guarantor->zip,
+                'guarantorcountrycode3166' => $guarantor->countryCode3166,
+                'guarantorcountrycode' => $guarantor->countryCode,
+                'guarantorphone' => $guarantor->phone,
+                'guarantoremail' => $guarantor->email,
+                'guarantordob' => $guarantor->birthday,
+                // ... add other fields from GuarantorData as required ...
+            ];
+        }
+
+        // Add EmergencyContactData fields if available
+        if ($emergencyContact) {
+            $body += [
+                'contactname' => $emergencyContact->name,
+                'contactrelationship' => $emergencyContact->relationship,
+                'contacthomephone' => $emergencyContact->homePhone,
+                'contactmobilephone' => $emergencyContact->mobilePhone,
+                // ... add other fields from EmergencyContactData as required ...
+            ];
+        }
+
+        // Remove null values to clean up the request body
+        return array_filter($body, fn ($value) => ! is_null($value));
+    }
+
+    //region Old Code
     /**
      * @param  int  $patientid patientid
      * @param  null|bool  $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
@@ -145,6 +216,7 @@ class UpdatePatient extends Request implements HasBody
      * @param  null|string  $workphone The patient's work phone number.  Generally not used to contact a patient.  Invalid numbers in a GET will be ignored.  Patient phone numbers and other data may change, and one phone number may be associated with multiple patients. You are responsible for taking additional steps to verify patient identity and for using this data in accordance with applicable law, including HIPAA. Only phone numbers that exist in the North American Naming Plan (NANP) are acceptable for input.
      * @param  null|string  $zip Patient's zip.  Matching occurs on first 5 characters.
      */
+    /*
     public function __construct(
         protected int $patientid,
         protected ?bool $patientfacingcall = null,
@@ -266,7 +338,9 @@ class UpdatePatient extends Request implements HasBody
         protected ?string $zip = null,
     ) {
     }
+    */
 
+    /*
     public function defaultBody(): array
     {
         return array_filter([
@@ -389,4 +463,5 @@ class UpdatePatient extends Request implements HasBody
             'zip' => $this->zip,
         ]);
     }
+    */
 }
