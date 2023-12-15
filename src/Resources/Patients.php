@@ -2,8 +2,10 @@
 
 namespace ChrisReedIO\AthenaSDK\Resources;
 
+use ChrisReedIO\AthenaSDK\Data\Patient\PatientData;
 use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\GetPatient;
 use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\ListPatients;
+use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\UpdatePatient;
 use ChrisReedIO\AthenaSDK\Resource;
 use ChrisReedIO\AthenaSDK\Resources\Patients\PatientSubscriptions;
 use Illuminate\Support\LazyCollection;
@@ -33,5 +35,13 @@ class Patients extends Resource
     public function subscriptions(): PatientSubscriptions
     {
         return new PatientSubscriptions($this->connector);
+    }
+
+    public function update(int $patientId, PatientData $patient): Response
+    {
+        return $this->connector->send(new UpdatePatient(
+            patientid: $patientId,
+            // TODO - Extract all of the patient data into parameters
+        ));
     }
 }

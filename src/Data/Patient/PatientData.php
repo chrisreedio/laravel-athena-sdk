@@ -2,9 +2,10 @@
 
 namespace ChrisReedIO\AthenaSDK\Data\Patient;
 
+use ChrisReedIO\AthenaSDK\Data\AthenaData;
 use DateTime;
 
-readonly class PatientData
+readonly class PatientData extends AthenaData
 {
     public function __construct(
         public ?int $athenaId = null,
