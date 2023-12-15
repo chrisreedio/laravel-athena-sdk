@@ -41,6 +41,7 @@ class AppointmentSubscriptions extends Resource
             showInsurance: true,
             // showPatientDetail: true,
         );
+
         return $this->connector
             ->paginate($request)
             ->collect();
