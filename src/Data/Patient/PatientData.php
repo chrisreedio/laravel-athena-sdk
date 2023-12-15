@@ -8,33 +8,7 @@ use DateTime;
 readonly class PatientData extends AthenaData
 {
     /**
-     * @param int|null $athenaId
-     * @param string|null $firstName
-     * @param string|null $lastName
-     * @param string|null $sex - M/F
-     * @param DateTime|null $dob
-     * @param string|null $email
-     * @param bool|null $emailExists
-     * @param string|null $homePhone
-     * @param string|null $mobilePhone
-     * @param string|null $departmentId
-     * @param string|null $street
-     * @param string|null $suite
-     * @param string|null $city
-     * @param string|null $state
-     * @param string|null $zip
-     * @param string|null $countryCode
-     * @param string|null $countryCode3166
-     * @param bool|null $contactPreferenceAnnouncementSms
-     * @param bool|null $portalTermsOnFile
-     * @param bool|null $consentToText
-     * @param bool|null $consentToCall
-     * @param DateTime|null $smsOptInDate
-     * @param bool|null $contactPreferenceLabPhone
-     * @param bool|null $patientPhoto
-     * @param string|null $confidentialityCode
-     * @param GuarantorData|null $guarantor
-     * @param EmergencyContactData|null $emergencyContact
+     * @param  string|null  $sex - M/F
      */
     public function __construct(
         public ?int $athenaId = null,
