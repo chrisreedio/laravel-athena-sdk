@@ -2,6 +2,8 @@
 
 namespace ChrisReedIO\AthenaSDK\Data\Appointment;
 
+use ChrisReedIO\AthenaSDK\Data\Patient\PatientData;
+
 readonly class AppointmentData
 {
     public function __construct(
@@ -36,6 +38,7 @@ readonly class AppointmentData
         public ?string $confirmationStatus = null,
         public ?string $encounterId = null,
         public ?string $encounterStatus = null,
+        public ?PatientData $patient = null,
     ) {
     }
 
@@ -73,6 +76,7 @@ readonly class AppointmentData
             confirmationStatus: $data['appointmentconfirmationname'] ?? null,
             encounterId: $data['encounterid'] ?? null,
             encounterStatus: $data['encounterstatus'] ?? null,
+            patient: isset($data['patient']) ? PatientData::fromArray($data['patient']) : null,
         );
     }
 }

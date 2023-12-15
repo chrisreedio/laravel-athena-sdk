@@ -75,6 +75,7 @@ class ListPatientChanges extends PaginatedRequest
 
     public function createDtoFromResponse(Response $response): array
     {
+        // dd($response->json());
         return collect($response->json($this->itemsKey))
             ->map(fn ($item) => PatientData::fromArray($item))
             ->all();

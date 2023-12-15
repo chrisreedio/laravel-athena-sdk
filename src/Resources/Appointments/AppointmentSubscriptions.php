@@ -35,8 +35,14 @@ class AppointmentSubscriptions extends Resource
 
     public function changes(bool $leaveUnprocessed = false): LazyCollection
     {
+        $request = new ListAppointmentChanges(
+            leaveUnprocessed: $leaveUnprocessed,
+            showCopay: true,
+            showInsurance: true,
+            // showPatientDetail: true,
+        );
         return $this->connector
-            ->paginate(new ListAppointmentChanges(leaveUnprocessed: $leaveUnprocessed))
+            ->paginate($request)
             ->collect();
     }
 }

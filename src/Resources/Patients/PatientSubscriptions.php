@@ -36,8 +36,8 @@ class PatientSubscriptions extends Resource
 
     public function changes(bool $leaveUnprocessed = false): LazyCollection
     {
-        return $this->connector
-            ->paginate(new ListPatientChanges(leaveUnprocessed: $leaveUnprocessed))
-            ->collect();
+
+        $request = new ListPatientChanges(leaveUnprocessed: $leaveUnprocessed);
+        return $this->connector->paginate($request)->collect();
     }
 }
