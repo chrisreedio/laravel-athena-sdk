@@ -38,6 +38,7 @@ class PatientSubscriptions extends Resource
     {
 
         $request = new ListPatientChanges(leaveUnprocessed: $leaveUnprocessed);
+
         return $this->connector->paginate($request)->collect();
     }
 }
