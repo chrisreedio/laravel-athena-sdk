@@ -37,13 +37,14 @@ class UpdatePatient extends Request implements HasBody
         // Extract guarantor and emergency contact data from the PatientData object
         $guarantor = $this->patient->guarantor;
         $emergencyContact = $this->patient->emergencyContact;
+        $dateFormat = 'm/d/Y';
 
         // Start building the request body with data from PatientData
         $body = [
             'firstname' => $this->patient->firstName,
             'lastname' => $this->patient->lastName,
             'sex' => $this->patient->sex,
-            'dob' => $this->patient->dob?->format('Y-m-d'),
+            'dob' => $this->patient->dob?->format($dateFormat),
             'email' => $this->patient->email,
             'homephone' => $this->patient->homePhone,
             'mobilephone' => $this->patient->mobilePhone,
@@ -76,7 +77,7 @@ class UpdatePatient extends Request implements HasBody
                 'guarantorcountrycode' => $guarantor->countryCode,
                 'guarantorphone' => $guarantor->phone,
                 'guarantoremail' => $guarantor->email,
-                'guarantordob' => $guarantor->birthday,
+                'guarantordob' => $guarantor->birthday?->format($dateFormat),
                 // ... add other fields from GuarantorData as required ...
             ];
         }

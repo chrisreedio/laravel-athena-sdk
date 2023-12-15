@@ -3,13 +3,14 @@
 namespace ChrisReedIO\AthenaSDK\Data\Patient;
 
 use ChrisReedIO\AthenaSDK\Data\AthenaData;
+use DateTime;
 
 readonly class GuarantorData extends AthenaData
 {
     public function __construct(
         public ?string $first_name = null,
         public ?string $last_name = null,
-        public ?string $birthday = null,
+        public ?DateTime $birthday = null,
         public ?string $address1 = null,
         public ?string $address2 = null,
         public ?string $city = null,
@@ -30,7 +31,7 @@ readonly class GuarantorData extends AthenaData
         return new static(
             first_name: $data['guarantorfirstname'] ?? null,
             last_name: $data['guarantorlastname'] ?? null,
-            birthday: $data['guarantordob'] ?? null,
+            birthday: isset($data['guarantordob']) ? new DateTime($data['guarantordob']) : null,
             address1: $data['guarantoraddress1'] ?? null,
             address2: $data['guarantoraddress2'] ?? null,
             city: $data['guarantorcity'] ?? null,
