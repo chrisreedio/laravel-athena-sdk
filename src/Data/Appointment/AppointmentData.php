@@ -2,6 +2,7 @@
 
 namespace ChrisReedIO\AthenaSDK\Data\Appointment;
 
+use ChrisReedIO\AthenaSDK\Data\Patient\InsuranceData;
 use ChrisReedIO\AthenaSDK\Data\Patient\PatientData;
 
 readonly class AppointmentData
@@ -39,6 +40,8 @@ readonly class AppointmentData
         public ?string $encounterId = null,
         public ?string $encounterStatus = null,
         public ?PatientData $patient = null,
+        // @var PatientData[]|null @insurance
+        public ?array $insurances = null,
     ) {
     }
 
@@ -77,6 +80,7 @@ readonly class AppointmentData
             encounterId: $data['encounterid'] ?? null,
             encounterStatus: $data['encounterstatus'] ?? null,
             patient: isset($data['patient']) ? PatientData::fromArray($data['patient']) : null,
+            insurances: isset($data['insurances']) ? array_map(fn (array $insurance) => InsuranceData::fromArray($insurance), $data['insurances']) : null,
         );
     }
 }

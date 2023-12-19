@@ -2,9 +2,12 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\PracticeConfiguration\DepartmentsReference;
 
+use ChrisReedIO\AthenaSDK\Data\Department\DepartmentData;
 use ChrisReedIO\AthenaSDK\PaginatedRequest;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
+
+use function dd;
 
 /**
  * ListDepartments
@@ -50,18 +53,27 @@ class ListDepartments extends PaginatedRequest
     public function createDtoFromResponse(Response $response): array
     {
         return collect($response->json($this->itemsKey))
-            ->map(fn (array $dept) => [
-                'athena_id' => $dept['departmentid'],
-                'name' => $dept['patientdepartmentname'],
-                'phone' => $dept['phone'] ?? null,
-                'address' => [
-                    'street' => $dept['address'],
-                    'suite' => $dept['address2'] ?? null,
-                    'city' => $dept['city'],
-                    'state' => $dept['state'],
-                    'zip' => $dept['zip'],
-                ],
-            ])->all();
+            ->map(fn (array $dept) => DepartmentData::fromArray($dept))
+            ->all();
+
+        /*
+         if ($dept['departmentid'] == '437') {
+                    dd($dept);
+                }
+
+                return [
+                    'athena_id' => $dept['departmentid'],
+                    'name' => $dept['patientdepartmentname'],
+                    'phone' => $dept['phone'] ?? null,
+                    'address' => [
+                        'street' => $dept['address'],
+                        'suite' => $dept['address2'] ?? null,
+                        'city' => $dept['city'],
+                        'state' => $dept['state'],
+                        'zip' => $dept['zip'],
+                    ],
+                ];
+         */
 
     }
 }
