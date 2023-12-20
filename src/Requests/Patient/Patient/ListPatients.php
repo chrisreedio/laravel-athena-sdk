@@ -2,6 +2,7 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\Patient\Patient;
 
+use ChrisReedIO\AthenaSDK\Data\Patient\PatientData;
 use ChrisReedIO\AthenaSDK\PaginatedRequest;
 use ChrisReedIO\AthenaSDK\Request;
 use JsonException;
@@ -383,18 +384,20 @@ class ListPatients extends PaginatedRequest //Request //PaginatedRequest
      */
     public function createDtoFromResponse(Response $response): array
     {
-        dd($response->json());
+        // dd($response->json());
 
         return collect($response->json($this->itemsKey))
-            ->map(fn (array $patient) => [
-                'athena_id' => $patient['patientid'],
-                'first_name' => $patient['firstname'],
-                'last_name' => $patient['lastname'],
-                'mobile_phone' => $patient['mobilephone'],
-                'home_phone' => $patient['homephone'],
-                'email' => $patient['email'],
-                'sms_consent' => $patient['consenttotext'],
-                // Email consent is missing
-            ])->all();
+            ->map(fn (array $patientData) => PatientData::fromArray($patientData))
+            ->all();
+            // ->map(fn (array $patient) => [
+            //     'athena_id' => $patient['patientid'],
+            //     'first_name' => $patient['firstname'],
+            //     'last_name' => $patient['lastname'],
+            //     'mobile_phone' => $patient['mobilephone'],
+            //     'home_phone' => $patient['homephone'],
+            //     'email' => $patient['email'],
+            //     'sms_consent' => $patient['consenttotext'],
+            //     // Email consent is missing
+            // ])->all();
     }
 }

@@ -2,8 +2,10 @@
 
 namespace ChrisReedIO\AthenaSDK\Data\Patient;
 
+use ChrisReedIO\AthenaSDK\Data\AddressData;
 use ChrisReedIO\AthenaSDK\Data\AthenaData;
 use DateTime;
+use function array_key_exists;
 
 readonly class PatientData extends AthenaData
 {
@@ -23,14 +25,7 @@ readonly class PatientData extends AthenaData
 
         public ?string $departmentId = null,
 
-        // Address
-        public ?string $street = null,
-        public ?string $suite = null,
-        public ?string $city = null,
-        public ?string $state = null,
-        public ?string $zip = null,
-        public ?string $countryCode = null,
-        public ?string $countryCode3166 = null,
+        public ?AddressData $address = null,
 
         // Contact Preferences
         public ?bool $contactPreferenceAnnouncementSms = null,
@@ -52,7 +47,6 @@ readonly class PatientData extends AthenaData
     public static function fromArray(array $data): static
     {
         // dd($data);
-
         return new self(
             athenaId: $data['patientid'] ?? null,
             firstName: $data['firstname'] ?? null,
@@ -64,13 +58,7 @@ readonly class PatientData extends AthenaData
             homePhone: $data['homephone'] ?? null,
             mobilePhone: $data['mobilephone'] ?? null,
             departmentId: $data['departmentid'] ?? null,
-            street: $data['street'] ?? null,
-            suite: $data['suite'] ?? null,
-            city: $data['city'] ?? null,
-            state: $data['state'] ?? null,
-            zip: $data['zip'] ?? null,
-            countryCode: $data['countrycode'] ?? null,
-            countryCode3166: $data['countrycode3166'] ?? null,
+            address:AddressData::fromArray($data),
             contactPreferenceAnnouncementSms: $data['contactpreference_announcement_sms'] ?? null,
             portalTermsOnFile: $data['portaltermsonfile'] ?? null,
             consentToText: $data['consenttotext'] ?? null,
