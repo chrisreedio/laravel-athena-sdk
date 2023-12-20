@@ -5,7 +5,6 @@ namespace ChrisReedIO\AthenaSDK\Data\Patient;
 use ChrisReedIO\AthenaSDK\Data\AddressData;
 use ChrisReedIO\AthenaSDK\Data\AthenaData;
 use DateTime;
-use function array_key_exists;
 
 readonly class PatientData extends AthenaData
 {
@@ -58,7 +57,7 @@ readonly class PatientData extends AthenaData
             homePhone: $data['homephone'] ?? null,
             mobilePhone: $data['mobilephone'] ?? null,
             departmentId: $data['departmentid'] ?? null,
-            address:AddressData::fromArray($data),
+            address: AddressData::fromArray($data),
             contactPreferenceAnnouncementSms: $data['contactpreference_announcement_sms'] ?? null,
             portalTermsOnFile: $data['portaltermsonfile'] ?? null,
             consentToText: $data['consenttotext'] ?? null,

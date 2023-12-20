@@ -89,6 +89,7 @@ class ListAppointmentChanges extends PaginatedRequest
     public function createDtoFromResponse(Response $response): array
     {
         dd($response->json());
+
         return collect($response->json($this->itemsKey))
             ->map(fn ($item) => AppointmentData::fromArray($item))
             ->all();

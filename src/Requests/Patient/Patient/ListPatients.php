@@ -389,15 +389,15 @@ class ListPatients extends PaginatedRequest //Request //PaginatedRequest
         return collect($response->json($this->itemsKey))
             ->map(fn (array $patientData) => PatientData::fromArray($patientData))
             ->all();
-            // ->map(fn (array $patient) => [
-            //     'athena_id' => $patient['patientid'],
-            //     'first_name' => $patient['firstname'],
-            //     'last_name' => $patient['lastname'],
-            //     'mobile_phone' => $patient['mobilephone'],
-            //     'home_phone' => $patient['homephone'],
-            //     'email' => $patient['email'],
-            //     'sms_consent' => $patient['consenttotext'],
-            //     // Email consent is missing
-            // ])->all();
+        // ->map(fn (array $patient) => [
+        //     'athena_id' => $patient['patientid'],
+        //     'first_name' => $patient['firstname'],
+        //     'last_name' => $patient['lastname'],
+        //     'mobile_phone' => $patient['mobilephone'],
+        //     'home_phone' => $patient['homephone'],
+        //     'email' => $patient['email'],
+        //     'sms_consent' => $patient['consenttotext'],
+        //     // Email consent is missing
+        // ])->all();
     }
 }
