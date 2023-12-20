@@ -50,13 +50,13 @@ class UpdatePatient extends Request implements HasBody
             'mobilephone' => $this->patient->mobilePhone,
 
             // Address
-            'address1' => $this->patient->street,
-            'address2' => $this->patient->suite,
-            'city' => $this->patient->city,
-            'state' => $this->patient->state,
-            'zip' => $this->patient->zip,
-            'countrycode3166' => $this->patient->countryCode3166,
-            'countrycode' => $this->patient->countryCode,
+            'address1' => $this->patient->address->street,
+            'address2' => $this->patient->address->suite,
+            'city' => $this->patient->address->city,
+            'state' => $this->patient->address->state,
+            'zip' => $this->patient->address->zip,
+            'countrycode3166' => $this->patient->address->countryCode3166,
+            'countrycode' => $this->patient->address->countryCode,
 
             // Contact Preferences
             'consenttocall' => $this->patient->consentToCall,
