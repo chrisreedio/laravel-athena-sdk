@@ -4,6 +4,9 @@ namespace ChrisReedIO\AthenaSDK\Data\Appointment;
 
 use ChrisReedIO\AthenaSDK\Data\Patient\InsuranceData;
 use ChrisReedIO\AthenaSDK\Data\Patient\PatientData;
+use DateTime;
+use Illuminate\Support\Carbon;
+use function array_key_exists;
 
 readonly class AppointmentData
 {
@@ -18,7 +21,7 @@ readonly class AppointmentData
         public ?string $departmentId = null,
         public ?string $providerId = null,
         public ?string $templateAppointmentId = null,
-        public ?string $scheduledDateTime = null,
+        public ?DateTime $scheduledDateTime = null,
         public ?int $hl7ProviderId = null,
         public ?string $scheduledBy = null,
         public ?string $patientAppointmentTypeName = null,
@@ -58,7 +61,7 @@ readonly class AppointmentData
             departmentId: $data['departmentid'] ?? null,
             providerId: $data['providerid'] ?? null,
             templateAppointmentId: $data['templateappointmentid'] ?? null,
-            scheduledDateTime: $data['scheduleddatetime'] ?? null,
+            scheduledDateTime: array_key_exists('scheduleddatetime', $data) ? Carbon::parse($data['scheduleddatetime'])->toDateTime() : null,
             hl7ProviderId: $data['hl7providerid'] ?? null,
             scheduledBy: $data['scheduledby'] ?? null,
             patientAppointmentTypeName: $data['patientappointmenttypename'] ?? null,
