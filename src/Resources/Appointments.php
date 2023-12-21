@@ -6,6 +6,7 @@ use ChrisReedIO\AthenaSDK\Resource;
 use ChrisReedIO\AthenaSDK\Resources\Appointments\AppointmentStatus;
 use ChrisReedIO\AthenaSDK\Resources\Appointments\AppointmentSubscriptions;
 use ChrisReedIO\AthenaSDK\Resources\Appointments\Booked;
+use ChrisReedIO\AthenaSDK\Resources\Appointments\CheckInResource;
 use ChrisReedIO\AthenaSDK\Resources\Appointments\Types;
 
 class Appointments extends Resource
@@ -28,5 +29,10 @@ class Appointments extends Resource
     public function status(): AppointmentStatus
     {
         return new AppointmentStatus($this->connector);
+    }
+
+    public function checkin(): CheckInResource
+    {
+        return new CheckInResource($this->connector);
     }
 }
