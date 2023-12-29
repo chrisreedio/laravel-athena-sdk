@@ -6,6 +6,7 @@ use ChrisReedIO\AthenaSDK\Data\Patient\InsuranceData;
 use ChrisReedIO\AthenaSDK\Data\Patient\PatientData;
 use DateTime;
 use Illuminate\Support\Carbon;
+
 use function array_key_exists;
 
 readonly class AppointmentData
