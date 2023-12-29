@@ -6,11 +6,11 @@ readonly class ProviderData
 {
     public function __construct(
         public int $athenaId,
-        public int $npi,
-        public string $firstName,
-        public string $lastName,
-        public string $specialtyId,
-        public string $specialty,
+        public ?int $npi,
+        public ?string $firstName,
+        public ?string $lastName,
+        public ?string $specialtyId,
+        public ?string $specialty,
     ) {
     }
 
@@ -18,11 +18,11 @@ readonly class ProviderData
     {
         return new self(
             athenaId: $data['providerid'],
-            npi: $data['npi'],
-            firstName: $data['firstname'],
-            lastName: $data['lastname'],
-            specialtyId: $data['specialtyid'],
-            specialty: $data['specialty'],
+            npi: $data['npi'] ?? null,
+            firstName: $data['firstname'] ?? null,
+            lastName: $data['lastname'] ?? null,
+            specialtyId: $data['specialtyid'] ?? null,
+            specialty: $data['specialty'] ?? null,
         );
     }
 }
