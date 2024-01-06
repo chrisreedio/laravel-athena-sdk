@@ -1,6 +1,6 @@
 <?php
 
-namespace ChrisReedIO\Athena\Database\Factories;
+namespace ChrisReedIO\AthenaSDK\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

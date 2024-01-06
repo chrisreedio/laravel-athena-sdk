@@ -1,8 +1,8 @@
 <?php
 
-namespace ChrisReedIO\Athena;
+namespace ChrisReedIO\AthenaSDK;
 
-use ChrisReedIO\Athena\Commands\AthenaCommand;
+use ChrisReedIO\AthenaSDK\Commands\AthenaCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -18,8 +18,8 @@ class AthenaServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-athena-sdk')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-athena-sdk_table')
+            // ->hasViews()
+            // ->hasMigration('create_laravel-athena-sdk_table')
             ->hasCommand(AthenaCommand::class);
     }
 }

@@ -1,4 +1,4 @@
-# Provides an interface to Athena EHR's API
+# Athena EHR API SDK for Laravel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/chrisreedio/laravel-athena-sdk.svg?style=flat-square)](https://packagist.org/packages/chrisreedio/laravel-athena-sdk)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/chrisreedio/laravel-athena-sdk/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/chrisreedio/laravel-athena-sdk/actions?query=workflow%3Arun-tests+branch%3Amain)
@@ -6,14 +6,6 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/chrisreedio/laravel-athena-sdk.svg?style=flat-square)](https://packagist.org/packages/chrisreedio/laravel-athena-sdk)
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-athena-sdk.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-athena-sdk)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
 
 ## Installation
 
@@ -52,7 +44,7 @@ php artisan vendor:publish --tag="laravel-athena-sdk-views"
 ## Usage
 
 ```php
-$athena = new ChrisReedIO\Athena();
+$athena = new ChrisReedIO\AthenaSDK\AthenaConnector();
 echo $athena->echoPhrase('Hello, ChrisReedIO!');
 ```
 

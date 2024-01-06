@@ -1,5 +1,5 @@
 <?php
 
-use ChrisReedIO\Athena\Tests\TestCase;
+use ChrisReedIO\AthenaSDK\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);
