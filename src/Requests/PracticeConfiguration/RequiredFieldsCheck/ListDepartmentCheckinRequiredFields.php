@@ -4,6 +4,7 @@ namespace ChrisReedIO\AthenaSDK\Requests\PracticeConfiguration\RequiredFieldsChe
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
 
 /**
  * ListDepartmentCheckinRequiredFields
@@ -25,5 +26,10 @@ class ListDepartmentCheckinRequiredFields extends Request
     public function __construct(
         protected int $departmentid,
     ) {
+    }
+
+    public function createDtoFromResponse(Response $response): array
+    {
+        return $response->json('fieldlist');
     }
 }

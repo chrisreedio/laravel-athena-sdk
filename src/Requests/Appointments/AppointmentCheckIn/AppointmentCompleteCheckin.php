@@ -6,17 +6,17 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
 /**
- * CreateAppointmentCancelCheckin
+ * CreateAppointmentCheckin
  *
- * Cancel appointment check-in process. It cannot be called if the check-in process has been completed.
+ * Check in this appointment.
  */
-class CreateAppointmentCancelCheckin extends Request
+class AppointmentCompleteCheckin extends Request
 {
     protected Method $method = Method::POST;
 
     public function resolveEndpoint(): string
     {
-        return "/appointments/{$this->appointmentid}/cancelcheckin";
+        return "/appointments/{$this->appointmentid}/checkin";
     }
 
     /**

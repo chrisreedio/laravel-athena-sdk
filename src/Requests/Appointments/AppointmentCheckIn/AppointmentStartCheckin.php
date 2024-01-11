@@ -10,7 +10,7 @@ use Saloon\Http\Request;
  *
  * Notifies that the appointment check-in process has started
  */
-class CreateAppointmentStartCheckin extends Request
+class AppointmentStartCheckin extends Request
 {
     protected Method $method = Method::POST;
 
