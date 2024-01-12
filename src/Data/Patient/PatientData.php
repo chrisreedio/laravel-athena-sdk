@@ -34,19 +34,26 @@ readonly class PatientData extends AthenaData
         public ?bool $consentToCall = null,
         public ?DateTime $smsOptInDate = null,
         public ?bool $contactPreferenceLabPhone = null,
+        public ?string $contactPreference = null,
 
         public ?bool $patientPhoto = null,
         public ?string $confidentialityCode = null,
 
         public ?GuarantorData $guarantor = null,
         public ?EmergencyContactData $emergencyContact = null,
+
+        public ?array $race = null,
+        public ?array $ethnicities = null,
+        public ?string $languageCode = null,
+
+        public ?string $primaryDepartmentId = null,
+        public ?string $primaryProviderId = null,
     ) {
     }
 
     public static function fromArray(array $data): static
     {
-        // dd($data);
-        return new self(
+        return new static(
             athenaId: $data['patientid'] ?? null,
             firstName: $data['firstname'] ?? null,
             lastName: $data['lastname'] ?? null,
@@ -64,10 +71,16 @@ readonly class PatientData extends AthenaData
             consentToCall: $data['consenttocall'] ?? null,
             smsOptInDate: isset($data['smsoptindate']) ? new DateTime($data['smsoptindate']) : null,
             contactPreferenceLabPhone: $data['contactpreference_lab_phone'] ?? null,
+            contactPreference: $data['contactpreference'] ?? null,
             patientPhoto: $data['patientphoto'] ?? null,
             confidentialityCode: $data['confidentialityCode'] ?? null,
             guarantor: GuarantorData::fromArray($data),
             emergencyContact: EmergencyContactData::fromArray($data),
+            race: $data['race'] ?? null,
+            ethnicities: $data['ethnicitycodes'] ?? null,
+            languageCode: $data['language6392code'] ?? null,
+            primaryDepartmentId: $data['primarydepartmentid'] ?? null,
+            primaryProviderId: $data['primaryproviderid'] ?? null,
         );
     }
 }

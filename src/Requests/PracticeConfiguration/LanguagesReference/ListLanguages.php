@@ -2,8 +2,11 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\PracticeConfiguration\LanguagesReference;
 
+use ChrisReedIO\AthenaSDK\Data\Practice\LanguageData;
+use Illuminate\Support\Collection;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
 
 /**
  * ListLanguages
@@ -21,5 +24,11 @@ class ListLanguages extends Request
 
     public function __construct()
     {
+    }
+
+    public function createDtoFromResponse(Response $response): Collection
+    {
+        return collect($response->json())
+            ->map(fn (array $language) => LanguageData::fromArray($language));
     }
 }

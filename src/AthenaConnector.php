@@ -6,6 +6,7 @@ namespace ChrisReedIO\AthenaSDK;
 use ChrisReedIO\AthenaSDK\Resources\Appointments;
 use ChrisReedIO\AthenaSDK\Resources\Departments;
 use ChrisReedIO\AthenaSDK\Resources\Patients;
+use ChrisReedIO\AthenaSDK\Resources\Practice;
 use ChrisReedIO\AthenaSDK\Resources\Providers;
 use Exception;
 // use Illuminate\Http\Request;
@@ -77,7 +78,7 @@ class AthenaConnector extends Connector implements HasPagination
     {
         return new class(connector: $this, request: $request) extends OffsetPaginator
         {
-            protected ?int $perPageLimit = 500;
+            protected ?int $perPageLimit = 1000;
 
             protected function isLastPage(Response $response): bool
             {
@@ -132,6 +133,11 @@ class AthenaConnector extends Connector implements HasPagination
     public function providers(): Providers
     {
         return new Providers($this);
+    }
+
+    public function practice(): Practice
+    {
+        return new Practice($this);
     }
     //endregion
 }
