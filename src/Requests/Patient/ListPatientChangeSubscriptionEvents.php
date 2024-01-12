@@ -1,11 +1,10 @@
 <?php
 
-namespace ChrisReedIO\AthenaSDK\Requests\Patient\Patient;
+namespace ChrisReedIO\AthenaSDK\Requests\Patient;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
-
 use function collect;
 
 /**

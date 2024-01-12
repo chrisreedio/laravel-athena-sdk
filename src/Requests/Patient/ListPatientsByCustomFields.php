@@ -1,6 +1,6 @@
 <?php
 
-namespace ChrisReedIO\AthenaSDK\Requests\Patient\Patient;
+namespace ChrisReedIO\AthenaSDK\Requests\Patient;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
