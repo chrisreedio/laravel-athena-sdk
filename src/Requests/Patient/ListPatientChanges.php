@@ -1,6 +1,6 @@
 <?php
 
-namespace ChrisReedIO\AthenaSDK\Requests\Patient\Patient;
+namespace ChrisReedIO\AthenaSDK\Requests\Patient;
 
 use ChrisReedIO\AthenaSDK\Data\Patient\PatientData;
 use ChrisReedIO\AthenaSDK\PaginatedRequest;

@@ -2,11 +2,11 @@
 
 namespace ChrisReedIO\AthenaSDK\Resources\Patients;
 
-use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\CreatePatientChangeSubscription;
-use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\DeletePatientChangeSubscription;
-use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\ListPatientChanges;
-use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\ListPatientChangeSubscriptionEvents;
-use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\ListPatientChangeSubscriptions;
+use ChrisReedIO\AthenaSDK\Requests\Patient\CreatePatientChangeSubscription;
+use ChrisReedIO\AthenaSDK\Requests\Patient\DeletePatientChangeSubscription;
+use ChrisReedIO\AthenaSDK\Requests\Patient\ListPatientChanges;
+use ChrisReedIO\AthenaSDK\Requests\Patient\ListPatientChangeSubscriptionEvents;
+use ChrisReedIO\AthenaSDK\Requests\Patient\ListPatientChangeSubscriptions;
 use ChrisReedIO\AthenaSDK\Resource;
 use Illuminate\Support\Collection;
 use Illuminate\Support\LazyCollection;

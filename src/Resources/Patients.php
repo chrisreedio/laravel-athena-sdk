@@ -3,9 +3,9 @@
 namespace ChrisReedIO\AthenaSDK\Resources;
 
 use ChrisReedIO\AthenaSDK\Data\Patient\PatientData;
-use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\GetPatient;
-use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\ListPatients;
-use ChrisReedIO\AthenaSDK\Requests\Patient\Patient\UpdatePatient;
+use ChrisReedIO\AthenaSDK\Requests\Patient\GetPatient;
+use ChrisReedIO\AthenaSDK\Requests\Patient\ListPatients;
+use ChrisReedIO\AthenaSDK\Requests\Patient\UpdatePatient;
 use ChrisReedIO\AthenaSDK\Resource;
 use ChrisReedIO\AthenaSDK\Resources\Patients\PatientSubscriptions;
 use Illuminate\Support\LazyCollection;
