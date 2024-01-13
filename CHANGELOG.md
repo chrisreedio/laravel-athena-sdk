@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.3 - 2024-01-13
+
+### What's Changed
+
+* Practice Configuration Data by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/5
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.2...v1.0.0-alpha.3
+
 ## v1.0.0-alpha.2 - 2024-01-11
 
 ### What's Changed
