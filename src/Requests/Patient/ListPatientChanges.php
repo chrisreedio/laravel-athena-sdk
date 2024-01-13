@@ -6,6 +6,7 @@ use ChrisReedIO\AthenaSDK\Data\Patient\PatientData;
 use ChrisReedIO\AthenaSDK\PaginatedRequest;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
+
 use function config;
 
 /**

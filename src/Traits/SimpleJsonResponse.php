@@ -2,7 +2,6 @@
 
 namespace ChrisReedIO\AthenaSDK\Traits;
 
-use Illuminate\Support\Collection;
 use Saloon\Http\Response;
 
 trait SimpleJsonResponse
