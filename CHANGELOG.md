@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.4 - 2024-01-16
+
+### What's Changed
+
+* feat: add showAll param to Departments list by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/6
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.3...v1.0.0-alpha.4
+
 ## v1.0.0-alpha.3 - 2024-01-13
 
 ### What's Changed
