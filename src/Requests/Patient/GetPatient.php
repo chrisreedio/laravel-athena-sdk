@@ -100,6 +100,7 @@ class GetPatient extends Request
             'status' => $response->status(),
             'response' => $response->json(),
         ]);
+
         return PatientData::fromArray($response->json()[0]);
     }
 }

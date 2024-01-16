@@ -110,6 +110,7 @@ class UpdatePatient extends Request implements HasBody
         }
 
         Log::error('UpdatePatient body', ['body' => $body]);
+
         // Remove null values to clean up the request body
         return array_filter($body, fn ($value) => ! is_null($value));
     }
