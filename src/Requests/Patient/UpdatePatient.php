@@ -61,6 +61,16 @@ class UpdatePatient extends Request implements HasBody
             // Contact Preferences
             'consenttocall' => $this->patient->consentToCall,
             'consenttotext' => $this->patient->consentToText,
+            'contactpreference' => $this->patient->contactPreference,
+
+            // Race, Ethnicities, and Language
+            'race' => $this->patient->race,
+            'ethnicities' => $this->patient->ethnicities,
+            'languagecode' => $this->patient->languageCode,
+
+            // Primary Provider and Department
+            'primaryproviderid' => $this->patient->primaryProviderId,
+            'primarydepartmentid' => $this->patient->primaryDepartmentId,
         ];
 
         // Add GuarantorData fields if available
