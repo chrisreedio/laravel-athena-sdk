@@ -3,6 +3,7 @@
 namespace ChrisReedIO\AthenaSDK\Requests\Patient;
 
 use ChrisReedIO\AthenaSDK\Data\Patient\PatientData;
+use Illuminate\Support\Facades\Log;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
@@ -94,7 +95,11 @@ class GetPatient extends Request
 
     public function createDtoFromResponse(Response $response): PatientData
     {
-        // dd($response->json()[0]);
+        // dd($response->json());
+        Log::error('GetPatient response', [
+            'status' => $response->status(),
+            'response' => $response->json(),
+        ]);
         return PatientData::fromArray($response->json()[0]);
     }
 }
