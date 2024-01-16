@@ -12,8 +12,8 @@ class Departments extends Resource
     /**
      * @return LazyCollection<DepartmentData>
      */
-    public function list(): LazyCollection
+    public function list(bool $showAll = false): LazyCollection
     {
-        return $this->connector->paginate(new ListDepartments())->collect();
+        return $this->connector->paginate(new ListDepartments(showalldepartments: $showAll))->collect();
     }
 }
