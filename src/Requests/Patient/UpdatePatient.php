@@ -3,6 +3,7 @@
 namespace ChrisReedIO\AthenaSDK\Requests\Patient;
 
 use ChrisReedIO\AthenaSDK\Data\Patient\PatientData;
+use Illuminate\Support\Facades\Log;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
@@ -64,9 +65,14 @@ class UpdatePatient extends Request implements HasBody
             'contactpreference' => $this->patient->contactPreference,
 
             // Race, Ethnicities, and Language
-            'race' => $this->patient->race,
-            'ethnicities' => $this->patient->ethnicities,
-            'languagecode' => $this->patient->languageCode,
+            // 'race' => $this->patient->race,
+            // 'racecode' => $this->patient->raceCode,
+            // TODO: temporary fix
+            'race' => $this->patient->raceCode,
+
+            // 'ethnicities' => $this->patient->ethnicities,
+            'ethnicitycode' => $this->patient->ethnicityCode,
+            'language6392code' => $this->patient->languageCode,
 
             // Primary Provider and Department
             'primaryproviderid' => $this->patient->primaryProviderId,
@@ -103,6 +109,7 @@ class UpdatePatient extends Request implements HasBody
             ];
         }
 
+        Log::error('UpdatePatient body', ['body' => $body]);
         // Remove null values to clean up the request body
         return array_filter($body, fn ($value) => ! is_null($value));
     }

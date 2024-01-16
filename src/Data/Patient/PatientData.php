@@ -43,7 +43,9 @@ readonly class PatientData extends AthenaData
         public ?EmergencyContactData $emergencyContact = null,
 
         public ?array $race = null,
+        public ?string $raceCode = null,
         public ?array $ethnicities = null,
+        public ?string $ethnicityCode = null,
         public ?string $languageCode = null,
 
         public ?string $primaryDepartmentId = null,
@@ -77,7 +79,9 @@ readonly class PatientData extends AthenaData
             guarantor: GuarantorData::fromArray($data),
             emergencyContact: EmergencyContactData::fromArray($data),
             race: $data['race'] ?? null,
+            raceCode: $data['racecode'] ?? null,
             ethnicities: $data['ethnicitycodes'] ?? null,
+            ethnicityCode: $data['ethnicitycode'] ?? null,
             languageCode: $data['language6392code'] ?? null,
             primaryDepartmentId: $data['primarydepartmentid'] ?? null,
             primaryProviderId: $data['primaryproviderid'] ?? null,
