@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.8 - 2024-01-18
+
+### What's Changed
+
+* feat: extend AppointmentData with base class and new fields by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/10
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.7...v1.0.0-alpha.8
+
 ## v1.0.0-alpha.7 - 2024-01-18
 
 ### What's Changed
