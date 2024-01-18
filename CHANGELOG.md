@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.10 - 2024-01-18
+
+### What's Changed
+
+* fix: correct key existence checks in AppointmentData by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/12
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.9...v1.0.0-alpha.10
+
 ## v1.0.0-alpha.9 - 2024-01-18
 
 ### What's Changed
