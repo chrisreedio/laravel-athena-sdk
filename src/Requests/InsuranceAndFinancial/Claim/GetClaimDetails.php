@@ -20,9 +20,9 @@ class GetClaimDetails extends Request
     }
 
     /**
-     * @param  int  $claimid claimid
-     * @param  null|bool  $showcustomfields Include custom fields for the claim.
-     * @param  null|bool  $showservicetypeaddons Include service type add-ons for the claim.
+     * @param  int  $claimid  claimid
+     * @param  null|bool  $showcustomfields  Include custom fields for the claim.
+     * @param  null|bool  $showservicetypeaddons  Include service type add-ons for the claim.
      */
     public function __construct(
         protected int $claimid,

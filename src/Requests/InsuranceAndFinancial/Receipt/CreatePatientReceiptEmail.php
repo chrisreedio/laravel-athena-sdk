@@ -24,9 +24,9 @@ class CreatePatientReceiptEmail extends Request implements HasBody
     }
 
     /**
-     * @param  string  $email The email address to send to.
-     * @param  int  $epaymentid epaymentid
-     * @param  int  $patientid patientid
+     * @param  string  $email  The email address to send to.
+     * @param  int  $epaymentid  epaymentid
+     * @param  int  $patientid  patientid
      */
     public function __construct(
         protected string $email,

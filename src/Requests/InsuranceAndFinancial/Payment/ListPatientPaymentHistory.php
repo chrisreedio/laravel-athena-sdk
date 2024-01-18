@@ -20,10 +20,10 @@ class ListPatientPaymentHistory extends Request
     }
 
     /**
-     * @param  array  $patientidlist Array of Patient IDs
-     * @param  string  $startdate Start Date
-     * @param  string  $enddate End date
-     * @param  null|bool  $additionalpaymentinfo Get additional payment information includes date of service, original plan, supervising provider.
+     * @param  array  $patientidlist  Array of Patient IDs
+     * @param  string  $startdate  Start Date
+     * @param  string  $enddate  End date
+     * @param  null|bool  $additionalpaymentinfo  Get additional payment information includes date of service, original plan, supervising provider.
      */
     public function __construct(
         protected array $patientidlist,

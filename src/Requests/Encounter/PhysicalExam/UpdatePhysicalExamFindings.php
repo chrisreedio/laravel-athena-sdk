@@ -24,11 +24,11 @@ class UpdatePhysicalExamFindings extends Request implements HasBody
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  null|array  $physicalexam This is a JSON structure containing everything you want the Physical Exam to now contain.  If you call the GET version of this call you can see some sample output.  It is extremely important to note that anything you pass in will become the new Physical Exam data. Even if you only wish to make an addition, you will need to pass in the whole output of the GET plus your addition, otherwise anything you don't pass in will be removed.
-     * @param  null|bool  $replacesectionnote If true, will replace the existing section note with the new one. If false, will append to the existing note.
-     * @param  null|string  $sectionnote The text to be updated to the physical exam section note for this encounter.
-     * @param  null|array  $templateids This is a JSON array of the template ids that should remain on (or be added to) the Physical Exam.  Any template ids not included in this list will be removed from the Physical Exam.
+     * @param  int  $encounterid  encounterid
+     * @param  null|array  $physicalexam  This is a JSON structure containing everything you want the Physical Exam to now contain.  If you call the GET version of this call you can see some sample output.  It is extremely important to note that anything you pass in will become the new Physical Exam data. Even if you only wish to make an addition, you will need to pass in the whole output of the GET plus your addition, otherwise anything you don't pass in will be removed.
+     * @param  null|bool  $replacesectionnote  If true, will replace the existing section note with the new one. If false, will append to the existing note.
+     * @param  null|string  $sectionnote  The text to be updated to the physical exam section note for this encounter.
+     * @param  null|array  $templateids  This is a JSON array of the template ids that should remain on (or be added to) the Physical Exam.  Any template ids not included in this list will be removed from the Physical Exam.
      */
     public function __construct(
         protected int $encounterid,

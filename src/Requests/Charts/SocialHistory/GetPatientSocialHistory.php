@@ -20,11 +20,11 @@ class GetPatientSocialHistory extends Request
     }
 
     /**
-     * @param  int  $departmentid The athenaNet department id.
-     * @param  int  $patientid patientid
-     * @param  null|string  $recipientcategory The intended audience for the data. If given, questions marked as confidential for this audience will be withheld.
-     * @param  null|bool  $shownotperformedquestions Include questions that the provider did not perform.
-     * @param  null|bool  $showunansweredquestions Include questions where there is no current answer.
+     * @param  int  $departmentid  The athenaNet department id.
+     * @param  int  $patientid  patientid
+     * @param  null|string  $recipientcategory  The intended audience for the data. If given, questions marked as confidential for this audience will be withheld.
+     * @param  null|bool  $shownotperformedquestions  Include questions that the provider did not perform.
+     * @param  null|bool  $showunansweredquestions  Include questions where there is no current answer.
      */
     public function __construct(
         protected int $departmentid,

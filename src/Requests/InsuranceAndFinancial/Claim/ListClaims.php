@@ -21,20 +21,20 @@ class ListClaims extends Request
     }
 
     /**
-     * @param  null|array  $appointmentid One or more appointment IDs.
-     * @param  null|array  $claimfilters Array, pass one or more options to filter claims.
-     * @param  null|string  $createdenddate The claim creation date, end of range, inclusive.
-     * @param  null|string  $createdstartdate The claim creation date, start of range, inclusive.
-     * @param  null|int  $departmentid The department ID of the service department for the claims being searched for.
-     * @param  null|int  $patientid The patient ID associated with the claims to search for
-     * @param  null|array  $procedurecodes One or more procedure codes
-     * @param  null|int  $providerid Will match either the provider or the supervising provider.
-     * @param  null|string  $serviceenddate The service date, end of range, inclusive.
-     * @param  null|string  $servicestartdate The service date, start of range, inclusive.
-     * @param  null|bool  $showcustomfields Include custom fields for the claims.
-     * @param  null|bool  $showlocalpatientid Include local patient ID for the claim if set to 1 in request.
-     * @param  null|bool  $showservicetypeaddons Include service type add-ons for the claim.
-     * @param  null|bool  $showsupervisingprovider Include supervising provider ID and name for the claim.
+     * @param  null|array  $appointmentid  One or more appointment IDs.
+     * @param  null|array  $claimfilters  Array, pass one or more options to filter claims.
+     * @param  null|string  $createdenddate  The claim creation date, end of range, inclusive.
+     * @param  null|string  $createdstartdate  The claim creation date, start of range, inclusive.
+     * @param  null|int  $departmentid  The department ID of the service department for the claims being searched for.
+     * @param  null|int  $patientid  The patient ID associated with the claims to search for
+     * @param  null|array  $procedurecodes  One or more procedure codes
+     * @param  null|int  $providerid  Will match either the provider or the supervising provider.
+     * @param  null|string  $serviceenddate  The service date, end of range, inclusive.
+     * @param  null|string  $servicestartdate  The service date, start of range, inclusive.
+     * @param  null|bool  $showcustomfields  Include custom fields for the claims.
+     * @param  null|bool  $showlocalpatientid  Include local patient ID for the claim if set to 1 in request.
+     * @param  null|bool  $showservicetypeaddons  Include service type add-ons for the claim.
+     * @param  null|bool  $showsupervisingprovider  Include supervising provider ID and name for the claim.
      */
     public function __construct(
         protected ?array $appointmentid = null,

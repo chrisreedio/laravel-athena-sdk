@@ -20,8 +20,8 @@ class GetInpatientClinicalDocument extends Request
     }
 
     /**
-     * @param  int  $clinicaldocumentid clinicaldocumentid
-     * @param  null|string  $pageids Returns only the corresponding pages from the document (Ignores invalid pageids).
+     * @param  int  $clinicaldocumentid  clinicaldocumentid
+     * @param  null|string  $pageids  Returns only the corresponding pages from the document (Ignores invalid pageids).
      */
     public function __construct(
         protected int $clinicaldocumentid,

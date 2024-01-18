@@ -24,14 +24,14 @@ class CreateEmployee extends Request implements HasBody
     }
 
     /**
-     * @param  null|string  $address The address of the employer.
-     * @param  null|string  $city The city of the employer.
-     * @param  null|int  $countryid The country ID of the employer.
-     * @param  null|string  $fax The fax number of the employer.
-     * @param  null|string  $name The name of the employer.
-     * @param  null|string  $phone The phone number of the employer.
-     * @param  null|string  $state The state of the employer.
-     * @param  null|string  $zip The zip code of the employer.
+     * @param  null|string  $address  The address of the employer.
+     * @param  null|string  $city  The city of the employer.
+     * @param  null|int  $countryid  The country ID of the employer.
+     * @param  null|string  $fax  The fax number of the employer.
+     * @param  null|string  $name  The name of the employer.
+     * @param  null|string  $phone  The phone number of the employer.
+     * @param  null|string  $state  The state of the employer.
+     * @param  null|string  $zip  The zip code of the employer.
      */
     public function __construct(
         protected ?string $address = null,

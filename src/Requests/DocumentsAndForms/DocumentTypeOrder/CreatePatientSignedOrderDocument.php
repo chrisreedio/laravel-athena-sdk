@@ -25,15 +25,15 @@ class CreatePatientSignedOrderDocument extends Request implements HasBody
     }
 
     /**
-     * @param  int  $departmentid The athenaNet department ID associated with the uploaded document.
-     * @param  int  $documenttypeid A specific document type identifier.
-     * @param  int  $patientid patientid
-     * @param  null|string  $attachmentcontents The file contents that will be attached to this document. PDFs are recommended.
-     * @param  null|int  $facilityid The ID of the external provider/lab/pharmacy associated the document.
-     * @param  null|string  $internalnote An internal note for the provider or staff. Updating this will append to any previous notes.
-     * @param  null|string  $priority Priority of this result.  1 is high; 2 is normal.
-     * @param  null|int  $providerid The ID of the ordering provider.
-     * @param  null|string  $snomedcode The snomed code associated with this order document.
+     * @param  int  $departmentid  The athenaNet department ID associated with the uploaded document.
+     * @param  int  $documenttypeid  A specific document type identifier.
+     * @param  int  $patientid  patientid
+     * @param  null|string  $attachmentcontents  The file contents that will be attached to this document. PDFs are recommended.
+     * @param  null|int  $facilityid  The ID of the external provider/lab/pharmacy associated the document.
+     * @param  null|string  $internalnote  An internal note for the provider or staff. Updating this will append to any previous notes.
+     * @param  null|string  $priority  Priority of this result.  1 is high; 2 is normal.
+     * @param  null|int  $providerid  The ID of the ordering provider.
+     * @param  null|string  $snomedcode  The snomed code associated with this order document.
      */
     public function __construct(
         protected int $departmentid,

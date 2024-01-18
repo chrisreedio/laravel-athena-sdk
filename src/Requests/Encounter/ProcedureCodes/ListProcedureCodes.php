@@ -20,8 +20,8 @@ class ListProcedureCodes extends Request
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  string  $searchvalue The name of the procedure you want to search for. This can be the code or the description.
+     * @param  int  $encounterid  encounterid
+     * @param  string  $searchvalue  The name of the procedure you want to search for. This can be the code or the description.
      */
     public function __construct(
         protected int $encounterid,

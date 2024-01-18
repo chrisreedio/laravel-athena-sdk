@@ -20,15 +20,15 @@ class ListPatientEncounters extends Request
     }
 
     /**
-     * @param  int  $departmentid The athenaNet department id.
-     * @param  int  $patientid patientid
-     * @param  null|int  $appointmentid Find the encounter for this appointment.
-     * @param  null|string  $enddate Omit any encounters later than this date
-     * @param  null|int  $providerid The ID of the provider for this encounter
-     * @param  null|bool  $showallstatuses By default only encounters in OPEN, CLOSED, or REVIEW status are retrieved, with this flag, encounters aren't filtered by status.
-     * @param  null|bool  $showalltypes Retrieve all encounter types, by default only VISIT and ORDERSONLY are retrieved.
-     * @param  null|bool  $showdiagnoses Query diagnosis information for every encounter
-     * @param  null|string  $startdate Omit any encounters earlier than this date
+     * @param  int  $departmentid  The athenaNet department id.
+     * @param  int  $patientid  patientid
+     * @param  null|int  $appointmentid  Find the encounter for this appointment.
+     * @param  null|string  $enddate  Omit any encounters later than this date
+     * @param  null|int  $providerid  The ID of the provider for this encounter
+     * @param  null|bool  $showallstatuses  By default only encounters in OPEN, CLOSED, or REVIEW status are retrieved, with this flag, encounters aren't filtered by status.
+     * @param  null|bool  $showalltypes  Retrieve all encounter types, by default only VISIT and ORDERSONLY are retrieved.
+     * @param  null|bool  $showdiagnoses  Query diagnosis information for every encounter
+     * @param  null|string  $startdate  Omit any encounters earlier than this date
      */
     public function __construct(
         protected int $departmentid,

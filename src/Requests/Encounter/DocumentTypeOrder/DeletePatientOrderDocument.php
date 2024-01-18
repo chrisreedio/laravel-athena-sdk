@@ -20,8 +20,8 @@ class DeletePatientOrderDocument extends Request
     }
 
     /**
-     * @param  int  $orderid orderid
-     * @param  int  $patientid patientid
+     * @param  int  $orderid  orderid
+     * @param  int  $patientid  patientid
      */
     public function __construct(
         protected int $orderid,

@@ -20,9 +20,9 @@ class GetPatientInsuranceCcmEnrollmentStatus extends Request
     }
 
     /**
-     * @param  int  $departmentid The current department ID.
-     * @param  int  $insuranceid insuranceid
-     * @param  int  $patientid patientid
+     * @param  int  $departmentid  The current department ID.
+     * @param  int  $insuranceid  insuranceid
+     * @param  int  $patientid  patientid
      */
     public function __construct(
         protected int $departmentid,

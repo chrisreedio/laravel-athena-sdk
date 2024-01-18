@@ -24,10 +24,10 @@ class UpdateVitalsReading extends Request implements HasBody
     }
 
     /**
-     * @param  int  $departmentid The department ID.
-     * @param  int  $patientid patientid
-     * @param  string  $value The reading value. See the configuration for the proper units.
-     * @param  int  $vitalid vitalid
+     * @param  int  $departmentid  The department ID.
+     * @param  int  $patientid  patientid
+     * @param  string  $value  The reading value. See the configuration for the proper units.
+     * @param  int  $vitalid  vitalid
      */
     public function __construct(
         protected int $departmentid,

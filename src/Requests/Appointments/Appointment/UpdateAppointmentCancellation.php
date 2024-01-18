@@ -24,12 +24,12 @@ class UpdateAppointmentCancellation extends Request implements HasBody
     }
 
     /**
-     * @param  int  $appointmentid appointmentid
-     * @param  int  $patientid The athenaNet patient ID.
-     * @param  null|int  $appointmentcancelreasonid Passing in this parameter will override the default cancel reason. Valid reasons can be retrieved via a call to the GET /appointmentcancelreasons endpoint.
-     * @param  null|string  $cancellationreason A text explanation why the appointment is being cancelled
-     * @param  null|bool  $ignoreschedulablepermission By default, we allow booking of appointments marked as schedulable via the web.  This flag allows you to bypass that restriction for booking.
-     * @param  null|bool  $nopatientcase By default, we create a patient case upon booking an appointment for new patients.  Setting this to true bypasses that patient case.
+     * @param  int  $appointmentid  appointmentid
+     * @param  int  $patientid  The athenaNet patient ID.
+     * @param  null|int  $appointmentcancelreasonid  Passing in this parameter will override the default cancel reason. Valid reasons can be retrieved via a call to the GET /appointmentcancelreasons endpoint.
+     * @param  null|string  $cancellationreason  A text explanation why the appointment is being cancelled
+     * @param  null|bool  $ignoreschedulablepermission  By default, we allow booking of appointments marked as schedulable via the web.  This flag allows you to bypass that restriction for booking.
+     * @param  null|bool  $nopatientcase  By default, we create a patient case upon booking an appointment for new patients.  Setting this to true bypasses that patient case.
      */
     public function __construct(
         protected int $appointmentid,

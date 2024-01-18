@@ -24,12 +24,12 @@ class UpdateBookedAppointment extends Request implements HasBody
     }
 
     /**
-     * @param  int  $appointmentid appointmentid
-     * @param  null|int  $appointmenttypeid New appointment type ID for this appointment.
-     * @param  null|int  $departmentid New department ID for this appointment.
-     * @param  null|int  $providerid New rendering provider for this appointment.
-     * @param  null|int  $schedulingproviderid New scheduling provider ID for this appointment.
-     * @param  null|int  $supervisingproviderid New supervisingprovider ID for this appointment.
+     * @param  int  $appointmentid  appointmentid
+     * @param  null|int  $appointmenttypeid  New appointment type ID for this appointment.
+     * @param  null|int  $departmentid  New department ID for this appointment.
+     * @param  null|int  $providerid  New rendering provider for this appointment.
+     * @param  null|int  $schedulingproviderid  New scheduling provider ID for this appointment.
+     * @param  null|int  $supervisingproviderid  New supervisingprovider ID for this appointment.
      */
     public function __construct(
         protected int $appointmentid,

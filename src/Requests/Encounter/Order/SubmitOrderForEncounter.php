@@ -25,9 +25,9 @@ class SubmitOrderForEncounter extends Request implements HasBody
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  int  $orderid orderid
-     * @param  string  $submitvia The route to submit via (ATHENAFAX, MANUALFAX, MANUALPRINT, and MANUALPHONE are currently the only supported options)
+     * @param  int  $encounterid  encounterid
+     * @param  int  $orderid  orderid
+     * @param  string  $submitvia  The route to submit via (ATHENAFAX, MANUALFAX, MANUALPRINT, and MANUALPHONE are currently the only supported options)
      */
     public function __construct(
         protected int $encounterid,

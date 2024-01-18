@@ -24,9 +24,9 @@ class UpdatePatientCaseDocumentAssignment extends Request implements HasBody
     }
 
     /**
-     * @param  int  $patientcaseid patientcaseid
-     * @param  int  $patientid patientid
-     * @param  string  $username AthenNet user to whom the case is being reassigned to.This parameter is case-sensitive.
+     * @param  int  $patientcaseid  patientcaseid
+     * @param  int  $patientid  patientid
+     * @param  string  $username  AthenNet user to whom the case is being reassigned to.This parameter is case-sensitive.
      */
     public function __construct(
         protected int $patientcaseid,

@@ -9,7 +9,7 @@ use DateTime;
 readonly class PatientData extends AthenaData
 {
     /**
-     * @param  string|null  $sex - M/F
+     * @param  string|null  $sex  - M/F
      */
     public function __construct(
         public ?int $athenaId = null,

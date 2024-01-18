@@ -24,9 +24,9 @@ class CreateOrderActionNote extends Request implements HasBody
     }
 
     /**
-     * @param  string  $actionnote The action note to add to the order.
-     * @param  int  $encounterid encounterid
-     * @param  int  $orderid orderid
+     * @param  string  $actionnote  The action note to add to the order.
+     * @param  int  $encounterid  encounterid
+     * @param  int  $orderid  orderid
      */
     public function __construct(
         protected string $actionnote,

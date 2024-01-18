@@ -24,9 +24,9 @@ class UpdateRiskContract extends Request implements HasBody
     }
 
     /**
-     * @param  null|string  $description Risk contract description
-     * @param  null|string  $name Risk contract title.
-     * @param  null|int  $riskcontractid Risk contract id.
+     * @param  null|string  $description  Risk contract description
+     * @param  null|string  $name  Risk contract title.
+     * @param  null|int  $riskcontractid  Risk contract id.
      */
     public function __construct(
         protected ?string $description = null,

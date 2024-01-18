@@ -20,7 +20,7 @@ class ListAppointmentCancelReasons extends Request
     }
 
     /**
-     * @param  null|bool  $slotavailable Only return values with slotavailable matching this boolean.
+     * @param  null|bool  $slotavailable  Only return values with slotavailable matching this boolean.
      */
     public function __construct(
         protected ?bool $slotavailable = null,

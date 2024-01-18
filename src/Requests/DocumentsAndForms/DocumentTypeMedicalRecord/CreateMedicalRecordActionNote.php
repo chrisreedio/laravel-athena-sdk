@@ -24,8 +24,8 @@ class CreateMedicalRecordActionNote extends Request implements HasBody
     }
 
     /**
-     * @param  string  $actionnote The new action note to add to the document.
-     * @param  int  $medicalrecordid medicalrecordid
+     * @param  string  $actionnote  The new action note to add to the document.
+     * @param  int  $medicalrecordid  medicalrecordid
      */
     public function __construct(
         protected string $actionnote,

@@ -24,11 +24,11 @@ class UpdateUserMessage extends Request implements HasBody
     }
 
     /**
-     * @param  int  $messageid messageid
-     * @param  string  $username username
-     * @param  null|bool  $flag Set whether this message is flagged for followup.
-     * @param  null|string  $folder Move the message to this folder. Can be INBOX, SENT, SAVED, TRASH.
-     * @param  null|bool  $read Set whether this message is read.
+     * @param  int  $messageid  messageid
+     * @param  string  $username  username
+     * @param  null|bool  $flag  Set whether this message is flagged for followup.
+     * @param  null|string  $folder  Move the message to this folder. Can be INBOX, SENT, SAVED, TRASH.
+     * @param  null|bool  $read  Set whether this message is read.
      */
     public function __construct(
         protected int $messageid,

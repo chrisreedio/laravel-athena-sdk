@@ -20,10 +20,10 @@ class GetImagingResultDocumentPage extends Request
     }
 
     /**
-     * @param  int  $imagingresultid imagingresultid
-     * @param  int  $pageid pageid
-     * @param  int  $patientid patientid
-     * @param  null|string  $filesize The file size of the document being requested.
+     * @param  int  $imagingresultid  imagingresultid
+     * @param  int  $pageid  pageid
+     * @param  int  $patientid  patientid
+     * @param  null|string  $filesize  The file size of the document being requested.
      */
     public function __construct(
         protected int $imagingresultid,

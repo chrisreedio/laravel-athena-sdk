@@ -24,11 +24,11 @@ class UpdateAppointmentSpecificMspQualifier extends Request implements HasBody
     }
 
     /**
-     * @param  int  $appointmentid appointmentid
-     * @param  int  $mspinsurancetypeid The MSP insurance type id
-     * @param  null|int  $departmentid The department ID.
-     * @param  null|bool  $mspinsurancetypesetyn Set the MSP Insurance Type
-     * @param  null|int  $patientid The athenaNet patient ID.
+     * @param  int  $appointmentid  appointmentid
+     * @param  int  $mspinsurancetypeid  The MSP insurance type id
+     * @param  null|int  $departmentid  The department ID.
+     * @param  null|bool  $mspinsurancetypesetyn  Set the MSP Insurance Type
+     * @param  null|int  $patientid  The athenaNet patient ID.
      */
     public function __construct(
         protected int $appointmentid,

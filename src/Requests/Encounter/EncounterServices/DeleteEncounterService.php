@@ -20,8 +20,8 @@ class DeleteEncounterService extends Request
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  int  $serviceid serviceid
+     * @param  int  $encounterid  encounterid
+     * @param  int  $serviceid  serviceid
      */
     public function __construct(
         protected int $encounterid,

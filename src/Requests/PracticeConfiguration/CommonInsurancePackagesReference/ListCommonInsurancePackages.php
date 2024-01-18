@@ -20,8 +20,8 @@ class ListCommonInsurancePackages extends Request
     }
 
     /**
-     * @param  int  $departmentid The ID of the department to check for common insurances. This is used to determine which provider group that we are working with.
-     * @param  null|bool  $showonlycasepolicies If true only show the case policies.
+     * @param  int  $departmentid  The ID of the department to check for common insurances. This is used to determine which provider group that we are working with.
+     * @param  null|bool  $showonlycasepolicies  If true only show the case policies.
      */
     public function __construct(
         protected int $departmentid,

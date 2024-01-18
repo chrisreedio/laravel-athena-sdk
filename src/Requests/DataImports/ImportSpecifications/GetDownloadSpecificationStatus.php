@@ -20,7 +20,7 @@ class GetDownloadSpecificationStatus extends Request
     }
 
     /**
-     * @param  int  $requestid requestid
+     * @param  int  $requestid  requestid
      */
     public function __construct(
         protected int $requestid,

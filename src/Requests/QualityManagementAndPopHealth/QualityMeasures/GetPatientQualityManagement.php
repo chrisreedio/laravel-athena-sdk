@@ -20,11 +20,11 @@ class GetPatientQualityManagement extends Request
     }
 
     /**
-     * @param  int  $departmentid The athenaNet department id.
-     * @param  int  $patientid patientid
-     * @param  null|string  $measuretype Optional filter to only get clinical guidelines or pay for performance results.
-     * @param  null|int  $providerid The ID of the provider. If not specified, the default provider is used -- usually the provider that has seen the patient most often / recently.
-     * @param  null|string  $status Optional filter to only get results with this status
+     * @param  int  $departmentid  The athenaNet department id.
+     * @param  int  $patientid  patientid
+     * @param  null|string  $measuretype  Optional filter to only get clinical guidelines or pay for performance results.
+     * @param  null|int  $providerid  The ID of the provider. If not specified, the default provider is used -- usually the provider that has seen the patient most often / recently.
+     * @param  null|string  $status  Optional filter to only get results with this status
      */
     public function __construct(
         protected int $departmentid,

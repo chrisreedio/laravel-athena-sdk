@@ -20,8 +20,8 @@ class GetPatientCaseDocumentAttachment extends Request
     }
 
     /**
-     * @param  int  $patientcasefileid patientcasefileid
-     * @param  int  $patientid patientid
+     * @param  int  $patientcasefileid  patientcasefileid
+     * @param  int  $patientid  patientid
      */
     public function __construct(
         protected int $patientcasefileid,

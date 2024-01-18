@@ -20,10 +20,10 @@ class DeletePatientVaccine extends Request
     }
 
     /**
-     * @param  int  $departmentid The athenaNet department id.
-     * @param  int  $patientid patientid
-     * @param  string  $vaccineid vaccineid
-     * @param  null|string  $deleteddate Date when this vaccine record was deleted from athenaNet (defaults to today)
+     * @param  int  $departmentid  The athenaNet department id.
+     * @param  int  $patientid  patientid
+     * @param  string  $vaccineid  vaccineid
+     * @param  null|string  $deleteddate  Date when this vaccine record was deleted from athenaNet (defaults to today)
      */
     public function __construct(
         protected int $departmentid,

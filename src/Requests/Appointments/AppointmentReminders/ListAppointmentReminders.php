@@ -20,13 +20,13 @@ class ListAppointmentReminders extends Request
     }
 
     /**
-     * @param  int  $departmentid An athenaNet department ID.
-     * @param  string  $enddate Find reminders for appointments whose approximate date is on or before this date.
-     * @param  string  $startdate Find reminders for appointments whose approximate date is on or after this date.
-     * @param  null|int  $appointmenttypeid An athenaNet appointment type ID.
-     * @param  null|int  $patientid An athenaNet patient ID.
-     * @param  null|int  $providerid An athenaNet provider ID.
-     * @param  null|bool  $showdeleted By default, we do not return reminders that have been deleted. Setting this to true will show all reminders regardless of status.
+     * @param  int  $departmentid  An athenaNet department ID.
+     * @param  string  $enddate  Find reminders for appointments whose approximate date is on or before this date.
+     * @param  string  $startdate  Find reminders for appointments whose approximate date is on or after this date.
+     * @param  null|int  $appointmenttypeid  An athenaNet appointment type ID.
+     * @param  null|int  $patientid  An athenaNet patient ID.
+     * @param  null|int  $providerid  An athenaNet provider ID.
+     * @param  null|bool  $showdeleted  By default, we do not return reminders that have been deleted. Setting this to true will show all reminders regardless of status.
      */
     public function __construct(
         protected int $departmentid,

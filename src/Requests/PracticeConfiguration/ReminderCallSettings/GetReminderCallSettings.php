@@ -20,8 +20,8 @@ class GetReminderCallSettings extends Request
     }
 
     /**
-     * @param  null|int  $departmentid The ID of the department. Required if also passing in the provider ID.
-     * @param  null|int  $providerid The ID of the provider.
+     * @param  null|int  $departmentid  The ID of the department. Required if also passing in the provider ID.
+     * @param  null|int  $providerid  The ID of the provider.
      */
     public function __construct(
         protected ?int $departmentid = null,

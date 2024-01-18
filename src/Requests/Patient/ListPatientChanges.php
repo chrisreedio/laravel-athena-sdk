@@ -30,16 +30,16 @@ class ListPatientChanges extends PaginatedRequest
     }
 
     /**
-     * @param  null|array  $confidentialityCode A comma separated list of confidentiality codes to filter patients by. If not set defaults to include all confidentiality codes. Supported codes: 'N' and 'R'. Only functions if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
-     * @param  null|array  $departmentId Department ID. Multiple departments are allowed, either comma separated or with multiple values.
-     * @param  null|bool  $ignoreRestrictions Patient information for patients with record restrictions and blocked patients will not be shown.  Setting this flag to true will show that information for those patients. No effect if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
-     * @param  null|bool  $leaveUnprocessed For testing purposes, do not mark records as processed.
-     * @param  null|array  $patientId Patient ID. Multiple Patient IDs are allowed, either comma separated or with multiple values.
-     * @param  null|bool  $returnGlobalId Fetch the Global ID of the patients.
-     * @param  null|bool  $showEnterpriseDetails If set, will show the local patient ID, Enterprise ID, provider group ID.
-     * @param  null|bool  $showPreviousPatientIds If set, will show the previous patient ID this patient was merged from.
-     * @param  null|string  $showProcessedEndDatetime See showprocessestartdatetime.
-     * @param  null|string  $showProcessedStartDatetime Show already processed changes.  This will show changes that you previously retrieved at some point after this datetime mm/dd/yyyy hh24:mi:ss (Eastern). Can be used to refetch data if there was an error, such as a timeout, and records are marked as already retrieved. This is intended to be used with showprocessedenddatetime and for a short period of time only. Also note that processed messages will eventually be deleted.
+     * @param  null|array  $confidentialityCode  A comma separated list of confidentiality codes to filter patients by. If not set defaults to include all confidentiality codes. Supported codes: 'N' and 'R'. Only functions if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
+     * @param  null|array  $departmentId  Department ID. Multiple departments are allowed, either comma separated or with multiple values.
+     * @param  null|bool  $ignoreRestrictions  Patient information for patients with record restrictions and blocked patients will not be shown.  Setting this flag to true will show that information for those patients. No effect if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
+     * @param  null|bool  $leaveUnprocessed  For testing purposes, do not mark records as processed.
+     * @param  null|array  $patientId  Patient ID. Multiple Patient IDs are allowed, either comma separated or with multiple values.
+     * @param  null|bool  $returnGlobalId  Fetch the Global ID of the patients.
+     * @param  null|bool  $showEnterpriseDetails  If set, will show the local patient ID, Enterprise ID, provider group ID.
+     * @param  null|bool  $showPreviousPatientIds  If set, will show the previous patient ID this patient was merged from.
+     * @param  null|string  $showProcessedEndDatetime  See showprocessestartdatetime.
+     * @param  null|string  $showProcessedStartDatetime  Show already processed changes.  This will show changes that you previously retrieved at some point after this datetime mm/dd/yyyy hh24:mi:ss (Eastern). Can be used to refetch data if there was an error, such as a timeout, and records are marked as already retrieved. This is intended to be used with showprocessedenddatetime and for a short period of time only. Also note that processed messages will eventually be deleted.
      */
     public function __construct(
         protected ?array $confidentialityCode = null,

@@ -24,12 +24,12 @@ class UpdatePatientVaccine extends Request implements HasBody
     }
 
     /**
-     * @param  string  $administerdate Date when this vaccine was administered (if administered). Can be in YYYY, MM/YYYY, or MM/DD/YYYY format.
-     * @param  int  $cvx Vaccine Administered Code
-     * @param  int  $departmentid The athenaNet department id.
-     * @param  int  $patientid patientid
-     * @param  string  $vaccineid vaccineid
-     * @param  null|string  $ndc The National Drug Code for the administered vaccine
+     * @param  string  $administerdate  Date when this vaccine was administered (if administered). Can be in YYYY, MM/YYYY, or MM/DD/YYYY format.
+     * @param  int  $cvx  Vaccine Administered Code
+     * @param  int  $departmentid  The athenaNet department id.
+     * @param  int  $patientid  patientid
+     * @param  string  $vaccineid  vaccineid
+     * @param  null|string  $ndc  The National Drug Code for the administered vaccine
      */
     public function __construct(
         protected string $administerdate,

@@ -24,12 +24,12 @@ class UpdatePatientMedications extends Request implements HasBody
     }
 
     /**
-     * @param  int  $departmentid The athenanet department ID
-     * @param  int  $patientid patientid
-     * @param  null|bool  $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
-     * @param  null|string  $thirdpartyusername User name of the patient in the third party application.
-     * @param  null|bool  $nomedicationsreported Set the "None Reported" checkbox indicating that no medications were reported for this patient.
-     * @param  null|string  $sectionnote The section-wide note for medications.
+     * @param  int  $departmentid  The athenanet department ID
+     * @param  int  $patientid  patientid
+     * @param  null|bool  $patientfacingcall  When 'true' is passed we will collect relevant data and store in our database.
+     * @param  null|string  $thirdpartyusername  User name of the patient in the third party application.
+     * @param  null|bool  $nomedicationsreported  Set the "None Reported" checkbox indicating that no medications were reported for this patient.
+     * @param  null|string  $sectionnote  The section-wide note for medications.
      */
     public function __construct(
         protected int $departmentid,

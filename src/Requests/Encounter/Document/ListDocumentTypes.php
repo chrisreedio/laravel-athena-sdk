@@ -20,8 +20,8 @@ class ListDocumentTypes extends Request
     }
 
     /**
-     * @param  string  $searchvalue The search string as a list of search words.
-     * @param  null|string  $documentsubclass Limit the results to document types that could apply to a document of the type specified.  If omitted, the results will not be filtered.
+     * @param  string  $searchvalue  The search string as a list of search words.
+     * @param  null|string  $documentsubclass  Limit the results to document types that could apply to a document of the type specified.  If omitted, the results will not be filtered.
      */
     public function __construct(
         protected string $searchvalue,

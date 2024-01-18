@@ -24,11 +24,11 @@ class CreatePatientChartExportDocument extends Request implements HasBody
     }
 
     /**
-     * @param  string  $createfromdaterangestart The start date, inclusive, of the chart export.
-     * @param  int  $patientid patientid
-     * @param  null|array  $createfromdatedocumentclass One or more document classes to include in the export.  Defaults to LABRESULT, IMAGINGRESULT, and CLINICALDOCUMENT.
-     * @param  null|string  $createfromdaterangeend The end date, inclusive, of the chart export.  Defaults to today.
-     * @param  null|int  $departmentid The department ID associated with the document export.
+     * @param  string  $createfromdaterangestart  The start date, inclusive, of the chart export.
+     * @param  int  $patientid  patientid
+     * @param  null|array  $createfromdatedocumentclass  One or more document classes to include in the export.  Defaults to LABRESULT, IMAGINGRESULT, and CLINICALDOCUMENT.
+     * @param  null|string  $createfromdaterangeend  The end date, inclusive, of the chart export.  Defaults to today.
+     * @param  null|int  $departmentid  The department ID associated with the document export.
      */
     public function __construct(
         protected string $createfromdaterangestart,

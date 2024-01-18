@@ -20,9 +20,9 @@ class GetEncounterSummaryContent extends Request
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  null|bool  $mobile Flag to skip many details to make the html smaller
-     * @param  null|bool  $skipamendments Flag to skip encounter amendments
+     * @param  int  $encounterid  encounterid
+     * @param  null|bool  $mobile  Flag to skip many details to make the html smaller
+     * @param  null|bool  $skipamendments  Flag to skip encounter amendments
      */
     public function __construct(
         protected int $encounterid,

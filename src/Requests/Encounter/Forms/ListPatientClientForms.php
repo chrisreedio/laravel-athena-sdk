@@ -20,8 +20,8 @@ class ListPatientClientForms extends Request
     }
 
     /**
-     * @param  int  $departmentid The department id
-     * @param  null|bool  $hidepdfs Hides PDF forms if set
+     * @param  int  $departmentid  The department id
+     * @param  null|bool  $hidepdfs  Hides PDF forms if set
      */
     public function __construct(
         protected int $departmentid,

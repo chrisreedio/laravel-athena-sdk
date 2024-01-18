@@ -20,8 +20,8 @@ class GetRiskContract extends Request
     }
 
     /**
-     * @param  null|string  $name Title of the risk contract
-     * @param  null|int  $riskcontractid ID of the risk contract
+     * @param  null|string  $name  Title of the risk contract
+     * @param  null|int  $riskcontractid  ID of the risk contract
      */
     public function __construct(
         protected ?string $name = null,

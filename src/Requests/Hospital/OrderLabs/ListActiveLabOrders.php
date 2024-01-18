@@ -20,8 +20,8 @@ class ListActiveLabOrders extends Request
     }
 
     /**
-     * @param  int  $ordertypeid The athena ID for the type of order being placed. Get the IDs using /stays/configuration/orders/lab.
-     * @param  null|string  $statusgroup Active: Orders that are not yet completed. Signed orders: Orders that are signed by a doctor. Unsigned orders: Orders that have not yet been signed.
+     * @param  int  $ordertypeid  The athena ID for the type of order being placed. Get the IDs using /stays/configuration/orders/lab.
+     * @param  null|string  $statusgroup  Active: Orders that are not yet completed. Signed orders: Orders that are signed by a doctor. Unsigned orders: Orders that have not yet been signed.
      */
     public function __construct(
         protected int $ordertypeid,

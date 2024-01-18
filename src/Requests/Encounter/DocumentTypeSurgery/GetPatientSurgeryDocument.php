@@ -24,11 +24,11 @@ class GetPatientSurgeryDocument extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $surgeryid surgeryid
-     * @param  null|bool  $showpreschedulingchecklist Return any pre-scheduling checklist.
-     * @param  null|bool  $showquestions Some order types like labs and imaging orders have additional pertinant information in a question/answer format. Setting this will return that data.
-     * @param  null|bool  $showstructuredauthorizationdetails When set, returns Prior Authorization and insurances for some order types, separately and in a structured version than those returned in showquestions.
+     * @param  int  $patientid  patientid
+     * @param  int  $surgeryid  surgeryid
+     * @param  null|bool  $showpreschedulingchecklist  Return any pre-scheduling checklist.
+     * @param  null|bool  $showquestions  Some order types like labs and imaging orders have additional pertinant information in a question/answer format. Setting this will return that data.
+     * @param  null|bool  $showstructuredauthorizationdetails  When set, returns Prior Authorization and insurances for some order types, separately and in a structured version than those returned in showquestions.
      */
     public function __construct(
         protected int $patientid,

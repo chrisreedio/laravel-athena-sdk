@@ -24,24 +24,24 @@ class UpdateReferralAuth extends Request implements HasBody
     }
 
     /**
-     * @param  int  $departmentid The department ID associated with this authorization.
-     * @param  int  $insuranceid The athena patient insurance ID.
-     * @param  int  $patientid patientid
-     * @param  int  $referralauthid referralauthid
-     * @param  null|array  $appointmentids The appointment ID associated with this authorization. Any appointment IDs updated will add on to the list of associated appointments.
-     * @param  null|string  $expirationdate The expiration date of when the referral authorization is valid.
-     * @param  null|array  $icd10diagnosiscodes The ICD10 codes associated with this referral authorization. Any updates will replace the current ICD10 diagnosis codes. Updates to ICD10DIAGNOSISCODES must also be made in tandem with ICD9DIAGNOSISCODES. IF ICD9 codes are not passed in along, existing ones will be removed
-     * @param  null|array  $icd9diagnosiscodes The ICD9 codes associated with this referral authorization. Any updates will replace the current ICD9 diagnosis codes. Updates to ICD9DIAGNOSISCODES must also be made in tandem with ICD10DIAGNOSISCODES. If ICD10 codes are not passed in along, existing ones will be removed.
-     * @param  null|bool  $noreferralrequired If set to true, then the insurance authorization number is not required.
-     * @param  null|string  $notes The note attached to this referral authorization.
-     * @param  null|string  $notestoprovider The notes for the provider.
-     * @param  null|array  $procedurecodes The procedure codes (CPT) associated with this referral authorization. Any updates will replace the current procedure codes. Procedure Codes should be given in double quotes only. Example: ["00770","15000,AS","0147T"]
-     * @param  null|string  $referralauthnumber The referral authorization number.  If this is passed in, then the REFERRINGPROVIDERID is required. This input can by bypassed with the NOREFERRALREQUIRED parameter.
-     * @param  null|int  $referringproviderid The athena referring provider ID associated with this authorization. Required if REFERRALAUTHNUMBER is passed in.
-     * @param  null|string  $startdate The start date of when the referral authorization is valid.
-     * @param  null|bool  $visits Determines whether or not this authorization specifies visits.
-     * @param  null|int  $visitsapproved The number of visits approved by this authorization.
-     * @param  null|int  $visitsleft The number of visits remaining from this authorization.
+     * @param  int  $departmentid  The department ID associated with this authorization.
+     * @param  int  $insuranceid  The athena patient insurance ID.
+     * @param  int  $patientid  patientid
+     * @param  int  $referralauthid  referralauthid
+     * @param  null|array  $appointmentids  The appointment ID associated with this authorization. Any appointment IDs updated will add on to the list of associated appointments.
+     * @param  null|string  $expirationdate  The expiration date of when the referral authorization is valid.
+     * @param  null|array  $icd10diagnosiscodes  The ICD10 codes associated with this referral authorization. Any updates will replace the current ICD10 diagnosis codes. Updates to ICD10DIAGNOSISCODES must also be made in tandem with ICD9DIAGNOSISCODES. IF ICD9 codes are not passed in along, existing ones will be removed
+     * @param  null|array  $icd9diagnosiscodes  The ICD9 codes associated with this referral authorization. Any updates will replace the current ICD9 diagnosis codes. Updates to ICD9DIAGNOSISCODES must also be made in tandem with ICD10DIAGNOSISCODES. If ICD10 codes are not passed in along, existing ones will be removed.
+     * @param  null|bool  $noreferralrequired  If set to true, then the insurance authorization number is not required.
+     * @param  null|string  $notes  The note attached to this referral authorization.
+     * @param  null|string  $notestoprovider  The notes for the provider.
+     * @param  null|array  $procedurecodes  The procedure codes (CPT) associated with this referral authorization. Any updates will replace the current procedure codes. Procedure Codes should be given in double quotes only. Example: ["00770","15000,AS","0147T"]
+     * @param  null|string  $referralauthnumber  The referral authorization number.  If this is passed in, then the REFERRINGPROVIDERID is required. This input can by bypassed with the NOREFERRALREQUIRED parameter.
+     * @param  null|int  $referringproviderid  The athena referring provider ID associated with this authorization. Required if REFERRALAUTHNUMBER is passed in.
+     * @param  null|string  $startdate  The start date of when the referral authorization is valid.
+     * @param  null|bool  $visits  Determines whether or not this authorization specifies visits.
+     * @param  null|int  $visitsapproved  The number of visits approved by this authorization.
+     * @param  null|int  $visitsleft  The number of visits remaining from this authorization.
      */
     public function __construct(
         protected int $departmentid,

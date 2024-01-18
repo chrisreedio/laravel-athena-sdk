@@ -20,10 +20,10 @@ class ListPatientAuthorizations extends Request
     }
 
     /**
-     * @param  int  $departmentid Department ID of the patient
-     * @param  int  $patientid patientid
-     * @param  null|bool  $showdeleted Show deleted authorizations
-     * @param  null|string  $status Release authorization status (VALID, EXPIRED, REVOKED)
+     * @param  int  $departmentid  Department ID of the patient
+     * @param  int  $patientid  patientid
+     * @param  null|bool  $showdeleted  Show deleted authorizations
+     * @param  null|string  $status  Release authorization status (VALID, EXPIRED, REVOKED)
      */
     public function __construct(
         protected int $departmentid,

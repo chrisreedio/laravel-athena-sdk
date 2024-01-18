@@ -24,17 +24,17 @@ class UpdateEncounterQuestionnaireScreener extends Request implements HasBody
     }
 
     /**
-     * @param  array  $documentids The document ID to attach to the questionnaire.  Multiple documents (either as a comma delimited list or multiple body parameters) are allowed.
-     * @param  int  $encounterid encounterid
-     * @param  int  $questionnaireid The questionnaire ID to be updated. If the questionnaireid does not exist in the GET /chart/encounter/{encounterid}/questionnairescreeners API, please activate it via the POST API.
-     * @param  array  $questions A JSON array of questions that contain a questionid and answer.
-     * @param  string  $score The score for the questionnaire screener. This is not automatically updated based on the questions and answers passed in.
-     * @param  null|array  $declinedreason Not yet implemented. Reason the questionnaire is declined
-     * @param  null|string  $guidelines The guidelines given by the score and questionnaire.
-     * @param  null|bool  $ignorescore If true, will ignore the score provided and treat it as not scored
-     * @param  null|array  $metaquestions Not yet implemented. Any meta questions related to this questionnaire. E.g., should this be considered generally as positive or negative?
-     * @param  null|string  $note The note for the questionnaire screener.
-     * @param  null|string  $state The state of the questionnaire. This is used exclusively for the PHQ2/9 screeners. If this is not explicitly passed in, the default behavior will set the state to a PHQ2 on a score lower than 3, otherwise it will be set to a PHQ9.
+     * @param  array  $documentids  The document ID to attach to the questionnaire.  Multiple documents (either as a comma delimited list or multiple body parameters) are allowed.
+     * @param  int  $encounterid  encounterid
+     * @param  int  $questionnaireid  The questionnaire ID to be updated. If the questionnaireid does not exist in the GET /chart/encounter/{encounterid}/questionnairescreeners API, please activate it via the POST API.
+     * @param  array  $questions  A JSON array of questions that contain a questionid and answer.
+     * @param  string  $score  The score for the questionnaire screener. This is not automatically updated based on the questions and answers passed in.
+     * @param  null|array  $declinedreason  Not yet implemented. Reason the questionnaire is declined
+     * @param  null|string  $guidelines  The guidelines given by the score and questionnaire.
+     * @param  null|bool  $ignorescore  If true, will ignore the score provided and treat it as not scored
+     * @param  null|array  $metaquestions  Not yet implemented. Any meta questions related to this questionnaire. E.g., should this be considered generally as positive or negative?
+     * @param  null|string  $note  The note for the questionnaire screener.
+     * @param  null|string  $state  The state of the questionnaire. This is used exclusively for the PHQ2/9 screeners. If this is not explicitly passed in, the default behavior will set the state to a PHQ2 on a score lower than 3, otherwise it will be set to a PHQ9.
      */
     public function __construct(
         protected array $documentids,

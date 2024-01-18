@@ -20,9 +20,9 @@ class GetPatientPerinatalHistory extends Request
     }
 
     /**
-     * @param  int  $departmentid The athenaNet department ID.
-     * @param  int  $patientid patientid
-     * @param  null|bool  $showunansweredquestions Include questions where there is no current answer.
+     * @param  int  $departmentid  The athenaNet department ID.
+     * @param  int  $patientid  patientid
+     * @param  null|bool  $showunansweredquestions  Include questions where there is no current answer.
      */
     public function __construct(
         protected int $departmentid,

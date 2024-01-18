@@ -20,11 +20,11 @@ class ListPatientSatisfactionScores extends Request
     }
 
     /**
-     * @param  int  $departmentid departmentid
-     * @param  string  $enddate The last date in a range that you want to search for patients based on when they had an appointment.
-     * @param  string  $startdate The first date in a range that you want to search for patients based on when they had an appointment.
-     * @param  null|string  $lastmodified Only return appointments that were last modified on the date provided.
-     * @param  null|int  $providerid providerid
+     * @param  int  $departmentid  departmentid
+     * @param  string  $enddate  The last date in a range that you want to search for patients based on when they had an appointment.
+     * @param  string  $startdate  The first date in a range that you want to search for patients based on when they had an appointment.
+     * @param  null|string  $lastmodified  Only return appointments that were last modified on the date provided.
+     * @param  null|int  $providerid  providerid
      */
     public function __construct(
         protected int $departmentid,

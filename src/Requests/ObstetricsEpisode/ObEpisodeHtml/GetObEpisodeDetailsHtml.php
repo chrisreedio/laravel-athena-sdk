@@ -20,10 +20,10 @@ class GetObEpisodeDetailsHtml extends Request
     }
 
     /**
-     * @param  int  $obepisodeid obepisodeid
-     * @param  int  $patientid patientid
-     * @param  null|bool  $includewrapper If true, will include a wrapper with standard HTML tags
-     * @param  null|bool  $showhiddenproblems Designates whether we will also show hidden problems. The default value is false.
+     * @param  int  $obepisodeid  obepisodeid
+     * @param  int  $patientid  patientid
+     * @param  null|bool  $includewrapper  If true, will include a wrapper with standard HTML tags
+     * @param  null|bool  $showhiddenproblems  Designates whether we will also show hidden problems. The default value is false.
      */
     public function __construct(
         protected int $obepisodeid,

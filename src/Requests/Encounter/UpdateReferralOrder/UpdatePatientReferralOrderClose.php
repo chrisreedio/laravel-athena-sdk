@@ -24,9 +24,9 @@ class UpdatePatientReferralOrderClose extends Request implements HasBody
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $referraldocumentid referraldocumentid
-     * @param  null|int  $actionreasonid ID of the document action reason.
+     * @param  int  $patientid  patientid
+     * @param  int  $referraldocumentid  referraldocumentid
+     * @param  null|int  $actionreasonid  ID of the document action reason.
      */
     public function __construct(
         protected int $patientid,

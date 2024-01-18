@@ -20,9 +20,9 @@ class DeletePatientSpecificInsurance extends Request
     }
 
     /**
-     * @param  int  $insuranceid insuranceid
-     * @param  int  $patientid patientid
-     * @param  null|string  $cancellationnote Optional note as to why this is being cancelled.
+     * @param  int  $insuranceid  insuranceid
+     * @param  int  $patientid  patientid
+     * @param  null|string  $cancellationnote  Optional note as to why this is being cancelled.
      */
     public function __construct(
         protected int $insuranceid,

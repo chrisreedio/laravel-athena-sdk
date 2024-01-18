@@ -23,8 +23,8 @@ class GetPatientOriginalLabResultDocument extends Request
     }
 
     /**
-     * @param  int  $labresultid labresultid
-     * @param  int  $patientid patientid
+     * @param  int  $labresultid  labresultid
+     * @param  int  $patientid  patientid
      */
     public function __construct(
         protected int $labresultid,

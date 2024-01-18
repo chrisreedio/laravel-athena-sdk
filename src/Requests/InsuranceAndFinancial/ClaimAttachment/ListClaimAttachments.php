@@ -20,7 +20,7 @@ class ListClaimAttachments extends Request
     }
 
     /**
-     * @param  int  $claimid claimid
+     * @param  int  $claimid  claimid
      */
     public function __construct(
         protected int $claimid,

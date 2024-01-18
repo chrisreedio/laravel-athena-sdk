@@ -7,7 +7,7 @@ use ChrisReedIO\AthenaSDK\Data\AthenaData;
 readonly class EmergencyContactData extends AthenaData
 {
     /**
-     * @param  string|null  $relationship SPOUSE, PARENT, CHILD, SIBLING, FRIEND, COUSIN, GUARDIAN, OTHER
+     * @param  string|null  $relationship  SPOUSE, PARENT, CHILD, SIBLING, FRIEND, COUSIN, GUARDIAN, OTHER
      */
     public function __construct(
         public ?string $name = null,

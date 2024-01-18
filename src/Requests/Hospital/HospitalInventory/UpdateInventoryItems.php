@@ -25,7 +25,7 @@ class UpdateInventoryItems extends Request implements HasBody
     }
 
     /**
-     * @param  array  $inventoryitems An array of JSON objects representing inventory items to update.
+     * @param  array  $inventoryitems  An array of JSON objects representing inventory items to update.
      */
     public function __construct(
         protected array $inventoryitems,

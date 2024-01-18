@@ -24,13 +24,13 @@ class CreateProviderEnrollmentDoc extends Request implements HasBody
     }
 
     /**
-     * @param  string  $document 64 bit encoded PNG image
-     * @param  string  $enrollmentcategoryid The ID of the enrollment category for the document (i.e. the type of document)
-     * @param  string  $entity Type of entity (PROVIDER or MEDICALGROUP)
-     * @param  string  $entityid The ID of the ENTITY
-     * @param  int  $providerprofileid providerprofileid
-     * @param  string  $taskid The full enrollment task ID where the document is stored
-     * @param  string  $username Username the database update will be logged under
+     * @param  string  $document  64 bit encoded PNG image
+     * @param  string  $enrollmentcategoryid  The ID of the enrollment category for the document (i.e. the type of document)
+     * @param  string  $entity  Type of entity (PROVIDER or MEDICALGROUP)
+     * @param  string  $entityid  The ID of the ENTITY
+     * @param  int  $providerprofileid  providerprofileid
+     * @param  string  $taskid  The full enrollment task ID where the document is stored
+     * @param  string  $username  Username the database update will be logged under
      */
     public function __construct(
         protected string $document,

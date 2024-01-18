@@ -28,16 +28,16 @@ class UpdatePatientClinicalDocument extends Request implements HasBody
     }
 
     /**
-     * @param  int  $clinicaldocumentid clinicaldocumentid
-     * @param  int  $patientid patientid
-     * @param  null|int  $clinicalproviderid The ID of the external provider/lab/pharmacy associated the document.
-     * @param  null|int  $documenttypeid A specific document type identifier.
-     * @param  null|string  $internalnote An internal note for the provider or staff. Updating this will append to any previous notes if replaceinternalnote is not set.
-     * @param  null|string  $observationdate The date an observation was made (mm/dd/yyyy).
-     * @param  null|string  $observationtime The time an observation was made (hh24:mi).  24 hour time.
-     * @param  null|string  $priority Priority of this result.  1 is high; 2 is normal.
-     * @param  null|int  $providerid The ID of the ordering provider.
-     * @param  null|bool  $replaceinternalnote If true, will replace the existing internal note with the new one. If false, will append to the existing note.
+     * @param  int  $clinicaldocumentid  clinicaldocumentid
+     * @param  int  $patientid  patientid
+     * @param  null|int  $clinicalproviderid  The ID of the external provider/lab/pharmacy associated the document.
+     * @param  null|int  $documenttypeid  A specific document type identifier.
+     * @param  null|string  $internalnote  An internal note for the provider or staff. Updating this will append to any previous notes if replaceinternalnote is not set.
+     * @param  null|string  $observationdate  The date an observation was made (mm/dd/yyyy).
+     * @param  null|string  $observationtime  The time an observation was made (hh24:mi).  24 hour time.
+     * @param  null|string  $priority  Priority of this result.  1 is high; 2 is normal.
+     * @param  null|int  $providerid  The ID of the ordering provider.
+     * @param  null|bool  $replaceinternalnote  If true, will replace the existing internal note with the new one. If false, will append to the existing note.
      */
     public function __construct(
         protected int $clinicaldocumentid,

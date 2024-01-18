@@ -20,10 +20,10 @@ class GetPatientReceipt extends Request
     }
 
     /**
-     * @param  int  $epaymentid epaymentid
-     * @param  int  $patientid patientid
-     * @param  null|bool  $customerversion If true, returns the customer (patient) version of the receipt.
-     * @param  null|bool  $merchantversion If true, returns the merchant version of the receipt.
+     * @param  int  $epaymentid  epaymentid
+     * @param  int  $patientid  patientid
+     * @param  null|bool  $customerversion  If true, returns the customer (patient) version of the receipt.
+     * @param  null|bool  $merchantversion  If true, returns the merchant version of the receipt.
      */
     public function __construct(
         protected int $epaymentid,

@@ -20,8 +20,8 @@ class DeleteClaimChangeSubscription extends Request
     }
 
     /**
-     * @param  null|string  $eventname By default, you are unsubscribed from all possible events.  If you only wish to unsubscribe from an individual event, pass the event name with this argument.
-     * @param  null|bool  $showadditionalevents If this is set, we will include additional events that aren't normally included in the default list of events.
+     * @param  null|string  $eventname  By default, you are unsubscribed from all possible events.  If you only wish to unsubscribe from an individual event, pass the event name with this argument.
+     * @param  null|bool  $showadditionalevents  If this is set, we will include additional events that aren't normally included in the default list of events.
      */
     public function __construct(
         protected ?string $eventname = null,

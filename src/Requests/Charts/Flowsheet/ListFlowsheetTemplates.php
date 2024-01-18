@@ -20,8 +20,8 @@ class ListFlowsheetTemplates extends Request
     }
 
     /**
-     * @param  int  $snomedcode snomedcode
-     * @param  null|int  $departmentid The department ID for the provider.  For non-enterprise practices, you may choose any department.  This is requried only when passing in one or more provider IDs.  If no provider ID is passed in, this field is ignored.
+     * @param  int  $snomedcode  snomedcode
+     * @param  null|int  $departmentid  The department ID for the provider.  For non-enterprise practices, you may choose any department.  This is requried only when passing in one or more provider IDs.  If no provider ID is passed in, this field is ignored.
      */
     public function __construct(
         protected int $snomedcode,

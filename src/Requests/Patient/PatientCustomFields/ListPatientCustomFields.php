@@ -20,7 +20,7 @@ class ListPatientCustomFields extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
+     * @param  int  $patientid  patientid
      */
     public function __construct(
         protected string $departmentid,

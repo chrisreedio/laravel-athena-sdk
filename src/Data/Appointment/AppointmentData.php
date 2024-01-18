@@ -46,6 +46,8 @@ readonly class AppointmentData
         public ?PatientData $patient = null,
         // @var PatientData[]|null @insurance
         public ?array $insurances = null,
+        public ?DateTime $checkInTime = null,
+        public ?DateTime $checkOutTime = null,
     ) {
     }
 
@@ -85,6 +87,8 @@ readonly class AppointmentData
             encounterStatus: $data['encounterstatus'] ?? null,
             patient: isset($data['patient']) ? PatientData::fromArray($data['patient']) : null,
             insurances: isset($data['insurances']) ? array_map(fn (array $insurance) => InsuranceData::fromArray($insurance), $data['insurances']) : null,
+            checkInTime: array_key_exists('checkintime', $data) ? Carbon::createFromFormat('m/d/Y H:i:s', $data['checkintime'])->toDateTime() : null,
+            checkOutTime: array_key_exists('checkouttime', $data) ? Carbon::createFromFormat('m/d/Y H:i:s', $data['checkouttime'])->toDateTime() : null,
         );
     }
 }

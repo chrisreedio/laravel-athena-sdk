@@ -20,9 +20,9 @@ class ListUserMessages extends Request
     }
 
     /**
-     * @param  string  $username username
-     * @param  null|string  $folder Requested message folder. Can be INBOX, SENT, SAVED, TRASH. Defaults to INBOX.
-     * @param  null|bool  $showunreadonly Only return unread messages. Defaults to false.
+     * @param  string  $username  username
+     * @param  null|string  $folder  Requested message folder. Can be INBOX, SENT, SAVED, TRASH. Defaults to INBOX.
+     * @param  null|bool  $showunreadonly  Only return unread messages. Defaults to false.
      */
     public function __construct(
         protected string $username,

@@ -20,10 +20,10 @@ class GetPatientInptAdminDocumentPage extends Request
     }
 
     /**
-     * @param  int  $inptadminid inptadminid
-     * @param  int  $pageid pageid
-     * @param  int  $patientid patientid
-     * @param  null|string  $filesize The file size of the document being requested.
+     * @param  int  $inptadminid  inptadminid
+     * @param  int  $pageid  pageid
+     * @param  int  $patientid  patientid
+     * @param  null|string  $filesize  The file size of the document being requested.
      */
     public function __construct(
         protected int $inptadminid,

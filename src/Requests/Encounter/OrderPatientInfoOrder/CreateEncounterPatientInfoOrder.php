@@ -24,11 +24,11 @@ class CreateEncounterPatientInfoOrder extends Request implements HasBody
     }
 
     /**
-     * @param  int  $diagnosissnomedcode The SNOMED code for diagnosis this order is for.
-     * @param  int  $encounterid encounterid
-     * @param  int  $ordertypeid The athena ID of the patient information to order. Get the IDs using /reference/order/patientinfo.
-     * @param  null|string  $externalnote An external note for the patient.
-     * @param  null|string  $providernote An internal note for the provider or staff.
+     * @param  int  $diagnosissnomedcode  The SNOMED code for diagnosis this order is for.
+     * @param  int  $encounterid  encounterid
+     * @param  int  $ordertypeid  The athena ID of the patient information to order. Get the IDs using /reference/order/patientinfo.
+     * @param  null|string  $externalnote  An external note for the patient.
+     * @param  null|string  $providernote  An internal note for the provider or staff.
      */
     public function __construct(
         protected int $diagnosissnomedcode,

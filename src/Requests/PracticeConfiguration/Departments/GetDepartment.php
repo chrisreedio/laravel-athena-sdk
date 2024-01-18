@@ -20,9 +20,9 @@ class GetDepartment extends Request
     }
 
     /**
-     * @param  int  $departmentid departmentid
-     * @param  null|bool  $providerlist If set to true, list providers who see patients in this department. Default is false.
-     * @param  null|bool  $showalldepartments By default, departments hidden in the portal do not appear. When this is set to true, that restriction is not applied. Default is false.
+     * @param  int  $departmentid  departmentid
+     * @param  null|bool  $providerlist  If set to true, list providers who see patients in this department. Default is false.
+     * @param  null|bool  $showalldepartments  By default, departments hidden in the portal do not appear. When this is set to true, that restriction is not applied. Default is false.
      */
     public function __construct(
         protected int $departmentid,

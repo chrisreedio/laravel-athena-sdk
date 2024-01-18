@@ -20,8 +20,8 @@ class ListProviderEnrollmentDocs extends Request
     }
 
     /**
-     * @param  int  $providerprofileid providerprofileid
-     * @param  null|bool  $open A boolean flag indicating that the response should include only document's whose OPEN field is true or false (depending on the flag value). If this flag is not set, all documents will be included in the response.
+     * @param  int  $providerprofileid  providerprofileid
+     * @param  null|bool  $open  A boolean flag indicating that the response should include only document's whose OPEN field is true or false (depending on the flag value). If this flag is not set, all documents will be included in the response.
      */
     public function __construct(
         protected int $providerprofileid,

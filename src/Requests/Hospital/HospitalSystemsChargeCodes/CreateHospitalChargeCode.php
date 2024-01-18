@@ -24,19 +24,19 @@ class CreateHospitalChargeCode extends Request implements HasBody
     }
 
     /**
-     * @param  string  $chargecode The chargecode to create.
-     * @param  int  $departmentid The department id to associate this chargecode with.
-     * @param  string  $description The description of what the chargecode specifies.
-     * @param  string  $effectivedate The date that this chargecode becomes valid. Formatted as MM/DD/YYYY.
-     * @param  string  $revenuecode The revenue code associated with this chargecode.
-     * @param  null|bool  $dynamicpricing Is Price set at charge entry.
-     * @param  null|string  $expirationdate Date that this chargecode expires. Formatted as MM/DD/YYYY.
-     * @param  null|bool  $fractionalbilling True if the chargecode can be fractionally billed.
-     * @param  null|number  $minprice The minimum price for fractional billing.
-     * @param  null|number  $price The amount charged for what this chargecode specifies.
-     * @param  null|string  $procedurecode The procedure code associated with this chargecode.
-     * @param  null|bool  $softcode Is hcpcs entered at charge entry.
-     * @param  null|string  $username The username to add as.
+     * @param  string  $chargecode  The chargecode to create.
+     * @param  int  $departmentid  The department id to associate this chargecode with.
+     * @param  string  $description  The description of what the chargecode specifies.
+     * @param  string  $effectivedate  The date that this chargecode becomes valid. Formatted as MM/DD/YYYY.
+     * @param  string  $revenuecode  The revenue code associated with this chargecode.
+     * @param  null|bool  $dynamicpricing  Is Price set at charge entry.
+     * @param  null|string  $expirationdate  Date that this chargecode expires. Formatted as MM/DD/YYYY.
+     * @param  null|bool  $fractionalbilling  True if the chargecode can be fractionally billed.
+     * @param  null|number  $minprice  The minimum price for fractional billing.
+     * @param  null|number  $price  The amount charged for what this chargecode specifies.
+     * @param  null|string  $procedurecode  The procedure code associated with this chargecode.
+     * @param  null|bool  $softcode  Is hcpcs entered at charge entry.
+     * @param  null|string  $username  The username to add as.
      */
     public function __construct(
         protected string $chargecode,

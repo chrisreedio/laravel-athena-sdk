@@ -20,10 +20,10 @@ class DeletePatientProblem extends Request
     }
 
     /**
-     * @param  int  $departmentid The athenaNet department id.
-     * @param  int  $patientid patientid
-     * @param  int  $problemid problemid
-     * @param  null|bool  $remove Set this to true if a problem was added in error. It will remove the problem from the chart permanently.
+     * @param  int  $departmentid  The athenaNet department id.
+     * @param  int  $patientid  patientid
+     * @param  int  $problemid  problemid
+     * @param  null|bool  $remove  Set this to true if a problem was added in error. It will remove the problem from the chart permanently.
      */
     public function __construct(
         protected int $departmentid,

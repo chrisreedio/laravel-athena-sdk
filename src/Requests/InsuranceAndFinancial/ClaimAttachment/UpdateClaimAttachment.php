@@ -24,10 +24,10 @@ class UpdateClaimAttachment extends Request implements HasBody
     }
 
     /**
-     * @param  int  $claimattachmentid The athena claim attachment ID.
-     * @param  int  $claimid claimid
-     * @param  null|string  $attachmenttype The claim attachment type class ID. Either attachmentype or notes is required.
-     * @param  null|string  $note The claim attachment notes, Either attachmentype or notes is required.
+     * @param  int  $claimattachmentid  The athena claim attachment ID.
+     * @param  int  $claimid  claimid
+     * @param  null|string  $attachmenttype  The claim attachment type class ID. Either attachmentype or notes is required.
+     * @param  null|string  $note  The claim attachment notes, Either attachmentype or notes is required.
      */
     public function __construct(
         protected int $claimattachmentid,

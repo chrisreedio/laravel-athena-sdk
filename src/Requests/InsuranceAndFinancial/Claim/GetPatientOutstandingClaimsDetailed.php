@@ -20,10 +20,10 @@ class GetPatientOutstandingClaimsDetailed extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  null|array  $claimids Filters the open claims to those with these IDs.
-     * @param  null|int  $communicatorbrandid Filters the open claims within the brand. For a branded practice, it is expected to be passed.
-     * @param  null|bool  $showfamily When true also get open claims associated through family.
+     * @param  int  $patientid  patientid
+     * @param  null|array  $claimids  Filters the open claims to those with these IDs.
+     * @param  null|int  $communicatorbrandid  Filters the open claims within the brand. For a branded practice, it is expected to be passed.
+     * @param  null|bool  $showfamily  When true also get open claims associated through family.
      */
     public function __construct(
         protected int $patientid,

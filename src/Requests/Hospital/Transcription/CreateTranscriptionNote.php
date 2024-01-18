@@ -24,14 +24,14 @@ class CreateTranscriptionNote extends Request implements HasBody
     }
 
     /**
-     * @param  int  $departmentid The department ID tied to the note.
-     * @param  string  $notetype Type of transcription note.
-     * @param  int  $providerid The provider ID.
-     * @param  int  $stayid stayid
-     * @param  string  $transcriptionistname The legal name of the Transcriptionist who transcribed the note being posted.
-     * @param  string  $transcriptionrecordeddatetime The date and time of dictation by the provider. Please convert this value to Eastern time and use the format MM/DD/YYYY HH24:MI:SS.
-     * @param  string  $transcriptiontext Transcription text.
-     * @param  null|int  $caseid Surgical case ID.
+     * @param  int  $departmentid  The department ID tied to the note.
+     * @param  string  $notetype  Type of transcription note.
+     * @param  int  $providerid  The provider ID.
+     * @param  int  $stayid  stayid
+     * @param  string  $transcriptionistname  The legal name of the Transcriptionist who transcribed the note being posted.
+     * @param  string  $transcriptionrecordeddatetime  The date and time of dictation by the provider. Please convert this value to Eastern time and use the format MM/DD/YYYY HH24:MI:SS.
+     * @param  string  $transcriptiontext  Transcription text.
+     * @param  null|int  $caseid  Surgical case ID.
      */
     public function __construct(
         protected int $departmentid,

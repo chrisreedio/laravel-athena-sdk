@@ -20,7 +20,7 @@ class GetMedicalRecordActionNote extends Request
     }
 
     /**
-     * @param  int  $medicalrecordid medicalrecordid
+     * @param  int  $medicalrecordid  medicalrecordid
      */
     public function __construct(
         protected int $medicalrecordid,

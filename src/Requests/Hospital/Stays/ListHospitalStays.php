@@ -22,14 +22,14 @@ class ListHospitalStays extends Request
     }
 
     /**
-     * @param  null|bool  $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
-     * @param  null|string  $thirdpartyusername User name of the patient in the third party application.
-     * @param  null|string  $enddate Include stays which were in "OPEN" or "DISCHARGED" status on or before this date.
-     * @param  null|int  $patientid Please remember to never disclose this ID to patients since it may result in inadvertent disclosure that a patient exists in a practice already.
-     * @param  null|bool  $showclosed By default it will be false. If set to true, stays with "CLOSED" status will also be returned.
-     * @param  null|bool  $showdeleted By default it will be false. If set to true, stays with "DELETED" status will also be returned
-     * @param  null|bool  $showpending By default it will be false. If set to true, stays with "PENDING" status will also be returned
-     * @param  null|string  $startdate Include stays which were in "OPEN" or "DISCHARGED" status on or after this date.
+     * @param  null|bool  $patientfacingcall  When 'true' is passed we will collect relevant data and store in our database.
+     * @param  null|string  $thirdpartyusername  User name of the patient in the third party application.
+     * @param  null|string  $enddate  Include stays which were in "OPEN" or "DISCHARGED" status on or before this date.
+     * @param  null|int  $patientid  Please remember to never disclose this ID to patients since it may result in inadvertent disclosure that a patient exists in a practice already.
+     * @param  null|bool  $showclosed  By default it will be false. If set to true, stays with "CLOSED" status will also be returned.
+     * @param  null|bool  $showdeleted  By default it will be false. If set to true, stays with "DELETED" status will also be returned
+     * @param  null|bool  $showpending  By default it will be false. If set to true, stays with "PENDING" status will also be returned
+     * @param  null|string  $startdate  Include stays which were in "OPEN" or "DISCHARGED" status on or after this date.
      */
     public function __construct(
         protected ?bool $patientfacingcall = null,
