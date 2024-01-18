@@ -18,8 +18,8 @@ class Departments extends Resource
         return $this->connector->paginate(new ListDepartments(showalldepartments: $showAll))->collect();
     }
 
-    public function patientLocations(): LazyCollection
+    public function patientLocations(string|int $departmentId): LazyCollection
     {
-        return $this->connector->paginate(new ListPatientLocations())->collect();
+        return $this->connector->paginate(new ListPatientLocations(intval($departmentId)))->collect();
     }
 }
