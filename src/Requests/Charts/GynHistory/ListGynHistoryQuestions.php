@@ -20,7 +20,7 @@ class ListGynHistoryQuestions extends Request
     }
 
     /**
-     * @param  null|bool  $showdeleted Include deleted questions
+     * @param  null|bool  $showdeleted  Include deleted questions
      */
     public function __construct(
         protected ?bool $showdeleted = null,

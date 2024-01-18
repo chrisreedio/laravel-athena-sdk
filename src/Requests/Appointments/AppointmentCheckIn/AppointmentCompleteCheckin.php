@@ -20,7 +20,7 @@ class AppointmentCompleteCheckin extends Request
     }
 
     /**
-     * @param  int  $appointmentid appointmentid
+     * @param  int  $appointmentid  appointmentid
      */
     public function __construct(
         protected int $appointmentid,

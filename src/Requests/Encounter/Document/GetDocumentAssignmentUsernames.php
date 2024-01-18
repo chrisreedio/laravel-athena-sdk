@@ -20,7 +20,7 @@ class GetDocumentAssignmentUsernames extends Request
     }
 
     /**
-     * @param  int  $documentid documentid
+     * @param  int  $documentid  documentid
      */
     public function __construct(
         protected int $documentid,

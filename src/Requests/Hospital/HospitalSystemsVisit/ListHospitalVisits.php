@@ -20,15 +20,15 @@ class ListHospitalVisits extends Request
     }
 
     /**
-     * @param  null|int  $departmentid Department ID to filter on.
-     * @param  null|bool  $nodepartment Boolean flag to include visits where department ID is null.
-     * @param  null|int  $patientid Patient ID to find visits for.
-     * @param  null|bool  $showdeleted Boolean flag to include deleted visits in the output.
-     * @param  null|bool  $showvisitcharges Boolean flag to also return visit charges in the output.
-     * @param  null|array  $statusids Only return visits that match one of these statuses
-     * @param  null|bool  $unregistered Boolean flag to only return visits where the registration has not been completed.
-     * @param  null|array  $visitcaseids Array of VisitCase IDs to filter on.
-     * @param  null|array  $visitids Only return these visit IDs.
+     * @param  null|int  $departmentid  Department ID to filter on.
+     * @param  null|bool  $nodepartment  Boolean flag to include visits where department ID is null.
+     * @param  null|int  $patientid  Patient ID to find visits for.
+     * @param  null|bool  $showdeleted  Boolean flag to include deleted visits in the output.
+     * @param  null|bool  $showvisitcharges  Boolean flag to also return visit charges in the output.
+     * @param  null|array  $statusids  Only return visits that match one of these statuses
+     * @param  null|bool  $unregistered  Boolean flag to only return visits where the registration has not been completed.
+     * @param  null|array  $visitcaseids  Array of VisitCase IDs to filter on.
+     * @param  null|array  $visitids  Only return these visit IDs.
      */
     public function __construct(
         protected ?int $departmentid = null,

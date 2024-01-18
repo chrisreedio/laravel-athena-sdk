@@ -24,15 +24,15 @@ class GetAppointmentDetails extends Request
     }
 
     /**
-     * @param  int  $appointmentid appointmentid
-     * @param  null|array  $confidentialitycode A comma separated list of confidentiality codes to filter patients by. If not set defaults to include all confidentiality codes. Supported codes: 'N' and 'R'. Only functions if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
-     * @param  null|bool  $ignorerestrictions When showing patient detail for appointments, the patient information for patients with record restrictions and blocked patients will not be shown.  Setting this flag to true will show that information for those patients. No effect if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
-     * @param  null|bool  $showclaimdetail Include claim information, if available, associated with the appointment.
-     * @param  null|bool  $showcopay By default, the expected co-pay is returned. For performance purposes, you can set this to false and copay will not be populated.
-     * @param  null|bool  $showexpectedprocedurecodes Show expected procedure codes
-     * @param  null|bool  $showinsurance Include patient insurance information.
-     * @param  null|bool  $showpatientdetail Include patient information for each patient associated with an appointment.
-     * @param  null|bool  $showtelehealth Show indicator for if this is a native athenatelehealth appointment
+     * @param  int  $appointmentid  appointmentid
+     * @param  null|array  $confidentialitycode  A comma separated list of confidentiality codes to filter patients by. If not set defaults to include all confidentiality codes. Supported codes: 'N' and 'R'. Only functions if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
+     * @param  null|bool  $ignorerestrictions  When showing patient detail for appointments, the patient information for patients with record restrictions and blocked patients will not be shown.  Setting this flag to true will show that information for those patients. No effect if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
+     * @param  null|bool  $showclaimdetail  Include claim information, if available, associated with the appointment.
+     * @param  null|bool  $showcopay  By default, the expected co-pay is returned. For performance purposes, you can set this to false and copay will not be populated.
+     * @param  null|bool  $showexpectedprocedurecodes  Show expected procedure codes
+     * @param  null|bool  $showinsurance  Include patient insurance information.
+     * @param  null|bool  $showpatientdetail  Include patient information for each patient associated with an appointment.
+     * @param  null|bool  $showtelehealth  Show indicator for if this is a native athenatelehealth appointment
      */
     public function __construct(
         protected int $appointmentid,

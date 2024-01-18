@@ -24,8 +24,8 @@ class CreateEncounterQuestionnaireScreener extends Request implements HasBody
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  int  $templateid The template ID for the screener that will be activated.
+     * @param  int  $encounterid  encounterid
+     * @param  int  $templateid  The template ID for the screener that will be activated.
      */
     public function __construct(
         protected int $encounterid,

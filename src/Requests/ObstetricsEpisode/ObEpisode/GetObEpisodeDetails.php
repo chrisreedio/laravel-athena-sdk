@@ -20,10 +20,10 @@ class GetObEpisodeDetails extends Request
     }
 
     /**
-     * @param  int  $obepisodeid obepisodeid
-     * @param  int  $patientid patientid
-     * @param  null|bool  $showeddcalculationsdays Designates whether we will also show eddcalucation days. The default value is false.
-     * @param  null|bool  $showhiddenproblems Designates whether we will also show hidden problems. The default value is false.
+     * @param  int  $obepisodeid  obepisodeid
+     * @param  int  $patientid  patientid
+     * @param  null|bool  $showeddcalculationsdays  Designates whether we will also show eddcalucation days. The default value is false.
+     * @param  null|bool  $showhiddenproblems  Designates whether we will also show hidden problems. The default value is false.
      */
     public function __construct(
         protected int $obepisodeid,

@@ -20,8 +20,8 @@ class GetEncounterAssessment extends Request
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  null|bool  $showstructured If true, returns assessment note templates as structured data. If false, returns it via lightly-HTML marked up English text, as displayed in the athenanet encounter summary.
+     * @param  int  $encounterid  encounterid
+     * @param  null|bool  $showstructured  If true, returns assessment note templates as structured data. If false, returns it via lightly-HTML marked up English text, as displayed in the athenanet encounter summary.
      */
     public function __construct(
         protected int $encounterid,

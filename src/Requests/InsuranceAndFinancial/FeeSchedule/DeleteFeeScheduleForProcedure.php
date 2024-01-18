@@ -20,8 +20,8 @@ class DeleteFeeScheduleForProcedure extends Request
     }
 
     /**
-     * @param  int  $feescheduleid The ID of the fee schedule.
-     * @param  string  $procedurecode The procedure code to be removed.
+     * @param  int  $feescheduleid  The ID of the fee schedule.
+     * @param  string  $procedurecode  The procedure code to be removed.
      */
     public function __construct(
         protected int $feescheduleid,

@@ -20,8 +20,8 @@ class ListInboxMessages extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  null|string  $showplaintext If Y, returns the TEXT attribute in plaintext.
+     * @param  int  $patientid  patientid
+     * @param  null|string  $showplaintext  If Y, returns the TEXT attribute in plaintext.
      */
     public function __construct(
         protected int $patientid,

@@ -20,10 +20,10 @@ class GetDepartmentsMapping extends Request
     }
 
     /**
-     * @param  null|int  $communicatorbrandid ID of the Brand
-     * @param  null|array  $departmentids One or more ID's of the Department
-     * @param  null|array  $providergroupids One or more ID's of the ProviderGroup
-     * @param  null|array  $providerids One or more ID's of the Provider
+     * @param  null|int  $communicatorbrandid  ID of the Brand
+     * @param  null|array  $departmentids  One or more ID's of the Department
+     * @param  null|array  $providergroupids  One or more ID's of the ProviderGroup
+     * @param  null|array  $providerids  One or more ID's of the Provider
      */
     public function __construct(
         protected ?int $communicatorbrandid = null,

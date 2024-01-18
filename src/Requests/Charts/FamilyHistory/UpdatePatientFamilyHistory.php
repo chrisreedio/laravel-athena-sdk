@@ -24,10 +24,10 @@ class UpdatePatientFamilyHistory extends Request implements HasBody
     }
 
     /**
-     * @param  int  $departmentid The athenaNet department id.
-     * @param  int  $patientid patientid
-     * @param  null|array  $relatives A JSON array of relatives, mimicking <a href="https://developer.athenahealth.com/docs/read/chart/Family_History">the output format</a> of the GET call.
-     * @param  null|string  $sectionnote Any additional section notes
+     * @param  int  $departmentid  The athenaNet department id.
+     * @param  int  $patientid  patientid
+     * @param  null|array  $relatives  A JSON array of relatives, mimicking <a href="https://developer.athenahealth.com/docs/read/chart/Family_History">the output format</a> of the GET call.
+     * @param  null|string  $sectionnote  Any additional section notes
      */
     public function __construct(
         protected int $departmentid,

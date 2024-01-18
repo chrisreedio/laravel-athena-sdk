@@ -20,13 +20,13 @@ class ListEmployers extends Request
     }
 
     /**
-     * @param  null|string  $address The address of the employer (partial match).
-     * @param  null|string  $city The city of the employer (exact match).
-     * @param  null|string  $exactname The name of the employer (exact match).
-     * @param  null|string  $name The name of the employer (partial match).
-     * @param  null|string  $phone The phone of the employer (exact match).
-     * @param  null|string  $state The state of the employer (exact match).
-     * @param  null|string  $zip The zip of the employer (exact match).
+     * @param  null|string  $address  The address of the employer (partial match).
+     * @param  null|string  $city  The city of the employer (exact match).
+     * @param  null|string  $exactname  The name of the employer (exact match).
+     * @param  null|string  $name  The name of the employer (partial match).
+     * @param  null|string  $phone  The phone of the employer (exact match).
+     * @param  null|string  $state  The state of the employer (exact match).
+     * @param  null|string  $zip  The zip of the employer (exact match).
      */
     public function __construct(
         protected ?string $address = null,

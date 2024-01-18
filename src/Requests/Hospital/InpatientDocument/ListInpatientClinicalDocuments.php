@@ -20,10 +20,10 @@ class ListInpatientClinicalDocuments extends Request
     }
 
     /**
-     * @param  int  $departmentid The department id associated with the document.
-     * @param  int  $patientid THe patient's ID.
-     * @param  null|string  $status Status of the document.
-     * @param  null|int  $stayid The stay ID. If this field is used, the departmentid must also match one of the departments returned in GET /stays/{stayid}.
+     * @param  int  $departmentid  The department id associated with the document.
+     * @param  int  $patientid  THe patient's ID.
+     * @param  null|string  $status  Status of the document.
+     * @param  null|int  $stayid  The stay ID. If this field is used, the departmentid must also match one of the departments returned in GET /stays/{stayid}.
      */
     public function __construct(
         protected int $departmentid,

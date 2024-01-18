@@ -20,8 +20,8 @@ class RevertOrderToSubmitStatus extends Request
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  int  $orderid orderid
+     * @param  int  $encounterid  encounterid
+     * @param  int  $orderid  orderid
      */
     public function __construct(
         protected int $encounterid,

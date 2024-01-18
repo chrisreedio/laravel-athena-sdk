@@ -20,7 +20,7 @@ class GetSurgeryDocumentActions extends Request
     }
 
     /**
-     * @param  int  $surgeryid surgeryid
+     * @param  int  $surgeryid  surgeryid
      */
     public function __construct(
         protected int $surgeryid,

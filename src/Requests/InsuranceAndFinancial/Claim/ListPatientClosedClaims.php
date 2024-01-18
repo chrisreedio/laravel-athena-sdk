@@ -20,9 +20,9 @@ class ListPatientClosedClaims extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  null|int  $departmentid The department ID of the service department for the claims being searched for
-     * @param  null|array  $procedurecodes One or more procedure codes
+     * @param  int  $patientid  patientid
+     * @param  null|int  $departmentid  The department ID of the service department for the claims being searched for
+     * @param  null|array  $procedurecodes  One or more procedure codes
      */
     public function __construct(
         protected int $patientid,

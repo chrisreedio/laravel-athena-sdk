@@ -20,9 +20,9 @@ class GetEncounterHpi extends Request
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  null|bool  $showstructured If true, returns history of present illness templates as structured data. If false, returns it via lightly-HTML marked up English text, as displayed in the athenanet encounter summary.
-     * @param  null|array  $templateids If templateids is passed in, it will return only the template data for the array of ids passed in. The SHOWSTRUCTURED flag must be true to use this.
+     * @param  int  $encounterid  encounterid
+     * @param  null|bool  $showstructured  If true, returns history of present illness templates as structured data. If false, returns it via lightly-HTML marked up English text, as displayed in the athenanet encounter summary.
+     * @param  null|array  $templateids  If templateids is passed in, it will return only the template data for the array of ids passed in. The SHOWSTRUCTURED flag must be true to use this.
      */
     public function __construct(
         protected int $encounterid,

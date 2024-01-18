@@ -20,8 +20,8 @@ class GetPatientStatementImage extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $statementid The patient statement ID.
+     * @param  int  $patientid  patientid
+     * @param  int  $statementid  The patient statement ID.
      */
     public function __construct(
         protected int $patientid,

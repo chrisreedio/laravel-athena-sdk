@@ -20,9 +20,9 @@ class GetPatientEncounterDocument extends Request
     }
 
     /**
-     * @param  int  $encounterdocumentid encounterdocumentid
-     * @param  int  $patientid patientid
-     * @param  null|bool  $getentityinfo If true, entityid and entitytype will be returned. entityid will be populated in createduser attribute.
+     * @param  int  $encounterdocumentid  encounterdocumentid
+     * @param  int  $patientid  patientid
+     * @param  null|bool  $getentityinfo  If true, entityid and entitytype will be returned. entityid will be populated in createduser attribute.
      */
     public function __construct(
         protected int $encounterdocumentid,

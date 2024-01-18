@@ -20,8 +20,8 @@ class ListPatientInterfaceConsents extends Request
     }
 
     /**
-     * @param  int  $departmentid Department ID
-     * @param  int  $patientid patientid
+     * @param  int  $departmentid  Department ID
+     * @param  int  $patientid  patientid
      */
     public function __construct(
         protected int $departmentid,

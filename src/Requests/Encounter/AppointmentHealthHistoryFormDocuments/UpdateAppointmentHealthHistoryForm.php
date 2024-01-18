@@ -24,9 +24,9 @@ class UpdateAppointmentHealthHistoryForm extends Request implements HasBody
     }
 
     /**
-     * @param  int  $appointmentid appointmentid
-     * @param  int  $formid formid
-     * @param  string  $healthhistoryform JSON object containing the health history form to update. For the SOCIAL history section, questions with inputtype: "DROPDOWN" will have an array of "dropdownvalues" when retrieved with the given appointment GET endpoint. Each item in "dropdownvalues" is an array containing a key and a value together, representing a dropdown option. For the PUT endpoint, you should always save/return the key as the value is for display only. If entering a future date, it must be within the next year.
+     * @param  int  $appointmentid  appointmentid
+     * @param  int  $formid  formid
+     * @param  string  $healthhistoryform  JSON object containing the health history form to update. For the SOCIAL history section, questions with inputtype: "DROPDOWN" will have an array of "dropdownvalues" when retrieved with the given appointment GET endpoint. Each item in "dropdownvalues" is an array containing a key and a value together, representing a dropdown option. For the PUT endpoint, you should always save/return the key as the value is for display only. If entering a future date, it must be within the next year.
      */
     public function __construct(
         protected int $appointmentid,

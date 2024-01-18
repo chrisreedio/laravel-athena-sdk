@@ -20,7 +20,7 @@ class GetImagingResultActionNote extends Request
     }
 
     /**
-     * @param  int  $imagingresultid imagingresultid
+     * @param  int  $imagingresultid  imagingresultid
      */
     public function __construct(
         protected int $imagingresultid,

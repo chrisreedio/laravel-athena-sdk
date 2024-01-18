@@ -24,21 +24,21 @@ class UpdateReferringProvider extends Request implements HasBody
     }
 
     /**
-     * @param  int  $referringproviderid referringproviderid
-     * @param  null|string  $address The address of the referring provider.
-     * @param  null|string  $address2 The address (line 2)  of the referring provider.
-     * @param  null|string  $city The city of the referring provider.
-     * @param  null|string  $email The email of the referring provider.
-     * @param  null|string  $fax The fax of the referring provider.
-     * @param  null|string  $firstname The first name of the referring provider.
-     * @param  null|string  $lastname The last name of the referring provider.
-     * @param  null|string  $middleinitial The middle initial of the referring provider.
-     * @param  null|string  $namesuffix The name suffix of the referring provider.
-     * @param  null|string  $note The notes associated with the referring provider.
-     * @param  null|int  $npinumber The NPI number associated with the referring provider. If this parameter exists in the body without a value, it will null out this field.
-     * @param  null|string  $phone The phone of the referring provider.
-     * @param  null|string  $state The state of the referring provider.
-     * @param  null|string  $zip The zip of the referring provider.
+     * @param  int  $referringproviderid  referringproviderid
+     * @param  null|string  $address  The address of the referring provider.
+     * @param  null|string  $address2  The address (line 2)  of the referring provider.
+     * @param  null|string  $city  The city of the referring provider.
+     * @param  null|string  $email  The email of the referring provider.
+     * @param  null|string  $fax  The fax of the referring provider.
+     * @param  null|string  $firstname  The first name of the referring provider.
+     * @param  null|string  $lastname  The last name of the referring provider.
+     * @param  null|string  $middleinitial  The middle initial of the referring provider.
+     * @param  null|string  $namesuffix  The name suffix of the referring provider.
+     * @param  null|string  $note  The notes associated with the referring provider.
+     * @param  null|int  $npinumber  The NPI number associated with the referring provider. If this parameter exists in the body without a value, it will null out this field.
+     * @param  null|string  $phone  The phone of the referring provider.
+     * @param  null|string  $state  The state of the referring provider.
+     * @param  null|string  $zip  The zip of the referring provider.
      */
     public function __construct(
         protected int $referringproviderid,

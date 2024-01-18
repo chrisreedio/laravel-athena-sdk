@@ -20,9 +20,9 @@ class ListTranscriptionNotes extends Request
     }
 
     /**
-     * @param  int  $stayid stayid
-     * @param  null|int  $departmentid The department ID tied to the note.
-     * @param  null|string  $notetype Type of transcription note.
+     * @param  int  $stayid  stayid
+     * @param  null|int  $departmentid  The department ID tied to the note.
+     * @param  null|string  $notetype  Type of transcription note.
      */
     public function __construct(
         protected int $stayid,

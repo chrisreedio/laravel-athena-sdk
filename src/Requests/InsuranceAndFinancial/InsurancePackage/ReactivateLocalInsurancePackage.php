@@ -24,8 +24,8 @@ class ReactivateLocalInsurancePackage extends Request implements HasBody
     }
 
     /**
-     * @param  int  $insurancepackageid insurancepackageid
-     * @param  null|string  $expirationdate The expiration date of the locally administered insurance package.  By default, reactivating a package will blank out the expiration date of a package.  This parameter should be used if the expiration date needs to be restored to a specific date.
+     * @param  int  $insurancepackageid  insurancepackageid
+     * @param  null|string  $expirationdate  The expiration date of the locally administered insurance package.  By default, reactivating a package will blank out the expiration date of a package.  This parameter should be used if the expiration date needs to be restored to a specific date.
      */
     public function __construct(
         protected int $insurancepackageid,

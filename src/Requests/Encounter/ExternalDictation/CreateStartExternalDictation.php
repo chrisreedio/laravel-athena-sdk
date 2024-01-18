@@ -24,9 +24,9 @@ class CreateStartExternalDictation extends Request implements HasBody
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  null|string  $dictatedby The username of the person who recorded this dictation.
-     * @param  null|string  $dictationrecordeddatetime This is the date/time the actual dictation was recorded. Please convert this value to Eastern time and use the format MM/DD/YYYY HH24:MI:SS.
+     * @param  int  $encounterid  encounterid
+     * @param  null|string  $dictatedby  The username of the person who recorded this dictation.
+     * @param  null|string  $dictationrecordeddatetime  This is the date/time the actual dictation was recorded. Please convert this value to Eastern time and use the format MM/DD/YYYY HH24:MI:SS.
      */
     public function __construct(
         protected int $encounterid,

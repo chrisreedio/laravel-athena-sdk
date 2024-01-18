@@ -20,8 +20,8 @@ class ListStayLabOrders extends Request
     }
 
     /**
-     * @param  int  $stayid stayid
-     * @param  null|string  $statusgroup Active: Orders that are not yet completed. Signed orders: Orders that are signed by a doctor. Unsigned orders: Orders that have not yet been signed.
+     * @param  int  $stayid  stayid
+     * @param  null|string  $statusgroup  Active: Orders that are not yet completed. Signed orders: Orders that are signed by a doctor. Unsigned orders: Orders that have not yet been signed.
      */
     public function __construct(
         protected int $stayid,

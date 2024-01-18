@@ -20,13 +20,13 @@ class ListPatientVitals extends Request
     }
 
     /**
-     * @param  int  $departmentid The department for this patient. A patient may have multiple charts, and the department determines which chart to retrieve.
-     * @param  int  $patientid patientid
-     * @param  null|bool  $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
-     * @param  null|string  $thirdpartyusername User name of the patient in the third party application.
-     * @param  null|string  $enddate Only retrieve vitals that were taking on or before this date
-     * @param  null|bool  $showemptyvitals Show configured vitals that have no readings for this patient.
-     * @param  null|string  $startdate Only retrieve vitals that were taking on or after this date
+     * @param  int  $departmentid  The department for this patient. A patient may have multiple charts, and the department determines which chart to retrieve.
+     * @param  int  $patientid  patientid
+     * @param  null|bool  $patientfacingcall  When 'true' is passed we will collect relevant data and store in our database.
+     * @param  null|string  $thirdpartyusername  User name of the patient in the third party application.
+     * @param  null|string  $enddate  Only retrieve vitals that were taking on or before this date
+     * @param  null|bool  $showemptyvitals  Show configured vitals that have no readings for this patient.
+     * @param  null|string  $startdate  Only retrieve vitals that were taking on or after this date
      */
     public function __construct(
         protected int $departmentid,

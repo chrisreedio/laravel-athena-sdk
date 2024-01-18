@@ -24,8 +24,8 @@ class CreateTelehealthDeepLink extends Request implements HasBody
     }
 
     /**
-     * @param  int  $appointmentid The athenaNet appointment ID.
-     * @param  int  $patientid The athenaNet Patient ID.
+     * @param  int  $appointmentid  The athenaNet appointment ID.
+     * @param  int  $patientid  The athenaNet Patient ID.
      */
     public function __construct(
         protected int $appointmentid,

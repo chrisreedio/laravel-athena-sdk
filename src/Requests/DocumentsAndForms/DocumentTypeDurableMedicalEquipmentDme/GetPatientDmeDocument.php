@@ -20,9 +20,9 @@ class GetPatientDmeDocument extends Request
     }
 
     /**
-     * @param  int  $dmeid dmeid
-     * @param  int  $patientid patientid
-     * @param  null|bool  $showquestions Some order types like labs and imaging orders have additional pertinant information in a question/answer format. Setting this will return that data.
+     * @param  int  $dmeid  dmeid
+     * @param  int  $patientid  patientid
+     * @param  null|bool  $showquestions  Some order types like labs and imaging orders have additional pertinant information in a question/answer format. Setting this will return that data.
      */
     public function __construct(
         protected int $dmeid,

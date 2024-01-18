@@ -24,12 +24,12 @@ class CreateAppointmentSlot extends Request implements HasBody
     }
 
     /**
-     * @param  string  $appointmentdate The appointment date for the new open appointment slot (mm/dd/yyyy).
-     * @param  array  $appointmenttime The time (hh24:mi) for the new appointment slot.  Multiple times (either as a comma delimited list or multiple POSTed values) are allowed.  24 hour time.
-     * @param  int  $departmentid The athenaNet department ID.
-     * @param  int  $providerid The athenaNet provider ID.
-     * @param  null|int  $appointmenttypeid The appointment type ID to be created.  Either this or a reason must be provided.
-     * @param  null|int  $reasonid The appointment reason (/patientappointmentreasons) to be created. Either this or a raw appointment type ID must be provided.
+     * @param  string  $appointmentdate  The appointment date for the new open appointment slot (mm/dd/yyyy).
+     * @param  array  $appointmenttime  The time (hh24:mi) for the new appointment slot.  Multiple times (either as a comma delimited list or multiple POSTed values) are allowed.  24 hour time.
+     * @param  int  $departmentid  The athenaNet department ID.
+     * @param  int  $providerid  The athenaNet provider ID.
+     * @param  null|int  $appointmenttypeid  The appointment type ID to be created.  Either this or a reason must be provided.
+     * @param  null|int  $reasonid  The appointment reason (/patientappointmentreasons) to be created. Either this or a raw appointment type ID must be provided.
      */
     public function __construct(
         protected string $appointmentdate,

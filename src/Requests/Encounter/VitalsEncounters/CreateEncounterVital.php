@@ -24,8 +24,8 @@ class CreateEncounterVital extends Request implements HasBody
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  array  $vitals This is an array of arrays in JSON.  Each subarray contains a group of related readings, like systolic and diastolic blood pressure. They will be assigned the same readingID
+     * @param  int  $encounterid  encounterid
+     * @param  array  $vitals  This is an array of arrays in JSON.  Each subarray contains a group of related readings, like systolic and diastolic blood pressure. They will be assigned the same readingID
      */
     public function __construct(
         protected int $encounterid,

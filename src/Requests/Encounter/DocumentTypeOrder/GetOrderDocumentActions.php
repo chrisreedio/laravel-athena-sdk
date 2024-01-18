@@ -20,7 +20,7 @@ class GetOrderDocumentActions extends Request
     }
 
     /**
-     * @param  int  $orderid orderid
+     * @param  int  $orderid  orderid
      */
     public function __construct(
         protected int $orderid,

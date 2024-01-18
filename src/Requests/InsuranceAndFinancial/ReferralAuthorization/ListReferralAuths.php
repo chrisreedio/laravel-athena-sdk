@@ -20,9 +20,9 @@ class ListReferralAuths extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  null|int  $insuranceid The insurance ID.
-     * @param  null|bool  $showexpired If set, results will include expired authorizations/referrals. This defaults to false.
+     * @param  int  $patientid  patientid
+     * @param  null|int  $insuranceid  The insurance ID.
+     * @param  null|bool  $showexpired  If set, results will include expired authorizations/referrals. This defaults to false.
      */
     public function __construct(
         protected int $patientid,

@@ -24,9 +24,9 @@ class UpdateLabResultClose extends Request implements HasBody
     }
 
     /**
-     * @param  int  $labresultid labresultid
-     * @param  null|string  $actionnote The note to be added to the document
-     * @param  null|int  $actionreasonid An alternate action reason to be applied the document
+     * @param  int  $labresultid  labresultid
+     * @param  null|string  $actionnote  The note to be added to the document
+     * @param  null|int  $actionreasonid  An alternate action reason to be applied the document
      */
     public function __construct(
         protected int $labresultid,

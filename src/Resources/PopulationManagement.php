@@ -10,8 +10,8 @@ use Saloon\Http\Response;
 class PopulationManagement extends Resource
 {
     /**
-     * @param  int  $riskcontractid ID of the risk contract
-     * @param  string  $name Title of the risk contract
+     * @param  int  $riskcontractid  ID of the risk contract
+     * @param  string  $name  Title of the risk contract
      */
     public function getRiskContract(?int $riskcontractid, ?string $name): Response
     {
@@ -19,9 +19,9 @@ class PopulationManagement extends Resource
     }
 
     /**
-     * @param  string  $name Risk contract title.
-     * @param  string  $description Risk contract description
-     * @param  int  $riskcontractid Risk contract id.
+     * @param  string  $name  Risk contract title.
+     * @param  string  $description  Risk contract description
+     * @param  int  $riskcontractid  Risk contract id.
      */
     public function updateRiskContract(?string $name, ?string $description, ?int $riskcontractid): Response
     {

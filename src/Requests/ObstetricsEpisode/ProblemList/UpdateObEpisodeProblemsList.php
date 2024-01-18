@@ -24,10 +24,10 @@ class UpdateObEpisodeProblemsList extends Request implements HasBody
     }
 
     /**
-     * @param  int  $obepisodeid obepisodeid
-     * @param  int  $patientid patientid
-     * @param  null|string  $note Free text notes for the entire problems list.
-     * @param  null|array  $problems A list of problems that should be updated.
+     * @param  int  $obepisodeid  obepisodeid
+     * @param  int  $patientid  patientid
+     * @param  null|string  $note  Free text notes for the entire problems list.
+     * @param  null|array  $problems  A list of problems that should be updated.
      */
     public function __construct(
         protected int $obepisodeid,

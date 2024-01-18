@@ -20,10 +20,10 @@ class GetClinicalProvider extends Request
     }
 
     /**
-     * @param  int  $clinicalproviderid clinicalproviderid
-     * @param  null|bool  $showdeleted By default, a deleted clinical provider is not returned.  Set to return if deleted.
-     * @param  null|int  $showfederalidnumber Include federal ID number in output.
-     * @param  null|int  $shownpi Include NPI in output.
+     * @param  int  $clinicalproviderid  clinicalproviderid
+     * @param  null|bool  $showdeleted  By default, a deleted clinical provider is not returned.  Set to return if deleted.
+     * @param  null|int  $showfederalidnumber  Include federal ID number in output.
+     * @param  null|int  $shownpi  Include NPI in output.
      */
     public function __construct(
         protected int $clinicalproviderid,

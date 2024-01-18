@@ -24,13 +24,13 @@ class UpdateAppointmentReminder extends Request implements HasBody
     }
 
     /**
-     * @param  int  $appointmentreminderid appointmentreminderid
-     * @param  null|int  $appointmenttypeid An athenaNet appointment type ID.
-     * @param  null|string  $approximatedate The approximate date on which an appointment for this reminder should be scheduled.
-     * @param  null|string  $note Miscellaneous notes for this reminder.
-     * @param  null|string  $patientinstructions Patient instructions regarding this reminder.
-     * @param  null|int  $providerid An athenaNet provider ID.
-     * @param  null|string  $status Status of the reminder.
+     * @param  int  $appointmentreminderid  appointmentreminderid
+     * @param  null|int  $appointmenttypeid  An athenaNet appointment type ID.
+     * @param  null|string  $approximatedate  The approximate date on which an appointment for this reminder should be scheduled.
+     * @param  null|string  $note  Miscellaneous notes for this reminder.
+     * @param  null|string  $patientinstructions  Patient instructions regarding this reminder.
+     * @param  null|int  $providerid  An athenaNet provider ID.
+     * @param  null|string  $status  Status of the reminder.
      */
     public function __construct(
         protected int $appointmentreminderid,

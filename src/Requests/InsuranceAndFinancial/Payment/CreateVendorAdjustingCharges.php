@@ -28,8 +28,8 @@ class CreateVendorAdjustingCharges extends Request implements HasBody
     }
 
     /**
-     * @param  number  $patientid Patient ID
-     * @param  string  $vendorcode vendorcode
+     * @param  number  $patientid  Patient ID
+     * @param  string  $vendorcode  vendorcode
      */
     public function __construct(
         protected array $charges,

@@ -20,10 +20,10 @@ class GetPatientOrderDocumentPage extends Request
     }
 
     /**
-     * @param  int  $orderid orderid
-     * @param  int  $pageid pageid
-     * @param  int  $patientid patientid
-     * @param  null|string  $filesize The file size of the document being requested.
+     * @param  int  $orderid  orderid
+     * @param  int  $pageid  pageid
+     * @param  int  $patientid  patientid
+     * @param  null|string  $filesize  The file size of the document being requested.
      */
     public function __construct(
         protected int $orderid,

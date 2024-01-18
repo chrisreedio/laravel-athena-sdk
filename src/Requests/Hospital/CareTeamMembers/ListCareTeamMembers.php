@@ -20,10 +20,10 @@ class ListCareTeamMembers extends Request
     }
 
     /**
-     * @param  int  $stayid stayid
-     * @param  null|bool  $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
-     * @param  null|string  $thirdpartyusername User name of the patient in the third party application.
-     * @param  null|bool  $showallstatuses By default only returns careteam members with a status of "active". If set to true, both active and not active careteam members will be returned.
+     * @param  int  $stayid  stayid
+     * @param  null|bool  $patientfacingcall  When 'true' is passed we will collect relevant data and store in our database.
+     * @param  null|string  $thirdpartyusername  User name of the patient in the third party application.
+     * @param  null|bool  $showallstatuses  By default only returns careteam members with a status of "active". If set to true, both active and not active careteam members will be returned.
      */
     public function __construct(
         protected int $stayid,

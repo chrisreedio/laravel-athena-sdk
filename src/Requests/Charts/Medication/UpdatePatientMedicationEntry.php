@@ -24,16 +24,16 @@ class UpdatePatientMedicationEntry extends Request implements HasBody
     }
 
     /**
-     * @param  int  $departmentid The athenanet department ID
-     * @param  string  $medicationentryid medicationentryid
-     * @param  int  $patientid patientid
-     * @param  null|bool  $hidden Set whether the medication is hidden in the UI.
-     * @param  null|string  $patientnote A patient-facing note
-     * @param  null|string  $providernote An internal note
-     * @param  null|string  $startdate Start date for this medication
-     * @param  null|string  $stopdate Stop date for this medication
-     * @param  null|string  $stopreason The reason the medication was stopped. If set, it it recommended but not required that a stop date is also set.
-     * @param  null|string  $unstructuredsig Can only be used to update historical (entered, downloaded, etc) medications. Will override a structured sig if there is one.
+     * @param  int  $departmentid  The athenanet department ID
+     * @param  string  $medicationentryid  medicationentryid
+     * @param  int  $patientid  patientid
+     * @param  null|bool  $hidden  Set whether the medication is hidden in the UI.
+     * @param  null|string  $patientnote  A patient-facing note
+     * @param  null|string  $providernote  An internal note
+     * @param  null|string  $startdate  Start date for this medication
+     * @param  null|string  $stopdate  Stop date for this medication
+     * @param  null|string  $stopreason  The reason the medication was stopped. If set, it it recommended but not required that a stop date is also set.
+     * @param  null|string  $unstructuredsig  Can only be used to update historical (entered, downloaded, etc) medications. Will override a structured sig if there is one.
      */
     public function __construct(
         protected int $departmentid,

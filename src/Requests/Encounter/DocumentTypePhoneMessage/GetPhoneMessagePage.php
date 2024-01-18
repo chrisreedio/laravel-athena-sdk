@@ -20,9 +20,9 @@ class GetPhoneMessagePage extends Request
     }
 
     /**
-     * @param  int  $pageid pageid
-     * @param  int  $phonemessageid phonemessageid
-     * @param  null|string  $filesize The file size of the document being requested.
+     * @param  int  $pageid  pageid
+     * @param  int  $phonemessageid  phonemessageid
+     * @param  null|string  $filesize  The file size of the document being requested.
      */
     public function __construct(
         protected int $pageid,

@@ -20,8 +20,8 @@ class ListRiskContracts extends Request
     }
 
     /**
-     * @param  null|int  $departmentid Department ID
-     * @param  null|int  $riskcontractid Risk Contract ID
+     * @param  null|int  $departmentid  Department ID
+     * @param  null|int  $riskcontractid  Risk Contract ID
      */
     public function __construct(
         protected ?int $departmentid = null,

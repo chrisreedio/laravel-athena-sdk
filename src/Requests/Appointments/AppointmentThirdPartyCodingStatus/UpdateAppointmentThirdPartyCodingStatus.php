@@ -24,8 +24,8 @@ class UpdateAppointmentThirdPartyCodingStatus extends Request implements HasBody
     }
 
     /**
-     * @param  int  $appointmentid appointmentid
-     * @param  string  $status The status to set this appointment's third party coding status to.
+     * @param  int  $appointmentid  appointmentid
+     * @param  string  $status  The status to set this appointment's third party coding status to.
      */
     public function __construct(
         protected int $appointmentid,

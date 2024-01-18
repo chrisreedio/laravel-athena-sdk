@@ -20,11 +20,11 @@ class GetPatientLetterDocument extends Request
     }
 
     /**
-     * @param  int  $letterid letterid
-     * @param  int  $patientid patientid
-     * @param  null|bool  $excludehtml If true, do not return the html content of this document
-     * @param  null|bool  $excludexml If true, do not return the xml content of this document
-     * @param  null|bool  $getentityinfo If true, entityid and entitytype will be returned. entityid will be populated in createduser attribute.
+     * @param  int  $letterid  letterid
+     * @param  int  $patientid  patientid
+     * @param  null|bool  $excludehtml  If true, do not return the html content of this document
+     * @param  null|bool  $excludexml  If true, do not return the xml content of this document
+     * @param  null|bool  $getentityinfo  If true, entityid and entitytype will be returned. entityid will be populated in createduser attribute.
      */
     public function __construct(
         protected int $letterid,

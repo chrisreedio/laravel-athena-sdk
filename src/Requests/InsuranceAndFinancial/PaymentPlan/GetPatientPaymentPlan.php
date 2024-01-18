@@ -20,10 +20,10 @@ class GetPatientPaymentPlan extends Request
     }
 
     /**
-     * @param  int  $departmentid The department ID.
-     * @param  int  $patientid patientid
-     * @param  null|bool  $linkedclaiminfo Get claims covered by the payment plan
-     * @param  null|array  $paymentplanids One or more payment plan IDs.
+     * @param  int  $departmentid  The department ID.
+     * @param  int  $patientid  patientid
+     * @param  null|bool  $linkedclaiminfo  Get claims covered by the payment plan
+     * @param  null|array  $paymentplanids  One or more payment plan IDs.
      */
     public function __construct(
         protected int $departmentid,

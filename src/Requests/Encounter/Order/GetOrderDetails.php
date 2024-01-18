@@ -25,11 +25,11 @@ class GetOrderDetails extends Request
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  int  $orderid orderid
-     * @param  null|bool  $showexternalcodes If set, translate the order information to relevant external vocabularies, where available. Examples are medictions to RxNorm and NDC, vaccines to CVX and MVX, labs to LOINC, etc. Our mappings are not exhaustive.
-     * @param  null|bool  $showquestions Some order types like labs and imaging orders have additional pertinant information in a question/answer format. Setting this will return that data.
-     * @param  null|bool  $showstructuredauthorizationdetails When set, returns Prior Authorization and insurances for some order types, separately and in a structured version than those returned in showquestions.
+     * @param  int  $encounterid  encounterid
+     * @param  int  $orderid  orderid
+     * @param  null|bool  $showexternalcodes  If set, translate the order information to relevant external vocabularies, where available. Examples are medictions to RxNorm and NDC, vaccines to CVX and MVX, labs to LOINC, etc. Our mappings are not exhaustive.
+     * @param  null|bool  $showquestions  Some order types like labs and imaging orders have additional pertinant information in a question/answer format. Setting this will return that data.
+     * @param  null|bool  $showstructuredauthorizationdetails  When set, returns Prior Authorization and insurances for some order types, separately and in a structured version than those returned in showquestions.
      */
     public function __construct(
         protected int $encounterid,

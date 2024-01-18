@@ -26,9 +26,9 @@ class CreatePatientEnrollment extends Request implements HasBody
     }
 
     /**
-     * @param  string  $action Action to take - enroll/unenroll
-     * @param  array  $patients List of Patient IDs Example: [123,124]
-     * @param  string  $vendorcode vendorcode
+     * @param  string  $action  Action to take - enroll/unenroll
+     * @param  array  $patients  List of Patient IDs Example: [123,124]
+     * @param  string  $vendorcode  vendorcode
      */
     public function __construct(
         protected string $action,

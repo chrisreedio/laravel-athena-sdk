@@ -28,19 +28,19 @@ class UpdatePatientCaseDocument extends Request implements HasBody
     }
 
     /**
-     * @param  int  $patientcaseid patientcaseid
-     * @param  int  $patientid patientid
-     * @param  null|string  $callbackname The name of the person to call (if other than patient).
-     * @param  null|string  $callbacknumber The phone number to use to call back the patient (mutually exclusive with callbacknumbertype).
-     * @param  null|string  $callbacknumbertype The phone number type to use to call back the patient (mutually exclusive with callbacknumber).
-     * @param  null|int  $clinicalproviderid The ID of the external provider/lab/pharmacy associated the document.
-     * @param  null|string  $documentsource Explains where this document originated.
-     * @param  null|string  $documentsubclass Subclasses for PATIENTCASE documents
-     * @param  null|string  $internalnote An internal note for the provider or staff. Updating this will append to any previous notes.
-     * @param  null|bool  $outboundonly True/false flag indicating the patient case requires an outbound phone call and is not a response to an inbound call.
-     * @param  null|string  $priority Priority of this result.  1 is high; 2 is normal.
-     * @param  null|int  $providerid The ID of the ordering provider.
-     * @param  null|string  $subject The subject of this patient case.
+     * @param  int  $patientcaseid  patientcaseid
+     * @param  int  $patientid  patientid
+     * @param  null|string  $callbackname  The name of the person to call (if other than patient).
+     * @param  null|string  $callbacknumber  The phone number to use to call back the patient (mutually exclusive with callbacknumbertype).
+     * @param  null|string  $callbacknumbertype  The phone number type to use to call back the patient (mutually exclusive with callbacknumber).
+     * @param  null|int  $clinicalproviderid  The ID of the external provider/lab/pharmacy associated the document.
+     * @param  null|string  $documentsource  Explains where this document originated.
+     * @param  null|string  $documentsubclass  Subclasses for PATIENTCASE documents
+     * @param  null|string  $internalnote  An internal note for the provider or staff. Updating this will append to any previous notes.
+     * @param  null|bool  $outboundonly  True/false flag indicating the patient case requires an outbound phone call and is not a response to an inbound call.
+     * @param  null|string  $priority  Priority of this result.  1 is high; 2 is normal.
+     * @param  null|int  $providerid  The ID of the ordering provider.
+     * @param  null|string  $subject  The subject of this patient case.
      */
     public function __construct(
         protected int $patientcaseid,

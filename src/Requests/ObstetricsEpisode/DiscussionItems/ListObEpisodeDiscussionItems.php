@@ -20,7 +20,7 @@ class ListObEpisodeDiscussionItems extends Request
     }
 
     /**
-     * @param  null|int  $trimester Optionally, only include elements from this trimester.
+     * @param  null|int  $trimester  Optionally, only include elements from this trimester.
      */
     public function __construct(
         protected ?int $trimester = null,

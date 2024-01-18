@@ -20,8 +20,8 @@ class GetPatientReturnToOfficeDocument extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $rtoid rtoid
+     * @param  int  $patientid  patientid
+     * @param  int  $rtoid  rtoid
      */
     public function __construct(
         protected int $patientid,

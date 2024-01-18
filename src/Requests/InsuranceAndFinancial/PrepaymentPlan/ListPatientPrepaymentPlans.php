@@ -21,8 +21,8 @@ class ListPatientPrepaymentPlans extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  null|array  $prepaymentplanids array of plan IDs to retrieve
+     * @param  int  $patientid  patientid
+     * @param  null|array  $prepaymentplanids  array of plan IDs to retrieve
      */
     public function __construct(
         protected int $patientid,

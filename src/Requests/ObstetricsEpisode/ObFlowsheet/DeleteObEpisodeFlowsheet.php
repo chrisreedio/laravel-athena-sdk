@@ -20,9 +20,9 @@ class DeleteObEpisodeFlowsheet extends Request
     }
 
     /**
-     * @param  int  $flowsheetid flowsheetid
-     * @param  int  $obepisodeid obepisodeid
-     * @param  int  $patientid patientid
+     * @param  int  $flowsheetid  flowsheetid
+     * @param  int  $obepisodeid  obepisodeid
+     * @param  int  $patientid  patientid
      */
     public function __construct(
         protected int $flowsheetid,

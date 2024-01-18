@@ -24,9 +24,9 @@ class CreateAppointmentChargeEntryNotRequiredIndicator extends Request implement
     }
 
     /**
-     * @param  int  $appointmentid appointmentid
-     * @param  string  $athenausername athenaNet username of the person marking this appointment as not requiring charge entry.
-     * @param  string  $chargeentrynotrequiredreason Reason that this appointment is being marked as not requiring charge entry. This reason is specific to each practice and must be configured by that practice in athenaNet. The reasons, with descriptions, can be listed with the /configuration/appointments/chargeentrynotrequiredreasons endpoint.
+     * @param  int  $appointmentid  appointmentid
+     * @param  string  $athenausername  athenaNet username of the person marking this appointment as not requiring charge entry.
+     * @param  string  $chargeentrynotrequiredreason  Reason that this appointment is being marked as not requiring charge entry. This reason is specific to each practice and must be configured by that practice in athenaNet. The reasons, with descriptions, can be listed with the /configuration/appointments/chargeentrynotrequiredreasons endpoint.
      */
     public function __construct(
         protected int $appointmentid,

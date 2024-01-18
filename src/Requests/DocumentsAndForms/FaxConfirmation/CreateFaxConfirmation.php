@@ -24,8 +24,8 @@ class CreateFaxConfirmation extends Request implements HasBody
     }
 
     /**
-     * @param  array  $confirmations the list of fax confirmations
-     * @param  string  $vendorname vendor name pushing fax confirmations
+     * @param  array  $confirmations  the list of fax confirmations
+     * @param  string  $vendorname  vendor name pushing fax confirmations
      */
     public function __construct(
         protected array $confirmations,

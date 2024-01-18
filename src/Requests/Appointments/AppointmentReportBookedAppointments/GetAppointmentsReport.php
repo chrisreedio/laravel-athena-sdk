@@ -20,9 +20,9 @@ class GetAppointmentsReport extends Request
     }
 
     /**
-     * @param  string  $enddate The ending date range of when an appointment was scheduled (inclusive).
-     * @param  string  $startdate The starting date range of when an appointment was scheduled (inclusive).
-     * @param  null|bool  $showexpectedprocedurecodes Set this field to true to retrieve expected procedure codes.
+     * @param  string  $enddate  The ending date range of when an appointment was scheduled (inclusive).
+     * @param  string  $startdate  The starting date range of when an appointment was scheduled (inclusive).
+     * @param  null|bool  $showexpectedprocedurecodes  Set this field to true to retrieve expected procedure codes.
      */
     public function __construct(
         protected string $enddate,

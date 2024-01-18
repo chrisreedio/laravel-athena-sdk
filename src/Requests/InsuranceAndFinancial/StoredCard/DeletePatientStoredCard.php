@@ -20,9 +20,9 @@ class DeletePatientStoredCard extends Request
     }
 
     /**
-     * @param  int  $departmentid The ID of the department where the payment or contract is being collected.
-     * @param  int  $patientid patientid
-     * @param  int  $storedcardid storedcardid
+     * @param  int  $departmentid  The ID of the department where the payment or contract is being collected.
+     * @param  int  $patientid  patientid
+     * @param  int  $storedcardid  storedcardid
      */
     public function __construct(
         protected int $departmentid,

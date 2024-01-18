@@ -25,10 +25,10 @@ class UpdatePatientFreeTextGoal extends Request implements HasBody
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  null|string  $freetextgoal A free text field used for unstructured goals.
-     * @param  null|bool  $replacefreetextgoal If true, will replace the existing free text goal with the new one. If false, will append to the existing free text goal.
-     * @param  null|string  $versiontoken A token specifying a unique version of data in the database. If it's specified and does not match the version token on the server, the update will fail.
+     * @param  int  $encounterid  encounterid
+     * @param  null|string  $freetextgoal  A free text field used for unstructured goals.
+     * @param  null|bool  $replacefreetextgoal  If true, will replace the existing free text goal with the new one. If false, will append to the existing free text goal.
+     * @param  null|string  $versiontoken  A token specifying a unique version of data in the database. If it's specified and does not match the version token on the server, the update will fail.
      */
     public function __construct(
         protected int $encounterid,

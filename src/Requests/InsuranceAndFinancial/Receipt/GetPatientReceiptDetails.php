@@ -20,9 +20,9 @@ class GetPatientReceiptDetails extends Request
     }
 
     /**
-     * @param  int  $epaymentid epaymentid
-     * @param  int  $patientid patientid
-     * @param  null|bool  $termsasjson To include contract terms as JSON object.
+     * @param  int  $epaymentid  epaymentid
+     * @param  int  $patientid  patientid
+     * @param  null|bool  $termsasjson  To include contract terms as JSON object.
      */
     public function __construct(
         protected int $epaymentid,

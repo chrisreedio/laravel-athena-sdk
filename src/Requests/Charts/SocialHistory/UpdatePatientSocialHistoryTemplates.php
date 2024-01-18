@@ -24,9 +24,9 @@ class UpdatePatientSocialHistoryTemplates extends Request implements HasBody
     }
 
     /**
-     * @param  int  $departmentid The athenaNet department id.
-     * @param  int  $patientid patientid
-     * @param  string  $templateids A comma separated list of template IDs to display in the social history section.
+     * @param  int  $departmentid  The athenaNet department id.
+     * @param  int  $patientid  patientid
+     * @param  string  $templateids  A comma separated list of template IDs to display in the social history section.
      */
     public function __construct(
         protected int $departmentid,

@@ -20,8 +20,8 @@ class DeletePatientAdminDocument extends Request
     }
 
     /**
-     * @param  int  $adminid adminid
-     * @param  int  $patientid patientid
+     * @param  int  $adminid  adminid
+     * @param  int  $patientid  patientid
      */
     public function __construct(
         protected int $adminid,

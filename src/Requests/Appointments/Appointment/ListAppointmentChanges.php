@@ -31,20 +31,20 @@ class ListAppointmentChanges extends PaginatedRequest
     }
 
     /**
-     * @param  null|array  $confidentialityCode A comma separated list of confidentiality codes to filter patients by. If not set defaults to include all confidentiality codes. Supported codes: 'N' and 'R'. Only functions if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
-     * @param  null|array  $departmentId Department ID. Multiple departments are allowed, either comma separated or with multiple values.
-     * @param  null|bool  $ignoreRestrictions When showing patient detail for appointments, the patient information for patients with record restrictions and blocked patients will not be shown.  Setting this flag to true will show that information for those patients. No effect if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
-     * @param  null|bool  $leaveUnprocessed For testing purposes, do not mark records as processed.
-     * @param  null|array  $patientId Patient ID. Multiple Patient IDs are allowed, either comma separated or with multiple values.
-     * @param  null|array  $providerId Provider ID.  Multiple providers are allowed using comma separated values.
-     * @param  null|bool  $showClaimDetail Include claim information, if available, associated with an appointment.
-     * @param  null|bool  $showCopay Return copay information with the appointment data.
-     * @param  null|bool  $showExpectedProcedureCodes Show the expected procedurecodes.
-     * @param  null|bool  $showInsurance Include patient insurance information. Shows insurance packages for the appointment if any are selected, and all patient packages otherwise.
-     * @param  null|bool  $showPatientDetail Include patient information for each patient associated with an appointment.
-     * @param  null|string  $showProcessedEndDatetime See showprocessedstartdatetime.
-     * @param  null|string  $showProcessedStartDatetime Show already processed changes.  This will show changes that you previously retrieved at some point after this datetime mm/dd/yyyy hh24:mi:ss (Eastern). Can be used to refetch data if there was an error, such as a timeout, and records are marked as already retrieved. This is intended to be used with showprocessedenddatetime and for a short period of time only. Also note that all messages will eventually be deleted.
-     * @param  null|bool  $showReminderCallDetail Include all remindercall related results, if available, associated with an appointment.
+     * @param  null|array  $confidentialityCode  A comma separated list of confidentiality codes to filter patients by. If not set defaults to include all confidentiality codes. Supported codes: 'N' and 'R'. Only functions if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
+     * @param  null|array  $departmentId  Department ID. Multiple departments are allowed, either comma separated or with multiple values.
+     * @param  null|bool  $ignoreRestrictions  When showing patient detail for appointments, the patient information for patients with record restrictions and blocked patients will not be shown.  Setting this flag to true will show that information for those patients. No effect if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
+     * @param  null|bool  $leaveUnprocessed  For testing purposes, do not mark records as processed.
+     * @param  null|array  $patientId  Patient ID. Multiple Patient IDs are allowed, either comma separated or with multiple values.
+     * @param  null|array  $providerId  Provider ID.  Multiple providers are allowed using comma separated values.
+     * @param  null|bool  $showClaimDetail  Include claim information, if available, associated with an appointment.
+     * @param  null|bool  $showCopay  Return copay information with the appointment data.
+     * @param  null|bool  $showExpectedProcedureCodes  Show the expected procedurecodes.
+     * @param  null|bool  $showInsurance  Include patient insurance information. Shows insurance packages for the appointment if any are selected, and all patient packages otherwise.
+     * @param  null|bool  $showPatientDetail  Include patient information for each patient associated with an appointment.
+     * @param  null|string  $showProcessedEndDatetime  See showprocessedstartdatetime.
+     * @param  null|string  $showProcessedStartDatetime  Show already processed changes.  This will show changes that you previously retrieved at some point after this datetime mm/dd/yyyy hh24:mi:ss (Eastern). Can be used to refetch data if there was an error, such as a timeout, and records are marked as already retrieved. This is intended to be used with showprocessedenddatetime and for a short period of time only. Also note that all messages will eventually be deleted.
+     * @param  null|bool  $showReminderCallDetail  Include all remindercall related results, if available, associated with an appointment.
      */
     public function __construct(
         protected ?array $confidentialityCode = null,

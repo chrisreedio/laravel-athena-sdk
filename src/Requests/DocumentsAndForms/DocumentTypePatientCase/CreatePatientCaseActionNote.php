@@ -24,8 +24,8 @@ class CreatePatientCaseActionNote extends Request implements HasBody
     }
 
     /**
-     * @param  string  $actionnote The new action note to add to the document.
-     * @param  int  $patientcaseid patientcaseid
+     * @param  string  $actionnote  The new action note to add to the document.
+     * @param  int  $patientcaseid  patientcaseid
      */
     public function __construct(
         protected string $actionnote,

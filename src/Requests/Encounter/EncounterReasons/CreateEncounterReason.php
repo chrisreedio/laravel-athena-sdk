@@ -24,9 +24,9 @@ class CreateEncounterReason extends Request implements HasBody
     }
 
     /**
-     * @param  int  $encounterid encounterid
-     * @param  int  $encounterreasonid Encounter reason ID. Must be from the list returned by /configuration/encounterreason
-     * @param  null|string  $laterality Optional laterality value (left or right)
+     * @param  int  $encounterid  encounterid
+     * @param  int  $encounterreasonid  Encounter reason ID. Must be from the list returned by /configuration/encounterreason
+     * @param  null|string  $laterality  Optional laterality value (left or right)
      */
     public function __construct(
         protected int $encounterid,

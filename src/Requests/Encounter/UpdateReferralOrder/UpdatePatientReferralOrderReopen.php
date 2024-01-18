@@ -20,8 +20,8 @@ class UpdatePatientReferralOrderReopen extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $referraldocumentid referraldocumentid
+     * @param  int  $patientid  patientid
+     * @param  int  $referraldocumentid  referraldocumentid
      */
     public function __construct(
         protected int $patientid,

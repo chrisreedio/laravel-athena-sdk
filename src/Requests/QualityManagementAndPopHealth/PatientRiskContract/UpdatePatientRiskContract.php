@@ -24,10 +24,10 @@ class UpdatePatientRiskContract extends Request implements HasBody
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  int  $riskcontractid Risk Contract ID
-     * @param  null|bool  $allcharts If true, apply this update to all charts associated with the given patient.
-     * @param  null|int  $departmentid Department ID
+     * @param  int  $patientid  patientid
+     * @param  int  $riskcontractid  Risk Contract ID
+     * @param  null|bool  $allcharts  If true, apply this update to all charts associated with the given patient.
+     * @param  null|int  $departmentid  Department ID
      */
     public function __construct(
         protected int $patientid,

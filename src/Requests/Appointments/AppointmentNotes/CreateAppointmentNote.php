@@ -24,9 +24,9 @@ class CreateAppointmentNote extends Request implements HasBody
     }
 
     /**
-     * @param  int  $appointmentid appointmentid
-     * @param  string  $notetext The note text.
-     * @param  null|bool  $displayonschedule Add appointment note to homepage display (defaults to false)
+     * @param  int  $appointmentid  appointmentid
+     * @param  string  $notetext  The note text.
+     * @param  null|bool  $displayonschedule  Add appointment note to homepage display (defaults to false)
      */
     public function __construct(
         protected int $appointmentid,

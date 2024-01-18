@@ -20,7 +20,7 @@ class GetAppointmentWaitlist extends Request
     }
 
     /**
-     * @param  int  $waitlistid waitlistid
+     * @param  int  $waitlistid  waitlistid
      */
     public function __construct(
         protected int $waitlistid,

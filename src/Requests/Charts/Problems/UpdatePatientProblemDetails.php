@@ -24,13 +24,13 @@ class UpdatePatientProblemDetails extends Request implements HasBody
     }
 
     /**
-     * @param  int  $departmentid The athenaNet department id.
-     * @param  int  $patientid patientid
-     * @param  int  $problemid problemid
-     * @param  null|string  $laterality Update the laterality of this problem. Can be null, LEFT, RIGHT, or BILATERAL.
-     * @param  null|string  $note The note to be attached to this problem.
-     * @param  null|string  $startdate The onset date to be updated for this problem in MM/DD/YYYY format.
-     * @param  null|string  $status Whether the problem is chronic or acute.
+     * @param  int  $departmentid  The athenaNet department id.
+     * @param  int  $patientid  patientid
+     * @param  int  $problemid  problemid
+     * @param  null|string  $laterality  Update the laterality of this problem. Can be null, LEFT, RIGHT, or BILATERAL.
+     * @param  null|string  $note  The note to be attached to this problem.
+     * @param  null|string  $startdate  The onset date to be updated for this problem in MM/DD/YYYY format.
+     * @param  null|string  $status  Whether the problem is chronic or acute.
      */
     public function __construct(
         protected int $departmentid,

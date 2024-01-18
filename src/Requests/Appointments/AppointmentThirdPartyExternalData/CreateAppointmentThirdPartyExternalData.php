@@ -24,8 +24,8 @@ class CreateAppointmentThirdPartyExternalData extends Request implements HasBody
     }
 
     /**
-     * @param  int  $appointmentid appointmentid
-     * @param  string  $externaldata The external data to be stored for this, up to 4000 characters
+     * @param  int  $appointmentid  appointmentid
+     * @param  string  $externaldata  The external data to be stored for this, up to 4000 characters
      */
     public function __construct(
         protected int $appointmentid,

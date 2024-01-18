@@ -20,11 +20,11 @@ class ListPatientAllergies extends Request
     }
 
     /**
-     * @param  int  $departmentid The athenaNet department id.
-     * @param  int  $patientid patientid
-     * @param  null|bool  $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
-     * @param  null|string  $thirdpartyusername User name of the patient in the third party application.
-     * @param  null|bool  $showinactive Include deactivated allergies
+     * @param  int  $departmentid  The athenaNet department id.
+     * @param  int  $patientid  patientid
+     * @param  null|bool  $patientfacingcall  When 'true' is passed we will collect relevant data and store in our database.
+     * @param  null|string  $thirdpartyusername  User name of the patient in the third party application.
+     * @param  null|bool  $showinactive  Include deactivated allergies
      */
     public function __construct(
         protected int $departmentid,

@@ -21,8 +21,8 @@ class ListPatientAppointmentReasons extends Request
     }
 
     /**
-     * @param  int  $departmentid The athenaNet department ID.
-     * @param  int  $providerid The athenaNet provider ID.
+     * @param  int  $departmentid  The athenaNet department ID.
+     * @param  int  $providerid  The athenaNet provider ID.
      */
     public function __construct(
         protected int $departmentid,

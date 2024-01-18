@@ -21,8 +21,8 @@ class ListPatientsByCustomFields extends Request
     }
 
     /**
-     * @param  int  $customfieldid customfieldid
-     * @param  string  $customfieldvalue customfieldvalue
+     * @param  int  $customfieldid  customfieldid
+     * @param  string  $customfieldvalue  customfieldvalue
      */
     public function __construct(
         protected int $customfieldid,

@@ -20,9 +20,9 @@ class GetAppointmentHealthHistoryForm extends Request
     }
 
     /**
-     * @param  int  $appointmentid appointmentid
-     * @param  int  $formid formid
-     * @param  null|bool  $shownullanswers If true, unanswered questions in the medical history, surgical history, and vaccine sections return null. If false (default), they return 'N'.
+     * @param  int  $appointmentid  appointmentid
+     * @param  int  $formid  formid
+     * @param  null|bool  $shownullanswers  If true, unanswered questions in the medical history, surgical history, and vaccine sections return null. If false (default), they return 'N'.
      */
     public function __construct(
         protected int $appointmentid,

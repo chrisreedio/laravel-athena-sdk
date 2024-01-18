@@ -24,15 +24,15 @@ class UpdatePatientAuthorization extends Request implements HasBody
     }
 
     /**
-     * @param  int  $departmentid Department ID of the patient
-     * @param  int  $patientid patientid
-     * @param  int  $releaseauthorizationid releaseauthorizationid
-     * @param  null|int  $clientformid The client form ID that the release authorization is for
-     * @param  null|string  $effectivedate The starting date that the release authorization takes effect
-     * @param  null|string  $expirationdate The last date that the release authorization is valid
-     * @param  null|string  $note Any additional notes for the release authorization
-     * @param  null|string  $revokeddate The date the release authorization was revoked
-     * @param  null|string  $signeddate The date the release authorization release is signed
+     * @param  int  $departmentid  Department ID of the patient
+     * @param  int  $patientid  patientid
+     * @param  int  $releaseauthorizationid  releaseauthorizationid
+     * @param  null|int  $clientformid  The client form ID that the release authorization is for
+     * @param  null|string  $effectivedate  The starting date that the release authorization takes effect
+     * @param  null|string  $expirationdate  The last date that the release authorization is valid
+     * @param  null|string  $note  Any additional notes for the release authorization
+     * @param  null|string  $revokeddate  The date the release authorization was revoked
+     * @param  null|string  $signeddate  The date the release authorization release is signed
      */
     public function __construct(
         protected int $departmentid,

@@ -20,8 +20,8 @@ class GetPatientDocumentXml extends Request
     }
 
     /**
-     * @param  int  $documentid documentid
-     * @param  int  $patientid patientid
+     * @param  int  $documentid  documentid
+     * @param  int  $patientid  patientid
      */
     public function __construct(
         protected int $documentid,

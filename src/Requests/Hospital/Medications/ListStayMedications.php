@@ -23,12 +23,12 @@ class ListStayMedications extends Request
     }
 
     /**
-     * @param  int  $stayid stayid
-     * @param  null|bool  $patientfacingcall When 'true' is passed we will collect relevant data and store in our database.
-     * @param  null|string  $thirdpartyusername User name of the patient in the third party application.
-     * @param  null|bool  $showadministeredlist If set to true, administered medications will be returned. By default true.
-     * @param  null|bool  $showpostdischargelist If set to true, post-discharge medications will be returned. By default false.
-     * @param  null|bool  $showpreadmissionlist If set to true, pre-admission medications will be returned. By default false.
+     * @param  int  $stayid  stayid
+     * @param  null|bool  $patientfacingcall  When 'true' is passed we will collect relevant data and store in our database.
+     * @param  null|string  $thirdpartyusername  User name of the patient in the third party application.
+     * @param  null|bool  $showadministeredlist  If set to true, administered medications will be returned. By default true.
+     * @param  null|bool  $showpostdischargelist  If set to true, post-discharge medications will be returned. By default false.
+     * @param  null|bool  $showpreadmissionlist  If set to true, pre-admission medications will be returned. By default false.
      */
     public function __construct(
         protected int $stayid,

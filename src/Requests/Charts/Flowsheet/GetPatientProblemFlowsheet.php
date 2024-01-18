@@ -20,13 +20,13 @@ class GetPatientProblemFlowsheet extends Request
     }
 
     /**
-     * @param  int  $departmentid The department ID of the patient chart.
-     * @param  int  $patientid patientid
-     * @param  int  $snomedcode snomedcode
-     * @param  null|string  $enddate Date you want flowsheet element's data to stop.
-     * @param  null|array  $providerid The list of provider IDs to format the flowsheet as.
-     * @param  null|bool  $showglobalflowsheetelementsonly Show elements from the globally configured flowsheet rather than those specific to a provider.  This may restrict the information returned, but is generally faster.
-     * @param  null|string  $startdate Date you want flowsheet element's data to start.
+     * @param  int  $departmentid  The department ID of the patient chart.
+     * @param  int  $patientid  patientid
+     * @param  int  $snomedcode  snomedcode
+     * @param  null|string  $enddate  Date you want flowsheet element's data to stop.
+     * @param  null|array  $providerid  The list of provider IDs to format the flowsheet as.
+     * @param  null|bool  $showglobalflowsheetelementsonly  Show elements from the globally configured flowsheet rather than those specific to a provider.  This may restrict the information returned, but is generally faster.
+     * @param  null|string  $startdate  Date you want flowsheet element's data to start.
      */
     public function __construct(
         protected int $departmentid,

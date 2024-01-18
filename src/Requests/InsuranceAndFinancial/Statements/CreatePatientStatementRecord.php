@@ -27,8 +27,8 @@ class CreatePatientStatementRecord extends Request implements HasBody
     }
 
     /**
-     * @param  array  $data Patient charge and statement sent details
-     * @param  string  $vendorcode vendorcode
+     * @param  array  $data  Patient charge and statement sent details
+     * @param  string  $vendorcode  vendorcode
      */
     public function __construct(
         protected array $data,

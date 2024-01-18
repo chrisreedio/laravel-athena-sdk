@@ -20,11 +20,11 @@ class ListPatientStatements extends Request
     }
 
     /**
-     * @param  string  $enddate Statements sent on or before this date (mm/dd/yyyy) will be included in the results.
-     * @param  int  $patientid patientid
-     * @param  string  $startdate Statements sent on or after this date (mm/dd/yyyy) will be included in the results.
-     * @param  null|bool  $claimsinstatement To view claim details sent in statement.
-     * @param  null|bool  $findpdfexist To check if the statement PDF is available.
+     * @param  string  $enddate  Statements sent on or before this date (mm/dd/yyyy) will be included in the results.
+     * @param  int  $patientid  patientid
+     * @param  string  $startdate  Statements sent on or after this date (mm/dd/yyyy) will be included in the results.
+     * @param  null|bool  $claimsinstatement  To view claim details sent in statement.
+     * @param  null|bool  $findpdfexist  To check if the statement PDF is available.
      */
     public function __construct(
         protected string $enddate,

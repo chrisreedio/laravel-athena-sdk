@@ -24,9 +24,9 @@ class UpdatePatientDefaultLabInfo extends Request implements HasBody
     }
 
     /**
-     * @param  int  $clinicalproviderid The clinical provider ID that you wish to add.
-     * @param  int  $departmentid The athenaNet department id.
-     * @param  int  $patientid patientid
+     * @param  int  $clinicalproviderid  The clinical provider ID that you wish to add.
+     * @param  int  $departmentid  The athenaNet department id.
+     * @param  int  $patientid  patientid
      */
     public function __construct(
         protected int $clinicalproviderid,

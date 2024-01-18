@@ -20,9 +20,9 @@ class GetPatientRiskContract extends Request
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  null|bool  $allcharts If true, retrieve the record which indicates a risk contract is applied to all charts associated with the given patient.
-     * @param  null|int  $departmentid Department ID
+     * @param  int  $patientid  patientid
+     * @param  null|bool  $allcharts  If true, retrieve the record which indicates a risk contract is applied to all charts associated with the given patient.
+     * @param  null|int  $departmentid  Department ID
      */
     public function __construct(
         protected int $patientid,

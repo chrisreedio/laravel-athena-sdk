@@ -24,22 +24,22 @@ class CreateReferralRequest extends Request implements HasBody
     }
 
     /**
-     * @param  int  $diagnosissnomedcode The SNOMED code for diagnosis this order is for.
-     * @param  int  $encounterid encounterid
-     * @param  int  $ordertypeid The athena ID of the referral type.
-     * @param  null|string  $dateofservice The date of service of the referral order. Replaces the startdate attribute. (This attribute is being rolled out, and will be generally available by the end of 2024.)
-     * @param  null|int  $facilityid The athena ID of the facility you want to send the order to. Get a localized list using /chart/configuration/facilities.
-     * @param  null|string  $facilitynote A note to send to the facility.
-     * @param  null|string  $futuresubmitdate The date the order should be sent. Defaults to today.
-     * @param  null|bool  $highpriority If true, then the order should be sent STAT.
-     * @param  null|array  $insurances Insurances used in prior authorization of the order. Practices with the Authorization Management Service enabled cannot set insurances; filling in this field will result in an error if that practice setting is ON. (This attribute is being rolled out, and will be generally available by the end of 2024.)
-     * @param  null|string  $notetopatient If this referral has a field for 'Notes to Patient' you may fill it in with this parameter. If the referral does not have this field available, this will error.
-     * @param  null|string  $procedurecode (DEPRECATED - has been replaced by procedurecodes.) If this referral has a field for 'Procedure Code' you may fill it in with this parameter.  If the referral does not have this field available, this will error.
-     * @param  null|array  $procedurecodes The list of procedure codes. Replaces the procedurecode input. (This attribute is being rolled out, and will be generally available by the end of 2024.)
-     * @param  null|string  $providernote An internal note for the provider or staff.
-     * @param  null|string  $reasonforreferral If this referral has a field for 'Reason for Referral' you may fill it in with this parameter. If the referral does not have this field available, this will error.
-     * @param  null|int  $requestedvisits The requested number of visits for the referral order. (This attribute is being rolled out, and will be generally available by the end of 2024.)
-     * @param  null|string  $startdate (DEPRECATED - has been replaced by dateofservice.) If this referral has a field for 'Start Date' you may fill it in with this parameter.  If the referral does not have this field available, this will error.
+     * @param  int  $diagnosissnomedcode  The SNOMED code for diagnosis this order is for.
+     * @param  int  $encounterid  encounterid
+     * @param  int  $ordertypeid  The athena ID of the referral type.
+     * @param  null|string  $dateofservice  The date of service of the referral order. Replaces the startdate attribute. (This attribute is being rolled out, and will be generally available by the end of 2024.)
+     * @param  null|int  $facilityid  The athena ID of the facility you want to send the order to. Get a localized list using /chart/configuration/facilities.
+     * @param  null|string  $facilitynote  A note to send to the facility.
+     * @param  null|string  $futuresubmitdate  The date the order should be sent. Defaults to today.
+     * @param  null|bool  $highpriority  If true, then the order should be sent STAT.
+     * @param  null|array  $insurances  Insurances used in prior authorization of the order. Practices with the Authorization Management Service enabled cannot set insurances; filling in this field will result in an error if that practice setting is ON. (This attribute is being rolled out, and will be generally available by the end of 2024.)
+     * @param  null|string  $notetopatient  If this referral has a field for 'Notes to Patient' you may fill it in with this parameter. If the referral does not have this field available, this will error.
+     * @param  null|string  $procedurecode  (DEPRECATED - has been replaced by procedurecodes.) If this referral has a field for 'Procedure Code' you may fill it in with this parameter.  If the referral does not have this field available, this will error.
+     * @param  null|array  $procedurecodes  The list of procedure codes. Replaces the procedurecode input. (This attribute is being rolled out, and will be generally available by the end of 2024.)
+     * @param  null|string  $providernote  An internal note for the provider or staff.
+     * @param  null|string  $reasonforreferral  If this referral has a field for 'Reason for Referral' you may fill it in with this parameter. If the referral does not have this field available, this will error.
+     * @param  null|int  $requestedvisits  The requested number of visits for the referral order. (This attribute is being rolled out, and will be generally available by the end of 2024.)
+     * @param  null|string  $startdate  (DEPRECATED - has been replaced by dateofservice.) If this referral has a field for 'Start Date' you may fill it in with this parameter.  If the referral does not have this field available, this will error.
      */
     public function __construct(
         protected int $diagnosissnomedcode,

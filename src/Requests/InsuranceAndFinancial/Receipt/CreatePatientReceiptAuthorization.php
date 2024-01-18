@@ -24,9 +24,9 @@ class CreatePatientReceiptAuthorization extends Request implements HasBody
     }
 
     /**
-     * @param  string  $attachmentcontents The PDF of the signed receipt. This implies that this is a multipart/form-data content type. This does NOT work correctly in I/O Docs. The filename itself is not used by athenaNet.
-     * @param  int  $epaymentid epaymentid
-     * @param  int  $patientid patientid
+     * @param  string  $attachmentcontents  The PDF of the signed receipt. This implies that this is a multipart/form-data content type. This does NOT work correctly in I/O Docs. The filename itself is not used by athenaNet.
+     * @param  int  $epaymentid  epaymentid
+     * @param  int  $patientid  patientid
      */
     public function __construct(
         protected string $attachmentcontents,

@@ -20,18 +20,18 @@ class ListClinicalProviders extends Request
     }
 
     /**
-     * @param  null|string  $address The address of the clinical provider on file. This should only be the street address and not include city/state/zip. This field must also have a minimum of three non-whitespace characters.
-     * @param  null|string  $city The city of the clinical provider on file. STATE is also required if this field is passed and ZIP is not specified.
-     * @param  null|int  $clinicalprovidernpi The NPI ID of the provider, if applicable.
-     * @param  null|int  $distance The distance in miles to filter results by.
-     * @param  null|string  $fax The fax phone number of the clinical provider on file.
-     * @param  null|string  $firstname First name of the clinical provider. Last name is also required if this field is passed. First name must match exactly.
-     * @param  null|string  $lastname Last name of the clinical provider. First name is also required if this field is passed. Last name must match exactly.
-     * @param  null|string  $name Name of the provider. This field should be used for non-person entities.
-     * @param  null|string  $ordertype The type of facility to search for.
-     * @param  null|string  $phone The phone number of the clinical provider on file.
-     * @param  null|string  $state The state of the clinical provider on file. This should only be the two letter state abbreviation. CITY is also required if this field is passed and ZIP is not specified.
-     * @param  null|int  $zip The zip code of the clinical provider on file. Required if DISTANCE is provided.
+     * @param  null|string  $address  The address of the clinical provider on file. This should only be the street address and not include city/state/zip. This field must also have a minimum of three non-whitespace characters.
+     * @param  null|string  $city  The city of the clinical provider on file. STATE is also required if this field is passed and ZIP is not specified.
+     * @param  null|int  $clinicalprovidernpi  The NPI ID of the provider, if applicable.
+     * @param  null|int  $distance  The distance in miles to filter results by.
+     * @param  null|string  $fax  The fax phone number of the clinical provider on file.
+     * @param  null|string  $firstname  First name of the clinical provider. Last name is also required if this field is passed. First name must match exactly.
+     * @param  null|string  $lastname  Last name of the clinical provider. First name is also required if this field is passed. Last name must match exactly.
+     * @param  null|string  $name  Name of the provider. This field should be used for non-person entities.
+     * @param  null|string  $ordertype  The type of facility to search for.
+     * @param  null|string  $phone  The phone number of the clinical provider on file.
+     * @param  null|string  $state  The state of the clinical provider on file. This should only be the two letter state abbreviation. CITY is also required if this field is passed and ZIP is not specified.
+     * @param  null|int  $zip  The zip code of the clinical provider on file. Required if DISTANCE is provided.
      */
     public function __construct(
         protected ?string $address = null,

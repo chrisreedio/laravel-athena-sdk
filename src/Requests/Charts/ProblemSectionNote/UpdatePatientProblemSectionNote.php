@@ -24,10 +24,10 @@ class UpdatePatientProblemSectionNote extends Request implements HasBody
     }
 
     /**
-     * @param  int  $departmentid The department id.
-     * @param  int  $patientid patientid
-     * @param  string  $sectionnote The note to be attached to this problem. Will be appended to the existing note by default, unless replacenote is true.
-     * @param  null|bool  $replacenote If set, will replace the section note (removing existing data) instead of appending data. Use with caution.
+     * @param  int  $departmentid  The department id.
+     * @param  int  $patientid  patientid
+     * @param  string  $sectionnote  The note to be attached to this problem. Will be appended to the existing note by default, unless replacenote is true.
+     * @param  null|bool  $replacenote  If set, will replace the section note (removing existing data) instead of appending data. Use with caution.
      */
     public function __construct(
         protected int $departmentid,

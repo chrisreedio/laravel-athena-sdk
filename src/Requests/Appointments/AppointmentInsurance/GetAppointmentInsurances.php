@@ -24,10 +24,10 @@ class GetAppointmentInsurances extends Request
     }
 
     /**
-     * @param  int  $appointmentid appointmentid
-     * @param  null|bool  $ignorerestrictions Set to true to allow ability to show the insurance information of appointments of patients with record restrictions and/or blocked status. No effect if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
-     * @param  null|bool  $showcancelled If set, include cancelled and expired insurances.
-     * @param  null|bool  $showfullssn If set, will show full SSN instead of a masked number.
+     * @param  int  $appointmentid  appointmentid
+     * @param  null|bool  $ignorerestrictions  Set to true to allow ability to show the insurance information of appointments of patients with record restrictions and/or blocked status. No effect if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
+     * @param  null|bool  $showcancelled  If set, include cancelled and expired insurances.
+     * @param  null|bool  $showfullssn  If set, will show full SSN instead of a masked number.
      */
     public function __construct(
         protected int $appointmentid,
