@@ -2,6 +2,7 @@
 
 namespace ChrisReedIO\AthenaSDK\Data\Appointment;
 
+use ChrisReedIO\AthenaSDK\Data\AthenaData;
 use ChrisReedIO\AthenaSDK\Data\Patient\InsuranceData;
 use ChrisReedIO\AthenaSDK\Data\Patient\PatientData;
 use DateTime;
@@ -9,7 +10,7 @@ use Illuminate\Support\Carbon;
 
 use function array_key_exists;
 
-readonly class AppointmentData
+readonly class AppointmentData extends AthenaData
 {
     public function __construct(
         public ?string $athenaId = null,
@@ -46,14 +47,21 @@ readonly class AppointmentData
         public ?PatientData $patient = null,
         // @var PatientData[]|null @insurance
         public ?array $insurances = null,
+        public ?DateTime $startCheckIn = null,
         public ?DateTime $checkInTime = null,
+        public ?DateTime $startCheckOut = null,
         public ?DateTime $checkOutTime = null,
+        public ?DateTime $cancelledAt = null,
+        public ?string $patientLocationId = null,
+        public ?string $rescheduledAppointmentId = null,
+        public ?DateTime $stopExamTime = null,
+        public ?DateTime $stopIntakeTime = null,
     ) {
     }
 
-    public static function fromArray(array $data): self
+    public static function fromArray(array $data): static
     {
-        return new self(
+        return new static(
             athenaId: $data['appointmentid'] ?? null,
             patientId: $data['patientid'] ?? null,
             appointmentTypeId: $data['appointmenttypeid'] ?? null,
@@ -87,8 +95,13 @@ readonly class AppointmentData
             encounterStatus: $data['encounterstatus'] ?? null,
             patient: isset($data['patient']) ? PatientData::fromArray($data['patient']) : null,
             insurances: isset($data['insurances']) ? array_map(fn (array $insurance) => InsuranceData::fromArray($insurance), $data['insurances']) : null,
-            checkInTime: array_key_exists('checkintime', $data) ? Carbon::createFromFormat('m/d/Y H:i:s', $data['checkintime'])->toDateTime() : null,
-            checkOutTime: array_key_exists('checkouttime', $data) ? Carbon::createFromFormat('m/d/Y H:i:s', $data['checkouttime'])->toDateTime() : null,
+            startCheckIn: array_key_exists('startcheckin', $data) ? Carbon::createFromFormat('m/d/Y H:i:s', $data['startcheckin'])->toDateTime() : null,
+            checkInTime: array_key_exists('checkindatetime', $data) ? Carbon::createFromFormat('m/d/Y H:i:s', $data['checkintime'])->toDateTime() : null,
+            startCheckOut: array_key_exists('startcheckoutdatetime', $data) ? Carbon::createFromFormat('m/d/Y H:i:s', $data['startcheckout'])->toDateTime() : null,
+            checkOutTime: array_key_exists('checkoutdatetime', $data) ? Carbon::createFromFormat('m/d/Y H:i:s', $data['checkouttime'])->toDateTime() : null,
+            cancelledAt: array_key_exists('cancelleddatetime', $data) ? Carbon::createFromFormat('m/d/Y H:i:s', $data['cancelleddatetime'])->toDateTime() : null,
+            patientLocationId: $data['patientlocationid'] ?? null,
+            rescheduledAppointmentId: $data['rescheduledappointmentid'] ?? null,
         );
     }
 }
