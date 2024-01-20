@@ -39,7 +39,7 @@ class AppointmentSubscriptions extends Resource
             leaveUnprocessed: $leaveUnprocessed,
             showCopay: true,
             showInsurance: true,
-            // showPatientDetail: true,
+            showPatientDetail: true,
         );
 
         return $this->connector
