@@ -2,22 +2,33 @@
 
 namespace ChrisReedIO\AthenaSDK\Resources;
 
-use ChrisReedIO\AthenaSDK\Data\Practice\PatientStatusData;
-use ChrisReedIO\AthenaSDK\Requests\Encounter\Chart\ListPatientStatuses;
+use ChrisReedIO\AthenaSDK\Requests\Encounter\Encounter\UpdatePatientEncounter;
 use ChrisReedIO\AthenaSDK\Resource;
-use Illuminate\Support\Collection;
+use ChrisReedIO\AthenaSDK\Resources\Encounters\PatientStatus;
+use InvalidArgumentException;
 use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
 
 class Encounters extends Resource
 {
+    public function statuses(): PatientStatus
+    {
+        return new PatientStatus($this->connector);
+    }
+
     /**
-     * @return Collection<PatientStatusData>
+     * @throws InvalidArgumentException
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function statuses(): Collection
+    public function update(int $encounterId, ?int $patientLocationId = null, ?int $patientStatusId = null): bool
     {
-        return $this->connector->send(new ListPatientStatuses())->dtoOrFail();
+        if ($patientStatusId === null && $patientLocationId === null) {
+            throw new InvalidArgumentException('Either patientStatusId or patientLocationId must be provided');
+        }
+
+        $response = $this->connector->send(new UpdatePatientEncounter($encounterId, $patientLocationId, $patientStatusId));
+
+        return $response->successful();
     }
 }
