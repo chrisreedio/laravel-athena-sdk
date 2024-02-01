@@ -13,6 +13,7 @@ class Encounters extends Resource
 {
     /**
      * @return Collection<PatientStatusData>
+     *
      * @throws FatalRequestException
      * @throws RequestException
      */
