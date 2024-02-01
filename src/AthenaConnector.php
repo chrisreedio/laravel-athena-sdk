@@ -4,7 +4,9 @@ namespace ChrisReedIO\AthenaSDK;
 
 // use ChrisReedIO\AthenaSDK\Resource\Appointments;
 use ChrisReedIO\AthenaSDK\Resources\Appointments;
+use ChrisReedIO\AthenaSDK\Resources\Chart;
 use ChrisReedIO\AthenaSDK\Resources\Departments;
+use ChrisReedIO\AthenaSDK\Resources\Encounters;
 use ChrisReedIO\AthenaSDK\Resources\Patients;
 use ChrisReedIO\AthenaSDK\Resources\Practice;
 use ChrisReedIO\AthenaSDK\Resources\Providers;
@@ -139,5 +141,14 @@ class AthenaConnector extends Connector implements HasPagination
     {
         return new Practice($this);
     }
+
+    public function encounters(): Encounters
+    {
+        return new Encounters($this);
+    }
+    // public function chart(): Chart
+    // {
+    //     return new Chart($this);
+    // }
     //endregion
 }
