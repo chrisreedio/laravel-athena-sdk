@@ -2,6 +2,8 @@
 
 namespace ChrisReedIO\AthenaSDK\Resources;
 
+use ChrisReedIO\AthenaSDK\Data\Appointment\AppointmentData;
+use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\GetAppointmentDetails;
 use ChrisReedIO\AthenaSDK\Resource;
 use ChrisReedIO\AthenaSDK\Resources\Appointments\AppointmentStatus;
 use ChrisReedIO\AthenaSDK\Resources\Appointments\AppointmentSubscriptions;
@@ -34,5 +36,15 @@ class Appointments extends Resource
     public function checkin(): CheckInResource
     {
         return new CheckInResource($this->connector);
+    }
+
+    public function get(
+        int $appointmentId,
+        ?bool $includeClaim = null,
+        ?bool $includeCopay = null,
+        ?bool $includeInsurance = null,
+        ?bool $includePatient = null,
+    ): AppointmentData {
+        return $this->connector->send(new GetAppointmentDetails($appointmentId))->dtoOrFail();
     }
 }

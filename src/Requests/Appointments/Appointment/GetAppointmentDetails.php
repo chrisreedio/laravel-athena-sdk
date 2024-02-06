@@ -2,8 +2,10 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment;
 
+use ChrisReedIO\AthenaSDK\Data\Appointment\AppointmentData;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
 
 /**
  * GetAppointmentDetails
@@ -59,5 +61,11 @@ class GetAppointmentDetails extends Request
             'showpatientdetail' => $this->showpatientdetail,
             'showtelehealth' => $this->showtelehealth,
         ]);
+    }
+
+    public function createDtoFromResponse(Response $response): AppointmentData
+    {
+        // dd($response->json());
+        return AppointmentData::fromArray($response->json()[0]);
     }
 }
