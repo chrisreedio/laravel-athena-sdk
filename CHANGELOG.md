@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.15 - 2024-02-06
+
+### What's Changed
+
+* feat: add `get` appointment details to appointment resource by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/17
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.14...v1.0.0-alpha.15
+
 ## v1.0.0-alpha.14 - 2024-02-02
 
 ### What's Changed
