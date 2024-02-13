@@ -7,6 +7,7 @@ use ChrisReedIO\AthenaSDK\Requests\Patient\PrivacyInformationVerification\GetPat
 use ChrisReedIO\AthenaSDK\Requests\Patient\PrivacyInformationVerification\UpdatePatientPrivacyInformationVerified;
 use ChrisReedIO\AthenaSDK\Resource;
 use DateTime;
+use Saloon\Http\Response;
 
 use function now;
 
@@ -64,18 +65,20 @@ class PatientPrivacy extends Resource
     //     return $this->connector->send($request)->successful();
     // }
 
-    public function update(bool $newState): bool
+    public function update(bool $newState): Response
     {
         $request = new UpdatePatientPrivacyInformationVerified(
             $this->departmentId,
             $this->patientId,
-            ($newState)
-                ? now()->setTimezone('America/Chicago')->format('Y-m-d H:i:s') : null,
+            // ($newState)
+            //     ? now()->setTimezone('America/Chicago')->format('Y-m-d H:i:s') : '',
+            now()->setTimezone('America/Chicago')->format('m/d/Y H:i:s'),
+             $newState ? 'Unable to sign' : 'Not Signed',
             insuredsignature: $newState,
             patientsignature: $newState,
             privacynotice: $newState,
         );
 
-        return $this->connector->send($request)->successful();
+        return $this->connector->send($request);
     }
 }

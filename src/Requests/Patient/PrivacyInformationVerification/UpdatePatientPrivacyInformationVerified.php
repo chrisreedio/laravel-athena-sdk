@@ -38,8 +38,8 @@ class UpdatePatientPrivacyInformationVerified extends Request implements HasBody
     public function __construct(
         protected int $departmentid,
         protected int $patientid,
-        protected ?string $signaturedatetime = null,
-        protected ?string $signaturename = null,
+        protected string $signaturedatetime,
+        protected string $signaturename,
         protected ?string $expirationdate = null,
         protected ?bool $insuredsignature = null,
         protected ?bool $patientsignature = null,
