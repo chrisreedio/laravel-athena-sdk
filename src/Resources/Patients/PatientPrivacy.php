@@ -51,24 +51,26 @@ class PatientPrivacy extends Resource
         return $this->connector->send($request)->successful();
     }
 
-    public function approve(): bool
-    {
-        $request = new UpdatePatientPrivacyInformationVerified(
-            $this->departmentId,
-            $this->patientId,
-            insuredsignature: true,
-            patientsignature: true,
-            privacynotice: true,
-        );
-
-        return $this->connector->send($request)->successful();
-    }
+    // public function approve(): bool
+    // {
+    //     $request = new UpdatePatientPrivacyInformationVerified(
+    //         $this->departmentId,
+    //         $this->patientId,
+    //         insuredsignature: true,
+    //         patientsignature: true,
+    //         privacynotice: true,
+    //     );
+    //
+    //     return $this->connector->send($request)->successful();
+    // }
 
     public function update(bool $newState): bool
     {
         $request = new UpdatePatientPrivacyInformationVerified(
             $this->departmentId,
             $this->patientId,
+            ($newState)
+                ? now()->setTimezone('America/Chicago')->format('Y-m-d H:i:s') : null,
             insuredsignature: $newState,
             patientsignature: $newState,
             privacynotice: $newState,
