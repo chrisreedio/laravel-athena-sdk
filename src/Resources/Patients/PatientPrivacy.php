@@ -73,7 +73,7 @@ class PatientPrivacy extends Resource
             // ($newState)
             //     ? now()->setTimezone('America/Chicago')->format('Y-m-d H:i:s') : '',
             now()->setTimezone('America/Chicago')->format('m/d/Y H:i:s'),
-             $newState ? 'Unable to sign' : 'Not Signed',
+            $newState ? 'Unable to sign' : 'Not Signed',
             insuredsignature: $newState,
             patientsignature: $newState,
             privacynotice: $newState,
