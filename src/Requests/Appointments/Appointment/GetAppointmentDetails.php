@@ -65,7 +65,7 @@ class GetAppointmentDetails extends Request
 
     public function createDtoFromResponse(Response $response): AppointmentData
     {
-        // dd($response->json());
+        // dd($response->json()[0]);
         return AppointmentData::fromArray($response->json()[0]);
     }
 }
