@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.17 - 2024-02-21
+
+### What's Changed
+
+* feat: extend ProviderData with new attributes by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/19
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.16...v1.0.0-alpha.17
+
 ## v1.0.0-alpha.16 - 2024-02-14
 
 ### What's Changed
