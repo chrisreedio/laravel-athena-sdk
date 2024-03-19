@@ -52,7 +52,9 @@ class AthenaConnector extends Connector implements HasPagination
             $authenticator = Cache::get('athena_access_token');
             if (! $authenticator) {
                 $authenticator = $this->getAccessToken();
-                $ttl = now()->diff($authenticator->getExpiresAt());
+                $expiresAt = $authenticator->getExpiresAt();
+                $expiresAt = $expiresAt->sub(new \DateInterval('PT1M'));
+                $ttl = now()->diff($expiresAt);
                 Cache::put('athena_access_token', $authenticator, $ttl);
             }
             $this->authenticate($authenticator);
