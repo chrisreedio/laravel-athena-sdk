@@ -3,7 +3,6 @@
 namespace ChrisReedIO\AthenaSDK\Data\Appointment;
 
 use ChrisReedIO\AthenaSDK\Data\AthenaData;
-use ChrisReedIO\AthenaSDK\Data\Patient\InsuranceData;
 use ChrisReedIO\AthenaSDK\Data\Patient\PatientData;
 use DateTime;
 use Illuminate\Support\Carbon;
@@ -94,7 +93,7 @@ readonly class AppointmentData extends AthenaData
             encounterId: $data['encounterid'] ?? null,
             encounterStatus: $data['encounterstatus'] ?? null,
             patient: isset($data['patient']) ? PatientData::fromArray($data['patient']) : null,
-            insurances: array_key_exists('insurances', $data) ? array_map(fn (array $insurance) => InsuranceData::fromArray($insurance), $data['insurances']) : null,
+            insurances: $data['insurances'] ?? null,
             startCheckIn: array_key_exists('startcheckin', $data) ? Carbon::createFromFormat('m/d/Y H:i:s', $data['startcheckin'])->toDateTime() : null,
             checkInTime: array_key_exists('checkindatetime', $data) ? Carbon::createFromFormat('m/d/Y H:i:s', $data['checkindatetime'])->toDateTime() : null,
             startCheckOut: array_key_exists('startcheckoutdatetime', $data) ? Carbon::createFromFormat('m/d/Y H:i:s', $data['startcheckoutdatetime'])->toDateTime() : null,
