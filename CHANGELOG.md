@@ -2,6 +2,16 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.19 - 2024-03-19
+
+### What's Changed
+
+* 🐛 fix(athena-connector): adjusted token expiration by subtracting a minute by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/22
+
+#### This is an experimental release!
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.18...v1.0.0-alpha.19
+
 ## v1.0.0-alpha.18 - 2024-03-19
 
 ### What's Changed
