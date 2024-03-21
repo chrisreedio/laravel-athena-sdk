@@ -2,6 +2,16 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.20 - 2024-03-21
+
+### What's Changed
+
+* Patient's "Chart Alerts" - "CRUD" Operations by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/23
+
+This is a new experimental release of the Chart Alert operations. Currently "use at your own risk".
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.19...v1.0.0-alpha.20
+
 ## v1.0.0-alpha.19 - 2024-03-19
 
 ### What's Changed
