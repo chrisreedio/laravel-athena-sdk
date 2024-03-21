@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.24 - 2024-03-21
+
+### What's Changed
+
+* ✨ feat: Added `departmentid` and changed `patientid` type in `UpdateP… by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/27
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.23...v1.0.0-alpha.24
+
 ## v1.0.0-alpha.23 - 2024-03-21
 
 ### What's Changed
