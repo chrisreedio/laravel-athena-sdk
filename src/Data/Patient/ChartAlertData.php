@@ -18,10 +18,11 @@ readonly class ChartAlertData extends AthenaData
 
     public static function fromArray(array $data): static
     {
-        $modifiedAt = null;
-        if (isset($data['lastmodified']) && $data['lastmodified'] !== '') {
+        $modifiedAt = $data['lastmodified'] ?? null;
+        if (!empty($modifiedAt)) {
             // The time this note was updated (mm/dd/yyyy hh24:mi:ss; Eastern time), if the note has been updated.
-            $modifiedAt = Carbon::createFromFormat('m/d/Y H:i:s', $data['lastmodified'], 'America/New_York')
+            // Note the docs are wrong, it's a two digit year
+            $modifiedAt = Carbon::createFromFormat('m/d/y H:i:s', $data['lastmodified'], 'America/New_York')
                 ->setTimezone('UTC')
                 ->toDateTime();
         }
