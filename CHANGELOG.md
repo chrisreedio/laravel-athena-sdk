@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.21 - 2024-03-21
+
+### What's Changed
+
+* 🐛 fix(data): corrected date format in `ChartAlertData` by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/24
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.20...v1.0.0-alpha.21
+
 ## v1.0.0-alpha.20 - 2024-03-21
 
 ### What's Changed
