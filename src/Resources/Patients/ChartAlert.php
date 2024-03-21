@@ -3,6 +3,7 @@
 namespace ChrisReedIO\AthenaSDK\Resources\Patients;
 
 use ChrisReedIO\AthenaSDK\AthenaConnector;
+use ChrisReedIO\AthenaSDK\Data\Patient\ChartAlertData;
 use ChrisReedIO\AthenaSDK\Requests\Patient\ChartAlert\CreatePatientChartAlert;
 use ChrisReedIO\AthenaSDK\Requests\Patient\ChartAlert\DeletePatientChartAlert;
 use ChrisReedIO\AthenaSDK\Requests\Patient\ChartAlert\GetPatientChartAlert;
@@ -43,7 +44,7 @@ class ChartAlert extends Resource
      * @throws \Saloon\Exceptions\Request\FatalRequestException
      * @throws \Saloon\Exceptions\Request\RequestException
      */
-    public function get(): array
+    public function get(): ?ChartAlertData
     {
         return $this->connector->send(new GetPatientChartAlert($this->patientId, $this->departmentId))->dtoOrFail();
     }
