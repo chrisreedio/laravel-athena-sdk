@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.22 - 2024-03-21
+
+### What's Changed
+
+* ✨ feat(`GetPatient.php`): Defaulted certain options to true by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/25
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.21...v1.0.0-alpha.22
+
 ## v1.0.0-alpha.21 - 2024-03-21
 
 ### What's Changed
