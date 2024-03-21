@@ -24,9 +24,9 @@ class CreatePatientChartAlert extends Request implements HasBody
     }
 
     /**
-     * @param  int  $patientid patientid
-     * @param  string  $notetext The note text.  Use PUT to add to any existing text and POST if you want to add new or replace the full note
-     * @param  int  $departmentid The department ID; needed because charts, and thus chart notes, may be department-specific
+     * @param  int  $patientid  patientid
+     * @param  string  $notetext  The note text.  Use PUT to add to any existing text and POST if you want to add new or replace the full note
+     * @param  int  $departmentid  The department ID; needed because charts, and thus chart notes, may be department-specific
      */
     public function __construct(
         protected int $patientid,
