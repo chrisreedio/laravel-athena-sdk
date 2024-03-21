@@ -96,10 +96,10 @@ class GetPatient extends Request
     public function createDtoFromResponse(Response $response): PatientData
     {
         // dd($response->json());
-        Log::error('GetPatient response', [
-            'status' => $response->status(),
-            'response' => $response->json(),
-        ]);
+        // Log::debug('GetPatient response', [
+        //     'status' => $response->status(),
+        //     'response' => $response->json(),
+        // ]);
 
         return PatientData::fromArray($response->json()[0]);
     }
