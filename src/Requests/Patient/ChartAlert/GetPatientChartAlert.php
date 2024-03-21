@@ -2,8 +2,10 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\Patient\ChartAlert;
 
+use ChrisReedIO\AthenaSDK\Data\Patient\ChartAlertData;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
 
 /**
  * GetPatientChartAlert
@@ -20,17 +22,22 @@ class GetPatientChartAlert extends Request
     }
 
     /**
-     * @param  int  $departmentid  The department ID; needed because charts, and thus chart notes, may be department-specific
-     * @param  int  $patientid  patientid
+     * @param  int  $patientid patientid
+     * @param  int  $departmentid The department ID; needed because charts, and thus chart notes, may be department-specific
      */
     public function __construct(
-        protected int $departmentid,
         protected int $patientid,
+        protected int $departmentid,
     ) {
     }
 
     public function defaultQuery(): array
     {
         return array_filter(['departmentid' => $this->departmentid]);
+    }
+
+    public function createDtoFromResponse(Response $response): ChartAlertData
+    {
+        return ChartAlertData::fromArray($response->json());
     }
 }
