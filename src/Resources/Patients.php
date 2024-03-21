@@ -15,7 +15,7 @@ use Saloon\Http\Response;
 
 class Patients extends Resource
 {
-    public function list(string $departmentId = null): LazyCollection
+    public function list(?string $departmentId = null): LazyCollection
     {
         return $this->connector->paginate(new ListPatients(departmentid: $departmentId))->collect();
     }
