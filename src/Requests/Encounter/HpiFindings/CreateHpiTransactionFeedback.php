@@ -89,7 +89,7 @@ class CreateHpiTransactionFeedback extends Request implements HasBody
         protected ?string $posdatacode = null,
         protected ?string $posentrymode = null,
         protected ?string $posreferencenumber = null,
-        protected ?array $response = null,
+        protected ?array $elavon_response = null, // This was renamed from $response to de-conflict with the Response class
         protected ?string $retrievalreferencenumber = null,
         protected ?string $systemtraceauditnumber = null,
         protected ?string $taxamount = null,
@@ -132,7 +132,7 @@ class CreateHpiTransactionFeedback extends Request implements HasBody
             'posdatacode' => $this->posdatacode,
             'posentrymode' => $this->posentrymode,
             'posreferencenumber' => $this->posreferencenumber,
-            'response' => $this->response,
+            'response' => $this->elavon_response,
             'retrievalreferencenumber' => $this->retrievalreferencenumber,
             'systemtraceauditnumber' => $this->systemtraceauditnumber,
             'taxamount' => $this->taxamount,
