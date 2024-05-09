@@ -7,8 +7,6 @@ use ChrisReedIO\AthenaSDK\PaginatedRequest;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
 
-use function dd;
-
 /**
  * ListDepartments
  *
