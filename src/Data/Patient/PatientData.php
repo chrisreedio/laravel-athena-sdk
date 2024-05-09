@@ -54,6 +54,13 @@ readonly class PatientData extends AthenaData
         public ?bool $privacyInformationVerified = null,
 
         public array $customFields = [],
+
+        // Address Fields
+        public ?string $address1 = null,
+        public ?string $address2 = null,
+        public ?string $city = null,
+        public ?string $state = null,
+        public ?string $zip = null,
     ) {
     }
 
@@ -91,6 +98,13 @@ readonly class PatientData extends AthenaData
             primaryProviderId: $data['primaryproviderid'] ?? null,
             privacyInformationVerified: $data['privacyinformationverified'] ?? null,
             customFields: $data['customfields'] ?? [],
+
+            // Address Fields
+            address1: $data['address1'] ?? null,
+            address2: $data['address2'] ?? null,
+            city: $data['city'] ?? null,
+            state: $data['state'] ?? null,
+            zip: $data['zip'] ?? null,
         );
     }
 }
