@@ -2,6 +2,17 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.25 - 2024-05-09
+
+### What's Changed
+
+* build(deps): bump aglipanci/laravel-pint-action from 2.3.1 to 2.4 by @dependabot in https://github.com/chrisreedio/laravel-athena-sdk/pull/29
+* build(deps): bump dependabot/fetch-metadata from 1.6.0 to 2.1.0 by @dependabot in https://github.com/chrisreedio/laravel-athena-sdk/pull/30
+* build(deps): bump ramsey/composer-install from 2 to 3 by @dependabot in https://github.com/chrisreedio/laravel-athena-sdk/pull/20
+* ✨ feat(`PatientData`): Added address fields to patient data model by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/31
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.24...v1.0.0-alpha.25
+
 ## v1.0.0-alpha.24 - 2024-03-21
 
 ### What's Changed
