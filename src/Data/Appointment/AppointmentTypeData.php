@@ -2,22 +2,24 @@
 
 namespace ChrisReedIO\AthenaSDK\Data\Appointment;
 
-readonly class AppointmentTypeData
+use ChrisReedIO\AthenaSDK\Data\AthenaData;
+
+readonly class AppointmentTypeData extends AthenaData
 {
     public function __construct(
-        public string $athenaId,
-        public string $code,
-        public string $name,
-        public int $duration,
-        public string $friendlyName,
-        public bool $patient, // Assuming 'patient' is a boolean, change type if necessary
-        public bool $generic, // Assuming 'generic' is a boolean, change type if necessary
-        public bool $templateOnly, // Assuming 'template_only' is a boolean, change type if necessary
-        public bool $createsEncounter // Assuming 'creates_encounter' is a boolean, change type if necessary
+        public ?string $athenaId = null,
+        public ?string $code = null,
+        public ?string $name = null,
+        public ?int $duration = null,
+        public ?string $friendlyName = null,
+        public ?bool $patient = null, // Assuming 'patient' is a boolean, change type if necessary
+        public ?bool $generic = null, // Assuming 'generic' is a boolean, change type if necessary
+        public ?bool $templateOnly = null, // Assuming 'template_only' is a boolean, change type if necessary
+        public ?bool $createsEncounter = null // Assuming 'creates_encounter' is a boolean, change type if necessary
     ) {
     }
 
-    public static function fromArray(array $data): self
+    public static function fromArray(array $data): static
     {
         return new self(
             athenaId: $data['appointmenttypeid'],
@@ -25,10 +27,10 @@ readonly class AppointmentTypeData
             name: $data['name'],
             duration: $data['duration'],
             friendlyName: $data['patientdisplayname'],
-            patient: $data['patient'],
-            generic: $data['generic'],
-            templateOnly: $data['templatetypeonly'],
-            createsEncounter: $data['createencounteroncheckin']
+            patient: self::toBool($data['patient']),
+            generic: self::toBool($data['generic']),
+            templateOnly: self::toBool($data['templatetypeonly']),
+            createsEncounter: self::toBool(['createencounteroncheckin'])
         );
     }
 }
