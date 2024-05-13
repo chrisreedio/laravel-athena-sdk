@@ -2,16 +2,18 @@
 
 namespace ChrisReedIO\AthenaSDK\Data\Appointment;
 
-readonly class CopayData
+use ChrisReedIO\AthenaSDK\Data\AthenaData;
+
+readonly class CopayData extends AthenaData
 {
     public function __construct(
-        public int $collectedForAppointment,
-        public int $insuranceCopay,
-        public int $collectedForOther,
+        public ?int $collectedForAppointment = null,
+        public ?int $insuranceCopay = null,
+        public ?int $collectedForOther = null,
     ) {
     }
 
-    public static function fromArray(array $data): self
+    public static function fromArray(array $data): static
     {
         return new self(
             collectedForAppointment: $data['collectedforappointment'],

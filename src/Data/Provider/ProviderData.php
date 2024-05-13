@@ -2,24 +2,26 @@
 
 namespace ChrisReedIO\AthenaSDK\Data\Provider;
 
-readonly class ProviderData
+use ChrisReedIO\AthenaSDK\Data\AthenaData;
+
+readonly class ProviderData extends AthenaData
 {
     public function __construct(
-        public int $athenaId,
-        public ?int $npi,
-        public ?string $entityType,
-        public ?string $firstName,
-        public ?string $lastName,
-        public ?string $schedulingName,
-        public ?string $specialtyId,
-        public ?string $specialty,
-        public ?bool $hideInPortal,
-        public ?bool $billable,
-        public ?bool $createsEncounters,
+        public ?int $athenaId = null,
+        public ?int $npi = null,
+        public ?string $entityType = null,
+        public ?string $firstName = null,
+        public ?string $lastName = null,
+        public ?string $schedulingName = null,
+        public ?string $specialtyId = null,
+        public ?string $specialty = null,
+        public ?bool $hideInPortal = null,
+        public ?bool $billable = null,
+        public ?bool $createsEncounters = null,
     ) {
     }
 
-    public static function fromArray(array $data): self
+    public static function fromArray(array $data): static
     {
         return new self(
             athenaId: $data['providerid'],
@@ -30,9 +32,9 @@ readonly class ProviderData
             schedulingName: $data['schedulingname'] ?? null,
             specialtyId: $data['specialtyid'] ?? null,
             specialty: $data['specialty'] ?? null,
-            hideInPortal: $data['hideinportal'] ?? false,
-            billable: $data['billable'] ?? false,
-            createsEncounters: $data['createencounteroncheckin'] ?? false,
+            hideInPortal: self::toBool($data['hideinportal'] ?? false),
+            billable: self::toBool($data['billable'] ?? false),
+            createsEncounters: self::toBool($data['createencounteroncheckin'] ?? false),
         );
     }
 }

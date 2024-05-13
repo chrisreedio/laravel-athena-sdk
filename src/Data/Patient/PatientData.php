@@ -9,7 +9,7 @@ use DateTime;
 readonly class PatientData extends AthenaData
 {
     /**
-     * @param  string|null  $sex  - M/F
+     * @param  string|null  $sex - M/F
      */
     public function __construct(
         public ?int $athenaId = null,
@@ -54,13 +54,6 @@ readonly class PatientData extends AthenaData
         public ?bool $privacyInformationVerified = null,
 
         public array $customFields = [],
-
-        // Address Fields
-        public ?string $address1 = null,
-        public ?string $address2 = null,
-        public ?string $city = null,
-        public ?string $state = null,
-        public ?string $zip = null,
     ) {
     }
 
@@ -73,19 +66,19 @@ readonly class PatientData extends AthenaData
             sex: $data['sex'] ?? null,
             dob: isset($data['dob']) ? new DateTime($data['dob']) : null,
             email: $data['email'] ?? null,
-            emailExists: $data['emailexists'] ?? null,
+            emailExists: self::toBool($data['emailexists'] ?? null),
             homePhone: $data['homephone'] ?? null,
             mobilePhone: $data['mobilephone'] ?? null,
             departmentId: $data['departmentid'] ?? null,
             address: AddressData::fromArray($data),
-            contactPreferenceAnnouncementSms: $data['contactpreference_announcement_sms'] ?? null,
-            portalTermsOnFile: $data['portaltermsonfile'] ?? null,
-            consentToText: $data['consenttotext'] ?? null,
-            consentToCall: $data['consenttocall'] ?? null,
+            contactPreferenceAnnouncementSms: self::toBool($data['contactpreference_announcement_sms'] ?? null),
+            portalTermsOnFile: self::toBool($data['portaltermsonfile'] ?? null),
+            consentToText: self::toBool($data['consenttotext'] ?? null),
+            consentToCall: self::toBool($data['consenttocall'] ?? null),
             smsOptInDate: isset($data['smsoptindate']) ? new DateTime($data['smsoptindate']) : null,
-            contactPreferenceLabPhone: $data['contactpreference_lab_phone'] ?? null,
+            contactPreferenceLabPhone: self::toBool($data['contactpreference_lab_phone'] ?? null),
             contactPreference: $data['contactpreference'] ?? null,
-            patientPhoto: $data['patientphoto'] ?? null,
+            patientPhoto: self::toBool($data['patientphoto'] ?? null),
             confidentialityCode: $data['confidentialityCode'] ?? null,
             guarantor: GuarantorData::fromArray($data),
             emergencyContact: EmergencyContactData::fromArray($data),
@@ -96,15 +89,8 @@ readonly class PatientData extends AthenaData
             languageCode: $data['language6392code'] ?? null,
             primaryDepartmentId: $data['primarydepartmentid'] ?? null,
             primaryProviderId: $data['primaryproviderid'] ?? null,
-            privacyInformationVerified: $data['privacyinformationverified'] ?? null,
+            privacyInformationVerified: self::toBool($data['privacyinformationverified'] ?? null),
             customFields: $data['customfields'] ?? [],
-
-            // Address Fields
-            address1: $data['address1'] ?? null,
-            address2: $data['address2'] ?? null,
-            city: $data['city'] ?? null,
-            state: $data['state'] ?? null,
-            zip: $data['zip'] ?? null,
         );
     }
 }

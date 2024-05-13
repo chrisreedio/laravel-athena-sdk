@@ -18,7 +18,7 @@ readonly class PatientLocationData extends AthenaData
         return new static(
             athenaId: $data['patientlocationid'] ?? null,
             name: $data['name'] ?? null,
-            isDefault: $data['defaultoncheckin'] ?? null,
+            isDefault: self::toBool($data['defaultoncheckin'] ?? null),
         );
     }
 }
