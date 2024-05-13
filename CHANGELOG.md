@@ -2,6 +2,15 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.26 - 2024-05-13
+
+### What's Changed
+
+* ✨ feat: extended `AthenaData` class and added nullable properties by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/32
+* Handling conversion of `string booleans` to `bool` via new `toBool` method on `AthenaData` abstract DTO class by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/32
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.25...v1.0.0-alpha.26
+
 ## v1.0.0-alpha.25 - 2024-05-09
 
 ### What's Changed
