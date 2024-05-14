@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.27 - 2024-05-14
+
+### What's Changed
+
+* 🐛 fix(data): corrected `createsEncounter` mapping in `AppointmentTypeData` by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/33
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.26...v1.0.0-alpha.27
+
 ## v1.0.0-alpha.26 - 2024-05-13
 
 ### What's Changed
