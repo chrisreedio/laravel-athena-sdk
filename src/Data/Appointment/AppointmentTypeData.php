@@ -30,7 +30,7 @@ readonly class AppointmentTypeData extends AthenaData
             patient: self::toBool($data['patient']),
             generic: self::toBool($data['generic']),
             templateOnly: self::toBool($data['templatetypeonly']),
-            createsEncounter: self::toBool(['createencounteroncheckin'])
+            createsEncounter: self::toBool($data['createencounteroncheckin'])
         );
     }
 }
