@@ -2,17 +2,21 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\Provider\ReferringProvider;
 
+use ChrisReedIO\AthenaSDK\PaginatedRequest;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
+
+use function config;
 
 /**
  * ListReferringProviderChanges
  *
  * Retrieves a list of referring providers whose details has been modified
  */
-class ListReferringProviderChanges extends Request
+class ListReferringProviderChanges extends PaginatedRequest
 {
     protected Method $method = Method::GET;
+
+    protected ?string $itemsKey = 'referringproviders';
 
     public function resolveEndpoint(): string
     {
@@ -33,8 +37,10 @@ class ListReferringProviderChanges extends Request
 
     public function defaultQuery(): array
     {
+        $leave = config('athena-sdk.leave_unprocessed') ?? $this->leaveUnprocessed;
+
         return array_filter([
-            'leaveunprocessed' => $this->leaveunprocessed,
+            'leaveunprocessed' => $leave,
             'showprocessedenddatetime' => $this->showprocessedenddatetime,
             'showprocessedstartdatetime' => $this->showprocessedstartdatetime,
         ]);
