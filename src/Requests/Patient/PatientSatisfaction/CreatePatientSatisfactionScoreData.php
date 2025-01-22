@@ -34,8 +34,7 @@ class CreatePatientSatisfactionScoreData extends Request implements HasBody
         protected string $providerdata,
         protected string $startdate,
         protected ?string $averagescore = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

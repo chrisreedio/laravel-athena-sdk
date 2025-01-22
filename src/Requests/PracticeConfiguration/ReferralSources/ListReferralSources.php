@@ -19,9 +19,7 @@ class ListReferralSources extends Request
         return '/referralsources';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {

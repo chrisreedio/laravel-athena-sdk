@@ -42,8 +42,7 @@ class ListPatientImagingResultDocuments extends Request
         protected ?bool $showportalonly = null,
         protected ?bool $showtemplate = null,
         protected ?string $status = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

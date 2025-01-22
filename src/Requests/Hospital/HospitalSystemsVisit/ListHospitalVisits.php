@@ -40,8 +40,7 @@ class ListHospitalVisits extends Request
         protected ?bool $unregistered = null,
         protected ?array $visitcaseids = null,
         protected ?array $visitids = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

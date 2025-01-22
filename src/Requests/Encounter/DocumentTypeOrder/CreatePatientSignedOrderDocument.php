@@ -45,8 +45,7 @@ class CreatePatientSignedOrderDocument extends Request implements HasBody
         protected ?string $priority = null,
         protected ?int $providerid = null,
         protected ?string $snomedcode = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

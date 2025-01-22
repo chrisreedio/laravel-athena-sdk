@@ -26,8 +26,7 @@ class ListOrderableVaccines extends Request
     public function __construct(
         protected ?string $cvx = null,
         protected ?string $searchvalue = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -19,9 +19,7 @@ class ListObDeliveryTypes extends Request
         return '/chart/configuration/obdeliverytypes';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {

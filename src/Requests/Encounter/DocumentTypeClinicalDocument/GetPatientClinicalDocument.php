@@ -30,8 +30,7 @@ class GetPatientClinicalDocument extends Request
         protected int $patientid,
         protected ?bool $getentityinfo = null,
         protected ?bool $showccdaxml = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

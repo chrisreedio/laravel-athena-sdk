@@ -19,7 +19,5 @@ class DeleteStrictJsonEncodingSetting extends Request
         return '/misc/properjsonencoding';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

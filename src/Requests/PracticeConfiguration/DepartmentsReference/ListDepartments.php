@@ -35,8 +35,7 @@ class ListDepartments extends PaginatedRequest
         protected ?bool $hospitalonly = null,
         protected ?bool $providerlist = null,
         protected ?bool $showalldepartments = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

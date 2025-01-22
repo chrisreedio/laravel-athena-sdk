@@ -28,10 +28,7 @@ class UpdatePatient extends Request implements HasBody
         return "/patients/{$this->patientId}";
     }
 
-    public function __construct(public int $patientId, public PatientData $patient)
-    {
-
-    }
+    public function __construct(public int $patientId, public PatientData $patient) {}
 
     public function defaultBody(): array
     {
@@ -115,7 +112,7 @@ class UpdatePatient extends Request implements HasBody
         return array_filter($body, fn ($value) => ! is_null($value));
     }
 
-    //region Old Code
+    // region Old Code
     /**
      * @param  int  $patientid  patientid
      * @param  null|bool  $patientfacingcall  When 'true' is passed we will collect relevant data and store in our database.
@@ -483,5 +480,5 @@ class UpdatePatient extends Request implements HasBody
         ]);
     }
     */
-    //endregion
+    // endregion
 }

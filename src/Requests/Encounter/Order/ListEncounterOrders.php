@@ -34,8 +34,7 @@ class ListEncounterOrders extends Request
         protected ?bool $showdeclinedorders = null,
         protected ?bool $showdiagnoseswithoutorders = null,
         protected ?bool $showexternalcodes = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

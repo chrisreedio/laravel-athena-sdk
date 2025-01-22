@@ -28,6 +28,5 @@ class DeleteObEpisodeFlowsheet extends Request
         protected int $flowsheetid,
         protected int $obepisodeid,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 }

@@ -38,8 +38,7 @@ class UpdatePatientMedications extends Request implements HasBody
         protected ?string $thirdpartyusername = null,
         protected ?bool $nomedicationsreported = null,
         protected ?string $sectionnote = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

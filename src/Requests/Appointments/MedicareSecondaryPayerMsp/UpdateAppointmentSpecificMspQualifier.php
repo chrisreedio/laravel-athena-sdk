@@ -36,8 +36,7 @@ class UpdateAppointmentSpecificMspQualifier extends Request implements HasBody
         protected ?int $departmentid = null,
         protected ?bool $mspinsurancetypesetyn = null,
         protected ?int $patientid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -23,7 +23,5 @@ class GetPersonalPronouns extends Request
         return '/personalpronouns';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

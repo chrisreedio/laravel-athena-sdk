@@ -24,8 +24,7 @@ class ListSentMessages extends Request
      */
     public function __construct(
         protected int $patientid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

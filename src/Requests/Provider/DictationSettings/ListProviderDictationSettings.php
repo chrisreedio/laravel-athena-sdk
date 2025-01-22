@@ -24,8 +24,7 @@ class ListProviderDictationSettings extends Request
      */
     public function __construct(
         protected ?array $providerid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

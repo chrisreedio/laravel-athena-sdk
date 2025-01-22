@@ -38,8 +38,7 @@ class UpdateCareTeamMembers extends Request implements HasBody
         protected string $recipientclassid,
         protected ?bool $patientfacingcall = null,
         protected ?string $thirdpartyusername = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -19,7 +19,5 @@ class ListSignedOffOrderChangeSubscriptionEvents extends Request
         return '/orders/signedoff/subscription/events';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

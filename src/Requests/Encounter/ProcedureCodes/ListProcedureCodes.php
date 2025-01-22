@@ -26,8 +26,7 @@ class ListProcedureCodes extends Request
     public function __construct(
         protected int $encounterid,
         protected string $searchvalue,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

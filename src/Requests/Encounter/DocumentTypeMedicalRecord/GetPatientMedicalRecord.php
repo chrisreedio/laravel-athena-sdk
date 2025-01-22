@@ -28,8 +28,7 @@ class GetPatientMedicalRecord extends Request
         protected int $medicalrecordid,
         protected int $patientid,
         protected ?bool $getentityinfo = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

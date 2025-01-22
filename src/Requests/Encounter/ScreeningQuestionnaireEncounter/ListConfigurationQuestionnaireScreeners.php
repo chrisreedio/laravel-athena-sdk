@@ -30,8 +30,7 @@ class ListConfigurationQuestionnaireScreeners extends Request
         protected int $patientid,
         protected ?int $appointmentid = null,
         protected ?int $encounterid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -68,8 +68,7 @@ class UpdateObEpisodeEddCalculation extends Request implements HasBody
         protected ?int $ultrasoundlatestdaysgestation = null,
         protected ?int $ultrasoundlatestweeksgestation = null,
         protected ?int $ultrasoundweeksgestation = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

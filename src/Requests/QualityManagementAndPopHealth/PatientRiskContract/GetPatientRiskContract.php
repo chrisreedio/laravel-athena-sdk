@@ -28,8 +28,7 @@ class GetPatientRiskContract extends Request
         protected int $patientid,
         protected ?bool $allcharts = null,
         protected ?int $departmentid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

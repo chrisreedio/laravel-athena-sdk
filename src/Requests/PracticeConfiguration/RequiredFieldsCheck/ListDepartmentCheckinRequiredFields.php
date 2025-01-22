@@ -25,8 +25,7 @@ class ListDepartmentCheckinRequiredFields extends Request
      */
     public function __construct(
         protected int $departmentid,
-    ) {
-    }
+    ) {}
 
     public function createDtoFromResponse(Response $response): array
     {

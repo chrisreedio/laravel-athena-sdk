@@ -40,8 +40,7 @@ class GetPatientVitals extends Request
         protected ?string $format = null,
         protected ?string $startdate = null,
         protected ?bool $xmloutput = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

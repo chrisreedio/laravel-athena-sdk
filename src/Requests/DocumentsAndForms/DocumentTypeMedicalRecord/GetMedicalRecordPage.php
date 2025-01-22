@@ -30,8 +30,7 @@ class GetMedicalRecordPage extends Request
         protected int $pageid,
         protected int $patientid,
         protected ?string $filesize = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

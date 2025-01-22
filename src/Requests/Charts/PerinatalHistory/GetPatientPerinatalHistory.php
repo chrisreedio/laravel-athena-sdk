@@ -28,8 +28,7 @@ class GetPatientPerinatalHistory extends Request
         protected int $departmentid,
         protected int $patientid,
         protected ?bool $showunansweredquestions = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

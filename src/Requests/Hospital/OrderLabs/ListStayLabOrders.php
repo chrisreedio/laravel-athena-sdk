@@ -26,8 +26,7 @@ class ListStayLabOrders extends Request
     public function __construct(
         protected int $stayid,
         protected ?string $statusgroup = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

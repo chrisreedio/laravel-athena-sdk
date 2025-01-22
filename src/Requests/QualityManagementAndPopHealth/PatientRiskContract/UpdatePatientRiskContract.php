@@ -34,8 +34,7 @@ class UpdatePatientRiskContract extends Request implements HasBody
         protected int $riskcontractid,
         protected ?bool $allcharts = null,
         protected ?int $departmentid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

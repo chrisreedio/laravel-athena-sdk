@@ -24,8 +24,7 @@ class ListPhysicianAuthActions extends Request
      */
     public function __construct(
         protected int $physicianauthid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

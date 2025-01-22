@@ -20,9 +20,7 @@ class GetGeneticScreeningAndInfectionHistoryQuestions extends Request
         return '/chart/configuration/obepisodes/geneticscreeningandinfectionhistory/questions';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {

@@ -30,8 +30,7 @@ class ListSchedulableAppointmentMetadata extends Request
         protected ?int $departmentid = null,
         protected ?int $providerid = null,
         protected ?bool $showenabledonly = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

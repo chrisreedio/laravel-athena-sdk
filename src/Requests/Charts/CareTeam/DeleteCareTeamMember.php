@@ -32,8 +32,7 @@ class DeleteCareTeamMember extends Request
         protected int $patientid,
         protected ?bool $patientfacingcall = null,
         protected ?string $thirdpartyusername = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

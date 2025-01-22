@@ -30,8 +30,7 @@ class CreateAppointmentThirdPartyExternalData extends Request implements HasBody
     public function __construct(
         protected int $appointmentid,
         protected string $externaldata,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

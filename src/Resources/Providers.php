@@ -18,7 +18,7 @@ class Providers extends Resource
      */
     public function list(): LazyCollection
     {
-        return $this->connector->paginate(new ListProviders())->collect();
+        return $this->connector->paginate(new ListProviders)->collect();
     }
 
     /**
@@ -26,7 +26,7 @@ class Providers extends Resource
      */
     public function specialities(): LazyCollection
     {
-        return $this->connector->paginate(new ListProviderSpecialties())->collect();
+        return $this->connector->paginate(new ListProviderSpecialties)->collect();
     }
 
     public function subscriptions(): ProviderSubscriptions

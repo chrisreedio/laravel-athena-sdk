@@ -46,8 +46,7 @@ class GetPatientAppointment extends Request
         protected ?bool $showinsurance = null,
         protected ?bool $showpatientdetail = null,
         protected ?bool $showtelehealth = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

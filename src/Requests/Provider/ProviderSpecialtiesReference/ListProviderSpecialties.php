@@ -23,9 +23,7 @@ class ListProviderSpecialties extends PaginatedRequest
         return '/reference/providerspecialties';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {

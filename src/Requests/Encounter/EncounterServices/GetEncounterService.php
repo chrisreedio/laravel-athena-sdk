@@ -26,6 +26,5 @@ class GetEncounterService extends Request
     public function __construct(
         protected int $encounterid,
         protected int $serviceid,
-    ) {
-    }
+    ) {}
 }

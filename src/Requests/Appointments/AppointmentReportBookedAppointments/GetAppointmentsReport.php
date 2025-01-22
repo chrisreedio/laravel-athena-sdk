@@ -28,8 +28,7 @@ class GetAppointmentsReport extends Request
         protected string $enddate,
         protected string $startdate,
         protected ?bool $showexpectedprocedurecodes = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

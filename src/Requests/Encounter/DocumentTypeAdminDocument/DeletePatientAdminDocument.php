@@ -26,6 +26,5 @@ class DeletePatientAdminDocument extends Request
     public function __construct(
         protected int $adminid,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 }

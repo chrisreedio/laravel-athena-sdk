@@ -40,8 +40,7 @@ class ListAppointmentsWaitlist extends Request
         protected ?int $patientid = null,
         protected ?string $priority = null,
         protected ?int $providerid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

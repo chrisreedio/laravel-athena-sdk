@@ -9,8 +9,7 @@ readonly class EthnicityData extends AthenaData
     public function __construct(
         public ?string $id = null,
         public ?string $name = null,
-    ) {
-    }
+    ) {}
 
     public static function fromArray(array $data): static
     {

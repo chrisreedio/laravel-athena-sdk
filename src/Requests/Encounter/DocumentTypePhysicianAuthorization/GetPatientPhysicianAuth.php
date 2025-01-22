@@ -26,6 +26,5 @@ class GetPatientPhysicianAuth extends Request
     public function __construct(
         protected int $patientid,
         protected int $physicianauthid,
-    ) {
-    }
+    ) {}
 }

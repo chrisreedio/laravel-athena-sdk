@@ -26,8 +26,7 @@ class ListLabTests extends Request
     public function __construct(
         protected int $facilityid,
         protected string $searchvalue,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

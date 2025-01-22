@@ -28,8 +28,7 @@ class GetClaimDetails extends Request
         protected int $claimid,
         protected ?bool $showcustomfields = null,
         protected ?bool $showservicetypeaddons = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

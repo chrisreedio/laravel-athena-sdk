@@ -30,8 +30,7 @@ class CreateEncounterVital extends Request implements HasBody
     public function __construct(
         protected int $encounterid,
         protected array $vitals,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

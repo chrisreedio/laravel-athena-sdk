@@ -62,8 +62,7 @@ class UpdateReferralAuth extends Request implements HasBody
         protected ?bool $visits = null,
         protected ?int $visitsapproved = null,
         protected ?int $visitsleft = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

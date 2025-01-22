@@ -30,8 +30,7 @@ class CreateEncounterDocumentActionNote extends Request implements HasBody
     public function __construct(
         protected string $actionnote,
         protected int $encounterdocumentid,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

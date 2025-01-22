@@ -26,6 +26,5 @@ class GetPatientCaseDocumentAttachment extends Request
     public function __construct(
         protected int $patientcasefileid,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 }

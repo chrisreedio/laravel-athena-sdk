@@ -26,6 +26,5 @@ class GetPrenatalFlowsheetConfiguration extends Request
     public function __construct(
         protected int $obepisodeid,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 }

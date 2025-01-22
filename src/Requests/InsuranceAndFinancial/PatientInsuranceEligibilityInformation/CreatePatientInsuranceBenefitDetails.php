@@ -34,8 +34,7 @@ class CreatePatientInsuranceBenefitDetails extends Request implements HasBody
         protected int $patientid,
         protected ?string $dateofservice = null,
         protected ?string $servicetypecode = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

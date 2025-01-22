@@ -24,6 +24,5 @@ class DeleteProvider extends Request
      */
     public function __construct(
         protected int $providerid,
-    ) {
-    }
+    ) {}
 }

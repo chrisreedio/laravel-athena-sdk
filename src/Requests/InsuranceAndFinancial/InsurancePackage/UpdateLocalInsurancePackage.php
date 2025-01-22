@@ -76,8 +76,7 @@ class UpdateLocalInsurancePackage extends Request implements HasBody
         protected ?string $state = null,
         protected ?string $switchoverdate = null,
         protected ?string $zip = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

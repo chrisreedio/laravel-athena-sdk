@@ -28,8 +28,7 @@ class DeletePatientStoredCard extends Request
         protected int $departmentid,
         protected int $patientid,
         protected int $storedcardid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

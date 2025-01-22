@@ -19,7 +19,5 @@ class ListCcmEnrollmentStatusChangeEvents extends Request
         return '/ccmenrollmentstatus/changed/subscription/events';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

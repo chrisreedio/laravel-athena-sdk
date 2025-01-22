@@ -32,8 +32,7 @@ class CreateMessageThreadReply extends Request implements HasBody
         protected int $messagethreadid,
         protected int $patientid,
         protected string $text,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

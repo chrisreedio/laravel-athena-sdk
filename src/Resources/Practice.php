@@ -23,7 +23,7 @@ class Practice extends Resource
      */
     public function languages(): Collection
     {
-        return $this->connector->send(new ListLanguages())->dtoOrFail();
+        return $this->connector->send(new ListLanguages)->dtoOrFail();
     }
 
     /**
@@ -34,7 +34,7 @@ class Practice extends Resource
      */
     public function races(): Collection
     {
-        return $this->connector->send(new ListRaces())->dtoOrFail();
+        return $this->connector->send(new ListRaces)->dtoOrFail();
     }
 
     /**
@@ -45,6 +45,6 @@ class Practice extends Resource
      */
     public function ethnicities(): Collection
     {
-        return $this->connector->send(new ListEthnicities())->dtoOrFail();
+        return $this->connector->send(new ListEthnicities)->dtoOrFail();
     }
 }

@@ -24,8 +24,7 @@ class GetPatientCaseActionNote extends Request
      */
     public function __construct(
         protected int $patientcaseid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

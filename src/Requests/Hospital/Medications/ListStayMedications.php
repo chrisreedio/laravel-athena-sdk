@@ -37,8 +37,7 @@ class ListStayMedications extends Request
         protected ?bool $showadministeredlist = null,
         protected ?bool $showpostdischargelist = null,
         protected ?bool $showpreadmissionlist = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

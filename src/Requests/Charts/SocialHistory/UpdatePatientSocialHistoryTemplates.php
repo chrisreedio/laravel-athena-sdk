@@ -32,8 +32,7 @@ class UpdatePatientSocialHistoryTemplates extends Request implements HasBody
         protected int $departmentid,
         protected int $patientid,
         protected string $templateids,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

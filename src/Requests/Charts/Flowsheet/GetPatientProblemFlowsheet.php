@@ -36,8 +36,7 @@ class GetPatientProblemFlowsheet extends Request
         protected ?array $providerid = null,
         protected ?bool $showglobalflowsheetelementsonly = null,
         protected ?string $startdate = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

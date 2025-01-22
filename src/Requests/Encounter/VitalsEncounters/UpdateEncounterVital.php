@@ -32,8 +32,7 @@ class UpdateEncounterVital extends Request implements HasBody
         protected int $encounterid,
         protected string $value,
         protected int $vitalid,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

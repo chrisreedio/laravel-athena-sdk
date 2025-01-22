@@ -24,6 +24,5 @@ class GetHealthHistoryForm extends Request
      */
     public function __construct(
         protected int $formid,
-    ) {
-    }
+    ) {}
 }

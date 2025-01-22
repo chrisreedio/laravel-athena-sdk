@@ -19,7 +19,5 @@ class ListLabResultChangeSubscriptions extends Request
         return '/labresults/changed/subscription';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

@@ -28,8 +28,7 @@ class GetEncounterHpi extends Request
         protected int $encounterid,
         protected ?bool $showstructured = null,
         protected ?array $templateids = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

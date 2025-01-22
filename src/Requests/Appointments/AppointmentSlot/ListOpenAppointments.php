@@ -40,8 +40,7 @@ class ListOpenAppointments extends Request
         protected ?array $reasonid = null,
         protected ?bool $showfrozenslots = null,
         protected ?string $startdate = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

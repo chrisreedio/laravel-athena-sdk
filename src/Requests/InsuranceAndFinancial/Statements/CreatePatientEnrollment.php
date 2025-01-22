@@ -34,8 +34,7 @@ class CreatePatientEnrollment extends Request implements HasBody
         protected string $action,
         protected array $patients,
         protected string $vendorcode,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

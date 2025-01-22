@@ -30,8 +30,7 @@ class CreateLabResultActionNote extends Request implements HasBody
     public function __construct(
         protected string $actionnote,
         protected int $labresultid,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

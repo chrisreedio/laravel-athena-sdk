@@ -32,8 +32,7 @@ class ListPatientSatisfactionScores extends Request
         protected string $enddate,
         protected ?string $lastmodified = null,
         protected ?int $providerid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -30,8 +30,7 @@ class GetPatientInsuranceBenefitDetails extends Request
         protected int $patientid,
         protected ?string $dateofservice = null,
         protected ?string $servicetypecode = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

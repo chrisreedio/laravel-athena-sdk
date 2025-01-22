@@ -20,9 +20,7 @@ class ListValidNonCcpCreditCardMethods extends Request
         return '/configuration/validnonccpcreditcardmethods';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {

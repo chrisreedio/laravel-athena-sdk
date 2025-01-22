@@ -24,8 +24,7 @@ class ListClaimChangeSubscriptions extends Request
      */
     public function __construct(
         protected ?bool $showadditionalevents = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

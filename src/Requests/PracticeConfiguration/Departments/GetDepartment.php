@@ -28,8 +28,7 @@ class GetDepartment extends Request
         protected int $departmentid,
         protected ?bool $providerlist = null,
         protected ?bool $showalldepartments = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

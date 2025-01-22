@@ -46,8 +46,7 @@ class CreateUserMessage extends Request implements HasBody
         protected ?string $linktext = null,
         protected ?string $payload = null,
         protected ?string $priority = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

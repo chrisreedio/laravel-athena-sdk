@@ -26,8 +26,7 @@ class ListPatientReceipts extends Request
     public function __construct(
         protected string $departmentid,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -27,8 +27,7 @@ class ListActiveStayVaccineOrders extends Request
     public function __construct(
         protected int $ordertypeid,
         protected ?string $statusgroup = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

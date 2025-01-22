@@ -26,8 +26,7 @@ class GetInpatientClinicalDocument extends Request
     public function __construct(
         protected int $clinicaldocumentid,
         protected ?string $pageids = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

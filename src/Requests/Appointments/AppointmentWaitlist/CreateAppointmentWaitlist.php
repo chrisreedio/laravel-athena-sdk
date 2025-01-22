@@ -48,8 +48,7 @@ class CreateAppointmentWaitlist extends Request implements HasBody
         protected ?string $note = null,
         protected ?string $priority = null,
         protected ?int $providerid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -34,8 +34,7 @@ class UpdatePatientStoredCard extends Request implements HasBody
         protected int $patientid,
         protected bool $preferredcard,
         protected int $storedcardid,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

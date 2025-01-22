@@ -40,8 +40,7 @@ class ListAdminDocuments extends Request
         protected ?bool $showdeleted = null,
         protected ?bool $showdocumentswithpatientid = null,
         protected ?string $status = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

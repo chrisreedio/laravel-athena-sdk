@@ -32,8 +32,7 @@ class CreateFeeScheduleForProcedure extends Request implements HasBody
         protected \number $amount,
         protected int $feescheduleid,
         protected string $procedurecode,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

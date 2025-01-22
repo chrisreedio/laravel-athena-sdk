@@ -113,8 +113,7 @@ class UpdatePatientSpecificInsurance extends Request implements HasBody
         protected ?string $repricername = null,
         protected ?string $repricerphone = null,
         protected ?string $stateofreportedinjury = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

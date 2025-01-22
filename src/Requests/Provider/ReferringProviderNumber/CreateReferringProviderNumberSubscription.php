@@ -28,8 +28,7 @@ class CreateReferringProviderNumberSubscription extends Request implements HasBo
      */
     public function __construct(
         protected ?string $eventname = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

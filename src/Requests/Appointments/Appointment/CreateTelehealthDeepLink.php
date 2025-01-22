@@ -30,8 +30,7 @@ class CreateTelehealthDeepLink extends Request implements HasBody
     public function __construct(
         protected int $appointmentid,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

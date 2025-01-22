@@ -36,8 +36,7 @@ class ListActiveStayVitals extends Request
         protected ?string $enddatetime = null,
         protected ?bool $showemptyvitals = null,
         protected ?string $startdatetime = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

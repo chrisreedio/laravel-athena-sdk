@@ -34,8 +34,7 @@ class UpdatePatientsPreferredPharmacy extends Request implements HasBody
         protected int $patientid,
         protected ?int $clinicalproviderid = null,
         protected ?int $ncpdpid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

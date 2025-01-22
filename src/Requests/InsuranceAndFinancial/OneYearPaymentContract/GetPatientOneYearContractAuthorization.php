@@ -28,8 +28,7 @@ class GetPatientOneYearContractAuthorization extends Request
         protected int $appointmentid,
         protected int $patientid,
         protected ?int $departmentid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -24,8 +24,7 @@ class GetMedicalRecordActionNote extends Request
      */
     public function __construct(
         protected int $medicalrecordid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -50,8 +50,7 @@ class CreateProcedureOrderForEncounter extends Request implements HasBody
         protected ?int $placeofserviceid = null,
         protected ?array $procedurecodes = null,
         protected ?string $providernote = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

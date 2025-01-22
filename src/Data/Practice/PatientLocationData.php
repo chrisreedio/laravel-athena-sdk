@@ -10,8 +10,7 @@ readonly class PatientLocationData extends AthenaData
         public ?int $athenaId = null,
         public ?string $name = null,
         public ?bool $isDefault = null,
-    ) {
-    }
+    ) {}
 
     public static function fromArray(array $data): static
     {

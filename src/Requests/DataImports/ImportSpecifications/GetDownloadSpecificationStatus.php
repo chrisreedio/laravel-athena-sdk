@@ -24,6 +24,5 @@ class GetDownloadSpecificationStatus extends Request
      */
     public function __construct(
         protected int $requestid,
-    ) {
-    }
+    ) {}
 }

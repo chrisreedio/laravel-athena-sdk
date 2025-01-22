@@ -32,8 +32,7 @@ class ListPatientStatements extends Request
         protected string $startdate,
         protected ?bool $claimsinstatement = null,
         protected ?bool $findpdfexist = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

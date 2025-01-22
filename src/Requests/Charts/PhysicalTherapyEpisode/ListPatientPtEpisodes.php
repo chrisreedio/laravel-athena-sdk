@@ -28,8 +28,7 @@ class ListPatientPtEpisodes extends Request
         protected int $departmentid,
         protected int $patientid,
         protected ?bool $showclosed = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -19,9 +19,7 @@ class ListObDeliverySites extends Request
         return '/chart/configuration/obdeliverysites';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {

@@ -24,6 +24,5 @@ class GetAthenaTelehealthRoom extends Request
      */
     public function __construct(
         protected int $appointmentid,
-    ) {
-    }
+    ) {}
 }

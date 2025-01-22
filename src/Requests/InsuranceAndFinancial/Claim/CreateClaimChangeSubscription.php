@@ -30,8 +30,7 @@ class CreateClaimChangeSubscription extends Request implements HasBody
     public function __construct(
         protected ?string $eventname = null,
         protected ?bool $showadditionalevents = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

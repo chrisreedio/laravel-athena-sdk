@@ -27,8 +27,7 @@ class ListConfiguredVitalsFields extends Request
     public function __construct(
         protected ?bool $showunconfigured = null,
         protected ?string $specialtyid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

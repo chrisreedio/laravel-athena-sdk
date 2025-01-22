@@ -35,8 +35,7 @@ class CreateChangeAgingOwnership extends Request implements HasBody
         protected array $claims,
         protected string $patientid,
         protected string $vendorcode,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

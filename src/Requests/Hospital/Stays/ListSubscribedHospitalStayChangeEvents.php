@@ -19,7 +19,5 @@ class ListSubscribedHospitalStayChangeEvents extends Request
         return '/stays/changed/subscription';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

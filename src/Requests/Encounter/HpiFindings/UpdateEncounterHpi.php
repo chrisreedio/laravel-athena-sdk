@@ -38,8 +38,7 @@ class UpdateEncounterHpi extends Request implements HasBody
         protected ?bool $replacesectionnote = null,
         protected ?string $sectionnote = null,
         protected ?array $templatedata = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

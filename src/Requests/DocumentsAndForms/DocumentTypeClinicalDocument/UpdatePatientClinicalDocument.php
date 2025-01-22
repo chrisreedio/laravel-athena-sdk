@@ -50,8 +50,7 @@ class UpdatePatientClinicalDocument extends Request implements HasBody
         protected ?string $priority = null,
         protected ?int $providerid = null,
         protected ?bool $replaceinternalnote = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -30,8 +30,7 @@ class CreateInventoryConsumption extends Request implements HasBody
     public function __construct(
         protected string $datecreated,
         protected array $inventory,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

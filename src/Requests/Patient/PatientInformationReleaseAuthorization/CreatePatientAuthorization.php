@@ -42,8 +42,7 @@ class CreatePatientAuthorization extends Request implements HasBody
         protected ?string $expirationdate = null,
         protected ?string $note = null,
         protected ?string $revokeddate = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

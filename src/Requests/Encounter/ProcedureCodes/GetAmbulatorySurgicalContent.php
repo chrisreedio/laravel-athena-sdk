@@ -27,8 +27,7 @@ class GetAmbulatorySurgicalContent extends Request
     public function __construct(
         protected int $encounterid,
         protected string $location,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

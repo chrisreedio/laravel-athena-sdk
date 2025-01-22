@@ -34,8 +34,7 @@ class CreateAppointmentChangeSubscription extends Request implements HasBody
         protected ?array $departmentids = null,
         protected ?bool $includeremindercall = null,
         protected ?bool $includesuggestedoverbooking = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

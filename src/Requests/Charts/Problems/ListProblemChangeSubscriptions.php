@@ -19,7 +19,5 @@ class ListProblemChangeSubscriptions extends Request
         return '/chart/healthhistory/problems/changed/subscription';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

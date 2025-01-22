@@ -28,8 +28,7 @@ class DeletePatientDefaultLabInfo extends Request
         protected int $clinicalproviderid,
         protected int $departmentid,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

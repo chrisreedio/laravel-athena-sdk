@@ -29,8 +29,7 @@ class ListStayAssessments extends Request
         protected int $stayid,
         protected ?bool $patientfacingcall = null,
         protected ?string $thirdpartyusername = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

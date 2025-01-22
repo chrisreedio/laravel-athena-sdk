@@ -24,6 +24,5 @@ class GetProcedureTimeoutChecklist extends Request
      */
     public function __construct(
         protected int $encounterid,
-    ) {
-    }
+    ) {}
 }

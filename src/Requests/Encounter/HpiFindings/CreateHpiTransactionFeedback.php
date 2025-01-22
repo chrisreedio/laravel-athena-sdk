@@ -99,8 +99,7 @@ class CreateHpiTransactionFeedback extends Request implements HasBody
         protected ?string $transactiontype = null,
         protected ?string $truncatedpan = null,
         protected ?string $validationcode = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

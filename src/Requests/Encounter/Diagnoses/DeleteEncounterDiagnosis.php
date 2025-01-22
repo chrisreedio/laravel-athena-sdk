@@ -26,6 +26,5 @@ class DeleteEncounterDiagnosis extends Request
     public function __construct(
         protected int $diagnosisid,
         protected int $encounterid,
-    ) {
-    }
+    ) {}
 }

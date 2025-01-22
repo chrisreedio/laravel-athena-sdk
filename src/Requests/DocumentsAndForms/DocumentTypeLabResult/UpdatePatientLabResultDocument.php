@@ -72,8 +72,7 @@ class UpdatePatientLabResultDocument extends Request implements HasBody
         protected ?string $specimenreceiveddatetime = null,
         protected ?string $specimenreporteddatetime = null,
         protected ?int $tietoorderid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

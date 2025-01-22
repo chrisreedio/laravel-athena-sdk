@@ -32,8 +32,7 @@ class UpdatePatientCaseDocumentAssignment extends Request implements HasBody
         protected int $patientcaseid,
         protected int $patientid,
         protected string $username,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

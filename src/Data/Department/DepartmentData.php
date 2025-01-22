@@ -14,8 +14,7 @@ readonly class DepartmentData extends AthenaData
         public ?string $phone = null,
         public ?int $timezone = null,
         public ?AddressData $address = null,
-    ) {
-    }
+    ) {}
 
     public static function fromArray(array $data): static
     {

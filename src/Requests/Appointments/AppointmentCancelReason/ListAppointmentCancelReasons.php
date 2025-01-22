@@ -24,8 +24,7 @@ class ListAppointmentCancelReasons extends Request
      */
     public function __construct(
         protected ?bool $slotavailable = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

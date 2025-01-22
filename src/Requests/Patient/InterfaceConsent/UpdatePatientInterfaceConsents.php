@@ -32,8 +32,7 @@ class UpdatePatientInterfaceConsents extends Request implements HasBody
         protected int $patientid,
         protected ?array $consents = null,
         protected ?int $departmentid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

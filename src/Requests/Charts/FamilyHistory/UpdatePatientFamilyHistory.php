@@ -34,8 +34,7 @@ class UpdatePatientFamilyHistory extends Request implements HasBody
         protected int $patientid,
         protected ?array $relatives = null,
         protected ?string $sectionnote = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

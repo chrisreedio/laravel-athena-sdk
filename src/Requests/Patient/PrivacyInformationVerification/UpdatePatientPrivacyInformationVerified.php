@@ -46,8 +46,7 @@ class UpdatePatientPrivacyInformationVerified extends Request implements HasBody
         protected ?bool $privacynotice = null,
         protected ?string $reasonpatientunabletosign = null,
         protected ?string $signerrelationshiptopatientid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

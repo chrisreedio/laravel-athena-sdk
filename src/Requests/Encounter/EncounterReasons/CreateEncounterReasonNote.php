@@ -32,8 +32,7 @@ class CreateEncounterReasonNote extends Request implements HasBody
         protected int $encounterid,
         protected ?bool $appendtext = null,
         protected ?string $notetext = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

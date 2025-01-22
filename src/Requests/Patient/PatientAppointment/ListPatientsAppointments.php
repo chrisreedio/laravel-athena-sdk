@@ -40,8 +40,7 @@ class ListPatientsAppointments extends Request
         protected ?bool $showtelehealth = null,
         protected ?string $sortorder = null,
         protected ?string $startdate = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

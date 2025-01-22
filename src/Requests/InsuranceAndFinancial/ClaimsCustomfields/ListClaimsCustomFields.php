@@ -19,7 +19,5 @@ class ListClaimsCustomFields extends Request
         return '/claims/customfields';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

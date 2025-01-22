@@ -38,8 +38,7 @@ class CreateEncounterService extends Request implements HasBody
         protected ?array $modifiers = null,
         protected ?string $procedurecode = null,
         protected ?\number $units = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

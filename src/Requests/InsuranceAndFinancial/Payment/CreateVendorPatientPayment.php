@@ -64,8 +64,7 @@ class CreateVendorPatientPayment extends Request implements HasBody
         protected ?string $postdate = null,
         protected ?string $todayservice = null,
         protected ?string $vendorterminalid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

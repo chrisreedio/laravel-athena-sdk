@@ -19,9 +19,7 @@ class ListTranscribableNoteTypes extends Request
         return '/stays/configuration/transcribablenotetypes';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {

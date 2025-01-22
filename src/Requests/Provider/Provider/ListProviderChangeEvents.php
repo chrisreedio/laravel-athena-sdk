@@ -22,9 +22,7 @@ class ListProviderChangeEvents extends Request
         return '/providers/changed/subscription/events';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function createDtoFromResponse(Response $response): array
     {

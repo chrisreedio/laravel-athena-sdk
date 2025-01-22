@@ -30,8 +30,7 @@ class CreateOrUpdatePatientInsurancePrescriptionCard extends Request implements 
     public function __construct(
         protected string $image,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

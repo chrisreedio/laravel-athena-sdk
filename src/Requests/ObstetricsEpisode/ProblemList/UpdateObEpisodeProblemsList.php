@@ -34,8 +34,7 @@ class UpdateObEpisodeProblemsList extends Request implements HasBody
         protected int $patientid,
         protected ?string $note = null,
         protected ?array $problems = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

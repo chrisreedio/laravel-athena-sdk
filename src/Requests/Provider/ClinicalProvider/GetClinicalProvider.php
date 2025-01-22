@@ -30,8 +30,7 @@ class GetClinicalProvider extends Request
         protected ?bool $showdeleted = null,
         protected ?int $showfederalidnumber = null,
         protected ?int $shownpi = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

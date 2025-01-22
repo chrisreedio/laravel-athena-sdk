@@ -32,8 +32,7 @@ class CreatePatientDriversLicense extends Request implements HasBody
         protected string $image,
         protected int $patientid,
         protected ?string $departmentid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

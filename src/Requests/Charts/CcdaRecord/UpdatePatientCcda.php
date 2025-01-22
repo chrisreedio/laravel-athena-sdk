@@ -36,8 +36,7 @@ class UpdatePatientCcda extends Request implements HasBody
         protected int $patientid,
         protected ?bool $patientfacingcall = null,
         protected ?string $thirdpartyusername = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

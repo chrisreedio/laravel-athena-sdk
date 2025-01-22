@@ -33,8 +33,7 @@ class CreatePatientStatementRecord extends Request implements HasBody
     public function __construct(
         protected array $data,
         protected string $vendorcode,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

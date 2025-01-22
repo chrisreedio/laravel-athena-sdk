@@ -255,8 +255,7 @@ class CreatePatient extends Request implements HasBody
         protected ?string $veteran = null,
         protected ?string $workphone = null,
         protected ?string $zip = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

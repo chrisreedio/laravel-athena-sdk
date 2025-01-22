@@ -44,8 +44,7 @@ class CreatePatientProblem extends Request implements HasBody
         protected ?string $note = null,
         protected ?string $startdate = null,
         protected ?string $status = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -38,8 +38,7 @@ class CreateAppointmentSlot extends Request implements HasBody
         protected int $providerid,
         protected ?int $appointmenttypeid = null,
         protected ?int $reasonid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

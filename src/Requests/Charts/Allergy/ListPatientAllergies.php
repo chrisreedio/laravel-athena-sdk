@@ -32,8 +32,7 @@ class ListPatientAllergies extends Request
         protected ?bool $patientfacingcall = null,
         protected ?string $thirdpartyusername = null,
         protected ?bool $showinactive = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

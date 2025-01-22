@@ -28,8 +28,7 @@ class GetProcedureDocumentation extends Request
         protected int $encounterid,
         protected ?bool $showhtml = null,
         protected ?bool $showoutcomes = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

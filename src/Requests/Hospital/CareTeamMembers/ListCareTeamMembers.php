@@ -30,8 +30,7 @@ class ListCareTeamMembers extends Request
         protected ?bool $patientfacingcall = null,
         protected ?string $thirdpartyusername = null,
         protected ?bool $showallstatuses = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

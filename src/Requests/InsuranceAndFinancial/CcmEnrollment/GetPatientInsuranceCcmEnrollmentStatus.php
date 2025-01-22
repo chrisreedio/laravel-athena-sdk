@@ -28,8 +28,7 @@ class GetPatientInsuranceCcmEnrollmentStatus extends Request
         protected int $departmentid,
         protected int $insuranceid,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

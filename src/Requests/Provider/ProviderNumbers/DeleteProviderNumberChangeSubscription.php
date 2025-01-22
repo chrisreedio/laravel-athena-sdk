@@ -24,8 +24,7 @@ class DeleteProviderNumberChangeSubscription extends Request
      */
     public function __construct(
         protected ?string $eventname = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

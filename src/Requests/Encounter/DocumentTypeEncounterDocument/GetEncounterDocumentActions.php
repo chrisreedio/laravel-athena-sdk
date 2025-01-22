@@ -24,8 +24,7 @@ class GetEncounterDocumentActions extends Request
      */
     public function __construct(
         protected int $encounterdocumentid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

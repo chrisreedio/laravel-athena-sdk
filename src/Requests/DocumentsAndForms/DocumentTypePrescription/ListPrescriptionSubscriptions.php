@@ -23,7 +23,5 @@ class ListPrescriptionSubscriptions extends Request
         return '/prescriptions/changed/subscription';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

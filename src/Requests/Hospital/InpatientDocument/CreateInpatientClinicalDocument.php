@@ -40,8 +40,7 @@ class CreateInpatientClinicalDocument extends Request implements HasBody
         protected ?int $caseid = null,
         protected ?int $documentlabelid = null,
         protected ?string $observationdatetime = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

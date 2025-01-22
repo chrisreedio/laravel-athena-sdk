@@ -19,9 +19,7 @@ class ListSlidingFeePlans extends Request
         return '/slidingfeeplans';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {

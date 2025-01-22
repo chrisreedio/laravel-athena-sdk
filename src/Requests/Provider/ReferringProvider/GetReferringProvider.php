@@ -24,6 +24,5 @@ class GetReferringProvider extends Request
      */
     public function __construct(
         protected int $referringproviderid,
-    ) {
-    }
+    ) {}
 }

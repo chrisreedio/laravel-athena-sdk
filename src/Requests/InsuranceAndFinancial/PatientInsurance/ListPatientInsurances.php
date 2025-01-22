@@ -36,8 +36,7 @@ class ListPatientInsurances extends Request
         protected ?bool $ignorerestrictions = null,
         protected ?bool $showcancelled = null,
         protected ?bool $showfullssn = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

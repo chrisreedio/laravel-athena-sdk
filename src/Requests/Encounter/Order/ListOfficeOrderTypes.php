@@ -19,7 +19,5 @@ class ListOfficeOrderTypes extends Request
         return '/chart/configuration/officeordertypes';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

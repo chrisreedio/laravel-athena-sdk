@@ -28,8 +28,7 @@ class DeleteAppointmentChangeSubscription extends Request
         protected ?string $eventname = null,
         protected ?bool $includeremindercall = null,
         protected ?bool $includesuggestedoverbooking = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -19,7 +19,5 @@ class ListModifiers extends Request
         return '/encounter/configuration/modifiers';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

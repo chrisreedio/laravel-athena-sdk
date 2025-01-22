@@ -24,6 +24,5 @@ class GetAppointmentIdByHash extends Request
      */
     public function __construct(
         protected string $messagehash,
-    ) {
-    }
+    ) {}
 }

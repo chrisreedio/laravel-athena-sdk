@@ -38,8 +38,7 @@ class ListPatientMedications extends Request
         protected ?bool $showndc = null,
         protected ?bool $showpend = null,
         protected ?bool $showrxnorm = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

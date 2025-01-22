@@ -25,8 +25,7 @@ class DeleteInventoryItems extends Request
      */
     public function __construct(
         protected array $athenainventoryitemids,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

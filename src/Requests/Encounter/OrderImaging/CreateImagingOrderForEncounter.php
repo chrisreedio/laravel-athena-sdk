@@ -48,8 +48,7 @@ class CreateImagingOrderForEncounter extends Request implements HasBody
         protected ?array $insurances = null,
         protected ?array $procedurecodes = null,
         protected ?string $providernote = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

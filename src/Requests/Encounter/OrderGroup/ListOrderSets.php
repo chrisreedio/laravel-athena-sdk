@@ -24,8 +24,7 @@ class ListOrderSets extends Request
      */
     public function __construct(
         protected ?string $username = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

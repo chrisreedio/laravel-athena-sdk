@@ -28,8 +28,7 @@ class DeletePatientAuthorization extends Request
         protected int $departmentid,
         protected int $patientid,
         protected int $releaseauthorizationid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

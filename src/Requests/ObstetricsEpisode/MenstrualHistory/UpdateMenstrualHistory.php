@@ -46,8 +46,7 @@ class UpdateMenstrualHistory extends Request implements HasBody
         protected ?bool $mensesmonthly = null,
         protected ?bool $onbcpconcept = null,
         protected ?string $priormenses = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -36,8 +36,7 @@ class CreateExpeditedAppointment extends Request implements HasBody
         protected int $patientid,
         protected int $providerid,
         protected ?bool $deferinsurance = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

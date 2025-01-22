@@ -36,8 +36,7 @@ class CreateProviderBillingRecord extends Request implements HasBody
         protected string $callbackapiuiamscope,
         protected string $callbackapiurlconfkey,
         protected array $providers,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

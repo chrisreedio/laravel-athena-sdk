@@ -26,6 +26,5 @@ class ListPatientSignedReceipts extends Request
     public function __construct(
         protected int $epaymentid,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 }

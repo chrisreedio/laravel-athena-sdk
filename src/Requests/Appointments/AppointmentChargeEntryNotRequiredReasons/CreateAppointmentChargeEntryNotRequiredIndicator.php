@@ -32,8 +32,7 @@ class CreateAppointmentChargeEntryNotRequiredIndicator extends Request implement
         protected int $appointmentid,
         protected string $athenausername,
         protected string $chargeentrynotrequiredreason,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -19,7 +19,5 @@ class ListOrderChangeSubscriptions extends Request
         return '/orders/changed/subscription';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

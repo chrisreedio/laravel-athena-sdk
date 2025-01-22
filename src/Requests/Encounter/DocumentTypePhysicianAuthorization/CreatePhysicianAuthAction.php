@@ -30,8 +30,7 @@ class CreatePhysicianAuthAction extends Request implements HasBody
     public function __construct(
         protected string $actionnote,
         protected int $physicianauthid,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -79,8 +79,7 @@ class UpdatePatientInsurance extends Request implements HasBody
         protected ?int $relationshiptoinsuredid = null,
         protected ?int $sequencenumber = null,
         protected ?bool $validateinsuranceidnumber = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

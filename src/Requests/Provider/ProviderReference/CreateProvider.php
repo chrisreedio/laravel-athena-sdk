@@ -100,8 +100,7 @@ class CreateProvider extends Request implements HasBody
         protected ?string $supervisingprovidertype = null,
         protected ?bool $trackmissingslips = null,
         protected ?string $username = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

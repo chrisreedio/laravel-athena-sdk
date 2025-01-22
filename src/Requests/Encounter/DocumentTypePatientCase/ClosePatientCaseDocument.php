@@ -32,8 +32,7 @@ class ClosePatientCaseDocument extends Request implements HasBody
         protected int $actionreasonid,
         protected int $patientcaseid,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -4,12 +4,9 @@ namespace ChrisReedIO\AthenaSDK\Resources\Providers;
 
 use ChrisReedIO\AthenaSDK\Requests\Provider\Provider\CreateProviderSubscription;
 use ChrisReedIO\AthenaSDK\Requests\Provider\Provider\DeleteProviderSubscription;
-use ChrisReedIO\AthenaSDK\Requests\Provider\Provider\ListProviderChangeEvents;
 use ChrisReedIO\AthenaSDK\Requests\Provider\Provider\ListProviderChanges;
-use ChrisReedIO\AthenaSDK\Requests\Provider\Provider\ListSubscribedProviderEvents;
 use ChrisReedIO\AthenaSDK\Requests\Provider\ReferringProvider\ListReferringProviders;
 use ChrisReedIO\AthenaSDK\Resource;
-use Illuminate\Support\Collection;
 use Illuminate\Support\LazyCollection;
 use Saloon\Http\Response;
 
@@ -22,7 +19,7 @@ class ReferringProviders extends Resource
 
     public function list(): LazyCollection
     {
-        return $this->connector->paginate(new ListReferringProviders())->collect();
+        return $this->connector->paginate(new ListReferringProviders)->collect();
     }
 
     // public function subscribe(?string $eventName = null): Response

@@ -28,8 +28,7 @@ class GetAppointmentHealthHistoryForm extends Request
         protected int $appointmentid,
         protected int $formid,
         protected ?bool $shownullanswers = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

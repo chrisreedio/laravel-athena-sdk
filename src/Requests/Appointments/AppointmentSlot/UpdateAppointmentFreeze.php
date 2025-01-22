@@ -33,8 +33,7 @@ class UpdateAppointmentFreeze extends Request implements HasBody
         protected int $appointmentid,
         protected bool $freeze,
         protected ?bool $requirescancellation = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

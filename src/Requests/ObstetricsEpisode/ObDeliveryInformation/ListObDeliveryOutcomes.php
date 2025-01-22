@@ -19,7 +19,5 @@ class ListObDeliveryOutcomes extends Request
         return '/chart/reference/obdeliveryoutcomes';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

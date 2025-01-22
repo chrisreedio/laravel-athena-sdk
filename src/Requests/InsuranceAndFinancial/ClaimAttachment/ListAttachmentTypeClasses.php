@@ -19,7 +19,5 @@ class ListAttachmentTypeClasses extends Request
         return '/claims/attachmenttypeclass';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

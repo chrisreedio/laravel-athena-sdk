@@ -30,8 +30,7 @@ class DeletePatientInsurances extends Request
         protected int $sequencenumber,
         protected ?string $cancellationnote = null,
         protected ?int $departmentid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

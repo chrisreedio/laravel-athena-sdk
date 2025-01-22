@@ -38,8 +38,7 @@ class ListPatientVaccines extends Request
         protected ?bool $showdeleted = null,
         protected ?bool $showprescribednotadministered = null,
         protected ?bool $showrefused = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

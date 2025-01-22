@@ -19,7 +19,5 @@ class ListOrCaseChangeSubscriptions extends Request
         return '/orcase/changed/subscription';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

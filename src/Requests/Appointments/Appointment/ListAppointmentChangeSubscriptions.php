@@ -31,8 +31,7 @@ class ListAppointmentChangeSubscriptions extends Request
     public function __construct(
         protected ?bool $includeremindercall = null,
         protected ?bool $includesuggestedoverbooking = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

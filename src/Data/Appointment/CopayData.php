@@ -10,8 +10,7 @@ readonly class CopayData extends AthenaData
         public ?int $collectedForAppointment = null,
         public ?int $insuranceCopay = null,
         public ?int $collectedForOther = null,
-    ) {
-    }
+    ) {}
 
     public static function fromArray(array $data): static
     {

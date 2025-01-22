@@ -32,8 +32,7 @@ class UpdateRiskContract extends Request implements HasBody
         protected ?string $description = null,
         protected ?string $name = null,
         protected ?int $riskcontractid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -24,8 +24,7 @@ class GetOrderDocumentActions extends Request
      */
     public function __construct(
         protected int $orderid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -42,8 +42,7 @@ class UpdateAppointmentReschedule extends Request implements HasBody
         protected ?bool $nopatientcase = null,
         protected ?int $reasonid = null,
         protected ?string $reschedulereason = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

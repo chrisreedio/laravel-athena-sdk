@@ -92,8 +92,7 @@ class ListPatientsByEnhancedBestMatch extends Request
         protected ?bool $usesoundexsearch = null,
         protected ?string $workphone = null,
         protected ?string $zip = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

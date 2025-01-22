@@ -24,6 +24,5 @@ class DeleteAppointmentReminder extends Request
      */
     public function __construct(
         protected int $appointmentreminderid,
-    ) {
-    }
+    ) {}
 }

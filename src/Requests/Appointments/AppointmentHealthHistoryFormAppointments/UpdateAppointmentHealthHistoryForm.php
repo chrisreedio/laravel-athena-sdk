@@ -32,8 +32,7 @@ class UpdateAppointmentHealthHistoryForm extends Request implements HasBody
         protected int $appointmentid,
         protected int $formid,
         protected string $healthhistoryform,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -30,8 +30,7 @@ class ListFacilities extends Request
         protected string $name,
         protected string $ordertype,
         protected ?int $patientid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

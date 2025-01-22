@@ -30,8 +30,7 @@ class ListInpatientClinicalDocuments extends Request
         protected int $patientid,
         protected ?string $status = null,
         protected ?int $stayid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

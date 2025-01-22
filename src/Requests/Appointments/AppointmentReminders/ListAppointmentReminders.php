@@ -36,8 +36,7 @@ class ListAppointmentReminders extends Request
         protected ?int $patientid = null,
         protected ?int $providerid = null,
         protected ?bool $showdeleted = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

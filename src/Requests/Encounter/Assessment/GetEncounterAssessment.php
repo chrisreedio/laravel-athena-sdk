@@ -26,8 +26,7 @@ class GetEncounterAssessment extends Request
     public function __construct(
         protected int $encounterid,
         protected ?bool $showstructured = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

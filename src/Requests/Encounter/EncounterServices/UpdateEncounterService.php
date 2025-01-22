@@ -38,8 +38,7 @@ class UpdateEncounterService extends Request implements HasBody
         protected ?array $icd10codes = null,
         protected ?array $modifiers = null,
         protected ?\number $units = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

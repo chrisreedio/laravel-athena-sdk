@@ -48,8 +48,7 @@ class UpdateEncounterReviewOfSystems extends Request implements HasBody
         protected ?array $wellchildros = null,
         protected ?string $wellchildsectionnote = null,
         protected ?array $wellchildtemplateids = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

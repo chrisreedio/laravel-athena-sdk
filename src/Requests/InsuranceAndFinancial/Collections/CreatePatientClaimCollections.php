@@ -33,8 +33,7 @@ class CreatePatientClaimCollections extends Request implements HasBody
     public function __construct(
         protected array $claimids,
         protected string $vendorcode,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

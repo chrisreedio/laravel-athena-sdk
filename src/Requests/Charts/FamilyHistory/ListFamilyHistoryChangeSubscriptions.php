@@ -19,7 +19,5 @@ class ListFamilyHistoryChangeSubscriptions extends Request
         return '/chart/healthhistory/familyhistory/changed/subscription';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

@@ -26,8 +26,7 @@ class ListInboxMessages extends Request
     public function __construct(
         protected int $patientid,
         protected ?string $showplaintext = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -26,8 +26,7 @@ class ListPatientPortalAccess extends Request
     public function __construct(
         protected int $patientid,
         protected ?int $communicatorbrandid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

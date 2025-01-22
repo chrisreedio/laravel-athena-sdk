@@ -24,6 +24,5 @@ class DeletePatientDriversLicense extends Request
      */
     public function __construct(
         protected int $patientid,
-    ) {
-    }
+    ) {}
 }

@@ -24,8 +24,7 @@ class ListAssignableUsers extends Request
      */
     public function __construct(
         protected int $departmentid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

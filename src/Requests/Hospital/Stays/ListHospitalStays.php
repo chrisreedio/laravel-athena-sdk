@@ -40,8 +40,7 @@ class ListHospitalStays extends Request
         protected ?bool $showdeleted = null,
         protected ?bool $showpending = null,
         protected ?string $startdate = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

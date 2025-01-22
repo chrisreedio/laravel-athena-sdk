@@ -19,7 +19,5 @@ class ListVaccineChangeSubscriptions extends Request
         return '/chart/healthhistory/vaccine/changed/subscription';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

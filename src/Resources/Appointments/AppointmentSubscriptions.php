@@ -15,12 +15,12 @@ class AppointmentSubscriptions extends Resource
 {
     public function events(): array
     {
-        return $this->connector->send(new ListAppointmentChangeEvents())->dtoOrFail();
+        return $this->connector->send(new ListAppointmentChangeEvents)->dtoOrFail();
     }
 
     public function list(): Collection
     {
-        return $this->connector->send(new ListAppointmentChangeSubscriptions())->dtoOrFail();
+        return $this->connector->send(new ListAppointmentChangeSubscriptions)->dtoOrFail();
     }
 
     public function subscribe(?string $eventName = null): \Saloon\Http\Response

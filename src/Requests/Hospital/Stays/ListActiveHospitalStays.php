@@ -32,8 +32,7 @@ class ListActiveHospitalStays extends Request
         protected ?int $hospitalroomid = null,
         protected ?int $hospitalunitid = null,
         protected ?int $patientid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

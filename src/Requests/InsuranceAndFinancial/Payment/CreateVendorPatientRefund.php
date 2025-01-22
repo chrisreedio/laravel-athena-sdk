@@ -51,8 +51,7 @@ class CreateVendorPatientRefund extends Request implements HasBody
         protected ?bool $ispaymentsettled = null,
         protected ?string $postdate = null,
         protected ?string $vendorterminalid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

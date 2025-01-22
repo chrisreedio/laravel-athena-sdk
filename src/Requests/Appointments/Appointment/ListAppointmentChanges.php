@@ -61,8 +61,7 @@ class ListAppointmentChanges extends PaginatedRequest
         protected ?string $showProcessedEndDatetime = null,
         protected ?string $showProcessedStartDatetime = null,
         protected ?bool $showReminderCallDetail = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

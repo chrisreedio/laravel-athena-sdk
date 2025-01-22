@@ -50,8 +50,7 @@ class ListHospitalChargeCodes extends Request
         protected ?array $revenuecodes = null,
         protected ?string $showduplicates = null,
         protected ?string $torevcode = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

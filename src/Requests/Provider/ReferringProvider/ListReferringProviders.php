@@ -4,7 +4,6 @@ namespace ChrisReedIO\AthenaSDK\Requests\Provider\ReferringProvider;
 
 use ChrisReedIO\AthenaSDK\Data\Provider\ReferringProviderData;
 use ChrisReedIO\AthenaSDK\PaginatedRequest;
-use Illuminate\Support\Collection;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
 
@@ -24,9 +23,7 @@ class ListReferringProviders extends PaginatedRequest
         return '/referringproviders';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {

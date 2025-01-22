@@ -34,8 +34,7 @@ class GetPatientInterpretationDocument extends Request
         protected ?int $encounterid = null,
         protected ?bool $showdeleted = null,
         protected ?string $status = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

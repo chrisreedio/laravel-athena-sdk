@@ -42,8 +42,7 @@ class UpdatePatientMedicationHistoryConsentVerified extends Request implements H
         protected ?string $medicationhistoryconsentby = null,
         protected ?string $reasonpatientunabletosign = null,
         protected ?int $signerrelationshiptopatientid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

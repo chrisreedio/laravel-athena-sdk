@@ -41,8 +41,7 @@ class CreateAppointmentReminder extends Request implements HasBody
         protected ?string $note = null,
         protected ?string $patientinstructions = null,
         protected ?int $providerid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

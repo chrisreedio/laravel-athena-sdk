@@ -50,8 +50,7 @@ class CreateAdminDocument extends Request implements HasBody
         protected ?string $originalfilename = null,
         protected ?string $priority = null,
         protected ?int $providerid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

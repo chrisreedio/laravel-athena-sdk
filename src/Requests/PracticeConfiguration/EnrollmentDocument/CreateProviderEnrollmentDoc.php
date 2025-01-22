@@ -40,8 +40,7 @@ class CreateProviderEnrollmentDoc extends Request implements HasBody
         protected int $providerprofileid,
         protected string $taskid,
         protected string $username,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -26,8 +26,7 @@ class ListProviderEnrollmentDocs extends Request
     public function __construct(
         protected int $providerprofileid,
         protected ?bool $open = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

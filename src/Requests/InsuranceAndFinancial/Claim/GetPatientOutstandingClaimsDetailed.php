@@ -30,8 +30,7 @@ class GetPatientOutstandingClaimsDetailed extends Request
         protected ?array $claimids = null,
         protected ?int $communicatorbrandid = null,
         protected ?bool $showfamily = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

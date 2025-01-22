@@ -24,8 +24,7 @@ class ListObEpisodeDiscussionItems extends Request
      */
     public function __construct(
         protected ?int $trimester = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -32,8 +32,7 @@ class CreateQualityManagementRefresh extends Request implements HasBody
         protected int $departmentid,
         protected int $patientid,
         protected ?int $providerid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

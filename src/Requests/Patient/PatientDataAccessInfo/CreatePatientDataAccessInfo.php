@@ -34,8 +34,7 @@ class CreatePatientDataAccessInfo extends Request implements HasBody
         protected string $source,
         protected string $thirdpartyusername,
         protected string $viewdate,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

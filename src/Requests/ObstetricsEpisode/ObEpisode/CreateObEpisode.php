@@ -32,8 +32,7 @@ class CreateObEpisode extends Request implements HasBody
         protected int $departmentid,
         protected int $patientid,
         protected ?string $numberofgestations = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

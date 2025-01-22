@@ -24,8 +24,7 @@ class GetSurgeryDocumentActions extends Request
      */
     public function __construct(
         protected int $surgeryid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -113,8 +113,7 @@ class CreatePatientCasePolicy extends Request implements HasBody
         protected ?string $repricerphone = null,
         protected ?string $stateofreportedinjury = null,
         protected ?bool $updateappointments = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

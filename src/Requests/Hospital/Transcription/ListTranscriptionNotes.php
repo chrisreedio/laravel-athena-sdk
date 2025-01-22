@@ -28,8 +28,7 @@ class ListTranscriptionNotes extends Request
         protected int $stayid,
         protected ?int $departmentid = null,
         protected ?string $notetype = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

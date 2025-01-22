@@ -10,6 +10,6 @@ class Types extends Resource
 {
     public function list(): LazyCollection
     {
-        return $this->connector->paginate(new ListAppointmentTypes())->collect();
+        return $this->connector->paginate(new ListAppointmentTypes)->collect();
     }
 }

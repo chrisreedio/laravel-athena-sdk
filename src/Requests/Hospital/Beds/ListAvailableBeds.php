@@ -30,8 +30,7 @@ class ListAvailableBeds extends Request
         protected ?int $departmentid = null,
         protected ?int $hospitalroomid = null,
         protected ?int $unitid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

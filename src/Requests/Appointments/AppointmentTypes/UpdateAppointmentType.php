@@ -36,8 +36,7 @@ class UpdateAppointmentType extends Request implements HasBody
         protected ?string $name = null,
         protected ?bool $patient = null,
         protected ?bool $templatetypeonly = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

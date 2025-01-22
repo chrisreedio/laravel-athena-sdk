@@ -30,8 +30,7 @@ class ListPatientCaseChanges extends Request
         protected ?array $patientids = null,
         protected ?string $showprocessedenddatetime = null,
         protected ?string $showprocessedstartdatetime = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

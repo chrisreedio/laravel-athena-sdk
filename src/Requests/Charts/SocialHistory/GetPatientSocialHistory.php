@@ -32,8 +32,7 @@ class GetPatientSocialHistory extends Request
         protected ?string $recipientcategory = null,
         protected ?bool $shownotperformedquestions = null,
         protected ?bool $showunansweredquestions = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

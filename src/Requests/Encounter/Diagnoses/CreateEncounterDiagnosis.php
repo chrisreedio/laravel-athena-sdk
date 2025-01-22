@@ -38,8 +38,7 @@ class CreateEncounterDiagnosis extends Request implements HasBody
         protected ?array $icd9codes = null,
         protected ?string $laterality = null,
         protected ?string $note = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

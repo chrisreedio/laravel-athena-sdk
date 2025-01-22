@@ -66,8 +66,7 @@ class GetPatient extends Request
         protected ?bool $showportalstatus = true,
         protected ?bool $showpreviouspatientids = null,
         protected ?bool $showprivacycustomfields = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

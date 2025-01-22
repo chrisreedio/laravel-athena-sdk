@@ -19,7 +19,5 @@ class ListProviderNumberChangeEvents extends Request
         return '/providernumbers/changed/subscription/events';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

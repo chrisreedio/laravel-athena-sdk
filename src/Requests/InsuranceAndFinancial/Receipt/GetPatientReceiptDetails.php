@@ -28,8 +28,7 @@ class GetPatientReceiptDetails extends Request
         protected int $epaymentid,
         protected int $patientid,
         protected ?bool $termsasjson = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

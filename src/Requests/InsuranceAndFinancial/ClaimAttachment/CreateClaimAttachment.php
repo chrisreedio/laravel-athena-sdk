@@ -36,8 +36,7 @@ class CreateClaimAttachment extends Request implements HasBody
         protected int $claimid,
         protected string $filename,
         protected ?string $note = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

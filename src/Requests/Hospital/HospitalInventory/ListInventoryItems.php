@@ -32,8 +32,7 @@ class ListInventoryItems extends Request
         protected ?bool $showdeleted = null,
         protected ?array $skus = null,
         protected ?array $vendorids = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

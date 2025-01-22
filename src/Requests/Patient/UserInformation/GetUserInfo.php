@@ -19,7 +19,5 @@ class GetUserInfo extends Request
         return '/userinfo';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

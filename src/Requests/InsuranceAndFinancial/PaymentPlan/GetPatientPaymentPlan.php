@@ -30,8 +30,7 @@ class GetPatientPaymentPlan extends Request
         protected int $patientid,
         protected ?bool $linkedclaiminfo = null,
         protected ?array $paymentplanids = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

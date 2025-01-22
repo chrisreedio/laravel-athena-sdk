@@ -46,8 +46,7 @@ class ListPatientDocuments extends Request
         protected ?bool $showmetadata = null,
         protected ?string $startdate = null,
         protected ?string $status = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -30,8 +30,7 @@ class GetPatientImagingResultDocument extends Request
         protected int $patientid,
         protected ?bool $getentityinfo = null,
         protected ?bool $showtemplate = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

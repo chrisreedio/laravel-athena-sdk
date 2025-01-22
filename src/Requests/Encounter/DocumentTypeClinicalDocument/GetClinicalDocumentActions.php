@@ -24,8 +24,7 @@ class GetClinicalDocumentActions extends Request
      */
     public function __construct(
         protected int $clinicaldocumentid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

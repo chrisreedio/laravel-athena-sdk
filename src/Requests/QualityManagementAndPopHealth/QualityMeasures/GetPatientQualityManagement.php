@@ -32,8 +32,7 @@ class GetPatientQualityManagement extends Request
         protected ?string $measuretype = null,
         protected ?int $providerid = null,
         protected ?string $status = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

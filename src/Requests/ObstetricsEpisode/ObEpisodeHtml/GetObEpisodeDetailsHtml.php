@@ -30,8 +30,7 @@ class GetObEpisodeDetailsHtml extends Request
         protected int $patientid,
         protected ?bool $includewrapper = null,
         protected ?bool $showhiddenproblems = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

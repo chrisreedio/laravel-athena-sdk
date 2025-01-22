@@ -19,6 +19,6 @@ class PatientStatus extends Resource
      */
     public function list(): Collection
     {
-        return $this->connector->send(new ListPatientStatuses())->dtoOrFail();
+        return $this->connector->send(new ListPatientStatuses)->dtoOrFail();
     }
 }

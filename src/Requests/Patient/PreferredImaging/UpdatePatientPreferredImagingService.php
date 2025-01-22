@@ -32,8 +32,7 @@ class UpdatePatientPreferredImagingService extends Request implements HasBody
         protected int $clinicalproviderid,
         protected int $departmentid,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

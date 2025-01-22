@@ -20,7 +20,5 @@ class CreateStrictJsonEncodingSetting extends Request
         return '/misc/properjsonencoding';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

@@ -32,8 +32,7 @@ class UpdatePatientCustomFields extends Request implements HasBody
         protected array $customfields,
         protected string $departmentid,
         protected string $patientid,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

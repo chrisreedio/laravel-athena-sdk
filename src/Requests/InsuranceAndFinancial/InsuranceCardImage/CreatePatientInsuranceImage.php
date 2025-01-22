@@ -34,8 +34,7 @@ class CreatePatientInsuranceImage extends Request implements HasBody
         protected int $insuranceid,
         protected int $patientid,
         protected ?string $departmentid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

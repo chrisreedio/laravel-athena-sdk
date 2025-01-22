@@ -28,8 +28,7 @@ readonly class ReferringProviderData extends AthenaData
         public ?string $specialty = null,
         public ?string $state = null,
         public ?string $zip = null,
-    ) {
-    }
+    ) {}
 
     public static function fromArray(array $data): static
     {

@@ -18,8 +18,7 @@ readonly class ProviderData extends AthenaData
         public ?bool $hideInPortal = null,
         public ?bool $billable = null,
         public ?bool $createsEncounters = null,
-    ) {
-    }
+    ) {}
 
     public static function fromArray(array $data): static
     {

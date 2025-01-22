@@ -30,8 +30,7 @@ class GetDepartmentsMapping extends Request
         protected ?array $departmentids = null,
         protected ?array $providergroupids = null,
         protected ?array $providerids = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

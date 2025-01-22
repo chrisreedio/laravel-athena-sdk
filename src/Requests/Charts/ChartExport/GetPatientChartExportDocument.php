@@ -28,8 +28,7 @@ class GetPatientChartExportDocument extends Request
         protected int $documentid,
         protected int $patientid,
         protected ?int $departmentid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

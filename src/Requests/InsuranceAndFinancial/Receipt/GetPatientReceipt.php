@@ -30,8 +30,7 @@ class GetPatientReceipt extends Request
         protected int $patientid,
         protected ?bool $customerversion = null,
         protected ?bool $merchantversion = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

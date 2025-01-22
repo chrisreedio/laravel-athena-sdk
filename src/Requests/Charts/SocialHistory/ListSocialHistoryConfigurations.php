@@ -19,7 +19,5 @@ class ListSocialHistoryConfigurations extends Request
         return '/chart/configuration/socialhistory';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

@@ -26,8 +26,7 @@ class ListInpatientDocumentLabels extends Request
     public function __construct(
         protected string $documentclass,
         protected string $searchvalue,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

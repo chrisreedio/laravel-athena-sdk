@@ -19,7 +19,5 @@ class ListPatientLocations extends Request
         return '/misc/patientlocations';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

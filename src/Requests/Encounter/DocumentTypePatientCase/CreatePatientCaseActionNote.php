@@ -30,8 +30,7 @@ class CreatePatientCaseActionNote extends Request implements HasBody
     public function __construct(
         protected string $actionnote,
         protected int $patientcaseid,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

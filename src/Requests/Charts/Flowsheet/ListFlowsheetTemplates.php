@@ -27,8 +27,7 @@ class ListFlowsheetTemplates extends Request
         protected int $snomedcode,
         protected ?int $departmentid = null,
         protected ?array $providerid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

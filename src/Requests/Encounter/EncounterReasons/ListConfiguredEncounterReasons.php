@@ -19,9 +19,7 @@ class ListConfiguredEncounterReasons extends Request
         return '/configuration/encounterreasons';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {
