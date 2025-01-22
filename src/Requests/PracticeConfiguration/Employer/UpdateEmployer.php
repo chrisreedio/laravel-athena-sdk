@@ -44,8 +44,7 @@ class UpdateEmployer extends Request implements HasBody
         protected ?string $phone = null,
         protected ?string $state = null,
         protected ?string $zip = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

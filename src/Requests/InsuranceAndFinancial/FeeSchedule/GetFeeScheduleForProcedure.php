@@ -30,8 +30,7 @@ class GetFeeScheduleForProcedure extends Request
         protected int $insurancepackageid,
         protected array $procedurecode,
         protected ?string $servicedate = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -19,9 +19,7 @@ class ListQuestionnaireScreeners extends Request
         return '/chart/questionnairescreeners';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {

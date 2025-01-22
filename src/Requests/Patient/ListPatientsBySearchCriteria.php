@@ -36,8 +36,7 @@ class ListPatientsBySearchCriteria extends Request
         protected ?array $confidentialitycode = null,
         protected ?string $maxresults = null,
         protected ?string $searchtype = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -66,8 +66,7 @@ class CreatePrescriptionOrder extends Request implements HasBody
         protected ?string $providernote = null,
         protected ?string $rxnormid = null,
         protected ?string $unstructuredsig = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

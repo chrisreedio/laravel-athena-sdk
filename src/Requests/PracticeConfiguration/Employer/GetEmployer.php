@@ -24,8 +24,7 @@ class GetEmployer extends Request
      */
     public function __construct(
         protected int $employerid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

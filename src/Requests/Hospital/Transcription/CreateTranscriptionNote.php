@@ -42,8 +42,7 @@ class CreateTranscriptionNote extends Request implements HasBody
         protected string $transcriptionrecordeddatetime,
         protected string $transcriptiontext,
         protected ?int $caseid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

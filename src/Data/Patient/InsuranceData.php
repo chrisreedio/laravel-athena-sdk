@@ -17,9 +17,7 @@ readonly class InsuranceData extends AthenaData
         public ?string $eligibilityStatus = null,
         public ?int $packageId = null,
         public ?int $sequenceNumber = null,
-    ) {
-
-    }
+    ) {}
 
     public static function fromArray(array $data): static
     {

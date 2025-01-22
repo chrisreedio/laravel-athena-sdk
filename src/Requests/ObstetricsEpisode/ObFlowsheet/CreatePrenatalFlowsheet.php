@@ -86,8 +86,7 @@ class CreatePrenatalFlowsheet extends Request implements HasBody
         protected ?int $providerid = null,
         protected ?string $specificgravityofurine = null,
         protected ?array $weight = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

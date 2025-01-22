@@ -34,8 +34,7 @@ class CreatePatientOneYearContractEmailAgreement extends Request implements HasB
         protected int $departmentid,
         protected string $email,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

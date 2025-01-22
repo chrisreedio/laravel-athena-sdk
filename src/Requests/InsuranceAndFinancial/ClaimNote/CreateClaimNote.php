@@ -30,8 +30,7 @@ class CreateClaimNote extends Request implements HasBody
     public function __construct(
         protected int $claimid,
         protected string $claimnote,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

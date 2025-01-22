@@ -24,6 +24,5 @@ class ListEncounterDiagnoses extends Request
      */
     public function __construct(
         protected int $encounterid,
-    ) {
-    }
+    ) {}
 }

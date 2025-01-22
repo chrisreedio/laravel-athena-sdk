@@ -24,6 +24,5 @@ class ListClaimAttachments extends Request
      */
     public function __construct(
         protected int $claimid,
-    ) {
-    }
+    ) {}
 }

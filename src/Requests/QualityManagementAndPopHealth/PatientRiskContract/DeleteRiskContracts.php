@@ -28,8 +28,7 @@ class DeleteRiskContracts extends Request
         protected ?bool $allriskcontracts = null,
         protected ?array $patients = null,
         protected ?int $riskcontractid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

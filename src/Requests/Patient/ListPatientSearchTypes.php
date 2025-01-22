@@ -19,9 +19,7 @@ class ListPatientSearchTypes extends Request
         return '/configuration/patients/searchtypes';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {

@@ -19,7 +19,5 @@ class ListSurgeryCaseChangeEvents extends Request
         return '/surgerycases/changed/subscription/events';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

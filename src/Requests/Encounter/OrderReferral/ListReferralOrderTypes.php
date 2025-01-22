@@ -24,8 +24,7 @@ class ListReferralOrderTypes extends Request
      */
     public function __construct(
         protected string $searchvalue,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -26,6 +26,5 @@ class DeletePatientInsuranceImage extends Request
     public function __construct(
         protected int $insuranceid,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 }

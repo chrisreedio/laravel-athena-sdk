@@ -28,8 +28,7 @@ class GetStageProcedureDocumentation extends Request
         protected int $encounterid,
         protected string $stage,
         protected ?bool $showhtml = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

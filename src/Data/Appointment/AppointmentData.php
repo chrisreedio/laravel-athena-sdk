@@ -55,8 +55,7 @@ readonly class AppointmentData extends AthenaData
         public ?string $rescheduledAppointmentId = null,
         public ?DateTime $stopExamTime = null,
         public ?DateTime $stopIntakeTime = null,
-    ) {
-    }
+    ) {}
 
     public static function fromArray(array $data): static
     {

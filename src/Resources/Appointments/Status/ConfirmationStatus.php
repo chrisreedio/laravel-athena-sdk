@@ -10,6 +10,6 @@ class ConfirmationStatus extends Resource
 {
     public function list(): Collection
     {
-        return $this->connector->send(new ListAppointmentConfirmationStatuses())->dtoOrFail();
+        return $this->connector->send(new ListAppointmentConfirmationStatuses)->dtoOrFail();
     }
 }

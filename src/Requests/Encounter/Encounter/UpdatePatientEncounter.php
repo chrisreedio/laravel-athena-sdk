@@ -32,8 +32,7 @@ class UpdatePatientEncounter extends Request implements HasBody
         protected int $encounterid,
         protected ?int $patientlocationid = null,
         protected ?int $patientstatusid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -24,8 +24,7 @@ class GetDocumentAssignmentUsernames extends Request
      */
     public function __construct(
         protected int $documentid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

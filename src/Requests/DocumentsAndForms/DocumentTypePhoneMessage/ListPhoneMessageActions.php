@@ -24,8 +24,7 @@ class ListPhoneMessageActions extends Request
      */
     public function __construct(
         protected int $phonemessageid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

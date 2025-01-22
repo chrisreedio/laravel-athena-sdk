@@ -34,8 +34,7 @@ class UpdatePatientProblemSectionNote extends Request implements HasBody
         protected int $patientid,
         protected string $sectionnote,
         protected ?bool $replacenote = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

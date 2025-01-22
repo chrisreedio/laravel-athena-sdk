@@ -19,9 +19,7 @@ class ListHealthHistoryForms extends Request
         return '/healthhistoryforms';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {

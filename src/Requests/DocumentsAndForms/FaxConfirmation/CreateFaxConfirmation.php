@@ -30,8 +30,7 @@ class CreateFaxConfirmation extends Request implements HasBody
     public function __construct(
         protected array $confirmations,
         protected string $vendorname,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -36,8 +36,7 @@ class UpdateObEpisodeDischargeInformation extends Request implements HasBody
         protected ?string $contraceptivemethod = null,
         protected ?string $feedingmethod = null,
         protected ?string $maternalhgbhctlevel = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

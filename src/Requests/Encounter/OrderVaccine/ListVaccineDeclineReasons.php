@@ -24,8 +24,7 @@ class ListVaccineDeclineReasons extends Request
      */
     public function __construct(
         protected ?bool $showinactive = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

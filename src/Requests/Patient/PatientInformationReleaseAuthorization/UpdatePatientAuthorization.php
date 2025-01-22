@@ -44,8 +44,7 @@ class UpdatePatientAuthorization extends Request implements HasBody
         protected ?string $note = null,
         protected ?string $revokeddate = null,
         protected ?string $signeddate = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

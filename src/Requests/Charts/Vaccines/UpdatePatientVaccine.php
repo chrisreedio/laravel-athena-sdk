@@ -38,8 +38,7 @@ class UpdatePatientVaccine extends Request implements HasBody
         protected int $patientid,
         protected string $vaccineid,
         protected ?string $ndc = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

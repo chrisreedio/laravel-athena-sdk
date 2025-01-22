@@ -52,8 +52,7 @@ class CreatePatientDocument extends Request implements HasBody
         protected ?string $internalnote = null,
         protected ?string $originalfilename = null,
         protected ?int $providerid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

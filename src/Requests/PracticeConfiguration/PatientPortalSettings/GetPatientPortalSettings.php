@@ -24,8 +24,7 @@ class GetPatientPortalSettings extends Request
      */
     public function __construct(
         protected ?int $communicatorbrandid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

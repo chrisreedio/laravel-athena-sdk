@@ -30,8 +30,7 @@ class ListPatientAcogDocuments extends Request
         protected int $patientid,
         protected ?bool $showdeleted = null,
         protected ?string $status = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

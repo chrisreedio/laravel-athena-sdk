@@ -44,8 +44,7 @@ class CreateEncounterLabOrders extends Request implements HasBody
         protected ?string $loinc = null,
         protected ?int $ordertypeid = null,
         protected ?string $providernote = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

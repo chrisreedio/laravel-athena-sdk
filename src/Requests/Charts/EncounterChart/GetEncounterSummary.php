@@ -31,8 +31,7 @@ class GetEncounterSummary extends Request
         protected int $patientid,
         protected ?bool $mobile = null,
         protected ?bool $skipamendments = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

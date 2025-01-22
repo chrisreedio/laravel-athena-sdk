@@ -32,8 +32,7 @@ class GetStayLabResults extends Request
         protected ?string $thirdpartyusername = null,
         protected ?string $datefilter = null,
         protected ?bool $showabnormaldetails = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

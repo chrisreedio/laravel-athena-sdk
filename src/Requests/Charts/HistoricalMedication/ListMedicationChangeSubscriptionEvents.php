@@ -19,7 +19,5 @@ class ListMedicationChangeSubscriptionEvents extends Request
         return '/chart/healthhistory/medication/changed/subscription/events';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

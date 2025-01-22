@@ -26,8 +26,7 @@ class ListPatientClientForms extends Request
     public function __construct(
         protected int $departmentid,
         protected ?bool $hidepdfs = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

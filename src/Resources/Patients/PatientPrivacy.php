@@ -17,8 +17,7 @@ class PatientPrivacy extends Resource
         protected AthenaConnector $connector,
         protected int $departmentId,
         protected int $patientId
-    ) {
-    }
+    ) {}
 
     public function get(): array
     {

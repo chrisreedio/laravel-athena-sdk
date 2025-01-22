@@ -22,9 +22,7 @@ class ListLanguages extends Request
         return '/languages';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function createDtoFromResponse(Response $response): Collection
     {

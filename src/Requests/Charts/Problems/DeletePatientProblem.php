@@ -30,8 +30,7 @@ class DeletePatientProblem extends Request
         protected int $patientid,
         protected int $problemid,
         protected ?bool $remove = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

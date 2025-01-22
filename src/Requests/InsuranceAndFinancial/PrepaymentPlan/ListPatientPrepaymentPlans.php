@@ -27,8 +27,7 @@ class ListPatientPrepaymentPlans extends Request
     public function __construct(
         protected int $patientid,
         protected ?array $prepaymentplanids = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

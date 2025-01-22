@@ -40,8 +40,7 @@ class ListInsurancePackages extends Request
         protected ?string $insurancezip = null,
         protected ?array $producttypeid = null,
         protected ?string $stateofcoverage = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

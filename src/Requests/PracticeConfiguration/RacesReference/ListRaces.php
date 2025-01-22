@@ -27,9 +27,7 @@ class ListRaces extends Request
         return '/races';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function createDtoFromResponse(Response $response): Collection
     {

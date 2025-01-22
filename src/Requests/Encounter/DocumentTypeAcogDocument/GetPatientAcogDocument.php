@@ -26,6 +26,5 @@ class GetPatientAcogDocument extends Request
     public function __construct(
         protected int $acogid,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 }

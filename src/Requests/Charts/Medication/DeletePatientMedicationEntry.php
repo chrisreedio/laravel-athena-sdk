@@ -28,8 +28,7 @@ class DeletePatientMedicationEntry extends Request
         protected int $departmentid,
         protected string $medicationentryid,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

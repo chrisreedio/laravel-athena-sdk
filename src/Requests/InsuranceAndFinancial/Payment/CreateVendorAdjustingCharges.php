@@ -35,8 +35,7 @@ class CreateVendorAdjustingCharges extends Request implements HasBody
         protected array $charges,
         protected \number $patientid,
         protected string $vendorcode,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

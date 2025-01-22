@@ -40,8 +40,7 @@ class ListPatientEncounters extends Request
         protected ?bool $showalltypes = null,
         protected ?bool $showdiagnoses = null,
         protected ?string $startdate = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

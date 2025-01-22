@@ -22,10 +22,7 @@ class ListAppointmentChangeEvents extends Request
         return '/appointments/changed/subscription/events';
     }
 
-    public function __construct()
-    {
-
-    }
+    public function __construct() {}
 
     public function createDtoFromResponse(Response $response): array
     {

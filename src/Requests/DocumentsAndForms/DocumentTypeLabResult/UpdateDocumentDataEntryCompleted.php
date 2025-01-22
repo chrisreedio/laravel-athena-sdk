@@ -30,8 +30,7 @@ class UpdateDocumentDataEntryCompleted extends Request implements HasBody
     public function __construct(
         protected int $documentid,
         protected ?string $actionnote = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

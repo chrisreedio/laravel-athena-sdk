@@ -40,8 +40,7 @@ class UpdateClaimDetails extends Request implements HasBody
         protected ?int $referralauthid = null,
         protected ?int $referringproviderid = null,
         protected ?array $servicetypeaddons = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

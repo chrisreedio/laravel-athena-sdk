@@ -56,8 +56,7 @@ class CreateVaccineOrder extends Request implements HasBody
         protected ?string $pharmacynote = null,
         protected ?string $providernote = null,
         protected ?string $unstructuredsig = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

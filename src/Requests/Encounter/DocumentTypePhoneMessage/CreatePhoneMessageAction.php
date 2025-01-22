@@ -30,8 +30,7 @@ class CreatePhoneMessageAction extends Request implements HasBody
     public function __construct(
         protected string $actionnote,
         protected int $phonemessageid,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

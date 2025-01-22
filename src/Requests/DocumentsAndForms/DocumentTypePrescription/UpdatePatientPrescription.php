@@ -42,8 +42,7 @@ class UpdatePatientPrescription extends Request implements HasBody
         protected ?string $internalnote = null,
         protected ?string $note = null,
         protected ?bool $pintotop = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

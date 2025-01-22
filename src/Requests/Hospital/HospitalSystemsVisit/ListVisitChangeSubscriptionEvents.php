@@ -19,7 +19,5 @@ class ListVisitChangeSubscriptionEvents extends Request
         return '/visits/changed/subscription/events';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

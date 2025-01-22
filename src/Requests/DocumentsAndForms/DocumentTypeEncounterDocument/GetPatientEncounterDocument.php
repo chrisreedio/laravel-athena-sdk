@@ -28,8 +28,7 @@ class GetPatientEncounterDocument extends Request
         protected int $encounterdocumentid,
         protected int $patientid,
         protected ?bool $getentityinfo = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -44,8 +44,7 @@ class UpdatePatientEncounterDocument extends Request implements HasBody
         protected ?int $encounterid = null,
         protected ?string $internalnote = null,
         protected ?string $priority = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

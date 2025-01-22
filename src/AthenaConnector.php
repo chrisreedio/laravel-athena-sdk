@@ -118,7 +118,7 @@ class AthenaConnector extends Connector implements HasPagination
         };
     }
 
-    //region Resources
+    // region Resources
     public function appointments(): Appointments
     {
         return new Appointments($this);
@@ -152,5 +152,5 @@ class AthenaConnector extends Connector implements HasPagination
     // {
     //     return new Chart($this);
     // }
-    //endregion
+    // endregion
 }

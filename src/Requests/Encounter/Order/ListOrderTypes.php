@@ -34,8 +34,7 @@ class ListOrderTypes extends Request
         protected ?int $providerid = null,
         protected ?string $searchterm = null,
         protected ?string $snomedcode = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

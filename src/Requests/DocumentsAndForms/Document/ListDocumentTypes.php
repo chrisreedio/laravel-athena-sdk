@@ -26,8 +26,7 @@ class ListDocumentTypes extends Request
     public function __construct(
         protected string $searchvalue,
         protected ?string $documentsubclass = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

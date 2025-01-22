@@ -32,8 +32,7 @@ class GetProvider extends Request
         protected ?bool $showdeletedproviders = null,
         protected float|int|null $showfederalidnumber = null,
         protected float|int|null $showusualdepartmentguessthreshold = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

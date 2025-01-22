@@ -45,8 +45,7 @@ class UpdateObEpisodeEddFromWeeks1820 extends Request implements HasBody
         protected ?string $quickening = null,
         protected ?int $ultrasoundlatestdaysgestation = null,
         protected ?int $ultrasoundlatestweeksgestation = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

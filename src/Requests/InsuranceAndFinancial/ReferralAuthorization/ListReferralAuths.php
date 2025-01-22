@@ -28,8 +28,7 @@ class ListReferralAuths extends Request
         protected int $patientid,
         protected ?int $insuranceid = null,
         protected ?bool $showexpired = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

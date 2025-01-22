@@ -24,8 +24,7 @@ class ListAdminDocumentActions extends Request
      */
     public function __construct(
         protected int $adminid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

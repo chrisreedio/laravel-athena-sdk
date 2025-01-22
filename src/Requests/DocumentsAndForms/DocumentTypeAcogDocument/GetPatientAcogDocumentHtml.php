@@ -28,8 +28,7 @@ class GetPatientAcogDocumentHtml extends Request
         protected int $acogid,
         protected int $patientid,
         protected ?bool $includewrapper = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

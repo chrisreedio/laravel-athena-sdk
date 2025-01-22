@@ -30,8 +30,7 @@ class ListPatientPaymentHistory extends Request
         protected string $startdate,
         protected string $enddate,
         protected ?bool $additionalpaymentinfo = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

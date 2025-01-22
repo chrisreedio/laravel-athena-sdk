@@ -32,8 +32,7 @@ class CreateOrderActionNote extends Request implements HasBody
         protected string $actionnote,
         protected int $encounterid,
         protected int $orderid,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

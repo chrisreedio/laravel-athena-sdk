@@ -34,8 +34,7 @@ class CreatePatientOrderGroups extends Request implements HasBody
         protected int $patientid,
         protected ?int $orderingproviderid = null,
         protected ?int $patientcaseid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

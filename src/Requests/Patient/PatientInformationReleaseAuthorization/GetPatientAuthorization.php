@@ -32,8 +32,7 @@ class GetPatientAuthorization extends Request
         protected int $releaseauthorizationid,
         protected ?bool $showdeleted = null,
         protected ?string $status = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

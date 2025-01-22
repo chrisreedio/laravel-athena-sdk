@@ -100,8 +100,7 @@ class UpdateProvider extends Request implements HasBody
         protected ?int $supervisingproviderid = null,
         protected ?bool $trackmissingslips = null,
         protected ?string $username = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

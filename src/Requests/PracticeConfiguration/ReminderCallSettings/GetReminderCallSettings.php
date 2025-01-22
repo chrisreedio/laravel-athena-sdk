@@ -26,8 +26,7 @@ class GetReminderCallSettings extends Request
     public function __construct(
         protected ?int $departmentid = null,
         protected ?int $providerid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

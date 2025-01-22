@@ -48,8 +48,7 @@ class UpdateEncounterQuestionnaireScreener extends Request implements HasBody
         protected ?array $metaquestions = null,
         protected ?string $note = null,
         protected ?string $state = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -40,8 +40,7 @@ class UpdateEncounterQuestionnaireScreenerScore extends Request implements HasBo
         protected ?array $metaquestions = null,
         protected ?string $note = null,
         protected ?string $score = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

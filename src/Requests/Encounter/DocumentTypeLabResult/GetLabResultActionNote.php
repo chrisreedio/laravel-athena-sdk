@@ -24,8 +24,7 @@ class GetLabResultActionNote extends Request
      */
     public function __construct(
         protected int $labresultid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

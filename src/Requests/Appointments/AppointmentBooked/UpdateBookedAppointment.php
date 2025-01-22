@@ -38,8 +38,7 @@ class UpdateBookedAppointment extends Request implements HasBody
         protected ?int $providerid = null,
         protected ?int $schedulingproviderid = null,
         protected ?int $supervisingproviderid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

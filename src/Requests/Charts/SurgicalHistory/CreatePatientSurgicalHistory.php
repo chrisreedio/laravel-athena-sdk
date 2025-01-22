@@ -38,8 +38,7 @@ class CreatePatientSurgicalHistory extends Request implements HasBody
         protected ?string $thirdpartyusername = null,
         protected ?array $procedures = null,
         protected ?string $sectionnote = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

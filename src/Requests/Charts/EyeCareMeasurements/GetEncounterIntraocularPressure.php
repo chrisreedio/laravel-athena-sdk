@@ -24,6 +24,5 @@ class GetEncounterIntraocularPressure extends Request
      */
     public function __construct(
         protected int $encounterid,
-    ) {
-    }
+    ) {}
 }

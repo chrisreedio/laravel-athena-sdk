@@ -28,8 +28,7 @@ class CreateInventoryItems extends Request implements HasBody
      */
     public function __construct(
         protected array $inventoryitems,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

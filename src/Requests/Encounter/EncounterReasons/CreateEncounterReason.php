@@ -32,8 +32,7 @@ class CreateEncounterReason extends Request implements HasBody
         protected int $encounterid,
         protected int $encounterreasonid,
         protected ?string $laterality = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

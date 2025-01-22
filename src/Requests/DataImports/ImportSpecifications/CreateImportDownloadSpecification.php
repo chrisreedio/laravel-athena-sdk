@@ -32,8 +32,7 @@ class CreateImportDownloadSpecification extends Request implements HasBody
         protected string $destinationpath,
         protected string $importtype,
         protected ?string $identityname = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

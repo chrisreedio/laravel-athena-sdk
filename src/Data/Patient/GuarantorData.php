@@ -23,8 +23,7 @@ readonly class GuarantorData extends AthenaData
         public ?string $phone = null,
         public ?string $email = null,
         public ?string $relationshipToPatient = null,
-    ) {
-    }
+    ) {}
 
     public static function fromArray(array $data): static
     {

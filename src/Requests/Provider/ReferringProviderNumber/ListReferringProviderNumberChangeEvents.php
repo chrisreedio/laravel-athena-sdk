@@ -19,7 +19,5 @@ class ListReferringProviderNumberChangeEvents extends Request
         return '/referringprovidernumbers/changed/subscription/events';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

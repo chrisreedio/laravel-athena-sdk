@@ -28,8 +28,7 @@ class DeletePatientSpecificInsurance extends Request
         protected int $insuranceid,
         protected int $patientid,
         protected ?string $cancellationnote = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

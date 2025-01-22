@@ -19,7 +19,5 @@ class ListAllergySeverities extends Request
         return '/reference/allergies/severities';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

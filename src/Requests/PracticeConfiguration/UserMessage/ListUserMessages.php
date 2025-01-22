@@ -28,8 +28,7 @@ class ListUserMessages extends Request
         protected string $username,
         protected ?string $folder = null,
         protected ?bool $showunreadonly = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

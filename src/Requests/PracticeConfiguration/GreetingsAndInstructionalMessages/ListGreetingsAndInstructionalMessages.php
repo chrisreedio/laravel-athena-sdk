@@ -19,9 +19,7 @@ class ListGreetingsAndInstructionalMessages extends Request
         return '/greetingsandinstructionalmessages';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {

@@ -26,8 +26,7 @@ class GetPatientPhotoThumbnail extends Request
     public function __construct(
         protected int $patientid,
         protected ?string $jpegoutput = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

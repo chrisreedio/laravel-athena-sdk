@@ -28,8 +28,7 @@ class GetPatientDmeDocument extends Request
         protected int $dmeid,
         protected int $patientid,
         protected ?bool $showquestions = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

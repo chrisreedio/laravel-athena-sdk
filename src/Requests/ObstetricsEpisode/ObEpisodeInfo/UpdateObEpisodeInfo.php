@@ -48,8 +48,7 @@ class UpdateObEpisodeInfo extends Request implements HasBody
         protected ?string $pediatrician = null,
         protected ?int $prepregnancyweightlbs = null,
         protected ?string $rhtype = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

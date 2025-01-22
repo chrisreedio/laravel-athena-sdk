@@ -30,8 +30,7 @@ class GetPhysicianAuthPage extends Request
         protected int $patientid,
         protected int $physicianauthid,
         protected ?string $filesize = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -38,8 +38,7 @@ class CreateInpatientAdminDocument extends Request implements HasBody
         protected ?int $documentlabelid = null,
         protected ?string $observationdatetime = null,
         protected ?int $stayid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -56,8 +56,7 @@ class CreatePatientStoredCard extends Request implements HasBody
         protected ?string $nameoncard = null,
         protected ?bool $todayservice = null,
         protected ?string $trackdata = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

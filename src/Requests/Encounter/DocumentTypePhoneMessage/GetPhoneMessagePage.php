@@ -28,8 +28,7 @@ class GetPhoneMessagePage extends Request
         protected int $pageid,
         protected int $phonemessageid,
         protected ?string $filesize = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

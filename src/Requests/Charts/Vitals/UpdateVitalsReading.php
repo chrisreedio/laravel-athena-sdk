@@ -34,8 +34,7 @@ class UpdateVitalsReading extends Request implements HasBody
         protected int $patientid,
         protected string $value,
         protected int $vitalid,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

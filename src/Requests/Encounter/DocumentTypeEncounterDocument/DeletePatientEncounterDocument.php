@@ -26,6 +26,5 @@ class DeletePatientEncounterDocument extends Request
     public function __construct(
         protected int $encounterdocumentid,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 }

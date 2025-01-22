@@ -19,7 +19,5 @@ class ListAllergyReactions extends Request
         return '/reference/allergies/reactions';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

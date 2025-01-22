@@ -30,8 +30,7 @@ class ListPhysicalExamFindings extends Request
         protected ?bool $ccdaoutputformat = null,
         protected ?bool $showstructured = null,
         protected ?array $templateids = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

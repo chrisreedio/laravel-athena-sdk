@@ -26,8 +26,7 @@ class ListCommonInsurancePackages extends Request
     public function __construct(
         protected int $departmentid,
         protected ?bool $showonlycasepolicies = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

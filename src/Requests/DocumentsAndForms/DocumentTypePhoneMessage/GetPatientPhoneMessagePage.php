@@ -30,8 +30,7 @@ class GetPatientPhoneMessagePage extends Request
         protected int $patientid,
         protected int $phonemessageid,
         protected ?string $filesize = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

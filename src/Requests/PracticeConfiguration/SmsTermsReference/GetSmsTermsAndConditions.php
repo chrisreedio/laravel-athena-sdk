@@ -19,7 +19,5 @@ class GetSmsTermsAndConditions extends Request
         return '/misc/smstermsandconditions';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

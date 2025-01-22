@@ -30,8 +30,7 @@ class GetPrescriptionPage extends Request
         protected int $patientid,
         protected int $prescriptionid,
         protected ?string $filesize = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

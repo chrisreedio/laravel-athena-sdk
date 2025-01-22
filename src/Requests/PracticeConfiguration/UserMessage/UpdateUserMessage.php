@@ -36,8 +36,7 @@ class UpdateUserMessage extends Request implements HasBody
         protected ?bool $flag = null,
         protected ?string $folder = null,
         protected ?bool $read = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

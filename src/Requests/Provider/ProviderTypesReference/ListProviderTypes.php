@@ -19,9 +19,7 @@ class ListProviderTypes extends Request
         return '/reference/providertypes';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {

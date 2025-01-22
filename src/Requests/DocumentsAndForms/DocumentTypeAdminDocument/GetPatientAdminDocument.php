@@ -28,8 +28,7 @@ class GetPatientAdminDocument extends Request
         protected int $adminid,
         protected int $patientid,
         protected ?bool $getentityinfo = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -16,12 +16,12 @@ class PatientSubscriptions extends Resource
 {
     public function events(): array
     {
-        return $this->connector->send(new ListPatientChangeSubscriptionEvents())->dtoOrFail();
+        return $this->connector->send(new ListPatientChangeSubscriptionEvents)->dtoOrFail();
     }
 
     public function list(): Collection
     {
-        return $this->connector->send(new ListPatientChangeSubscriptions())->dtoOrFail();
+        return $this->connector->send(new ListPatientChangeSubscriptions)->dtoOrFail();
     }
 
     public function subscribe(?string $eventName = null, ?array $departmentIds = null): Response

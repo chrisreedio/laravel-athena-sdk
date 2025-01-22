@@ -34,8 +34,7 @@ class CreateAppointmentClaim extends Request implements HasBody
         protected array $claimcharges,
         protected ?array $servicetypeaddons = null,
         protected ?int $supervisingproviderid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

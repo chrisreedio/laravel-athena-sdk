@@ -24,6 +24,5 @@ class UndeleteEmployer extends Request
      */
     public function __construct(
         protected int $employerid,
-    ) {
-    }
+    ) {}
 }

@@ -19,9 +19,7 @@ class ListPracticeInfo extends Request
         return '/practiceinfo';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {

@@ -34,8 +34,7 @@ class UpdatePatientGoalsDiscussionNotes extends Request implements HasBody
         protected ?string $discussionnotes = null,
         protected ?bool $replacediscussionnotes = null,
         protected ?string $versiontoken = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -48,8 +48,7 @@ class GetCcdaExport extends Request
         protected ?int $enterpriseid = null,
         protected ?string $startdate = null,
         protected ?string $version = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

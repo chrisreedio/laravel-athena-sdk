@@ -24,8 +24,7 @@ class ListLetterDocumentActions extends Request
      */
     public function __construct(
         protected int $letterid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

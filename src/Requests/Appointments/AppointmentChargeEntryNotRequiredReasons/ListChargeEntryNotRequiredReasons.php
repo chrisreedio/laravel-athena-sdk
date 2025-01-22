@@ -20,9 +20,7 @@ class ListChargeEntryNotRequiredReasons extends Request
         return '/configuration/appointments/chargeentrynotrequiredreasons';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {

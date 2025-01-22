@@ -28,8 +28,7 @@ class GetAdminDocumentPage extends Request
         protected int $adminid,
         protected int $pageid,
         protected ?string $filesize = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

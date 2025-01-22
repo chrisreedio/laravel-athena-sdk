@@ -32,8 +32,7 @@ class CreateStartExternalDictation extends Request implements HasBody
         protected int $encounterid,
         protected ?string $dictatedby = null,
         protected ?string $dictationrecordeddatetime = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

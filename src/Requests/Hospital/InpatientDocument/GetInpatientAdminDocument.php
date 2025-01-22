@@ -24,6 +24,5 @@ class GetInpatientAdminDocument extends Request
      */
     public function __construct(
         protected int $admindocumentid,
-    ) {
-    }
+    ) {}
 }

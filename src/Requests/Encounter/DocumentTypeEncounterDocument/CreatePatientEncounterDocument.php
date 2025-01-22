@@ -48,8 +48,7 @@ class CreatePatientEncounterDocument extends Request implements HasBody
         protected ?string $entitytype = null,
         protected ?string $internalnote = null,
         protected ?string $priority = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

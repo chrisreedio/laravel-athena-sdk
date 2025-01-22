@@ -31,8 +31,7 @@ class DeactivateLocalInsurancePackage extends Request implements HasBody
     public function __construct(
         protected int $insurancepackageid,
         protected ?string $expirationdate = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

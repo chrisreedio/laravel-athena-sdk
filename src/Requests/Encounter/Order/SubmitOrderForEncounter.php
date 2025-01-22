@@ -33,8 +33,7 @@ class SubmitOrderForEncounter extends Request implements HasBody
         protected int $encounterid,
         protected int $orderid,
         protected string $submitvia,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

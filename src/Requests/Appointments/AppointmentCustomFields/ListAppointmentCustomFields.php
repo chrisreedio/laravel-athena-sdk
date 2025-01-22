@@ -19,9 +19,7 @@ class ListAppointmentCustomFields extends Request
         return '/appointments/customfields';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {

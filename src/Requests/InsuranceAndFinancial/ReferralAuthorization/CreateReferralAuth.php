@@ -60,8 +60,7 @@ class CreateReferralAuth extends Request implements HasBody
         protected ?string $startdate = null,
         protected ?int $visitsapproved = null,
         protected ?int $visitsleft = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -28,8 +28,7 @@ class CreateChargeCodeChangeSubscription extends Request implements HasBody
      */
     public function __construct(
         protected ?string $eventname = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -34,8 +34,7 @@ class CreatePrescriptionSubscription extends Request implements HasBody
     public function __construct(
         protected ?array $departmentids = null,
         protected ?string $eventname = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

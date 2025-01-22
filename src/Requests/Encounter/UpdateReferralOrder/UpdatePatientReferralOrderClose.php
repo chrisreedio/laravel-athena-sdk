@@ -32,8 +32,7 @@ class UpdatePatientReferralOrderClose extends Request implements HasBody
         protected int $patientid,
         protected int $referraldocumentid,
         protected ?int $actionreasonid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

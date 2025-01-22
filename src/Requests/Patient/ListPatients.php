@@ -17,7 +17,7 @@ use Saloon\Http\Response;
  * href="/api/resources/best-practices-and-troubleshooting#Handling_Beta_APIs">Permissioned Rollout of
  * APIs</a> for more information if you are experiencing issues.
  */
-class ListPatients extends PaginatedRequest //Request //PaginatedRequest
+class ListPatients extends PaginatedRequest // Request //PaginatedRequest
 {
     protected Method $method = Method::GET;
 
@@ -256,8 +256,7 @@ class ListPatients extends PaginatedRequest //Request //PaginatedRequest
         protected ?string $veteran = null,
         protected ?string $workphone = null,
         protected ?string $zip = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -32,8 +32,7 @@ class UpdatePatientChartAlert extends Request implements HasBody
         protected int $patientid,
         protected string $notetext,
         protected int $departmentid,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

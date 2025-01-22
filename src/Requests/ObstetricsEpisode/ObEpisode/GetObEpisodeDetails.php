@@ -30,8 +30,7 @@ class GetObEpisodeDetails extends Request
         protected int $patientid,
         protected ?bool $showeddcalculationsdays = null,
         protected ?bool $showhiddenproblems = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -30,8 +30,7 @@ class DeletePatientVaccine extends Request
         protected int $patientid,
         protected string $vaccineid,
         protected ?string $deleteddate = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

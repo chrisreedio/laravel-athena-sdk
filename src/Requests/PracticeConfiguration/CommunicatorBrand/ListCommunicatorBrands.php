@@ -19,9 +19,7 @@ class ListCommunicatorBrands extends Request
         return '/communicatorbrands';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {

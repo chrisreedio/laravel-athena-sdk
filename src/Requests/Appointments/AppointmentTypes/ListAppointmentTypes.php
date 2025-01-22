@@ -41,8 +41,7 @@ class ListAppointmentTypes extends PaginatedRequest
         protected ?bool $hidetemplatetypeonly = null,
         protected ?array $providerids = null,
         protected ?bool $showappointmenttypeclasses = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

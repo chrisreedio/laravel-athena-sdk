@@ -28,8 +28,7 @@ class ListClaimNotes extends Request
         protected int $claimid,
         protected ?string $pendingflags = null,
         protected ?bool $showholdonly = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

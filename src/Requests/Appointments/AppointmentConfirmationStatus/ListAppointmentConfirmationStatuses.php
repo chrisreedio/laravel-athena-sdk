@@ -21,9 +21,7 @@ class ListAppointmentConfirmationStatuses extends Request
         return '/reference/appointmentconfirmationstatus';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {

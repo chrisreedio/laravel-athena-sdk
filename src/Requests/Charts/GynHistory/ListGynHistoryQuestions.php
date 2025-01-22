@@ -24,8 +24,7 @@ class ListGynHistoryQuestions extends Request
      */
     public function __construct(
         protected ?bool $showdeleted = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -27,6 +27,5 @@ class CreateLabResultReadStatus extends Request
     public function __construct(
         protected int $messagethreadid,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 }

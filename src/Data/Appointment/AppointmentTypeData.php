@@ -16,8 +16,7 @@ readonly class AppointmentTypeData extends AthenaData
         public ?bool $generic = null, // Assuming 'generic' is a boolean, change type if necessary
         public ?bool $templateOnly = null, // Assuming 'template_only' is a boolean, change type if necessary
         public ?bool $createsEncounter = null // Assuming 'creates_encounter' is a boolean, change type if necessary
-    ) {
-    }
+    ) {}
 
     public static function fromArray(array $data): static
     {

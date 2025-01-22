@@ -34,8 +34,7 @@ class UpdatePatientGoalsInstructions extends Request implements HasBody
         protected ?string $patientinstructions = null,
         protected ?bool $replaceinstructions = null,
         protected ?string $versiontoken = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

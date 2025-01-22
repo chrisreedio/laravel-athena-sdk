@@ -28,8 +28,7 @@ class GetPatientInsuranceImage extends Request
         protected int $insuranceid,
         protected int $patientid,
         protected ?string $jpegoutput = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

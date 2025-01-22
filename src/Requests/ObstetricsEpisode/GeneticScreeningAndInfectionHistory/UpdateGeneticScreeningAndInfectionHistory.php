@@ -32,8 +32,7 @@ class UpdateGeneticScreeningAndInfectionHistory extends Request implements HasBo
         protected array $answers,
         protected int $obepisodeid,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

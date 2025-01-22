@@ -36,8 +36,7 @@ class UpdateClaimNoteOverride extends Request implements HasBody
         protected ?array $claimnoteids = null,
         protected ?bool $overrideall = null,
         protected ?bool $undooverrides = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

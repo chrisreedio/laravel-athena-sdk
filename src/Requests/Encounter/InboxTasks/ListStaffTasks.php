@@ -38,8 +38,7 @@ class ListStaffTasks extends Request
         protected ?string $sortorder = null,
         protected ?string $status = null,
         protected ?string $subtype = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

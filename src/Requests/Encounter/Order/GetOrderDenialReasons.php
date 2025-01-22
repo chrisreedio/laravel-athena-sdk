@@ -28,8 +28,7 @@ class GetOrderDenialReasons extends Request
         protected int $encounterid,
         protected int $orderid,
         protected ?string $username = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

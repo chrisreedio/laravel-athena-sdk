@@ -19,9 +19,7 @@ class ListRecipientClasses extends Request
         return '/chart/configuration/recipientclasses';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {

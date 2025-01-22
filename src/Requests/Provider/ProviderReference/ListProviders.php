@@ -33,8 +33,7 @@ class ListProviders extends PaginatedRequest
         protected ?string $providertype = null,
         protected ?bool $showallproviderids = null,
         protected float|int|null $showusualdepartmentguessthreshold = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

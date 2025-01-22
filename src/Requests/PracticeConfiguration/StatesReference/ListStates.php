@@ -19,7 +19,5 @@ class ListStates extends Request
         return '/states';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

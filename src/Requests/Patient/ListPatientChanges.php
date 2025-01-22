@@ -52,8 +52,7 @@ class ListPatientChanges extends PaginatedRequest
         protected ?bool $showPreviousPatientIds = null,
         protected ?string $showProcessedEndDatetime = null,
         protected ?string $showProcessedStartDatetime = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

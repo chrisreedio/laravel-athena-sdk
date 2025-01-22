@@ -34,8 +34,7 @@ class ListPatientProblems extends Request
         protected ?string $thirdpartyusername = null,
         protected ?bool $showdiagnosisinfo = null,
         protected ?bool $showinactive = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

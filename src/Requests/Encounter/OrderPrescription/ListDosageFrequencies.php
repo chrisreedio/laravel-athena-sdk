@@ -19,7 +19,5 @@ class ListDosageFrequencies extends Request
         return '/reference/order/prescription/frequencies';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

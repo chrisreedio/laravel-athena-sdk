@@ -7,8 +7,7 @@ readonly class SubscriptionEventData
     public function __construct(
         public ?string $id = null,
         public ?string $name = null,
-    ) {
-    }
+    ) {}
 
     public static function fromArray(array $data): self
     {

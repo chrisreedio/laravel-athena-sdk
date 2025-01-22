@@ -32,8 +32,7 @@ class CreatePatientReceiptEmail extends Request implements HasBody
         protected string $email,
         protected int $epaymentid,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

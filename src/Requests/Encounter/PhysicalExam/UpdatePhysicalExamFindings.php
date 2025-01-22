@@ -36,8 +36,7 @@ class UpdatePhysicalExamFindings extends Request implements HasBody
         protected ?bool $replacesectionnote = null,
         protected ?string $sectionnote = null,
         protected ?array $templateids = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

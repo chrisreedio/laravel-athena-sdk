@@ -24,6 +24,5 @@ class GetPatientPortalStatus extends Request
      */
     public function __construct(
         protected int $patientid,
-    ) {
-    }
+    ) {}
 }

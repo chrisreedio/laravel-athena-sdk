@@ -26,8 +26,7 @@ class ListExistingPatientAppointmentReasons extends Request
     public function __construct(
         protected int $departmentid,
         protected int $providerid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

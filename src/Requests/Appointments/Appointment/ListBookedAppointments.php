@@ -72,8 +72,7 @@ class ListBookedAppointments extends PaginatedRequest
         protected ?bool $showpatientdetail = null,
         protected ?bool $showremindercalldetail = null,
         protected ?string $startlastmodified = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

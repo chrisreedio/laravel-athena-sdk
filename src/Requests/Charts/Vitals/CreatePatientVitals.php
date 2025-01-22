@@ -40,8 +40,7 @@ class CreatePatientVitals extends Request implements HasBody
         protected ?bool $patientfacingcall = null,
         protected ?string $thirdpartyusername = null,
         protected ?bool $returnvitalids = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

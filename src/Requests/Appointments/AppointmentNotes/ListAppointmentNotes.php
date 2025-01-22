@@ -26,8 +26,7 @@ class ListAppointmentNotes extends Request
     public function __construct(
         protected int $appointmentid,
         protected ?bool $showdeleted = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

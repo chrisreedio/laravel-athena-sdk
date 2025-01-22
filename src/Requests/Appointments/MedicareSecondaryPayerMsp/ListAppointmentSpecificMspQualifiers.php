@@ -25,8 +25,7 @@ class ListAppointmentSpecificMspQualifiers extends Request
      */
     public function __construct(
         protected ?int $departmentid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

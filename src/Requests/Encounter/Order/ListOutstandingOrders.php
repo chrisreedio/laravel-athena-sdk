@@ -26,8 +26,7 @@ class ListOutstandingOrders extends Request
     public function __construct(
         protected int $encounterid,
         protected ?bool $showdeclinedorders = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

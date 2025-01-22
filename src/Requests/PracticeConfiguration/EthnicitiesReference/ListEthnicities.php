@@ -27,9 +27,7 @@ class ListEthnicities extends Request
         return '/ethnicities';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function createDtoFromResponse(Response $response): Collection
     {

@@ -36,8 +36,7 @@ class CreatePatientChartExportDocument extends Request implements HasBody
         protected ?array $createfromdatedocumentclass = null,
         protected ?string $createfromdaterangeend = null,
         protected ?int $departmentid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

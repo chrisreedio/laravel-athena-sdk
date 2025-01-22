@@ -40,8 +40,7 @@ class CreatePatientVaccine extends Request implements HasBody
         protected ?bool $patientfacingcall = null,
         protected ?string $thirdpartyusername = null,
         protected ?string $ndc = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

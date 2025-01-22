@@ -19,7 +19,5 @@ class ListSubscribedChargeCodeChangeEvents extends Request
         return '/chargecodes/changed/subscription';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

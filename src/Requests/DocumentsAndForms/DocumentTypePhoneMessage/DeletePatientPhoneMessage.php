@@ -26,6 +26,5 @@ class DeletePatientPhoneMessage extends Request
     public function __construct(
         protected int $patientid,
         protected int $phonemessageid,
-    ) {
-    }
+    ) {}
 }

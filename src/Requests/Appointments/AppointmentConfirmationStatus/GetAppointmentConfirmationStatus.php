@@ -24,6 +24,5 @@ class GetAppointmentConfirmationStatus extends Request
      */
     public function __construct(
         protected int $appointmentid,
-    ) {
-    }
+    ) {}
 }

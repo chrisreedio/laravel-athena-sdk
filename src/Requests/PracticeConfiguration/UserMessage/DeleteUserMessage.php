@@ -26,6 +26,5 @@ class DeleteUserMessage extends Request
     public function __construct(
         protected int $messageid,
         protected string $username,
-    ) {
-    }
+    ) {}
 }

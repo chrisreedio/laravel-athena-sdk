@@ -38,8 +38,7 @@ class UpdateAppointmentAccidentData extends Request implements HasBody
         protected ?bool $relatedtoautoaccident = null,
         protected ?bool $relatedtoemployment = null,
         protected ?bool $relatedtootheraccident = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

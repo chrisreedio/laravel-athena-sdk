@@ -19,7 +19,5 @@ class ListMobileCarriers extends Request
         return '/mobilecarriers';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

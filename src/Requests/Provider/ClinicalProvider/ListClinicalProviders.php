@@ -46,8 +46,7 @@ class ListClinicalProviders extends Request
         protected ?string $phone = null,
         protected ?string $state = null,
         protected ?int $zip = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

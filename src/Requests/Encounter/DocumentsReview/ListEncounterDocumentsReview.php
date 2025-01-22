@@ -24,8 +24,7 @@ class ListEncounterDocumentsReview extends Request
      */
     public function __construct(
         protected int $encounterid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

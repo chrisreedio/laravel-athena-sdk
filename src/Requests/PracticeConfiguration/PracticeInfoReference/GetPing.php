@@ -19,7 +19,5 @@ class GetPing extends Request
         return '/ping';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

@@ -26,8 +26,7 @@ class DeleteClaimAttachment extends Request
     public function __construct(
         protected int $claimattachmentid,
         protected int $claimid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -30,8 +30,7 @@ class ListEncounterVitals extends Request
         protected ?string $enddate = null,
         protected ?bool $showemptyvitals = null,
         protected ?string $startdate = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

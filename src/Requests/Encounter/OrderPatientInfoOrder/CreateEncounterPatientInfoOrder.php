@@ -36,8 +36,7 @@ class CreateEncounterPatientInfoOrder extends Request implements HasBody
         protected int $ordertypeid,
         protected ?string $externalnote = null,
         protected ?string $providernote = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

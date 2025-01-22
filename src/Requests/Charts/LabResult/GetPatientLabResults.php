@@ -54,8 +54,7 @@ class GetPatientLabResults extends Request
         protected ?bool $showtemplate = null,
         protected ?string $startdate = null,
         protected ?int $supersededdocumentid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -28,8 +28,7 @@ class ListPatientOutstandingClaims extends Request
         protected int $patientid,
         protected ?int $departmentid = null,
         protected ?array $procedurecodes = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

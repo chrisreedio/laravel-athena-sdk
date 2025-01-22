@@ -26,8 +26,7 @@ class GetRiskContract extends Request
     public function __construct(
         protected ?string $name = null,
         protected ?int $riskcontractid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

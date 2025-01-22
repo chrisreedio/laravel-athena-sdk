@@ -26,8 +26,7 @@ class GetPatientStatementImage extends Request
     public function __construct(
         protected int $patientid,
         protected int $statementid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

@@ -28,8 +28,7 @@ class GetProviderTaskCounts extends Request
         protected int $providerid,
         protected ?int $departmentid = null,
         protected ?int $patientid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

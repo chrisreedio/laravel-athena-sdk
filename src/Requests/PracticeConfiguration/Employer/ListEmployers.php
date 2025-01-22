@@ -36,8 +36,7 @@ class ListEmployers extends Request
         protected ?string $phone = null,
         protected ?string $state = null,
         protected ?string $zip = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

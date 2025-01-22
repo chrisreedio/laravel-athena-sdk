@@ -24,6 +24,5 @@ class AppointmentCancelCheckin extends Request
      */
     public function __construct(
         protected int $appointmentid,
-    ) {
-    }
+    ) {}
 }

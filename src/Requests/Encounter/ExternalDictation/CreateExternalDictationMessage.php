@@ -36,8 +36,7 @@ class CreateExternalDictationMessage extends Request implements HasBody
         protected int $totalmessagecount,
         protected string $transcriptiontext,
         protected ?string $encountersection = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -30,8 +30,7 @@ class ListOutstandingOrders extends Request
         protected ?int $encounterid = null,
         protected ?int $patientid = null,
         protected ?bool $showdeclinedorders = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

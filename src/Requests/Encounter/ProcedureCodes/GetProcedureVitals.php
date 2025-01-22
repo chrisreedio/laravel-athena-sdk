@@ -28,8 +28,7 @@ class GetProcedureVitals extends Request
         protected int $encounterid,
         protected string $stage,
         protected ?bool $showunits = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

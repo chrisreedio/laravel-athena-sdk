@@ -38,8 +38,7 @@ class UpdatePatientInsuranceCcmEnrollmentStatus extends Request implements HasBo
         protected int $status,
         protected ?string $effectivedate = null,
         protected ?string $expirationdate = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

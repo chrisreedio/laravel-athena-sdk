@@ -32,8 +32,7 @@ class UpdateLabResultClose extends Request implements HasBody
         protected int $labresultid,
         protected ?string $actionnote = null,
         protected ?int $actionreasonid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

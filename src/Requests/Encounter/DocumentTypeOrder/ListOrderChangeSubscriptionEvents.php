@@ -19,7 +19,5 @@ class ListOrderChangeSubscriptionEvents extends Request
         return '/orders/changed/subscription/events';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

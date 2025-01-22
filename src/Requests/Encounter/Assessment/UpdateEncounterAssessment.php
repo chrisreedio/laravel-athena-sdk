@@ -32,8 +32,7 @@ class UpdateEncounterAssessment extends Request implements HasBody
         protected string $assessmenttext,
         protected int $encounterid,
         protected ?bool $replacetext = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

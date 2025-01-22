@@ -48,8 +48,7 @@ class CreateEncounterDmeOrder extends Request implements HasBody
         protected ?string $providernote = null,
         protected ?\number $totalquantity = null,
         protected ?string $unstructuredsig = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

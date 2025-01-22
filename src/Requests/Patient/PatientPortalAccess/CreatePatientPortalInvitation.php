@@ -43,8 +43,7 @@ class CreatePatientPortalInvitation extends Request implements HasBody
         protected ?string $mobilephone = null,
         protected ?bool $patientinitiated = null,
         protected ?string $permissionlevel = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

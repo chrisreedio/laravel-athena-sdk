@@ -37,8 +37,7 @@ class GetOrderDetails extends Request
         protected ?bool $showexternalcodes = null,
         protected ?bool $showquestions = null,
         protected ?bool $showstructuredauthorizationdetails = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

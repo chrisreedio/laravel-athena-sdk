@@ -28,7 +28,7 @@ readonly class PatientData extends AthenaData
 
         // Contact Preferences
         public ?bool $contactPreferenceAnnouncementSms = null,
-        //TODO - Grab the other contact preferences from the patient data
+        // TODO - Grab the other contact preferences from the patient data
         public ?bool $portalTermsOnFile = null,
         public ?bool $consentToText = null,
         public ?bool $consentToCall = null,
@@ -54,8 +54,7 @@ readonly class PatientData extends AthenaData
         public ?bool $privacyInformationVerified = null,
 
         public array $customFields = [],
-    ) {
-    }
+    ) {}
 
     public static function fromArray(array $data): static
     {

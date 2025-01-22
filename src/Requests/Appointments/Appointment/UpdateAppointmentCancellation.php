@@ -38,8 +38,7 @@ class UpdateAppointmentCancellation extends Request implements HasBody
         protected ?string $cancellationreason = null,
         protected ?bool $ignoreschedulablepermission = null,
         protected ?bool $nopatientcase = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -32,8 +32,7 @@ class UpdateAppointmentInsurances extends Request implements HasBody
         protected int $appointmentid,
         protected ?int $primaryinsuranceid = null,
         protected ?int $secondaryinsuranceid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

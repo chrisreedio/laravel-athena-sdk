@@ -19,7 +19,5 @@ class GetSingleAppointmentContractTerms extends Request
         return '/misc/singleappointmentcontractterms';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

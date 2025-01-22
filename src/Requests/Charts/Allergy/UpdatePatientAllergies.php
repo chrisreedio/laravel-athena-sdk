@@ -40,8 +40,7 @@ class UpdatePatientAllergies extends Request implements HasBody
         protected ?array $allergies = null,
         protected ?bool $nkda = null,
         protected ?string $sectionnote = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

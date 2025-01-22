@@ -78,8 +78,7 @@ class CreatePatientImagingResultDocument extends Request implements HasBody
         protected ?string $resultstatus = null,
         protected ?string $ssotarget = null,
         protected ?int $tietoorderid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -24,6 +24,5 @@ class GetDepartmentEcommunicationDisclosure extends Request
      */
     public function __construct(
         protected int $departmentid,
-    ) {
-    }
+    ) {}
 }

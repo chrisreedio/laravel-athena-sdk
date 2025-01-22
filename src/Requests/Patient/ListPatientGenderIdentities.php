@@ -24,8 +24,7 @@ class ListPatientGenderIdentities extends Request
      */
     public function __construct(
         protected ?bool $show2015edcehrtvalues = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

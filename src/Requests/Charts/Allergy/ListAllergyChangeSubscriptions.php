@@ -19,7 +19,5 @@ class ListAllergyChangeSubscriptions extends Request
         return '/chart/healthhistory/allergies/changed/subscription';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

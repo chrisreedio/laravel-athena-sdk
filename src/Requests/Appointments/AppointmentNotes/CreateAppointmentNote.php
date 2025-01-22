@@ -32,8 +32,7 @@ class CreateAppointmentNote extends Request implements HasBody
         protected int $appointmentid,
         protected string $notetext,
         protected ?bool $displayonschedule = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

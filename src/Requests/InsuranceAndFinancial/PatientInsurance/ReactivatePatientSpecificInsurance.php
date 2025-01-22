@@ -32,8 +32,7 @@ class ReactivatePatientSpecificInsurance extends Request implements HasBody
         protected int $insuranceid,
         protected int $patientid,
         protected ?string $expirationdate = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

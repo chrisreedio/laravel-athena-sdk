@@ -28,8 +28,7 @@ class GetEncounterSummaryContent extends Request
         protected int $encounterid,
         protected ?bool $mobile = null,
         protected ?bool $skipamendments = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

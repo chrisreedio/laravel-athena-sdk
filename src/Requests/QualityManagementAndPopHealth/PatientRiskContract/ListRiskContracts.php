@@ -26,8 +26,7 @@ class ListRiskContracts extends Request
     public function __construct(
         protected ?int $departmentid = null,
         protected ?int $riskcontractid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

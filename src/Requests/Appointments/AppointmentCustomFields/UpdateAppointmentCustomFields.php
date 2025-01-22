@@ -30,8 +30,7 @@ class UpdateAppointmentCustomFields extends Request implements HasBody
     public function __construct(
         protected int $appointmentid,
         protected array $customfields,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -30,8 +30,7 @@ class CreateEncounterQuestionnaireScreener extends Request implements HasBody
     public function __construct(
         protected int $encounterid,
         protected int $templateid,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

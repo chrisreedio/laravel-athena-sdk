@@ -26,8 +26,7 @@ class DeleteEncounterReason extends Request
     public function __construct(
         protected int $encounterid,
         protected int $encounterreasonid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

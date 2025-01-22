@@ -40,8 +40,7 @@ class CreateEncounterOrderOther extends Request implements HasBody
         protected ?string $facilitynote = null,
         protected ?bool $highpriority = null,
         protected ?string $providernote = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

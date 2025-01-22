@@ -34,8 +34,7 @@ class UpdateClaimAttachment extends Request implements HasBody
         protected int $claimid,
         protected ?string $attachmenttype = null,
         protected ?string $note = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

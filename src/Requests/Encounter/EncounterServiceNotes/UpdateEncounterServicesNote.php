@@ -30,8 +30,7 @@ class UpdateEncounterServicesNote extends Request implements HasBody
     public function __construct(
         protected int $encounterid,
         protected string $note,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

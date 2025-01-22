@@ -23,7 +23,5 @@ class ListPrescriptionChangeEvents extends Request
         return '/prescriptions/changed/subscription/events';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

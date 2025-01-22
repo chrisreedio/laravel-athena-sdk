@@ -19,7 +19,5 @@ class GetOneYearContractTerms extends Request
         return '/misc/oneyearcontractterms';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

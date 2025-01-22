@@ -34,8 +34,7 @@ class DenyOrderWithReasons extends Request implements HasBody
         protected int $encounterid,
         protected int $orderid,
         protected ?string $username = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

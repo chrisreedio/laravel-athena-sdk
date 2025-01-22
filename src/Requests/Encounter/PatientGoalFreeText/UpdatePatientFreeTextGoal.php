@@ -35,8 +35,7 @@ class UpdatePatientFreeTextGoal extends Request implements HasBody
         protected ?string $freetextgoal = null,
         protected ?bool $replacefreetextgoal = null,
         protected ?string $versiontoken = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -14,8 +14,7 @@ readonly class EmergencyContactData extends AthenaData
         public ?string $relationship = null,
         public ?string $homePhone = null,
         public ?string $mobilePhone = null,
-    ) {
-    }
+    ) {}
 
     public static function fromArray(array $data): static
     {

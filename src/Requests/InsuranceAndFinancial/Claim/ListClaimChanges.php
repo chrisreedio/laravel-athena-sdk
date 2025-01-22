@@ -34,8 +34,7 @@ class ListClaimChanges extends Request
         protected ?string $showprocessedenddatetime = null,
         protected ?string $showprocessedstartdatetime = null,
         protected ?bool $showservicetypeaddons = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

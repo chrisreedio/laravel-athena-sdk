@@ -36,8 +36,7 @@ class ListInsurancePackageCasePolicies extends Request
         protected ?string $insurancephone = null,
         protected ?string $insurancestate = null,
         protected ?string $insurancezip = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

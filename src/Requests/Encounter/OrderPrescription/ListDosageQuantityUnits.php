@@ -19,7 +19,5 @@ class ListDosageQuantityUnits extends Request
         return '/reference/order/prescription/dosagequantityunits';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

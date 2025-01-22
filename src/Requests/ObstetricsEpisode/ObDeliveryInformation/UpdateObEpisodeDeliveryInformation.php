@@ -60,8 +60,7 @@ class UpdateObEpisodeDeliveryInformation extends Request implements HasBody
         protected ?bool $pretermlabor = null,
         protected ?bool $tubalsterilization = null,
         protected ?\number $weeksgestation = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

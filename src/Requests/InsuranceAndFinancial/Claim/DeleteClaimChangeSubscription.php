@@ -26,8 +26,7 @@ class DeleteClaimChangeSubscription extends Request
     public function __construct(
         protected ?string $eventname = null,
         protected ?bool $showadditionalevents = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

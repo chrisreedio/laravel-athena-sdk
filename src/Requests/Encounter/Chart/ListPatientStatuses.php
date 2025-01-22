@@ -22,9 +22,7 @@ class ListPatientStatuses extends Request
         return '/chart/configuration/patientstatuses';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function defaultQuery(): array
     {

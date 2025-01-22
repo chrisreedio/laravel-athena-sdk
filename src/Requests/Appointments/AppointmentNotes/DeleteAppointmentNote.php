@@ -26,6 +26,5 @@ class DeleteAppointmentNote extends Request
     public function __construct(
         protected int $appointmentid,
         protected int $noteid,
-    ) {
-    }
+    ) {}
 }

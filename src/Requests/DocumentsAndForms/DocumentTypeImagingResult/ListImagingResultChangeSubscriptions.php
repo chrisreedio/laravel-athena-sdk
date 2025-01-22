@@ -19,7 +19,5 @@ class ListImagingResultChangeSubscriptions extends Request
         return '/imagingresults/changed/subscription';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

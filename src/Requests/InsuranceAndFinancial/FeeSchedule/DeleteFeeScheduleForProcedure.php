@@ -26,8 +26,7 @@ class DeleteFeeScheduleForProcedure extends Request
     public function __construct(
         protected int $feescheduleid,
         protected string $procedurecode,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

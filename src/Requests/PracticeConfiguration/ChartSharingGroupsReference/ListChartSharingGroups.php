@@ -19,7 +19,5 @@ class ListChartSharingGroups extends Request
         return '/configuration/chartsharinggroups';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

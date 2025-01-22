@@ -26,8 +26,7 @@ class GetAppointmentType extends Request
     public function __construct(
         protected int $appointmenttypeid,
         protected ?bool $showappointmenttypeclasses = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

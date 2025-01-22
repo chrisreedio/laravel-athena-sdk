@@ -27,8 +27,7 @@ class ListPatientsByCustomFields extends Request
     public function __construct(
         protected int $customfieldid,
         protected string $customfieldvalue,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

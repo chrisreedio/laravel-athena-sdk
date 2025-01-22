@@ -48,8 +48,7 @@ class CreatePatientPaymentRecord extends Request implements HasBody
         protected ?string $otheramount = null,
         protected ?string $postdate = null,
         protected ?string $todayservice = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -51,8 +51,7 @@ class ListClaims extends Request
         protected ?bool $showlocalpatientid = null,
         protected ?bool $showservicetypeaddons = null,
         protected ?bool $showsupervisingprovider = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

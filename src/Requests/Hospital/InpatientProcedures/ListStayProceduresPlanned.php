@@ -24,8 +24,7 @@ class ListStayProceduresPlanned extends Request
      */
     public function __construct(
         protected int $stayid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

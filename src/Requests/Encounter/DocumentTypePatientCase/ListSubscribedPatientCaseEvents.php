@@ -19,7 +19,5 @@ class ListSubscribedPatientCaseEvents extends Request
         return '/documents/patientcase/changed/subscription';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

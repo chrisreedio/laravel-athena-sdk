@@ -30,8 +30,7 @@ class GetEncounterReviewOfSystems extends Request
         protected ?bool $showstructured = null,
         protected ?array $templateids = null,
         protected ?array $wellchildtemplateids = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

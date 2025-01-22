@@ -12,9 +12,7 @@ readonly class ChartAlertData extends AthenaData
         public ?string $noteText = null,
         public ?string $lastModifiedBy = null,
         public ?DateTime $lastModified = null,
-    ) {
-
-    }
+    ) {}
 
     public static function fromArray(array $data): static
     {

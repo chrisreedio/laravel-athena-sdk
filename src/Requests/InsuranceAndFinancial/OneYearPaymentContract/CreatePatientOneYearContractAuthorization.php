@@ -60,8 +60,7 @@ class CreatePatientOneYearContractAuthorization extends Request implements HasBo
         protected ?string $nameoncard = null,
         protected ?bool $todayservice = null,
         protected ?string $trackdata = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

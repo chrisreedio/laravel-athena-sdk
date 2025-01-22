@@ -19,7 +19,5 @@ class ListCustomFields extends Request
         return '/customfields';
     }
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 }

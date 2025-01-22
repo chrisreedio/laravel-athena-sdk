@@ -32,8 +32,7 @@ class CreatePatientReceiptAuthorization extends Request implements HasBody
         protected string $attachmentcontents,
         protected int $epaymentid,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

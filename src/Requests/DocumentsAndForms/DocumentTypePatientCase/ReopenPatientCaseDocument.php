@@ -26,6 +26,5 @@ class ReopenPatientCaseDocument extends Request
     public function __construct(
         protected int $patientcaseid,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 }

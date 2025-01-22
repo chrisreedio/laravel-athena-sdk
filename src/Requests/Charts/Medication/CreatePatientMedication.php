@@ -50,8 +50,7 @@ class CreatePatientMedication extends Request implements HasBody
         protected ?string $stopdate = null,
         protected ?string $stopreason = null,
         protected ?string $unstructuredsig = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

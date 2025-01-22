@@ -32,8 +32,7 @@ class UpdateObEpisodeDiscussionItems extends Request implements HasBody
         protected array $discussions,
         protected int $obepisodeid,
         protected int $patientid,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

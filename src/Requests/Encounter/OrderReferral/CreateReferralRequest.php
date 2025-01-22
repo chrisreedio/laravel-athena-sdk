@@ -58,8 +58,7 @@ class CreateReferralRequest extends Request implements HasBody
         protected ?string $reasonforreferral = null,
         protected ?int $requestedvisits = null,
         protected ?string $startdate = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

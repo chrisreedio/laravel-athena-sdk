@@ -52,8 +52,7 @@ class CreateHospitalChargeCode extends Request implements HasBody
         protected ?string $procedurecode = null,
         protected ?bool $softcode = null,
         protected ?string $username = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

@@ -80,8 +80,7 @@ class UpdateObEpisodeFlowsheet extends Request implements HasBody
         protected ?int $protein = null,
         protected ?string $specificgravityofurine = null,
         protected ?array $weight = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

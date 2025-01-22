@@ -34,8 +34,7 @@ class UpdateAppointmentNote extends Request implements HasBody
         protected int $noteid,
         protected string $notetext,
         protected ?bool $displayonschedule = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

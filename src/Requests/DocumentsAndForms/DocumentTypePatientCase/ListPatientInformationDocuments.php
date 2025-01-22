@@ -42,8 +42,7 @@ class ListPatientInformationDocuments extends Request
         protected ?bool $showdeleted = null,
         protected ?string $startdate = null,
         protected ?string $status = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

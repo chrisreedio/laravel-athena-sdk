@@ -32,8 +32,7 @@ class UpdateCloseImagingResult extends Request implements HasBody
         protected int $imagingresultid,
         protected ?string $actionnote = null,
         protected ?int $actionreasonid = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

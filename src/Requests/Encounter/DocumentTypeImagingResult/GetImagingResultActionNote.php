@@ -24,8 +24,7 @@ class GetImagingResultActionNote extends Request
      */
     public function __construct(
         protected int $imagingresultid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

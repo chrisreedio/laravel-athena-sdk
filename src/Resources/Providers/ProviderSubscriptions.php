@@ -16,12 +16,12 @@ class ProviderSubscriptions extends Resource
 {
     public function events(): array
     {
-        return $this->connector->send(new ListProviderChangeEvents())->dtoOrFail();
+        return $this->connector->send(new ListProviderChangeEvents)->dtoOrFail();
     }
 
     public function list(): Collection
     {
-        return $this->connector->send(new ListSubscribedProviderEvents())->dtoOrFail();
+        return $this->connector->send(new ListSubscribedProviderEvents)->dtoOrFail();
     }
 
     public function subscribe(?string $eventName = null): Response

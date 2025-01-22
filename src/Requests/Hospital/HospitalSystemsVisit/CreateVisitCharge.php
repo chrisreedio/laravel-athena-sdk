@@ -38,8 +38,7 @@ class CreateVisitCharge extends Request implements HasBody
         protected ?int $renderingproviderid = null,
         protected ?int $servicedepartmentid = null,
         protected ?string $username = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

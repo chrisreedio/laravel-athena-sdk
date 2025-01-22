@@ -32,8 +32,7 @@ class GetPatientLetterDocument extends Request
         protected ?bool $excludehtml = null,
         protected ?bool $excludexml = null,
         protected ?bool $getentityinfo = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

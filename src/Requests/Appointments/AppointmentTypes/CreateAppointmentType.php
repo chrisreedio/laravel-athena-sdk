@@ -38,8 +38,7 @@ class CreateAppointmentType extends Request implements HasBody
         protected string $shortname,
         protected ?bool $generic = null,
         protected ?bool $templatetypeonly = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

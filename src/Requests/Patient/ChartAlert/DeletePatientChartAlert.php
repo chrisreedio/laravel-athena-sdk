@@ -26,8 +26,7 @@ class DeletePatientChartAlert extends Request
     public function __construct(
         protected int $patientid,
         protected int $departmentid,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

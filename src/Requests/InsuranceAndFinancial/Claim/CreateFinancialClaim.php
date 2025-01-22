@@ -54,8 +54,7 @@ class CreateFinancialClaim extends Request implements HasBody
         protected ?int $secondarypatientinsuranceid = null,
         protected ?string $servicedate = null,
         protected ?array $servicetypeaddons = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

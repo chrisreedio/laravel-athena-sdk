@@ -36,8 +36,7 @@ class GetPatientSurgeryDocument extends Request
         protected ?bool $showpreschedulingchecklist = null,
         protected ?bool $showquestions = null,
         protected ?bool $showstructuredauthorizationdetails = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {

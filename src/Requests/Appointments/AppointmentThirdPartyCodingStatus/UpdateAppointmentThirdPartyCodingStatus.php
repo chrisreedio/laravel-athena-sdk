@@ -30,8 +30,7 @@ class UpdateAppointmentThirdPartyCodingStatus extends Request implements HasBody
     public function __construct(
         protected int $appointmentid,
         protected string $status,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {

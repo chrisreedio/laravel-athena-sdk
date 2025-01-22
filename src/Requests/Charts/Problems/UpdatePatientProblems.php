@@ -38,8 +38,7 @@ class UpdatePatientProblems extends Request implements HasBody
         protected ?string $thirdpartyusername = null,
         protected ?bool $replacenote = null,
         protected ?string $sectionnote = null,
-    ) {
-    }
+    ) {}
 
     public function defaultBody(): array
     {
