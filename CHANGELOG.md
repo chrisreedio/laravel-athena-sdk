@@ -2,6 +2,15 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.28 - 2025-01-22
+
+### What's Changed
+
+* build(deps): bump dependabot/fetch-metadata from 2.1.0 to 2.2.0 by @dependabot in https://github.com/chrisreedio/laravel-athena-sdk/pull/34
+* ✨ feat: added ReferringProviders resources & updated dependencies by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/35
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.27...v1.0.0-alpha.28
+
 ## v1.0.0-alpha.27 - 2024-05-14
 
 ### What's Changed
