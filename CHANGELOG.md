@@ -2,6 +2,15 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.29 - 2025-01-28
+
+### What's Changed
+
+* build(deps): bump dependabot/fetch-metadata from 2.2.0 to 2.3.0 by @dependabot in https://github.com/chrisreedio/laravel-athena-sdk/pull/36
+* fix: corrected key in `fromArray` method of `AddressData` class by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/37
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.28...v1.0.0-alpha.29
+
 ## v1.0.0-alpha.28 - 2025-01-22
 
 ### What's Changed
