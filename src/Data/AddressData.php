@@ -17,7 +17,7 @@ readonly class AddressData extends AthenaData
     public static function fromArray(array $data): static
     {
         return new static(
-            street: $data['address1'] ?? null,
+            street: $data['address'] ?? null,
             suite: $data['address2'] ?? null,
             city: $data['city'] ?? null,
             state: $data['state'] ?? null,
