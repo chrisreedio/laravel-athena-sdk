@@ -12,8 +12,7 @@ readonly class AddressData extends AthenaData
         public ?string $zip = null,
         public ?string $countryCode = null,
         public ?string $countryCode3166 = null,
-    ) {
-    }
+    ) {}
 
     public static function fromArray(array $data): static
     {
