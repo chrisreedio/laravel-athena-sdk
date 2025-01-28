@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.30 - 2025-01-28
+
+### What's Changed
+
+* ✨ feat: updated `fromArray` to prioritize `address1` for street by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/38
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.29...v1.0.0-alpha.30
+
 ## v1.0.0-alpha.29 - 2025-01-28
 
 ### What's Changed
