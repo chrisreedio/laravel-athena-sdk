@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.32 - 2025-02-10
+
+### What's Changed
+
+* fix: corrected typeName key in ProviderData.php by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/41
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.31...v1.0.0-alpha.32
+
 ## v1.0.0-alpha.31 - 2025-02-10
 
 ### What's Changed
