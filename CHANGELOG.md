@@ -2,6 +2,15 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.31 - 2025-02-10
+
+### What's Changed
+
+* build(deps): bump aglipanci/laravel-pint-action from 2.4 to 2.5 by @dependabot in https://github.com/chrisreedio/laravel-athena-sdk/pull/39
+* ✨ feat: added new provider type fields in `ProviderData.php` by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/40
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.30...v1.0.0-alpha.31
+
 ## v1.0.0-alpha.30 - 2025-01-28
 
 ### What's Changed
