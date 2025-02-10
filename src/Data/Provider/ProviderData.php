@@ -39,7 +39,7 @@ readonly class ProviderData extends AthenaData
             hideInPortal: self::toBool($data['hideinportal'] ?? false),
             billable: self::toBool($data['billable'] ?? false),
             createsEncounters: self::toBool($data['createencounteroncheckin'] ?? false),
-            typeName: $data['providertypename'] ?? null,
+            typeName: $data['providertype'] ?? null,
             typeId: $data['providertypeid'] ?? null,
             ansiSpecialtyCode: $data['ansispecialtycode'] ?? null,
             ansiSpecialtyName: $data['ansispecialtyname'] ?? null,
