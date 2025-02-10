@@ -18,6 +18,10 @@ readonly class ProviderData extends AthenaData
         public ?bool $hideInPortal = null,
         public ?bool $billable = null,
         public ?bool $createsEncounters = null,
+        public ?string $typeName = null,
+        public ?string $typeId = null,
+        public ?string $ansiSpecialtyCode = null,
+        public ?string $ansiSpecialtyName = null,
     ) {}
 
     public static function fromArray(array $data): static
@@ -34,6 +38,10 @@ readonly class ProviderData extends AthenaData
             hideInPortal: self::toBool($data['hideinportal'] ?? false),
             billable: self::toBool($data['billable'] ?? false),
             createsEncounters: self::toBool($data['createencounteroncheckin'] ?? false),
+            typeName: $data['providertypename'] ?? null,
+            typeId: $data['providertypeid'] ?? null,
+            ansiSpecialtyCode: $data['ansispecialtycode'] ?? null,
+            ansiSpecialtyName: $data['ansispecialtyname'] ?? null,
         );
     }
 }
