@@ -22,8 +22,7 @@ readonly class ProviderData extends AthenaData
         public ?string $typeId = null,
         public ?string $ansiSpecialtyCode = null,
         public ?string $ansiSpecialtyName = null,
-    ) {
-    }
+    ) {}
 
     public static function fromArray(array $data): static
     {
