@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.33 - 2025-02-21
+
+### What's Changed
+
+* ✨ feat: added `referringProviders` method to `AthenaConnector` by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/42
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.32...v1.0.0-alpha.33
+
 ## v1.0.0-alpha.32 - 2025-02-10
 
 ### What's Changed
