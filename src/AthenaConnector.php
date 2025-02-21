@@ -139,6 +139,11 @@ class AthenaConnector extends Connector implements HasPagination
         return new Providers($this);
     }
 
+    public function referringProviders(): Providers\ReferringProviders
+    {
+        return new Providers\ReferringProviders($this);
+    }
+
     public function practice(): Practice
     {
         return new Practice($this);
