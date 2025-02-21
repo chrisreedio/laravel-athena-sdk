@@ -4,6 +4,9 @@ namespace ChrisReedIO\AthenaSDK\Requests\Provider\ReferringProvider;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
+
+use function collect;
 
 /**
  * ListReferringProviderChangeEvents
@@ -19,5 +22,14 @@ class ListReferringProviderChangeEvents extends Request
         return '/referringproviders/changed/subscription/events';
     }
 
-    public function __construct() {}
+    public function __construct()
+    {
+        //
+    }
+
+    public function createDtoFromResponse(Response $response): array
+    {
+        // dd($response->json('subscriptions'));
+        return collect($response->json('subscriptions'))->flatten()->all();
+    }
 }

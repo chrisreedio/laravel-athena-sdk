@@ -2,9 +2,13 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\Provider\ReferringProvider;
 
+use ChrisReedIO\AthenaSDK\Data\Provider\ProviderData;
+use ChrisReedIO\AthenaSDK\Data\Provider\ReferringProviderData;
 use ChrisReedIO\AthenaSDK\PaginatedRequest;
 use Saloon\Enums\Method;
 
+use Saloon\Http\Response;
+use function collect;
 use function config;
 
 /**
@@ -43,5 +47,12 @@ class ListReferringProviderChanges extends PaginatedRequest
             'showprocessedenddatetime' => $this->showprocessedenddatetime,
             'showprocessedstartdatetime' => $this->showprocessedstartdatetime,
         ]);
+    }
+
+    public function createDtoFromResponse(Response $response): array
+    {
+        return collect($response->json($this->itemsKey))
+            ->map(fn ($item) => ReferringProviderData::fromArray($item))
+            ->all();
     }
 }
