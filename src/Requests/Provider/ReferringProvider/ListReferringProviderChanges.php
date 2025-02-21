@@ -2,12 +2,11 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\Provider\ReferringProvider;
 
-use ChrisReedIO\AthenaSDK\Data\Provider\ProviderData;
 use ChrisReedIO\AthenaSDK\Data\Provider\ReferringProviderData;
 use ChrisReedIO\AthenaSDK\PaginatedRequest;
 use Saloon\Enums\Method;
-
 use Saloon\Http\Response;
+
 use function collect;
 use function config;
 
