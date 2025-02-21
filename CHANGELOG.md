@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.36 - 2025-02-21
+
+### What's Changed
+
+* 🔧 fix: adjusted default values in `ProviderData.php` to `null` by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/45
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.35...v1.0.0-alpha.36
+
 ## v1.0.0-alpha.35 - 2025-02-21
 
 ### What's Changed
