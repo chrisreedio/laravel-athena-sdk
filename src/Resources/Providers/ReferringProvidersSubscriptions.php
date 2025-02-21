@@ -24,12 +24,12 @@ class ReferringProvidersSubscriptions extends Resource
         return $this->connector->send(new ListReferringProviderSubscriptions)->dtoOrFail();
     }
 
-    public function subscribe(string $eventName = null): Response
+    public function subscribe(?string $eventName = null): Response
     {
         return $this->connector->send(new CreateReferringProviderSubscription($eventName));
     }
 
-    public function unsubscribe(string $eventName = null): Response
+    public function unsubscribe(?string $eventName = null): Response
     {
         return $this->connector->send(new DeleteReferringProviderSubscription($eventName));
     }
