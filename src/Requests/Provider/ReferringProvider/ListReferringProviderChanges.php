@@ -32,9 +32,9 @@ class ListReferringProviderChanges extends PaginatedRequest
      * @param  null|string  $showprocessedstartdatetime  Show already processed changes.  This will show changes that you previously retrieved at some point after this datetime mm/dd/yyyy hh24:mi:ss (Eastern). Can be used to refetch data if there was an error, such as a timeout, and records are marked as already retrieved. This is intended to be used with showprocessedenddatetime and for a short period of time only. Also note that all messages will eventually be deleted.
      */
     public function __construct(
-        protected ?bool $leaveunprocessed = null,
-        protected ?string $showprocessedenddatetime = null,
-        protected ?string $showprocessedstartdatetime = null,
+        protected ?bool $leaveUnprocessed = null,
+        protected ?string $showProcessedEndDatetime = null,
+        protected ?string $showProcessedStartDatetime = null,
     ) {}
 
     public function defaultQuery(): array
@@ -43,8 +43,8 @@ class ListReferringProviderChanges extends PaginatedRequest
 
         return array_filter([
             'leaveunprocessed' => $leave,
-            'showprocessedenddatetime' => $this->showprocessedenddatetime,
-            'showprocessedstartdatetime' => $this->showprocessedstartdatetime,
+            'showprocessedenddatetime' => $this->showProcessedEndDatetime,
+            'showprocessedstartdatetime' => $this->showProcessedStartDatetime,
         ]);
     }
 
