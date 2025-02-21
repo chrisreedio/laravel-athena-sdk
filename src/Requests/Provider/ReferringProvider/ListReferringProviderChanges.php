@@ -35,8 +35,7 @@ class ListReferringProviderChanges extends PaginatedRequest
         protected ?bool $leaveUnprocessed = null,
         protected ?string $showProcessedEndDatetime = null,
         protected ?string $showProcessedStartDatetime = null,
-    ) {
-    }
+    ) {}
 
     public function defaultQuery(): array
     {
