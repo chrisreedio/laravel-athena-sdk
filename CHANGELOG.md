@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.0.0-alpha.37 - 2025-04-23
+
+### What's Changed
+
+* Laravel 12 Support by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/46
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.36...v1.0.0-alpha.37
+
 ## v1.0.0-alpha.36 - 2025-02-21
 
 ### What's Changed
