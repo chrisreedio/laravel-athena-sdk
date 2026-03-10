@@ -29,9 +29,9 @@ class CreatePrescriptionOrder extends Request implements HasBody
      * @param  null|string  $additionalinstructions  Sig field. Additional modifiers for when to take the medication.
      * @param  null|string  $administernote  An additional note to the provider or staff for administration.
      * @param  null|bool  $dispenseaswritten  Whether the prescription should be marked as dispense as written (i.e., no substitutions without consulting the doctor).
-     * @param  null|number  $dosagequantity  Sig field. The numerical amount of medication to take.
+     * @param  null|int|float  $dosagequantity  Sig field. The numerical amount of medication to take.
      * @param  null|string  $dosagequantityunit  Sig field. The unit of the dosage quantity, and required if that is passed in. Get the list of available values from /reference/order/prescription/dosagequantityunits. Most values are not valid for each individual medication.
-     * @param  null|number  $duration  Sig field. The numerical amount of days to take this medication for.
+     * @param  null|int|float  $duration  Sig field. The numerical amount of days to take this medication for.
      * @param  null|string  $externalnote  An additional note to the patient.
      * @param  null|int  $facilityid  The athena ID of the pharmacy you want to send the prescription to. Defaults to the patient default pharmacy. You can use this or the pharmacy NCPDP ID but not both. Get a localized list using /chart/configuration/facilities.
      * @param  null|string  $frequency  Sig field. How often to take doses of the medication. Get the list of available values from /reference/order/prescription/frequencies.
@@ -51,9 +51,9 @@ class CreatePrescriptionOrder extends Request implements HasBody
         protected ?string $additionalinstructions = null,
         protected ?string $administernote = null,
         protected ?bool $dispenseaswritten = null,
-        protected ?\number $dosagequantity = null,
+        protected int|float|null $dosagequantity = null,
         protected ?string $dosagequantityunit = null,
-        protected ?\number $duration = null,
+        protected int|float|null $duration = null,
         protected ?string $externalnote = null,
         protected ?int $facilityid = null,
         protected ?string $frequency = null,

@@ -24,12 +24,12 @@ class CreateFeeScheduleForProcedure extends Request implements HasBody
     }
 
     /**
-     * @param  number  $amount  The amount to charge for this procedure code.
+     * @param  int|float  $amount  The amount to charge for this procedure code.
      * @param  int  $feescheduleid  The ID of the fee schedule.
      * @param  string  $procedurecode  The procedure code to be added or updated.
      */
     public function __construct(
-        protected \number $amount,
+        protected int|float $amount,
         protected int $feescheduleid,
         protected string $procedurecode,
     ) {}

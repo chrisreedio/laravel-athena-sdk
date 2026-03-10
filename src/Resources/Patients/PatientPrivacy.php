@@ -41,7 +41,7 @@ class PatientPrivacy extends Resource
             $this->departmentId,
             $this->patientId,
             $signatureName,
-            $signatureDatetime?->format('Y-m-d H:i:s'),
+            $signatureDatetime->format('Y-m-d H:i:s'),
             null,
             $insuredSignature,
             $patientSignature,

@@ -32,8 +32,8 @@ class CreateHospitalChargeCode extends Request implements HasBody
      * @param  null|bool  $dynamicpricing  Is Price set at charge entry.
      * @param  null|string  $expirationdate  Date that this chargecode expires. Formatted as MM/DD/YYYY.
      * @param  null|bool  $fractionalbilling  True if the chargecode can be fractionally billed.
-     * @param  null|number  $minprice  The minimum price for fractional billing.
-     * @param  null|number  $price  The amount charged for what this chargecode specifies.
+     * @param  null|int|float  $minprice  The minimum price for fractional billing.
+     * @param  null|int|float  $price  The amount charged for what this chargecode specifies.
      * @param  null|string  $procedurecode  The procedure code associated with this chargecode.
      * @param  null|bool  $softcode  Is hcpcs entered at charge entry.
      * @param  null|string  $username  The username to add as.
@@ -47,8 +47,8 @@ class CreateHospitalChargeCode extends Request implements HasBody
         protected ?bool $dynamicpricing = null,
         protected ?string $expirationdate = null,
         protected ?bool $fractionalbilling = null,
-        protected ?\number $minprice = null,
-        protected ?\number $price = null,
+        protected int|float|null $minprice = null,
+        protected int|float|null $price = null,
         protected ?string $procedurecode = null,
         protected ?bool $softcode = null,
         protected ?string $username = null,

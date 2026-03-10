@@ -114,12 +114,12 @@ class CreatePatient extends Request implements HasBody
      * @param  null|string  $occupationcode  Occupation of the patient, using the US Census occupation code (code system 2.16.840.1.113883.6.240).  "other" can be used as well.
      * @param  null|bool  $onlinestatementonlyyn  Set to true if a patient wishes to get e-statements instead of paper statements. Should only be set for patients with an email address and clients with athenaCommunicator. The language we use in the portal is, "Future billing statements will be sent to you securely via your Patient Portal account. You will receive an email notice when new statements are available." This language is not required, but it is given as a suggestion.
      * @param  null|bool  $portalaccessgiven  This flag is set if the patient has been given access to the portal. This may be set by the API user if a patient has been given access to the portal "by providing a preprinted brochure or flyer showing the URL where patients can access their Patient Care Summaries." The practiceinfo endpoint can provide the portal URL. While technically allowed, it would be very unusual to set this to false via the API.
-     * @param  null|number  $povertylevelcalculated  Patient's poverty level (% of the Federal Poverty Level), as calculated from family size, income per pay period, pay period, and state. Typically only valued if client has Federal Poverty Level fields turned on.
-     * @param  null|number  $povertylevelfamilysize  Patient's family size (used for determining poverty level). Only settable if client has Federal Poverty Level fields turned on.
+     * @param  null|int|float  $povertylevelcalculated  Patient's poverty level (% of the Federal Poverty Level), as calculated from family size, income per pay period, pay period, and state. Typically only valued if client has Federal Poverty Level fields turned on.
+     * @param  null|int|float  $povertylevelfamilysize  Patient's family size (used for determining poverty level). Only settable if client has Federal Poverty Level fields turned on.
      * @param  null|bool  $povertylevelfamilysizedeclined  Indicates if the patient delcines to provide "povertylevelfamilysize". Should be set to Yes if the patient declines.
      * @param  null|bool  $povertylevelincomedeclined  Indicates if the patient delcines to provide "povertylevelincomeperpayperiod". Should be set to Yes if the patient declines.
      * @param  null|string  $povertylevelincomepayperiod  Patient's pay period (used for determining poverty level). Only settable if client has Federal Poverty Level fields turned on.
-     * @param  null|number  $povertylevelincomeperpayperiod  Patient's income per specified pay period (used for determining poverty level). Only settable if client has Federal Poverty Level fields turned on.
+     * @param  null|int|float  $povertylevelincomeperpayperiod  Patient's income per specified pay period (used for determining poverty level). Only settable if client has Federal Poverty Level fields turned on.
      * @param  null|bool  $povertylevelincomerangedeclined  Indicates whether or not the patient declines to provide an income level (povertylevelcalculated).
      * @param  null|string  $preferredname  The patient's preferred name (i.e. nickname).
      * @param  null|string  $preferredpronouns  Pronoun this patient uses. (Max length: 20)
@@ -228,12 +228,12 @@ class CreatePatient extends Request implements HasBody
         protected ?string $occupationcode = null,
         protected ?bool $onlinestatementonlyyn = null,
         protected ?bool $portalaccessgiven = null,
-        protected ?\number $povertylevelcalculated = null,
-        protected ?\number $povertylevelfamilysize = null,
+        protected int|float|null $povertylevelcalculated = null,
+        protected int|float|null $povertylevelfamilysize = null,
         protected ?bool $povertylevelfamilysizedeclined = null,
         protected ?bool $povertylevelincomedeclined = null,
         protected ?string $povertylevelincomepayperiod = null,
-        protected ?\number $povertylevelincomeperpayperiod = null,
+        protected int|float|null $povertylevelincomeperpayperiod = null,
         protected ?bool $povertylevelincomerangedeclined = null,
         protected ?string $preferredname = null,
         protected ?string $preferredpronouns = null,

@@ -33,7 +33,7 @@ class CreateEncounterDmeOrder extends Request implements HasBody
      * @param  null|int  $numrefillsallowed  The number of refills allowed for this DME. Defaults to 0.
      * @param  null|string  $orderingmode  Selects whether you wish to prescribe, or dispense this DME.
      * @param  null|string  $providernote  An internal note for the provider or staff.
-     * @param  null|number  $totalquantity  The total amount of units of the DME being prescribed.
+     * @param  null|int|float  $totalquantity  The total amount of units of the DME being prescribed.
      * @param  null|string  $unstructuredsig  The unstructured sig.
      */
     public function __construct(
@@ -46,7 +46,7 @@ class CreateEncounterDmeOrder extends Request implements HasBody
         protected ?int $numrefillsallowed = null,
         protected ?string $orderingmode = null,
         protected ?string $providernote = null,
-        protected ?\number $totalquantity = null,
+        protected int|float|null $totalquantity = null,
         protected ?string $unstructuredsig = null,
     ) {}
 
