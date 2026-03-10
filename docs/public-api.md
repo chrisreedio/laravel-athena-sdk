@@ -26,155 +26,257 @@ $appointments = Athena::appointments();
 
 `AthenaConnector` exposes these top-level resources:
 
-- `appointments(): Appointments`
-- `departments(): Departments`
-- `patients(): Patients`
-- `providers(): Providers`
-- `referringProviders(): ReferringProviders`
-- `practice(): Practice`
-- `encounters(): Encounters`
+```php
+public function appointments(): Appointments;
+public function departments(): Departments;
+public function patients(): Patients;
+public function providers(): Providers;
+public function referringProviders(): ReferringProviders;
+public function practice(): Practice;
+public function encounters(): Encounters;
+```
 
 ## Appointments
 
 Top-level methods on `appointments()`:
 
-- `booked(): Booked`
-- `subscriptions(): AppointmentSubscriptions`
-- `types(): Types`
-- `status(): AppointmentStatus`
-- `checkin(): CheckInResource`
-- `get(int $appointmentId, ?bool $includeClaim = null, ?bool $includeCopay = null, ?bool $includeInsurance = null, ?bool $includePatient = null): AppointmentData`
+```php
+public function booked(): Booked;
+public function subscriptions(): AppointmentSubscriptions;
+public function types(): Types;
+public function status(): AppointmentStatus;
+public function checkin(): CheckInResource;
+public function get(
+    int $appointmentId,
+    ?bool $includeClaim = null,
+    ?bool $includeCopay = null,
+    ?bool $includeInsurance = null,
+    ?bool $includePatient = null,
+): AppointmentData;
+```
 
 Current behavior note:
 - `get(...)` currently fetches appointment details by appointment ID only. The optional include flags exist on the wrapper signature but are not currently forwarded to the underlying request.
 
 ### `appointments()->booked()`
 
-- `list(string $startdate, string $enddate, ?string $appointmentstatus = null, ?int $appointmenttypeid = null, ?array $confidentialitycode = null, ?int $departmentid = null, ?string $endlastmodified = null, ?bool $ignorerestrictions = null, ?int $patientid = null, ?array $providerid = null, ?string $scheduledenddate = null, ?string $scheduledstartdate = null, ?bool $showcancelled = null, ?bool $showclaimdetail = null, ?bool $showcopay = null, ?bool $showexpectedprocedurecodes = null, ?bool $showinsurance = null, ?bool $showpatientdetail = null, ?bool $showremindercalldetail = null, ?string $startlastmodified = null): LazyCollection`
-- `listMultiDept(string $startdate, string $enddate, ?string $appointmentstatus = null, ?int $appointmenttypeid = null, ?array $confidentialitycode = null, ?array $departmentid = null, ?string $endlastmodified = null, ?bool $ignorerestrictions = null, ?array $patientid = null, ?array $providerid = null, ?string $scheduledenddate = null, ?string $scheduledstartdate = null, ?bool $showcancelled = null, ?bool $showclaimdetail = null, ?bool $showcopay = null, ?bool $showexpectedprocedurecodes = null, ?bool $showinsurance = null, ?bool $showpatientdetail = null, ?bool $showremindercalldetail = null, ?string $startlastmodified = null): LazyCollection`
+```php
+public function list(
+    string $startdate,
+    string $enddate,
+    ?string $appointmentstatus = null,
+    ?int $appointmenttypeid = null,
+    ?array $confidentialitycode = null,
+    ?int $departmentid = null,
+    ?string $endlastmodified = null,
+    ?bool $ignorerestrictions = null,
+    ?int $patientid = null,
+    ?array $providerid = null,
+    ?string $scheduledenddate = null,
+    ?string $scheduledstartdate = null,
+    ?bool $showcancelled = null,
+    ?bool $showclaimdetail = null,
+    ?bool $showcopay = null,
+    ?bool $showexpectedprocedurecodes = null,
+    ?bool $showinsurance = null,
+    ?bool $showpatientdetail = null,
+    ?bool $showremindercalldetail = null,
+    ?string $startlastmodified = null,
+): LazyCollection;
+
+public function listMultiDept(
+    string $startdate,
+    string $enddate,
+    ?string $appointmentstatus = null,
+    ?int $appointmenttypeid = null,
+    ?array $confidentialitycode = null,
+    ?array $departmentid = null,
+    ?string $endlastmodified = null,
+    ?bool $ignorerestrictions = null,
+    ?array $patientid = null,
+    ?array $providerid = null,
+    ?string $scheduledenddate = null,
+    ?string $scheduledstartdate = null,
+    ?bool $showcancelled = null,
+    ?bool $showclaimdetail = null,
+    ?bool $showcopay = null,
+    ?bool $showexpectedprocedurecodes = null,
+    ?bool $showinsurance = null,
+    ?bool $showpatientdetail = null,
+    ?bool $showremindercalldetail = null,
+    ?string $startlastmodified = null,
+): LazyCollection;
+```
 
 ### `appointments()->subscriptions()`
 
-- `events(): array`
-- `list(): Collection`
-- `subscribe(?string $eventName = null): Response`
-- `unsubscribe(?string $eventName = null): Response`
-- `changes(bool $leaveUnprocessed = false): LazyCollection`
+```php
+public function events(): array;
+public function list(): Collection;
+public function subscribe(?string $eventName = null): Response;
+public function unsubscribe(?string $eventName = null): Response;
+public function changes(bool $leaveUnprocessed = false): LazyCollection;
+```
 
 ### `appointments()->types()`
 
-- `list(): LazyCollection`
+```php
+public function list(): LazyCollection;
+```
 
 ### `appointments()->status()`
 
-- `confirmation(): ConfirmationStatus`
+```php
+public function confirmation(): ConfirmationStatus;
+```
 
 #### `appointments()->status()->confirmation()`
 
-- `list(): Collection`
+```php
+public function list(): Collection;
+```
 
 ### `appointments()->checkin()`
 
-- `fields(string $departmentId): array`
-- `validate(string $appointmentId): Response`
-- `start(string $appointmentId): Response`
-- `complete(string $appointmentId): Response`
-- `cancel(string $appointmentId): Response`
+```php
+public function fields(string $departmentId): array;
+public function validate(string $appointmentId): Response;
+public function start(string $appointmentId): Response;
+public function complete(string $appointmentId): Response;
+public function cancel(string $appointmentId): Response;
+```
 
 ## Departments
 
 Top-level methods on `departments()`:
 
-- `list(bool $showAll = false): LazyCollection`
-- `patientLocations(int $departmentId): Collection`
+```php
+public function list(bool $showAll = false): LazyCollection;
+public function patientLocations(int $departmentId): Collection;
+```
 
 ## Patients
 
 Top-level methods on `patients()`:
 
-- `list(?string $departmentId = null): LazyCollection`
-- `get(int $patientId): PatientData`
-- `subscriptions(): PatientSubscriptions`
-- `update(int $patientId, PatientData $patient): Response`
-- `privacy(int $departmentId, int $patientId): PatientPrivacy`
-- `chartAlert(int $patientId, int $departmentId): ChartAlert`
+```php
+public function list(?string $departmentId = null): LazyCollection;
+public function get(int $patientId): PatientData;
+public function subscriptions(): PatientSubscriptions;
+public function update(int $patientId, PatientData $patient): Response;
+public function privacy(int $departmentId, int $patientId): PatientPrivacy;
+public function chartAlert(int $patientId, int $departmentId): ChartAlert;
+```
 
 ### `patients()->subscriptions()`
 
-- `events(): array`
-- `list(): Collection`
-- `subscribe(?string $eventName = null, ?array $departmentIds = null): Response`
-- `unsubscribe(?string $eventName = null): Response`
-- `changes(bool $leaveUnprocessed = false): LazyCollection`
+```php
+public function events(): array;
+public function list(): Collection;
+public function subscribe(?string $eventName = null, ?array $departmentIds = null): Response;
+public function unsubscribe(?string $eventName = null): Response;
+public function changes(bool $leaveUnprocessed = false): LazyCollection;
+```
 
 ### `patients()->privacy($departmentId, $patientId)`
 
-- `get(): array`
-- `set(?string $signatureName = null, ?DateTime $signatureDatetime = null, ?bool $privacySignature = null, ?bool $insuredSignature = null, ?bool $patientSignature = null, ?string $unableToSignReason = null): bool`
-- `update(bool $newState): Response`
+```php
+public function get(): array;
+public function set(
+    ?string $signatureName = null,
+    ?DateTime $signatureDatetime = null,
+    ?bool $privacySignature = null,
+    ?bool $insuredSignature = null,
+    ?bool $patientSignature = null,
+    ?string $unableToSignReason = null,
+): bool;
+public function update(bool $newState): Response;
+```
 
 ### `patients()->chartAlert($patientId, $departmentId)`
 
-- `create(string $note): bool`
-- `get(): ?ChartAlertData`
-- `update(string $note): bool`
-- `delete(): bool`
+```php
+public function create(string $note): bool;
+public function get(): ?ChartAlertData;
+public function update(string $note): bool;
+public function delete(): bool;
+```
 
 ## Providers
 
 Top-level methods on `providers()`:
 
-- `list(): LazyCollection`
-- `specialities(): LazyCollection`
-- `subscriptions(): ProviderSubscriptions`
-- `referring(): ReferringProviders`
+```php
+public function list(): LazyCollection;
+public function specialities(): LazyCollection;
+public function subscriptions(): ProviderSubscriptions;
+public function referring(): ReferringProviders;
+```
 
 ### `providers()->subscriptions()`
 
-- `events(): array`
-- `list(): Collection`
-- `subscribe(?string $eventName = null): Response`
-- `unsubscribe(?string $eventName = null): Response`
-- `changes(bool $leaveUnprocessed = false): LazyCollection`
+```php
+public function events(): array;
+public function list(): Collection;
+public function subscribe(?string $eventName = null): Response;
+public function unsubscribe(?string $eventName = null): Response;
+public function changes(bool $leaveUnprocessed = false): LazyCollection;
+```
 
 ### `providers()->referring()`
 
-- `subscriptions(): ReferringProvidersSubscriptions`
-- `list(): LazyCollection`
+```php
+public function subscriptions(): ReferringProvidersSubscriptions;
+public function list(): LazyCollection;
+```
 
 ## Referring Providers
 
 Top-level methods on `referringProviders()`:
 
-- `subscriptions(): ReferringProvidersSubscriptions`
-- `list(): LazyCollection`
+```php
+public function subscriptions(): ReferringProvidersSubscriptions;
+public function list(): LazyCollection;
+```
 
 ### `referringProviders()->subscriptions()`
 
-- `events(): array`
-- `list(): Collection`
-- `subscribe(?string $eventName = null): Response`
-- `unsubscribe(?string $eventName = null): Response`
-- `changes(bool $leaveUnprocessed = false): LazyCollection`
+```php
+public function events(): array;
+public function list(): Collection;
+public function subscribe(?string $eventName = null): Response;
+public function unsubscribe(?string $eventName = null): Response;
+public function changes(bool $leaveUnprocessed = false): LazyCollection;
+```
 
 ## Practice
 
 Top-level methods on `practice()`:
 
-- `languages(): Collection`
-- `races(): Collection`
-- `ethnicities(): Collection`
+```php
+public function languages(): Collection;
+public function races(): Collection;
+public function ethnicities(): Collection;
+```
 
 ## Encounters
 
 Top-level methods on `encounters()`:
 
-- `statuses(): PatientStatus`
-- `update(int $encounterId, ?int $patientLocationId = null, ?int $patientStatusId = null): bool`
+```php
+public function statuses(): PatientStatus;
+public function update(
+    int $encounterId,
+    ?int $patientLocationId = null,
+    ?int $patientStatusId = null,
+): bool;
+```
 
 ### `encounters()->statuses()`
 
-- `list(): Collection`
+```php
+public function list(): Collection;
+```
 
 ## Stability Guidance
 
