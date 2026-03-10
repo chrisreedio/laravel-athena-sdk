@@ -1,6 +1,8 @@
 # Endpoint Checklist
 
-This file contains a checklist of all 'tested' endpoints.
+This file is a coverage roadmap for the package surface, not a claim that each endpoint below has automated integration coverage.
+
+Use it as a backlog for future request and DTO verification work.
 
 
 - [ ] Appointments

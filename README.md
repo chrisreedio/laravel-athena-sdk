@@ -1,76 +1,99 @@
 # Athena EHR API SDK for Laravel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/chrisreedio/laravel-athena-sdk.svg?style=flat-square)](https://packagist.org/packages/chrisreedio/laravel-athena-sdk)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/chrisreedio/laravel-athena-sdk/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/chrisreedio/laravel-athena-sdk/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/chrisreedio/laravel-athena-sdk/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/chrisreedio/laravel-athena-sdk/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Tests](https://img.shields.io/github/actions/workflow/status/chrisreedio/laravel-athena-sdk/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/chrisreedio/laravel-athena-sdk/actions/workflows/run-tests.yml)
+[![Code Style](https://img.shields.io/github/actions/workflow/status/chrisreedio/laravel-athena-sdk/fix-php-code-style-issues.yml?branch=main&label=style&style=flat-square)](https://github.com/chrisreedio/laravel-athena-sdk/actions/workflows/fix-php-code-style-issues.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/chrisreedio/laravel-athena-sdk.svg?style=flat-square)](https://packagist.org/packages/chrisreedio/laravel-athena-sdk)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+`laravel-athena-sdk` is a Laravel-first wrapper around Athenahealth's API. It provides a configured connector, resource-style entry points for common API domains, and DTOs for mapping Athena responses into typed PHP objects.
+
+The package is best suited for applications that want a package-native integration layer instead of building raw Saloon requests and response mapping from scratch.
 
 ## Installation
-
-You can install the package via composer:
 
 ```bash
 composer require chrisreedio/laravel-athena-sdk
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="laravel-athena-sdk-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
+Publish the package config:
 
 ```bash
 php artisan vendor:publish --tag="laravel-athena-sdk-config"
 ```
 
-This is the contents of the published config file:
+Set the required Athena credentials in your environment:
 
-```php
-return [
-];
+```ini
+ATHENA_BASE_URL=https://api.preview.platform.athenahealth.com
+ATHENA_CLIENT_ID=your-client-id
+ATHENA_CLIENT_SECRET=your-client-secret
+ATHENA_PRACTICE_ID=your-practice-id
+ATHENA_LEAVE_UNPROCESSED=false
 ```
 
-Optionally, you can publish the views using
+## Configuration
 
-```bash
-php artisan vendor:publish --tag="laravel-athena-sdk-views"
-```
+The package currently publishes a config file only. There are no package views or package migrations to publish.
+
+The connector authenticates with Athena using the client credentials grant flow and caches the access token under the `athena_access_token` cache key.
 
 ## Usage
 
+Instantiate the connector directly:
+
 ```php
-$athena = new ChrisReedIO\AthenaSDK\AthenaConnector();
-echo $athena->echoPhrase('Hello, ChrisReedIO!');
+use ChrisReedIO\AthenaSDK\AthenaConnector;
+
+$athena = new AthenaConnector();
+
+$appointment = $athena->appointments()->get(
+    appointmentId: 123456,
+);
 ```
 
-## Testing
+Or use the facade:
+
+```php
+use ChrisReedIO\AthenaSDK\Facades\Athena;
+
+$providers = Athena::providers();
+```
+
+The top-level resources currently exposed by the connector are:
+
+- `appointments()`
+- `departments()`
+- `patients()`
+- `providers()`
+- `referringProviders()`
+- `practice()`
+- `encounters()`
+
+## Local Checks
 
 ```bash
 composer test
+composer analyse
+composer format:test
 ```
+
+## Additional Notes
+
+- [`docs/endpoints.md`](docs/endpoints.md) tracks endpoint coverage work still to be validated.
+- Static analysis currently reports legacy issues that have not been fully remediated yet.
 
 ## Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+See [CHANGELOG.md](CHANGELOG.md) for release history.
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for local setup and pull request expectations.
 
-## Security Vulnerabilities
+## Security
 
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
-
-## Credits
-
-- [Chris Reed](https://github.com/chrisreedio)
-- [All Contributors](../../contributors)
+See [SECURITY.md](SECURITY.md) for how to report vulnerabilities.
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+Released under the [MIT license](LICENSE.md).
