@@ -36,11 +36,11 @@ class UpdateObEpisodeDeliveryInformation extends Request implements HasBody
      * @param  null|array  $fetusdata  The data about the fetuses delivered. The number of items in this array must reflect the number of fetuses in the OB Episode Information section. The input generally reflects the fetusdata output of GET /chart/{patientid}/obepisodes/{obepisodeid} with a couple of exceptions. This uses birthweightlbs and birthweightoz instead of grams. It also uses ID numbers for deliverytype, ethnicity, outcome, and race. See the documentation for those individual inputs for more information. If you update the information for one fetus you must update the information for all fetuses.
      * @param  null|string  $incisiontype  The type of incision.
      * @param  null|string  $labor  The type of labor.
-     * @param  null|number  $laborlengthhrs  Length of labor in hours.
+     * @param  null|int|float  $laborlengthhrs  Length of labor in hours.
      * @param  null|string  $postpartumcomplications  Select any postpartum complications.
      * @param  null|bool  $pretermlabor  Boolean to indicate if the labor was preterm.
      * @param  null|bool  $tubalsterilization  Boolean to indicate tubal sterlization.
-     * @param  null|number  $weeksgestation  The gestation time in the format weeks.days (ex: 35.2 is 35 weeks and 2 days.)
+     * @param  null|int|float  $weeksgestation  The gestation time in the format weeks.days (ex: 35.2 is 35 weeks and 2 days.)
      */
     public function __construct(
         protected string $deliverydate,
@@ -55,11 +55,11 @@ class UpdateObEpisodeDeliveryInformation extends Request implements HasBody
         protected ?array $fetusdata = null,
         protected ?string $incisiontype = null,
         protected ?string $labor = null,
-        protected ?\number $laborlengthhrs = null,
+        protected int|float|null $laborlengthhrs = null,
         protected ?string $postpartumcomplications = null,
         protected ?bool $pretermlabor = null,
         protected ?bool $tubalsterilization = null,
-        protected ?\number $weeksgestation = null,
+        protected int|float|null $weeksgestation = null,
     ) {}
 
     public function defaultBody(): array

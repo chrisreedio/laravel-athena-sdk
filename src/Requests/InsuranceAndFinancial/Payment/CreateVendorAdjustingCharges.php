@@ -28,12 +28,12 @@ class CreateVendorAdjustingCharges extends Request implements HasBody
     }
 
     /**
-     * @param  number  $patientid  Patient ID
+     * @param  int|float  $patientid  Patient ID
      * @param  string  $vendorcode  vendorcode
      */
     public function __construct(
         protected array $charges,
-        protected \number $patientid,
+        protected int|float $patientid,
         protected string $vendorcode,
     ) {}
 

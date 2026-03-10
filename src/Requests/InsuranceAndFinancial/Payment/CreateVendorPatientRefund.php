@@ -27,9 +27,9 @@ class CreateVendorPatientRefund extends Request implements HasBody
     }
 
     /**
-     * @param  number  $departmentid  The ID of the department where the refund is issued.
+     * @param  int|float  $departmentid  The ID of the department where the refund is issued.
      * @param  string  $externalrefid  The Vendor side reference for this refund. This is expected to be unique for a vendor as it is the one used for checking if a particular refund is duplicate of another. Also, in case of any issues, this field will help us with debugging. Maxlength = 32
-     * @param  number  $patientid  The ID of the patient for whom the payment is made
+     * @param  int|float  $patientid  The ID of the patient for whom the payment is made
      * @param  string  $patientpaymentid  patientpaymentid
      * @param  string  $paymentmethod  The payment method obtained from the api /patientpayvendors/{VENDORCODE}/validvendorpaymentmethods
      * @param  string  $vendorcode  vendorcode
@@ -40,9 +40,9 @@ class CreateVendorPatientRefund extends Request implements HasBody
      * @param  null|string  $vendorterminalid  The TID is used to make the CC payment with payment gateway.  This is required if the payment method is a credit card.
      */
     public function __construct(
-        protected \number $departmentid,
+        protected int|float $departmentid,
         protected string $externalrefid,
-        protected \number $patientid,
+        protected int|float $patientid,
         protected string $patientpaymentid,
         protected string $paymentmethod,
         protected string $vendorcode,

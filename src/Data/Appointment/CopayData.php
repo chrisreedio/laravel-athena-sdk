@@ -14,7 +14,7 @@ readonly class CopayData extends AthenaData
 
     public static function fromArray(array $data): static
     {
-        return new self(
+        return new static(
             collectedForAppointment: $data['collectedforappointment'],
             insuranceCopay: $data['insurancecopay'],
             collectedForOther: $data['collectedforother'],

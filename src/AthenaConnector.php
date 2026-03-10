@@ -2,16 +2,13 @@
 
 namespace ChrisReedIO\AthenaSDK;
 
-// use ChrisReedIO\AthenaSDK\Resource\Appointments;
 use ChrisReedIO\AthenaSDK\Resources\Appointments;
-use ChrisReedIO\AthenaSDK\Resources\Chart;
 use ChrisReedIO\AthenaSDK\Resources\Departments;
 use ChrisReedIO\AthenaSDK\Resources\Encounters;
 use ChrisReedIO\AthenaSDK\Resources\Patients;
 use ChrisReedIO\AthenaSDK\Resources\Practice;
 use ChrisReedIO\AthenaSDK\Resources\Providers;
 use Exception;
-// use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use ReflectionException;
 use Saloon\Exceptions\OAuthConfigValidationException;
@@ -61,7 +58,6 @@ class AthenaConnector extends Connector implements HasPagination
         } catch (ReflectionException|OAuthConfigValidationException|Throwable $e) {
             throw new \Exception('Athena SDK failed to authenticate: '.$e->getMessage());
         }
-
     }
 
     public function resolveBaseUrl(): string
@@ -100,20 +96,16 @@ class AthenaConnector extends Connector implements HasPagination
                     throw new \Exception(class_basename($request).' must set itemsKey');
                 }
 
-                // if ($response->)
                 try {
                     $dtoResult = $response->dtoOrFail();
                 } catch (Throwable $e) {
                     throw new \Exception(class_basename($request).' failed to parse response body to DTO: '.$e->getMessage());
-                    // dd($e->getMessage());
                 }
                 if (! $dtoResult) {
                     return $response->json($itemsKey);
-                    // throw new \Exception('Failed to parse response body as JSON.');
                 }
 
                 return $dtoResult;
-
             }
         };
     }
@@ -153,9 +145,4 @@ class AthenaConnector extends Connector implements HasPagination
     {
         return new Encounters($this);
     }
-    // public function chart(): Chart
-    // {
-    //     return new Chart($this);
-    // }
-    // endregion
 }

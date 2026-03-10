@@ -2,9 +2,9 @@
 
 namespace ChrisReedIO\AthenaSDK\Resources;
 
-use ChrisReedIO\AthenaSDK\Requests\Chart\CreateQualityManagementRefresh;
-use ChrisReedIO\AthenaSDK\Requests\Chart\GetPatientQualityManagement;
-use ChrisReedIO\AthenaSDK\Requests\Chart\GetQualityManagementRefreshTime;
+use ChrisReedIO\AthenaSDK\Requests\QualityManagementAndPopHealth\QualityMeasures\CreateQualityManagementRefresh;
+use ChrisReedIO\AthenaSDK\Requests\QualityManagementAndPopHealth\QualityMeasures\GetPatientQualityManagement;
+use ChrisReedIO\AthenaSDK\Requests\QualityManagementAndPopHealth\QualityMeasures\GetQualityManagementRefreshTime;
 use ChrisReedIO\AthenaSDK\Resource;
 use Saloon\Http\Response;
 
@@ -24,7 +24,7 @@ class Chart extends Resource
         ?int $providerid,
         ?string $measuretype,
     ): Response {
-        return $this->connector->send(new GetPatientQualityManagement($patientid, $status, $departmentid, $providerid, $measuretype));
+        return $this->connector->send(new GetPatientQualityManagement($departmentid, $patientid, $measuretype, $providerid, $status));
     }
 
     /**
@@ -33,7 +33,7 @@ class Chart extends Resource
      */
     public function getQualityManagementRefreshTime(int $patientid, int $departmentid): Response
     {
-        return $this->connector->send(new GetQualityManagementRefreshTime($patientid, $departmentid));
+        return $this->connector->send(new GetQualityManagementRefreshTime($departmentid, $patientid));
     }
 
     /**
@@ -43,6 +43,6 @@ class Chart extends Resource
      */
     public function createQualityManagementRefresh(int $patientid, ?int $providerid, int $departmentid): Response
     {
-        return $this->connector->send(new CreateQualityManagementRefresh($patientid, $providerid, $departmentid));
+        return $this->connector->send(new CreateQualityManagementRefresh($departmentid, $patientid, $providerid));
     }
 }

@@ -20,7 +20,7 @@ readonly class AppointmentTypeData extends AthenaData
 
     public static function fromArray(array $data): static
     {
-        return new self(
+        return new static(
             athenaId: $data['appointmenttypeid'],
             code: $data['shortname'],
             name: $data['name'],

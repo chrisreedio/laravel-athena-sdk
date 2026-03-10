@@ -39,7 +39,7 @@ class ListBookedAppointmentsForMultipleDepartments extends PaginatedRequest
      * @param  null|array  $departmentid  The athenaNet department ID. Multiple IDs (either as a comma delimited list or multiple POSTed values) are allowed.
      * @param  null|string  $endlastmodified  Identify appointments modified prior to this date/time (mm/dd/yyyy hh:mi:ss).  Inclusive. Note: This can only be used if a startlastmodified value is supplied as well.
      * @param  null|bool  $ignorerestrictions  When showing patient detail for appointments, the patient information for patients with record restrictions and blocked patients will not be shown.  Setting this flag to true will show that information for those patients. No effect if the CLTH_DP_NEW_BTG_MDP_RESTRICTIONS toggle is enabled.
-     * @param  null|int  $patientid  The athenaNet patient ID.  If operating in a Provider Group Enterprise practice, this should be the enterprise patient ID.
+     * @param  null|array  $patientid  The athenaNet patient ID.  If operating in a Provider Group Enterprise practice, this should be the enterprise patient ID.
      * @param  null|array  $providerid  The athenaNet provider ID.  Multiple IDs (either as a comma delimited list or multiple POSTed values) are allowed.
      * @param  null|string  $scheduledenddate  End of the appointment scheduled search date range (mm/dd/yyyy).  Inclusive.
      * @param  null|string  $scheduledstartdate  Start of the appointment scheduled search date range (mm/dd/yyyy).  Inclusive.

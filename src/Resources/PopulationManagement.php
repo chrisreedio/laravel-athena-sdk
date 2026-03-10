@@ -2,8 +2,8 @@
 
 namespace ChrisReedIO\AthenaSDK\Resources;
 
-use ChrisReedIO\AthenaSDK\Requests\PopulationManagement\GetRiskContract;
-use ChrisReedIO\AthenaSDK\Requests\PopulationManagement\UpdateRiskContract;
+use ChrisReedIO\AthenaSDK\Requests\QualityManagementAndPopHealth\RiskContractReference\GetRiskContract;
+use ChrisReedIO\AthenaSDK\Requests\QualityManagementAndPopHealth\RiskContractReference\UpdateRiskContract;
 use ChrisReedIO\AthenaSDK\Resource;
 use Saloon\Http\Response;
 
@@ -15,7 +15,7 @@ class PopulationManagement extends Resource
      */
     public function getRiskContract(?int $riskcontractid, ?string $name): Response
     {
-        return $this->connector->send(new GetRiskContract($riskcontractid, $name));
+        return $this->connector->send(new GetRiskContract($name, $riskcontractid));
     }
 
     /**
@@ -25,6 +25,6 @@ class PopulationManagement extends Resource
      */
     public function updateRiskContract(?string $name, ?string $description, ?int $riskcontractid): Response
     {
-        return $this->connector->send(new UpdateRiskContract($name, $description, $riskcontractid));
+        return $this->connector->send(new UpdateRiskContract($description, $name, $riskcontractid));
     }
 }
