@@ -69,6 +69,18 @@ The top-level resources currently exposed by the connector are:
 - `practice()`
 - `encounters()`
 
+## Public API
+
+The supported Laravel-facing wrapper surface is documented in [`docs/public-api.md`](docs/public-api.md).
+
+That document covers:
+
+- the connector and facade entry points
+- the resource methods exposed through `AthenaConnector`
+- the nested resource helpers exposed from those top-level resources
+
+Raw request classes under `src/Requests` are still available for lower-level use, but they are not the primary API documented in this package.
+
 ## Local Checks
 
 ```bash
