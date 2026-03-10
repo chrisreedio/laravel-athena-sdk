@@ -92,7 +92,7 @@ composer format:test
 ## Additional Notes
 
 - [`docs/endpoints.md`](docs/endpoints.md) tracks endpoint coverage work still to be validated.
-- Static analysis currently reports legacy issues that have not been fully remediated yet.
+- `composer analyse` runs cleanly and is enforced in CI alongside tests and formatting checks.
 
 ## Changelog
 
