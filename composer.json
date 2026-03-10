@@ -61,7 +61,7 @@
             "@composer run build",
             "@php vendor/bin/testbench serve"
         ],
-        "analyse": "vendor/bin/phpstan analyse --no-progress --debug",
+        "analyse": "vendor/bin/phpstan analyse --no-progress",
         "test": "vendor/bin/pest",
         "test-coverage": "vendor/bin/pest --coverage",
         "format": "vendor/bin/pint",
