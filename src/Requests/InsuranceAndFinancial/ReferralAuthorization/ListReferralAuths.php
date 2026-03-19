@@ -2,8 +2,13 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\InsuranceAndFinancial\ReferralAuthorization;
 
+use ChrisReedIO\AthenaSDK\Data\Patient\ReferralAuthorizationData;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
+
+use function array_is_list;
+use function collect;
 
 /**
  * ListReferralAuths
@@ -36,5 +41,20 @@ class ListReferralAuths extends Request
             'insuranceid' => $this->insuranceid,
             'showexpired' => $this->showexpired,
         ]);
+    }
+
+    public function createDtoFromResponse(Response $response): array
+    {
+        $payload = $response->json();
+
+        $items = $payload['referralauths']
+            ?? $payload['referrals']
+            ?? $payload['authorizations']
+            ?? (array_is_list($payload) ? $payload : []);
+
+        return collect($items)
+            ->filter(static fn (mixed $item): bool => is_array($item))
+            ->map(static fn (array $item): ReferralAuthorizationData => ReferralAuthorizationData::fromArray($item))
+            ->all();
     }
 }

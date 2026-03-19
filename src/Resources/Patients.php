@@ -11,6 +11,7 @@ use ChrisReedIO\AthenaSDK\Resources\Patients\ChartAlert;
 use ChrisReedIO\AthenaSDK\Resources\Patients\PatientInsurances;
 use ChrisReedIO\AthenaSDK\Resources\Patients\PatientPrivacy;
 use ChrisReedIO\AthenaSDK\Resources\Patients\PatientSubscriptions;
+use ChrisReedIO\AthenaSDK\Resources\Patients\ReferralAuthorizations;
 use Illuminate\Support\LazyCollection;
 use Saloon\Http\Response;
 
@@ -40,6 +41,11 @@ class Patients extends Resource
     public function insurances(int $patientId): PatientInsurances
     {
         return new PatientInsurances($this->connector, $patientId);
+    }
+
+    public function referralAuthorizations(int $patientId): ReferralAuthorizations
+    {
+        return new ReferralAuthorizations($this->connector, $patientId);
     }
 
     public function update(int $patientId, PatientData $patient): Response

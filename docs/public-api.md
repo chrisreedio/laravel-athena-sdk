@@ -164,6 +164,7 @@ public function list(?string $departmentId = null): LazyCollection;
 public function get(int $patientId): PatientData;
 public function subscriptions(): PatientSubscriptions;
 public function insurances(int $patientId): PatientInsurances;
+public function referralAuthorizations(int $patientId): ReferralAuthorizations;
 public function update(int $patientId, PatientData $patient): Response;
 public function privacy(int $departmentId, int $patientId): PatientPrivacy;
 public function chartAlert(int $patientId, int $departmentId): ChartAlert;
@@ -187,6 +188,15 @@ public function list(
     ?bool $ignoreRestrictions = null,
     ?bool $showCancelled = null,
     ?bool $showFullSsn = null,
+): array;
+```
+
+### `patients()->referralAuthorizations($patientId)`
+
+```php
+public function list(
+    ?bool $showExpired = null,
+    ?int $insuranceId = null,
 ): array;
 ```
 
