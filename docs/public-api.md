@@ -163,6 +163,7 @@ Top-level methods on `patients()`:
 public function list(?string $departmentId = null): LazyCollection;
 public function get(int $patientId): PatientData;
 public function subscriptions(): PatientSubscriptions;
+public function insurances(int $patientId): PatientInsurances;
 public function update(int $patientId, PatientData $patient): Response;
 public function privacy(int $departmentId, int $patientId): PatientPrivacy;
 public function chartAlert(int $patientId, int $departmentId): ChartAlert;
@@ -176,6 +177,17 @@ public function list(): Collection;
 public function subscribe(?string $eventName = null, ?array $departmentIds = null): Response;
 public function unsubscribe(?string $eventName = null): Response;
 public function changes(bool $leaveUnprocessed = false): LazyCollection;
+```
+
+### `patients()->insurances($patientId)`
+
+```php
+public function list(
+    ?int $departmentId = null,
+    ?bool $ignoreRestrictions = null,
+    ?bool $showCancelled = null,
+    ?bool $showFullSsn = null,
+): array;
 ```
 
 ### `patients()->privacy($departmentId, $patientId)`

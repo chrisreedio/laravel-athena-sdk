@@ -8,6 +8,7 @@ use ChrisReedIO\AthenaSDK\Requests\Patient\ListPatients;
 use ChrisReedIO\AthenaSDK\Requests\Patient\UpdatePatient;
 use ChrisReedIO\AthenaSDK\Resource;
 use ChrisReedIO\AthenaSDK\Resources\Patients\ChartAlert;
+use ChrisReedIO\AthenaSDK\Resources\Patients\PatientInsurances;
 use ChrisReedIO\AthenaSDK\Resources\Patients\PatientPrivacy;
 use ChrisReedIO\AthenaSDK\Resources\Patients\PatientSubscriptions;
 use Illuminate\Support\LazyCollection;
@@ -34,6 +35,11 @@ class Patients extends Resource
     public function subscriptions(): PatientSubscriptions
     {
         return new PatientSubscriptions($this->connector);
+    }
+
+    public function insurances(int $patientId): PatientInsurances
+    {
+        return new PatientInsurances($this->connector, $patientId);
     }
 
     public function update(int $patientId, PatientData $patient): Response

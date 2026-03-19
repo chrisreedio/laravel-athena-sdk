@@ -2,8 +2,12 @@
 
 namespace ChrisReedIO\AthenaSDK\Requests\InsuranceAndFinancial\PatientInsurance;
 
+use ChrisReedIO\AthenaSDK\Data\Patient\InsuranceData;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
+
+use function collect;
 
 /**
  * ListPatientInsurances
@@ -46,5 +50,12 @@ class ListPatientInsurances extends Request
             'showcancelled' => $this->showcancelled,
             'showfullssn' => $this->showfullssn,
         ]);
+    }
+
+    public function createDtoFromResponse(Response $response): array
+    {
+        return collect($response->json('insurances', []))
+            ->map(static fn (array $item): InsuranceData => InsuranceData::fromArray($item))
+            ->all();
     }
 }
