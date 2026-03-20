@@ -26,6 +26,6 @@ class PatientInsurances extends Resource
             showfullssn: $showFullSsn,
         );
 
-        return $this->connector->send($request)->dtoOrFail($request);
+        return $this->connector->send($request)->dtoOrFail();
     }
 }
