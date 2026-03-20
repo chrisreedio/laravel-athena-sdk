@@ -2,6 +2,19 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.1.0-beta.1 - 2026-03-20
+
+### What's Changed
+
+* build(deps): bump dependabot/fetch-metadata from 2.3.0 to 2.4.0 by @dependabot[bot] in https://github.com/chrisreedio/laravel-athena-sdk/pull/47
+* build(deps): bump aglipanci/laravel-pint-action from 2.5 to 2.6 by @dependabot[bot] in https://github.com/chrisreedio/laravel-athena-sdk/pull/49
+* build(deps): bump dependabot/fetch-metadata from 2.4.0 to 2.5.0 by @dependabot[bot] in https://github.com/chrisreedio/laravel-athena-sdk/pull/53
+* Enhance development setup and testing tools by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/54
+* Feature/precheck patient insurance api by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/56
+* build(deps): bump ramsey/composer-install from 3 to 4 by @dependabot[bot] in https://github.com/chrisreedio/laravel-athena-sdk/pull/55
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.0.0-alpha.37...v1.1.0-beta.1
+
 ## v1.0.0-alpha.37 - 2025-04-23
 
 ### What's Changed
