@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.2.0 - 2026-04-06
+
+### What's Changed
+
+* Add InsuranceData class with expanded properties and corresponding tests by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/58
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.1.0-beta.1...v1.2
+
 ## v1.1.0-beta.1 - 2026-03-20
 
 ### What's Changed
