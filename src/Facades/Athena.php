@@ -2,6 +2,7 @@
 
 namespace ChrisReedIO\AthenaSDK\Facades;
 
+use ChrisReedIO\AthenaSDK\AthenaConnector;
 use Illuminate\Support\Facades\Facade;
 
 /**
@@ -11,6 +12,6 @@ class Athena extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \ChrisReedIO\AthenaSDK\AthenaConnector::class;
+        return AthenaConnector::class;
     }
 }

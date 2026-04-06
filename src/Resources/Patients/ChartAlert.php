@@ -9,6 +9,9 @@ use ChrisReedIO\AthenaSDK\Requests\Patient\ChartAlert\DeletePatientChartAlert;
 use ChrisReedIO\AthenaSDK\Requests\Patient\ChartAlert\GetPatientChartAlert;
 use ChrisReedIO\AthenaSDK\Requests\Patient\ChartAlert\UpdatePatientChartAlert;
 use ChrisReedIO\AthenaSDK\Resource;
+use JsonException;
+use Saloon\Exceptions\Request\FatalRequestException;
+use Saloon\Exceptions\Request\RequestException;
 
 class ChartAlert extends Resource
 {
@@ -23,9 +26,9 @@ class ChartAlert extends Resource
     /**
      * Create new department specific patient's chart-alert
      *
-     * @throws \JsonException
-     * @throws \Saloon\Exceptions\Request\FatalRequestException
-     * @throws \Saloon\Exceptions\Request\RequestException
+     * @throws FatalRequestException
+     * @throws JsonException
+     * @throws RequestException
      */
     public function create(string $note): bool
     {
@@ -40,9 +43,9 @@ class ChartAlert extends Resource
     /**
      * Get last modified information of patient's chart specific to a department
      *
-     * @throws \JsonException
-     * @throws \Saloon\Exceptions\Request\FatalRequestException
-     * @throws \Saloon\Exceptions\Request\RequestException
+     * @throws FatalRequestException
+     * @throws JsonException
+     * @throws RequestException
      */
     public function get(): ?ChartAlertData
     {
@@ -52,9 +55,9 @@ class ChartAlert extends Resource
     /**
      * Update department specific patient's chart-alert
      *
-     * @throws \JsonException
-     * @throws \Saloon\Exceptions\Request\FatalRequestException
-     * @throws \Saloon\Exceptions\Request\RequestException
+     * @throws FatalRequestException
+     * @throws JsonException
+     * @throws RequestException
      */
     public function update(string $note): bool
     {
@@ -69,9 +72,9 @@ class ChartAlert extends Resource
     /**
      * Delete department specific alerts for patient's chart changes
      *
-     * @throws \JsonException
-     * @throws \Saloon\Exceptions\Request\FatalRequestException
-     * @throws \Saloon\Exceptions\Request\RequestException
+     * @throws FatalRequestException
+     * @throws JsonException
+     * @throws RequestException
      */
     public function delete(): bool
     {
