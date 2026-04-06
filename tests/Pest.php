@@ -1,6 +1,7 @@
 <?php
 
 use ChrisReedIO\AthenaSDK\Tests\TestCase;
+use DateTimeImmutable;
 use Illuminate\Support\Facades\Cache;
 use Saloon\Http\Auth\AccessTokenAuthenticator;
 
@@ -23,7 +24,7 @@ function athenaTestConfig(array $overrides = []): array
 
 function cacheAthenaToken(string $token = 'test-access-token'): AccessTokenAuthenticator
 {
-    $authenticator = new AccessTokenAuthenticator($token, null, new \DateTimeImmutable('+1 hour'));
+    $authenticator = new AccessTokenAuthenticator($token, null, new DateTimeImmutable('+1 hour'));
 
     Cache::put('athena_access_token', $authenticator, now()->addHour());
 

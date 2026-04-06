@@ -8,6 +8,7 @@ use ChrisReedIO\AthenaSDK\Resources\Encounters;
 use ChrisReedIO\AthenaSDK\Resources\Patients;
 use ChrisReedIO\AthenaSDK\Resources\Practice;
 use ChrisReedIO\AthenaSDK\Resources\Providers;
+use DateInterval;
 use Exception;
 use Illuminate\Support\Facades\Cache;
 use ReflectionException;
@@ -36,12 +37,12 @@ class AthenaConnector extends Connector implements HasPagination
     {
         $this->baseUrl = config('athena-sdk.base_url');
         if (empty($this->baseUrl)) {
-            throw new \Exception('Athena SDK base_url not set in config/athena-sdk.php');
+            throw new Exception('Athena SDK base_url not set in config/athena-sdk.php');
         }
 
         $this->practiceId ??= config('athena-sdk.practice_id');
         if (empty($this->practiceId)) {
-            throw new \Exception('Athena SDK practice_id not set in config/athena-sdk.php');
+            throw new Exception('Athena SDK practice_id not set in config/athena-sdk.php');
         }
 
         // Attempt to set up authentication
@@ -50,13 +51,13 @@ class AthenaConnector extends Connector implements HasPagination
             if (! $authenticator) {
                 $authenticator = $this->getAccessToken();
                 $expiresAt = $authenticator->getExpiresAt();
-                $expiresAt = $expiresAt->sub(new \DateInterval('PT1M'));
+                $expiresAt = $expiresAt->sub(new DateInterval('PT1M'));
                 $ttl = now()->diff($expiresAt);
                 Cache::put('athena_access_token', $authenticator, $ttl);
             }
             $this->authenticate($authenticator);
         } catch (ReflectionException|OAuthConfigValidationException|Throwable $e) {
-            throw new \Exception('Athena SDK failed to authenticate: '.$e->getMessage());
+            throw new Exception('Athena SDK failed to authenticate: '.$e->getMessage());
         }
     }
 

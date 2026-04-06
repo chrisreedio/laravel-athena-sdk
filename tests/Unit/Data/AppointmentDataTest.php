@@ -1,6 +1,7 @@
 <?php
 
 use ChrisReedIO\AthenaSDK\Data\Appointment\AppointmentData;
+use DateTimeInterface;
 
 it('maps representative appointment payload fields into a dto', function () {
     $appointment = AppointmentData::fromArray([
@@ -40,10 +41,10 @@ it('maps representative appointment payload fields into a dto', function () {
     expect($appointment->athenaId)->toBe('1001')
         ->and($appointment->patientId)->toBe('2002')
         ->and($appointment->appointmentType)->toBe('Follow Up')
-        ->and($appointment->scheduledDateTime)->toBeInstanceOf(\DateTimeInterface::class)
-        ->and($appointment->scheduledDateTime?->format(\DateTimeInterface::ATOM))->toBe('2025-02-21T13:45:00-05:00')
-        ->and($appointment->lastModified)->toBeInstanceOf(\DateTimeInterface::class)
-        ->and($appointment->lastModified?->format(\DateTimeInterface::ATOM))->toBe('2025-02-21T14:00:00-05:00')
+        ->and($appointment->scheduledDateTime)->toBeInstanceOf(DateTimeInterface::class)
+        ->and($appointment->scheduledDateTime?->format(DateTimeInterface::ATOM))->toBe('2025-02-21T13:45:00-05:00')
+        ->and($appointment->lastModified)->toBeInstanceOf(DateTimeInterface::class)
+        ->and($appointment->lastModified?->format(DateTimeInterface::ATOM))->toBe('2025-02-21T14:00:00-05:00')
         ->and($appointment->appointmentCopay?->insuranceCopay)->toBe(30)
         ->and($appointment->patient?->firstName)->toBe('Avery')
         ->and($appointment->patient?->address?->street)->toBe('456 Oak Ave')
