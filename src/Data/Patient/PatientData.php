@@ -52,6 +52,8 @@ readonly class PatientData extends AthenaData
         public ?string $primaryProviderId = null,
 
         public ?bool $privacyInformationVerified = null,
+        // @var PatientBalanceData[]|null
+        public ?array $balances = null,
 
         public array $customFields = [],
     ) {}
@@ -89,6 +91,12 @@ readonly class PatientData extends AthenaData
             primaryDepartmentId: $data['primarydepartmentid'] ?? null,
             primaryProviderId: $data['primaryproviderid'] ?? null,
             privacyInformationVerified: self::toBool($data['privacyinformationverified'] ?? null),
+            balances: isset($data['balances']) && is_array($data['balances'])
+                ? array_map(
+                    static fn (array $balance): PatientBalanceData => PatientBalanceData::fromArray($balance),
+                    array_values($data['balances'])
+                )
+                : null,
             customFields: $data['customfields'] ?? [],
         );
     }
