@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.3.0 - 2026-04-14
+
+### What's Changed
+
+* Add PatientBalanceData class and integrate balances into PatientData by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/59
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.2.0...v1.3.0
+
 ## v1.2.0 - 2026-04-06
 
 ### What's Changed
