@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ChrisReedIO\AthenaSDK\Facades;
 
 use ChrisReedIO\AthenaSDK\AthenaConnector;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \ChrisReedIO\AthenaSDK\AthenaConnector
+ * @see ChrisReedIO\AthenaSDK\AthenaConnector
  */
 class Athena extends Facade
 {

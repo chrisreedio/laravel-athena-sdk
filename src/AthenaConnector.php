@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ChrisReedIO\AthenaSDK;
 
 use ChrisReedIO\AthenaSDK\Resources\Appointments;
@@ -89,18 +91,18 @@ class AthenaConnector extends Connector implements HasPagination
             protected function getPageItems(Response $response, Request $request): array
             {
                 if (! $request instanceof PaginatedRequest) {
-                    throw new \Exception(class_basename($request).' must extend PaginatedRequest');
+                    throw new Exception(class_basename($request).' must extend PaginatedRequest');
                 }
 
                 $itemsKey = $request->getItemsKey();
                 if (! $itemsKey) {
-                    throw new \Exception(class_basename($request).' must set itemsKey');
+                    throw new Exception(class_basename($request).' must set itemsKey');
                 }
 
                 try {
                     $dtoResult = $response->dtoOrFail();
                 } catch (Throwable $e) {
-                    throw new \Exception(class_basename($request).' failed to parse response body to DTO: '.$e->getMessage());
+                    throw new Exception(class_basename($request).' failed to parse response body to DTO: '.$e->getMessage());
                 }
                 if (! $dtoResult) {
                     return $response->json($itemsKey);
