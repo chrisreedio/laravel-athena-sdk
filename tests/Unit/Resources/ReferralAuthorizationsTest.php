@@ -19,7 +19,8 @@ it('lists patient referral authorizations through the patient resource', functio
                     'insuranceid' => '12345',
                     'appointmentids' => [9001, 9002],
                     'startdate' => '2026-03-01',
-                    'expirationdate' => '2026-03-31',
+                    'enddate' => '2026-03-31',
+                    'expired' => false,
                     'referralauthnumber' => 'AUTH-123',
                     'noreferralrequired' => false,
                     'specifiesvisits' => true,
@@ -44,6 +45,7 @@ it('lists patient referral authorizations through the patient resource', functio
         ->and($authorizations)->toHaveCount(1)
         ->and($authorizations[0])->toBeInstanceOf(ReferralAuthorizationData::class)
         ->and($authorizations[0]->athenaId)->toBe(501)
+        ->and($authorizations[0]->isExpired)->toBeFalse()
         ->and($response->getPendingRequest()->query()->all())->toBe([
             'insuranceid' => 12345,
             'showexpired' => true,
