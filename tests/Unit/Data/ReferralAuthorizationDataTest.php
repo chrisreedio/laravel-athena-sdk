@@ -9,7 +9,8 @@ it('maps representative referral authorization payload fields into a dto', funct
         'insuranceid' => '12345',
         'appointmentids' => ['9001', '9002'],
         'startdate' => '2026-03-01',
-        'expirationdate' => '2026-03-31',
+        'enddate' => '2026-03-31',
+        'expired' => 'false',
         'referralauthnumber' => 'AUTH-123',
         'noreferralrequired' => 'false',
         'specifiesvisits' => 'true',
@@ -28,6 +29,7 @@ it('maps representative referral authorization payload fields into a dto', funct
         ->and($authorization->appointmentIds)->toBe([9001, 9002])
         ->and($authorization->startDate?->format('Y-m-d'))->toBe('2026-03-01')
         ->and($authorization->expirationDate?->format('Y-m-d'))->toBe('2026-03-31')
+        ->and($authorization->isExpired)->toBeFalse()
         ->and($authorization->referralAuthNumber)->toBe('AUTH-123')
         ->and($authorization->noReferralRequired)->toBeFalse()
         ->and($authorization->specifiesVisits)->toBeTrue()
