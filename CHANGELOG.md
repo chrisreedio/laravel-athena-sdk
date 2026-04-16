@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.3.1 - 2026-04-16
+
+### What's Changed
+
+* Add isExpired property to ReferralAuthorizationData and update related tests by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/60
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.3.0...v1.3.1
+
 ## v1.3.0 - 2026-04-14
 
 ### What's Changed
