@@ -2,6 +2,16 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.4.0 - 2026-04-21
+
+### What's Changed
+
+* Add rate limiting to AthenaConnector using Saloon's rate-limit plugin by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/62
+* build(deps): bump dependabot/fetch-metadata from 2.5.0 to 3.1.0 by @dependabot[bot] in https://github.com/chrisreedio/laravel-athena-sdk/pull/61
+* Package Updates - Config for Rate Limiting by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/63
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.3.1...v1.4.0
+
 ## v1.3.1 - 2026-04-16
 
 ### What's Changed
