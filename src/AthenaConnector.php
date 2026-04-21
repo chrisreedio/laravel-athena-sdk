@@ -130,7 +130,7 @@ class AthenaConnector extends Connector implements HasPagination
 
     protected function getRateLimitPerSecond(): int
     {
-        return app()->environment('production') ? 150 : 15;
+        return max(1, (int) config('athena-sdk.rate_limit_per_second', app()->environment('production') ? 150 : 15));
     }
 
     // region Resources
