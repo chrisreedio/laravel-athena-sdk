@@ -63,3 +63,54 @@ it('creates top level resource accessors without contacting the network', functi
         ->and($connector->practice())->toBeInstanceOf(Practice::class)
         ->and($connector->encounters())->toBeInstanceOf(Encounters::class);
 });
+
+it('uses a 15 requests-per-second limiter outside production', function () {
+    athenaTestConfig();
+    cacheAthenaToken();
+
+    $connector = new AthenaConnector;
+    $limits = $connector->getLimits();
+
+    $perSecondLimit = null;
+    foreach ($limits as $limit) {
+        if ($limit->getAllow() === 15 && $limit->getReleaseInSeconds() === 1) {
+            $perSecondLimit = $limit;
+
+            break;
+        }
+    }
+
+    expect($perSecondLimit)->not->toBeNull()
+        ->and($perSecondLimit->getAllow())->toBe(15)
+        ->and($perSecondLimit->getReleaseInSeconds())->toBe(1)
+        ->and($perSecondLimit->getShouldSleep())->toBeFalse();
+});
+
+it('uses a 150 requests-per-second limiter in production', function () {
+    athenaTestConfig();
+    cacheAthenaToken();
+
+    $originalEnvironment = app('env');
+    app()->instance('env', 'production');
+
+    try {
+        $connector = new AthenaConnector;
+        $limits = $connector->getLimits();
+
+        $perSecondLimit = null;
+        foreach ($limits as $limit) {
+            if ($limit->getAllow() === 150 && $limit->getReleaseInSeconds() === 1) {
+                $perSecondLimit = $limit;
+
+                break;
+            }
+        }
+
+        expect($perSecondLimit)->not->toBeNull()
+            ->and($perSecondLimit->getAllow())->toBe(150)
+            ->and($perSecondLimit->getReleaseInSeconds())->toBe(1)
+            ->and($perSecondLimit->getShouldSleep())->toBeFalse();
+    } finally {
+        app()->instance('env', $originalEnvironment);
+    }
+});
