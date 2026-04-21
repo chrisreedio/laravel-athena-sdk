@@ -35,6 +35,8 @@ ATHENA_LEAVE_UNPROCESSED=false
 
 The package currently publishes a config file only. There are no package views or package migrations to publish.
 
+The connector also ships with built-in Athena rate limiting using Saloon's rate-limit plugin. All requests are capped per connector instance to 15 requests per second outside `production` and 150 requests per second in `production`. Rate-limit violations fail fast (a `RateLimitReachedException` will be thrown rather than auto-sleeping and retrying).
+
 The connector authenticates with Athena using the client credentials grant flow and caches the access token under the `athena_access_token` cache key.
 
 ## Usage

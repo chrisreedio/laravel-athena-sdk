@@ -15,6 +15,10 @@ use Exception;
 use Illuminate\Support\Facades\Cache;
 use ReflectionException;
 use Saloon\Exceptions\OAuthConfigValidationException;
+use Saloon\RateLimitPlugin\Contracts\RateLimitStore;
+use Saloon\RateLimitPlugin\Limit;
+use Saloon\RateLimitPlugin\Stores\LaravelCacheStore;
+use Saloon\RateLimitPlugin\Traits\HasRateLimits;
 use Saloon\Helpers\OAuth2\OAuthConfig;
 use Saloon\Http\Connector;
 use Saloon\Http\Request;
@@ -29,6 +33,7 @@ use function class_basename;
 class AthenaConnector extends Connector implements HasPagination
 {
     use ClientCredentialsGrant;
+    use HasRateLimits;
 
     protected ?string $baseUrl = null;
 
@@ -111,6 +116,21 @@ class AthenaConnector extends Connector implements HasPagination
                 return $dtoResult;
             }
         };
+    }
+
+    protected function resolveLimits(): array
+    {
+        return [Limit::allow($this->getRateLimitPerSecond())->everySeconds(1)];
+    }
+
+    protected function resolveRateLimitStore(): RateLimitStore
+    {
+        return new LaravelCacheStore(cache()->store());
+    }
+
+    protected function getRateLimitPerSecond(): int
+    {
+        return app()->environment('production') ? 150 : 15;
     }
 
     // region Resources
