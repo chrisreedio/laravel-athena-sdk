@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.4.1 - 2026-04-24
+
+### What's Changed
+
+* Enhance AthenaConnector token management with caching and locking by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/64
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.4.0...v1.4.1
+
 ## v1.4.0 - 2026-04-21
 
 ### What's Changed
