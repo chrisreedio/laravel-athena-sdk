@@ -45,6 +45,14 @@ class Appointments extends Resource
         ?bool $includeInsurance = null,
         ?bool $includePatient = null,
     ): AppointmentData {
-        return $this->connector->send(new GetAppointmentDetails($appointmentId))->dtoOrFail();
+        $request = new GetAppointmentDetails(
+            $appointmentId,
+            showclaimdetail: $includeClaim,
+            showcopay: $includeCopay,
+            showinsurance: $includeInsurance,
+            showpatientdetail: $includePatient,
+        );
+
+        return $this->connector->send($request)->dtoOrFail();
     }
 }
