@@ -55,12 +55,21 @@ class AthenaConnector extends Connector implements HasPagination
         // Attempt to set up authentication
         try {
             $authenticator = Cache::get('athena_access_token');
-            if (! $authenticator) {
-                $authenticator = $this->getAccessToken();
-                $expiresAt = $authenticator->getExpiresAt();
-                $expiresAt = $expiresAt->sub(new DateInterval('PT1M'));
-                $ttl = now()->diff($expiresAt);
-                Cache::put('athena_access_token', $authenticator, $ttl);
+            if (! $authenticator || $authenticator->hasExpired()) {
+                $authenticator = Cache::lock('athena_access_token_lock', 30)->block(10, function () {
+                    $authenticator = Cache::get('athena_access_token');
+                    if ($authenticator && $authenticator->hasNotExpired()) {
+                        return $authenticator;
+                    }
+
+                    $authenticator = $this->getAccessToken();
+                    $expiresAt = $authenticator->getExpiresAt();
+                    $expiresAt = $expiresAt->sub(new DateInterval('PT1M'));
+                    $ttl = now()->diff($expiresAt);
+                    Cache::put('athena_access_token', $authenticator, $ttl);
+
+                    return $authenticator;
+                });
             }
             $this->authenticate($authenticator);
         } catch (ReflectionException|OAuthConfigValidationException|Throwable $e) {
