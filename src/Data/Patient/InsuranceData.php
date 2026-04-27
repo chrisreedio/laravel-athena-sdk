@@ -61,6 +61,8 @@ readonly class InsuranceData extends AthenaData
         public ?string $insuredSex = null,
         public ?string $insuredState = null,
         public ?string $insuredZip = null,
+        /** @var InsuranceCopayData[]|null */
+        public ?array $copays = null,
     ) {}
 
     public static function fromArray(array $data): static
@@ -120,6 +122,7 @@ readonly class InsuranceData extends AthenaData
             insuredSex: $data['insuredsex'] ?? null,
             insuredState: $data['insuredstate'] ?? null,
             insuredZip: $data['insuredzip'] ?? null,
+            copays: isset($data['copays']) ? array_map(static fn (array $copay): InsuranceCopayData => InsuranceCopayData::fromArray($copay), $data['copays']) : null,
         );
     }
 }
