@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.5.0 - 2026-04-27
+
+### What's Changed
+
+* Add InsuranceCopayData class and integrate into InsuranceData by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/65
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.4.2...v1.5.0
+
 ## v1.4.2 - 2026-04-24
 
 **Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.4.1...v1.4.2
