@@ -28,6 +28,8 @@ it('maps the expanded patient insurance payload', function () {
         'sequencenumber' => 1,
         'casepolicytypename' => 'Standard Policy',
         'issuedate' => '2026-01-01',
+        'expirationdate' => '2027-01-01',
+        'cancelled' => '2026-12-31',
         'note' => 'Verified with payer',
         'confidentialitycode' => 'normal',
         'insurancepackageaddress1' => '1 Insurance Way',
@@ -84,6 +86,8 @@ it('maps the expanded patient insurance payload', function () {
         ->and($insurance->sequenceNumber)->toBe(1)
         ->and($insurance->casePolicyTypeName)->toBe('Standard Policy')
         ->and($insurance->issueDate)->toBe('2026-01-01')
+        ->and($insurance->expirationDate)->toBe('2027-01-01')
+        ->and($insurance->cancelled)->toBe('2026-12-31')
         ->and($insurance->note)->toBe('Verified with payer')
         ->and($insurance->confidentialityCode)->toBe('normal')
         ->and($insurance->insurancePackageAddress1)->toBe('1 Insurance Way')
