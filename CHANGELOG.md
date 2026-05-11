@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.7.0 - 2026-05-11
+
+### What's Changed
+
+* Add implement AppointmentNotes resource (create appointment note) by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/69
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.6.0...v1.7.0
+
 ## v1.6.0 - 2026-05-07
 
 ### What's Changed
