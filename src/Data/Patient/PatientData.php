@@ -52,6 +52,8 @@ readonly class PatientData extends AthenaData
         public ?string $primaryProviderId = null,
 
         public ?bool $privacyInformationVerified = null,
+        public ?PatientPrivacyInfoData $detailedPrivacyInfo = null,
+        public ?PortalStatusData $portalStatus = null,
         // @var PatientBalanceData[]|null
         public ?array $balances = null,
 
@@ -91,6 +93,12 @@ readonly class PatientData extends AthenaData
             primaryDepartmentId: $data['primarydepartmentid'] ?? null,
             primaryProviderId: $data['primaryproviderid'] ?? null,
             privacyInformationVerified: self::toBool($data['privacyinformationverified'] ?? null),
+            detailedPrivacyInfo: isset($data['detailedprivacyinfo']) && is_array($data['detailedprivacyinfo'])
+                ? PatientPrivacyInfoData::fromArray($data['detailedprivacyinfo'])
+                : null,
+            portalStatus: isset($data['portalstatus']) && is_array($data['portalstatus'])
+                ? PortalStatusData::fromArray($data['portalstatus'])
+                : null,
             balances: isset($data['balances']) && is_array($data['balances'])
                 ? array_map(
                     static fn (array $balance): PatientBalanceData => PatientBalanceData::fromArray($balance),

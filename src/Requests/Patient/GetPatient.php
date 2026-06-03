@@ -45,6 +45,7 @@ class GetPatient extends Request
      * @param  null|bool  $showportalstatus  If set, will include portal enrollment status in response.
      * @param  null|bool  $showpreviouspatientids  If set, will show the previous patient ID this patient was merged from.
      * @param  null|bool  $showprivacycustomfields  Include privacy custom fields for the patient when SHOWCUSTOMFIELDS also set to true.
+     * @param  null|bool  $showprivacyinfo  Include privacy information for the patient.
      */
     public function __construct(
         protected int $patientid,
@@ -58,7 +59,7 @@ class GetPatient extends Request
         protected ?bool $show2015edcehrtvalues = null,
         protected ?bool $showallclaims = null,
         protected ?bool $showallpatientdepartmentstatus = null,
-        protected ?bool $showbalancedetails = null,
+        protected ?bool $showbalancedetails = true,
         protected ?bool $showcustomfields = true,
         protected ?bool $showfullssn = null,
         protected ?bool $showinsurance = true,
@@ -66,6 +67,7 @@ class GetPatient extends Request
         protected ?bool $showportalstatus = true,
         protected ?bool $showpreviouspatientids = null,
         protected ?bool $showprivacycustomfields = null,
+        protected ?bool $showprivacyinfo = true,
     ) {}
 
     public function defaultQuery(): array
@@ -89,6 +91,7 @@ class GetPatient extends Request
             'showportalstatus' => $this->showportalstatus,
             'showpreviouspatientids' => $this->showpreviouspatientids,
             'showprivacycustomfields' => $this->showprivacycustomfields,
+            'showprivacyinfo' => $this->showprivacyinfo,
         ]);
     }
 
