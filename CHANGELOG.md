@@ -2,6 +2,26 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.7.0 - 2026-05-11
+
+### What's Changed
+
+* Add implement AppointmentNotes resource (create appointment note) by @chrisreedio in https://github.com/chrisreedio/laravel-athena-sdk/pull/69
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.6.0...v1.7.0
+
+## v1.6.0 - 2026-05-07
+
+### What's Changed
+
+* Add expirationDate and cancelled fields to InsuranceData class by @sc-chgraham in https://github.com/chrisreedio/laravel-athena-sdk/pull/68
+
+### New Contributors
+
+* @sc-chgraham made their first contribution in https://github.com/chrisreedio/laravel-athena-sdk/pull/68
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.5.1...v1.6.0
+
 ## v1.5.1 - 2026-05-05
 
 ### What's Changed

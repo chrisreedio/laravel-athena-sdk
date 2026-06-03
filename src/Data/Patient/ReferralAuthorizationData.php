@@ -33,7 +33,8 @@ readonly class ReferralAuthorizationData extends AthenaData
         return new static(
             athenaId: isset($data['referralauthid']) ? (int) $data['referralauthid'] : null,
             departmentId: isset($data['departmentid']) ? (int) $data['departmentid'] : null,
-            insuranceId: isset($data['insuranceidnumber']) ? (string) $data['insuranceidnumber'] : null,
+            insuranceId: isset($data['insuranceidnumber']) ? (string) $data['insuranceidnumber']
+                : (isset($data['insuranceid']) ? (string) $data['insuranceid'] : null),
             appointmentIds: array_values(array_map(
                 static fn (mixed $id): int => (int) $id,
                 array_filter($data['appointmentids'] ?? [], static fn (mixed $id): bool => $id !== null && $id !== '')
