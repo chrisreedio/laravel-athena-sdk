@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.8.0 - 2026-06-03
+
+### What's Changed
+
+* Expand get patient request by @sc-chgraham in https://github.com/chrisreedio/laravel-athena-sdk/pull/70
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.7.0...v1.8.0
+
 ## v1.7.0 - 2026-05-11
 
 ### What's Changed
