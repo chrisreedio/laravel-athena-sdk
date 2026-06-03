@@ -6,7 +6,7 @@ it('maps representative referral authorization payload fields into a dto', funct
     $authorization = ReferralAuthorizationData::fromArray([
         'referralauthid' => '501',
         'departmentid' => '77',
-        'insuranceid' => '12345',
+        'insuranceidnumber' => '12345',
         'appointmentids' => ['9001', '9002'],
         'startdate' => '2026-03-01',
         'enddate' => '2026-03-31',
