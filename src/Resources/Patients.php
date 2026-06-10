@@ -32,8 +32,7 @@ class Patients extends Resource
         int $patientId,
         ?bool $limitLocalPatientId = null,
         ?string $departmentId = null,
-    ): PatientData
-    {
+    ): PatientData {
         return $this->connector->send(new GetPatient(
             patientid: $patientId,
             limitlocalpatientid: $limitLocalPatientId,
