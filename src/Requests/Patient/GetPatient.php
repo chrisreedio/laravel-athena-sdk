@@ -85,7 +85,7 @@ class GetPatient extends Request
             'showcustomfields' => $this->showcustomfields,
             'showfullssn' => $this->showfullssn,
             'showinsurance' => $this->showinsurance,
-            'showlocalpatientid' => $this->showlocalpatientid,
+            'showlocalpatientid' => true,
             'showportalstatus' => $this->showportalstatus,
             'showpreviouspatientids' => $this->showpreviouspatientids,
             'showprivacycustomfields' => $this->showprivacycustomfields,

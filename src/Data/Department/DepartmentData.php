@@ -13,6 +13,7 @@ readonly class DepartmentData extends AthenaData
         public ?string $patientName = null,
         public ?string $phone = null,
         public ?int $timezone = null,
+        public ?string $providerGroupId = null,
         public ?AddressData $address = null,
     ) {}
 
@@ -24,8 +25,8 @@ readonly class DepartmentData extends AthenaData
             patientName: $data['patientdepartmentname'] ?? null,
             phone: $data['phone'] ?? null,
             timezone: $data['timezone'] ?? null,
+            providerGroupId: $data['providergroupid'] ?? null,
             address: (isset($data['address']) ? AddressData::fromArray($data) : null),
-
         );
     }
 }
