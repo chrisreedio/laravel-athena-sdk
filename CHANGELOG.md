@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.9.0 - 2026-06-11
+
+### What's Changed
+
+* feat(department): add providerGroupId to DepartmentData and update Patient retrieval by @sc-chgraham in https://github.com/chrisreedio/laravel-athena-sdk/pull/71
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.8.0...v1.9.0
+
 ## v1.8.0 - 2026-06-03
 
 ### What's Changed
