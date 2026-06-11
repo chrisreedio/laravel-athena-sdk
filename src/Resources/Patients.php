@@ -30,11 +30,13 @@ class Patients extends Resource
 
     public function get(
         int $patientId,
+        ?bool $showLocalPatientId = null,
         ?bool $limitLocalPatientId = null,
         ?string $departmentId = null,
     ): PatientData {
         return $this->connector->send(new GetPatient(
             patientid: $patientId,
+            showlocalpatientid: $showLocalPatientId,
             limitlocalpatientid: $limitLocalPatientId,
             departmentid: $departmentId,
         ))->dtoOrFail();
