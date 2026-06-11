@@ -13,6 +13,7 @@ readonly class PatientData extends AthenaData
      */
     public function __construct(
         public ?int $athenaId = null,
+        public ?string $athenaLocalId = null,
         public ?string $firstName = null,
         public ?string $lastName = null,
         public ?string $sex = null,
@@ -64,6 +65,7 @@ readonly class PatientData extends AthenaData
     {
         return new static(
             athenaId: $data['patientid'] ?? null,
+            athenaLocalId: isset($data['localpatientid']) ? $data['localpatientid'] : null,
             firstName: $data['firstname'] ?? null,
             lastName: $data['lastname'] ?? null,
             sex: $data['sex'] ?? null,

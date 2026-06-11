@@ -28,9 +28,18 @@ class Patients extends Resource
     //     return $this->connector->send(new ListPatients(departmentid: $departmentId));
     // }
 
-    public function get(int $patientId): PatientData
-    {
-        return $this->connector->send(new GetPatient($patientId))->dtoOrFail();
+    public function get(
+        int $patientId,
+        ?bool $showLocalPatientId = null,
+        ?bool $limitLocalPatientId = null,
+        ?string $departmentId = null,
+    ): PatientData {
+        return $this->connector->send(new GetPatient(
+            patientid: $patientId,
+            showlocalpatientid: $showLocalPatientId,
+            limitlocalpatientid: $limitLocalPatientId,
+            departmentid: $departmentId,
+        ))->dtoOrFail();
     }
 
     public function subscriptions(): PatientSubscriptions
