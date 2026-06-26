@@ -38,7 +38,7 @@ class AppointmentSubscriptions extends Resource
         ?bool $leaveUnprocessed = false,
         ?bool $showCopay = true,
         ?bool $showInsurance = true,
-        ?bool $showPatientDetail = null,
+        ?bool $showPatientDetail = true,
     ): LazyCollection {
         $request = new ListAppointmentChanges(
             leaveUnprocessed: $leaveUnprocessed,
