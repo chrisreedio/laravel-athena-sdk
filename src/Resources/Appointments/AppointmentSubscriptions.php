@@ -34,13 +34,17 @@ class AppointmentSubscriptions extends Resource
         return $this->connector->send(new DeleteAppointmentChangeSubscription($eventName));
     }
 
-    public function changes(bool $leaveUnprocessed = false): LazyCollection
-    {
+    public function changes(
+        ?bool $leaveUnprocessed = false,
+        ?bool $showCopay = true,
+        ?bool $showInsurance = true,
+        ?bool $showPatientDetail = true,
+    ): LazyCollection {
         $request = new ListAppointmentChanges(
             leaveUnprocessed: $leaveUnprocessed,
-            showCopay: true,
-            showInsurance: true,
-            showPatientDetail: true,
+            showCopay: $showCopay,
+            showInsurance: $showInsurance,
+            showPatientDetail: $showPatientDetail,
         );
 
         return $this->connector
