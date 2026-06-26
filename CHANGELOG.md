@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-athena-sdk` will be documented in this file.
 
+## v1.9.1 - 2026-06-26
+
+### What's Changed
+
+* Stop requesting appointment patient detail by default by @sc-chgraham in https://github.com/chrisreedio/laravel-athena-sdk/pull/72
+
+**Full Changelog**: https://github.com/chrisreedio/laravel-athena-sdk/compare/v1.9.0...v1.9.1
+
 ## v1.9.0 - 2026-06-11
 
 ### What's Changed
