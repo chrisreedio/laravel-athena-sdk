@@ -3,6 +3,7 @@
 namespace ChrisReedIO\AthenaSDK\Resources\Appointments;
 
 use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\ListBookedAppointments;
+use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\ListBookedAppointmentsForMultipleAppointments;
 use ChrisReedIO\AthenaSDK\Requests\Appointments\Appointment\ListBookedAppointmentsForMultipleDepartments;
 use ChrisReedIO\AthenaSDK\Resource;
 use Illuminate\Support\LazyCollection;
@@ -107,6 +108,32 @@ class Booked extends Resource
             $showpatientdetail,
             $showremindercalldetail,
             $startlastmodified,
+        ))->collect();
+    }
+
+    public function listByAppointmentIds(
+        array $appointmentids,
+        ?array $confidentialitycode = null,
+        ?bool $showcancelled = null,
+        ?bool $showclaimdetail = null,
+        ?bool $showcopay = null,
+        ?bool $showexpectedprocedurecodes = null,
+        ?bool $showinsurance = null,
+        ?bool $showpatientdetail = null,
+        ?bool $showpatientinstructions = null,
+        ?bool $showremindercalldetail = null,
+    ): LazyCollection {
+        return $this->connector->paginate(new ListBookedAppointmentsForMultipleAppointments(
+            $appointmentids,
+            $confidentialitycode,
+            $showcancelled,
+            $showclaimdetail,
+            $showcopay,
+            $showexpectedprocedurecodes,
+            $showinsurance,
+            $showpatientdetail,
+            $showpatientinstructions,
+            $showremindercalldetail,
         ))->collect();
     }
 }
