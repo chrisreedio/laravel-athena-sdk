@@ -88,6 +88,7 @@ class AthenaConnector extends Connector implements HasPagination
             ->setClientId(config('athena-sdk.client_id'))
             ->setClientSecret(config('athena-sdk.client_secret'))
             ->setTokenEndpoint($this->baseUrl.'/oauth2/v1/token')
+            ->setAllowBaseUrlOverride()
             ->setDefaultScopes(['athena/service/Athenanet.MDP.*']);
     }
 

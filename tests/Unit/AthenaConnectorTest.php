@@ -53,6 +53,15 @@ it('allows overriding the practice id in the constructor', function () {
     expect($connector->resolveBaseUrl())->toBe('https://example.athena.test/v1/999888');
 });
 
+it('allows its absolute OAuth token endpoint to override the API base URL', function () {
+    athenaTestConfig(['base_url' => 'https://example.athena.test']);
+    cacheAthenaToken();
+
+    $connector = new AthenaConnector;
+
+    expect($connector->oauthConfig()->getAllowBaseUrlOverride())->toBeTrue();
+});
+
 it('creates top level resource accessors without contacting the network', function () {
     athenaTestConfig();
     cacheAthenaToken();
